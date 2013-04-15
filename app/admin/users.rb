@@ -1,7 +1,9 @@
 ActiveAdmin.register User do
+  config.batch_actions = false
+  config.clear_sidebar_sections!
   actions :index, :destroy, :edit
   
-   index do 
+  index do 
     column :email
     column :role
     default_actions

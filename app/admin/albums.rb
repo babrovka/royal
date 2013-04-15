@@ -1,41 +1,38 @@
-ActiveAdmin.register Article do
+ActiveAdmin.register Album do
   config.batch_actions = false
   config.clear_sidebar_sections!
-  
+
   index do 
     column :title
-    column :date
     column :text do |row|
       row.text.html_safe
     end
     default_actions
   end
-  
+
   form do |f|  
     f.inputs "Details" do
       f.input :title
-      f.input :date, :as => :datepicker
       f.input :text
     end
     
-    f.has_many :article_images do |attachment_form|      
+    f.has_many :album_images do |attachment_form|      
       attachment_form.input :image, :as => :file, :hint => ( attachment_form.object.new_record? || !attachment_form.object.image ) ? nil : image_tag(attachment_form.object.image.url(:thumb))
       attachment_form.input :_destroy, :as => :boolean, :required => false, :label => I18n.t('destroy')
     end
     f.actions
   end
   
-  show do |article|
+  show do |album|
     attributes_table do
       row :title
-      row :date
       row :text do |row|
         row.text.html_safe
       end
     end
     
     panel "Images" do 
-      table_for article.article_images do 
+      table_for album.album_images do 
         column :image do |column|
           if column.image?
           image_tag column.image.url(:thumb)
@@ -45,5 +42,5 @@ ActiveAdmin.register Article do
     end
       
    end
-  
+
 end
