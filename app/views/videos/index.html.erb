@@ -1,0 +1,4 @@
+<% @videos.each do |video| %>
+	<%= video.title %>
+	<p><%= raw(youtube_embed(video.youtube)) %></p>
+<% end %>
