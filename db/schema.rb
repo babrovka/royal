@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130415140232) do
+ActiveRecord::Schema.define(:version => 20130425124518) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -80,6 +80,82 @@ ActiveRecord::Schema.define(:version => 20130415140232) do
     t.text     "text"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "brands", :force => true do |t|
+    t.string   "title"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "cases", :force => true do |t|
+    t.string   "title"
+    t.text     "text"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "cases_products", :force => true do |t|
+    t.integer "case_id"
+    t.integer "product_id"
+  end
+
+  create_table "consultations", :force => true do |t|
+    t.text     "question"
+    t.text     "answer"
+    t.integer  "brand_id"
+    t.integer  "case_id"
+    t.boolean  "check",      :default => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
+
+  create_table "consultations_products", :force => true do |t|
+    t.integer "consultation_id"
+    t.integer "product_id"
+  end
+
+  create_table "events", :force => true do |t|
+    t.string   "title"
+    t.date     "date"
+    t.text     "text"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "events_users", :force => true do |t|
+    t.integer "event_id"
+    t.integer "user_id"
+  end
+
+  create_table "procedures", :force => true do |t|
+    t.string   "title"
+    t.text     "text"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "procedures_products", :force => true do |t|
+    t.integer "procedure_id"
+    t.integer "product_id"
+  end
+
+  create_table "products", :force => true do |t|
+    t.string   "title"
+    t.string   "packing"
+    t.text     "text"
+    t.text     "ingredients"
+    t.integer  "brand_id"
+    t.boolean  "visible_professional",                               :default => false
+    t.boolean  "visible_dealer1",                                    :default => false
+    t.boolean  "visible_dealer2",                                    :default => false
+    t.boolean  "visible_dealer3",                                    :default => false
+    t.decimal  "price_professional",   :precision => 8, :scale => 2
+    t.decimal  "price_dealer1",        :precision => 8, :scale => 2
+    t.decimal  "price_dealer2",        :precision => 8, :scale => 2
+    t.decimal  "price_dealer3",        :precision => 8, :scale => 2
+    t.datetime "created_at",                                                            :null => false
+    t.datetime "updated_at",                                                            :null => false
   end
 
   create_table "publications", :force => true do |t|

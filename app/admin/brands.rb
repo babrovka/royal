@@ -1,4 +1,4 @@
-ActiveAdmin.register Video do
+ActiveAdmin.register Brand do
    config.batch_actions = false
    config.clear_sidebar_sections!
 
@@ -10,7 +10,6 @@ ActiveAdmin.register Video do
    form do |f|  
      f.inputs "Details" do
        f.input :title
-       f.input :youtube
      end
      f.actions
    end
@@ -18,9 +17,6 @@ ActiveAdmin.register Video do
   show do
     attributes_table do
       row :title
-      row :youtube do |row|
-        raw(youtube_embed(row.youtube))
-      end
     end  
-   end
+   end  
 end

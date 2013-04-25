@@ -1,6 +1,12 @@
 Royal::Application.routes.draw do
 
+  get "users/show"
+
   match "/videos" => "videos#index"
+  
+  match 'users/:id' => 'users#show'
+  
+  resources :events
 
   root :to => 'pages#home'
 

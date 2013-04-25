@@ -26,6 +26,7 @@ ActiveAdmin.register Article do
   end
   
   show do |article|
+    
     attributes_table do
       row :title
       row :date
@@ -43,7 +44,7 @@ ActiveAdmin.register Article do
         end
       end
     end
-      
+    
    end
   
 end

@@ -1,0 +1,10 @@
+<h1>Мои записи</h1>
+<% @user.events.each do |event| %>
+
+<div class="event">
+<h3><%= event.title %></h3>
+<p><%= event.date %></p>
+<p><%= event.text %></p>
+<%= appointment_link(event) %>
+</div>
+<% end %>

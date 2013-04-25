@@ -1,16 +1,16 @@
-ActiveAdmin.register Video do
-   config.batch_actions = false
-   config.clear_sidebar_sections!
-
+ActiveAdmin.register Event do
    index do 
      column :title
+     column :date
+     column :text
      default_actions
    end
 
    form do |f|  
      f.inputs "Details" do
        f.input :title
-       f.input :youtube
+       f.input :date, :as => :datepicker
+       f.input :text
      end
      f.actions
    end
@@ -18,9 +18,8 @@ ActiveAdmin.register Video do
   show do
     attributes_table do
       row :title
-      row :youtube do |row|
-        raw(youtube_embed(row.youtube))
-      end
+      row :date
+      row :text
     end  
-   end
+   end 
 end
