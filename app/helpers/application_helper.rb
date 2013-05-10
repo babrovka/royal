@@ -1,6 +1,7 @@
 # coding: utf-8
 
 module ApplicationHelper
+    
   def youtube_embed(youtube_url)
     if youtube_url[/youtu\.be\/([^\?]*)/]
       youtube_id = $1
@@ -14,10 +15,16 @@ module ApplicationHelper
   end
   
   def appointment_link(event)
-    if current_user.events.exists?(event)
-      link_to 'Отписаться', event, method: :delete, :remote => true, :class => 'appointment_link destroy'
+    if controller_name == "users"
+      css = "appointment_link destroy"
     else
-      link_to 'Записаться', events_path(event_id: event), method: :post, :remote => true, :class => 'appointment_link'
+      css = "appointment_link"
+    end
+    
+    if current_user.events.exists?(event)
+      link_to 'Отписаться', event, method: :delete, :remote => true, :class => css, :id => event.id
+    else
+      link_to 'Записаться', events_path(event_id: event), method: :post, :remote => true, :class => css, :id => event.id
     end
   end
 end

@@ -13,12 +13,24 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+/*
+$(document).ready(
+    function(){
+	$(".destroy").click(function (){
+		
+		$(this).parent().hide();
+	});
+});*/
+
+
+/*
 $(document).ready(
      function(){
-	 	
-		$(".destroy").click(function (){
-			
-			$(this).parent().hide();
-		});
+          $(".appointment_link").bind("ajax:success",
+                   function(evt, data, status, xhr){
+                        $(this).text('Отписаться');
+           }).bind("ajax:error", function(evt, data, status, xhr){
+                    alert('failure');
+           });
+});*/
 
-});
