@@ -7,8 +7,7 @@ class LineItemsController < InheritedResources::Base
     
     respond_to do |format|
       if @line_item.save
-      format.html { redirect_to @line_item.cart,
-        notice: 'Line item was successfully created' }
+      format.html { redirect_to products_path }
       else
         format.html  { render action: "new" }
       end
@@ -20,7 +19,7 @@ class LineItemsController < InheritedResources::Base
 
     respond_to do |format|
       if @line_item.update_attributes(params[:line_item])
-        format.html { redirect_to @line_item, notice: 'Line item was successfully updated.' }
+        format.html { redirect_to products_path }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

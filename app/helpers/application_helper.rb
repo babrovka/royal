@@ -27,4 +27,7 @@ module ApplicationHelper
       link_to 'Записаться', events_path(event_id: event), method: :post, :remote => true, :class => css, :id => event.id
     end
   end
+  
+
+  
 end

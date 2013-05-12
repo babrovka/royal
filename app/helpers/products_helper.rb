@@ -12,4 +12,12 @@ module ProductsHelper
     end
   end
   
+  def total_price(item)
+    price(item.product) * item.quantity
+  end
+  
+  def total_cart_price(cart)
+    cart.line_items.to_a.sum { |item| total_price(item) }
+  end
+  
 end

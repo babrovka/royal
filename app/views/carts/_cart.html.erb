@@ -1,0 +1,9 @@
+<table>
+	<%= render(cart.line_items) %>
+	<tr>
+		<td colspan='2'>Total</td>
+		<td><%= number_to_currency(total_cart_price(cart)) %></td>
+	<tr>
+</table>
+
+<%= button_to 'Очистить корзину', cart, method: :delete, confirm: 'Вы уверены?' %>
