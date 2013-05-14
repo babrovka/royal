@@ -12,6 +12,7 @@
 	<tr>
 </table>
 <%= button_to 'Оформить заказ', new_order_path, method: :get %>
+<%= button_to 'Редактировать', edit_cart_path(@cart), method: :get %>
 <%= button_to 'Очистить корзину', cart, method: :delete, confirm: 'Вы уверены?', remote: true %>
 
 <% end %>

@@ -1,0 +1,7 @@
+<tr id="<%= dom_id(f.object) %>">
+	<td><%= f.object.product.title %></td>
+	<td><%= f.number_field :quantity, :min => 0, :class => 'dynamic_bullshit' %></td>
+	<td><%= link_to 'Удалить', line_item_path(f.object),
+	            :confirm => 'Вы уверены?', :method => :delete, :class => 'line_item_destroy', :remote => true %>
+</tr>
+ 
