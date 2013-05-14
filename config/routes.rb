@@ -1,5 +1,6 @@
 Royal::Application.routes.draw do
 
+  resources :orders
 
 
   resources :line_items
@@ -8,7 +9,7 @@ Royal::Application.routes.draw do
   resources :events
   resources :products
   
-  root :to => 'pages#home'
+  root :to => 'products#index'
 
   
   match '/account' => 'users#show'

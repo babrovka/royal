@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
   
   has_one :cart
   has_and_belongs_to_many :events, :uniq => true
+  has_many :orders
   
   ROLES = %w[professional dealer1 dealer2 dealer3]
 end

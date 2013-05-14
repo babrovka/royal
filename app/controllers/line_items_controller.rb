@@ -8,6 +8,7 @@ class LineItemsController < InheritedResources::Base
     respond_to do |format|
       if @line_item.save
       format.html { redirect_to products_path }
+      format.js
       else
         format.html  { render action: "new" }
       end

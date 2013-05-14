@@ -1,3 +1,9 @@
+<% if @cart.line_items.empty? %>
+
+В вашей корзине нихуя нет
+
+<% else %>
+
 <table>
 	<%= render(cart.line_items) %>
 	<tr>
@@ -5,5 +11,7 @@
 		<td><%= number_to_currency(total_cart_price(cart)) %></td>
 	<tr>
 </table>
+<%= button_to 'Оформить заказ', new_order_path, method: :get %>
+<%= button_to 'Очистить корзину', cart, method: :delete, confirm: 'Вы уверены?', remote: true %>
 
-<%= button_to 'Очистить корзину', cart, method: :delete, confirm: 'Вы уверены?' %>
+<% end %>

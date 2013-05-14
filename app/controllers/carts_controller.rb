@@ -20,6 +20,7 @@ class CartsController < InheritedResources::Base
     
     respond_to do |format|
       format.html { redirect_to products_path, notice: 'Your cart is currently empty' }
+      format.js
       format.json { head :no_content }
     end
   end

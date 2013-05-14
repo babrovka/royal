@@ -23,8 +23,11 @@
 	
 	<% end %>
 <%= yield %>
+
 <% unless @cart.nil? %>
+<div id="cart" style="margin-top: 40px;">
 <%= render @cart %>
+</div>
 <% end %>
 </body>
 </html>
