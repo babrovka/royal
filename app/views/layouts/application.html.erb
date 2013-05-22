@@ -11,7 +11,22 @@
 <div id="header">
   <div class="container">
     <div class="row">
-      <div class="span2"><%= link_to "вход для партнеров", "#", :class => 'partners_link' %></div>
+      <div class="span12">
+        <%= link_to "вход для партнеров", "#", :class => 'partners_link' %>
+		<%= link_to "vkontakte", "#", :class => 'social_link vk' %>
+        <%= link_to "facebook", "#", :class => 'social_link fb' %>
+		<%= link_to "twitter", "#", :class => 'social_link tw' %>
+		<div id="search">
+		<form id="footsearch" accept-charset="UTF-8" action="/search" method="get">
+			<input name="utf8" type="hidden" value="&#x2713;" />
+			<input type="text" name="testfind" class="search-input" onfocus="if(this.value=='поиск по сайту') this.value='';" onblur="if(this.value=='') this.value='поиск по сайту';" value="поиск по сайту" />
+			<a href="/" class="search-submit"></a>
+		</form>
+		</div>
+		<%= link_to "показать на карте", "#", :class => 'map_link' %>
+		<div class="phone">8 800 100-8079</div>
+		<div class="phone">8 812 702-7989</div>
+      </div>
     </div>
   </div>
 </div>
