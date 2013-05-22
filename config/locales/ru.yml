@@ -1,2 +1,100 @@
-ru: 
+ru:
+  destroy: "Удалить"
+  images: "Изображения"
+  details: "Детали"
+  properties: "Свойства"
+  title: "Название"
+  image: "Изображение"  
+  event_type: "Тип мероприятия"
+  recipe_type: "Тип рецепта"
+  front_images: "Изображение для слайдера"
+  album: "Альбом"
+  more_images: "Добавить еще изображения"
+  album_updated: "Альбом изменен"
+  event_updated: "Событие изменено"
   products: "Товары"
+  catalog: "Каталог"
+  users: "Пользователи"
+  media: "Медиа"
+  catalog: "Каталог"
+  users: "Пользователи"
+  destroy_image: "Удалить изображение?"
+  activerecord:
+    models: 
+      admin_user:
+        one: "Адмиристратор"
+        other: "Администраторы"
+      album:
+        one: "Альбом"
+        few: "Альбомы"
+        many: "Альбомов"
+        other: "Альбомы"
+      article:
+        one: "Новость"
+        other: "Новости"
+      brand:
+        one: "Бренд"
+        other: "Бренды"
+      case:
+        one: "Случай применения"
+        other: "Случаи применения"
+      consultation:
+        one: "Консультация"
+        other: "Консультации"
+      event:
+        one: "Событие"
+        other: "События"
+      order:
+        one: "Заказ"
+        other: "Заказы"    
+      procedure:
+        one: "Процедура"
+        other: "Процедуры"  
+      product:
+        one: "Товар"
+        other: "Товары"
+      publication:
+        one: "Публикация"
+        other: "Публикации"
+      user: 
+        one: "Пользователь"
+        other: "Пользователи"
+      video: "Видео"
+    attributes:
+      user:
+        role: "Тип пользователя"
+        password: "Пароль"   
+        password_confirmation: "Подтверждение пароля"
+        check: "Подтвержден"
+      admin_user:
+        password: "Пароль"   
+        password_confirmation: "Подтверждение пароля"
+        current_sign_in_at: "Текущая авторизация"
+        last_sign_in_at: "Последняя авторизация"
+        sign_in_count: "Кол-во авторизаций"
+      publication:
+        title: "Название"
+        file: "Файл"
+        image: "Изображение"
+      recipe:
+        title: "Название"
+        text: "Описание"        
+      event:
+        title: "Название"
+        price: "Стоимость"
+        date: "Дата"
+        text: "Описание" 
+        shorttext: "Текст для главной" 
+        eventdetails: "Детали занятия"
+        main: "Разместить на главной?"
+      event_type:
+        title: "Название"
+      recipe_type:
+        title: "Название"    
+      photo:
+        title: "Название"
+        image: "Изображение"
+      album:
+        title: "Название"
+        text: "Описание"
+        

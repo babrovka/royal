@@ -1,4 +1,9 @@
-ActiveAdmin.register AdminUser do     
+ActiveAdmin.register AdminUser do   
+  config.batch_actions = false
+  config.clear_sidebar_sections!
+    
+  menu :parent => I18n.t('users')
+  
   index do                            
     column :email                     
     column :current_sign_in_at        

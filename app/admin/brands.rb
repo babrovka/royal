@@ -1,6 +1,7 @@
 ActiveAdmin.register Brand do
-   config.batch_actions = false
-   config.clear_sidebar_sections!
+  menu :parent => I18n.t('catalog')
+  config.batch_actions = false
+  config.clear_sidebar_sections!
 
    index do 
      column :title

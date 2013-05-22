@@ -1,4 +1,5 @@
 ActiveAdmin.register Album do
+  menu :parent => I18n.t('media')
   config.batch_actions = false
   config.clear_sidebar_sections!
 
@@ -11,7 +12,7 @@ ActiveAdmin.register Album do
   end
 
   form do |f|  
-    f.inputs "Details" do
+    f.inputs do
       f.input :title
       f.input :text
     end

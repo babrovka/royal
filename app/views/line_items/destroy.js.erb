@@ -1,4 +1,2 @@
-$('#<%= dom_id(@line_item) %>').fadeOut('fast', function(){
-        $(this).remove();
-    });
+$('#<%= dom_id(@line_item) %>').empty();
 $('#cart').html("<%=j render @cart %>");

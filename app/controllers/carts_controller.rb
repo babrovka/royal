@@ -14,12 +14,16 @@ class CartsController < InheritedResources::Base
     end
   end
   
+  def edit
+    @cart = Cart.find(params[:id])
+  end
+  
   def update
     @cart = Cart.find(params[:id])
-
+    
     respond_to do |format|
       if @cart.update_attributes(params[:cart])
-        format.html { redirect_to action: "edit", notice: 'Cart was successfully updated.' }
+        format.html { render @cart, notice: 'Cart was successfully updated.' }
         format.js
         format.json { head :no_content }
       else

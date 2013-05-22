@@ -1,5 +1,5 @@
 ActiveAdmin.register Order do
-  
+  menu :parent => I18n.t('catalog')
   
   show do |order|
    attributes_table do

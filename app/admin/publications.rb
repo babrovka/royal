@@ -18,9 +18,9 @@ ActiveAdmin.register Publication do
   end
 
   form do |f|  
-    f.inputs "Details" do
+    f.inputs do
       f.input :title
-      f.input :file, :as => :file
+      f.input :file, :as => :file, :hint => ( f.object.new_record? || !f.object.file ) ? nil : link_to(f.object.file_file_name, f.object.file.url(:original, false), target: "_blank")
       f.input :image, :as => :file, :hint => ( f.object.new_record? || !f.object.image ) ? nil : image_tag(f.object.image.url(:thumb))
     end
     

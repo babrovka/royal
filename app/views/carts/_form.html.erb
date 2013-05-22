@@ -1,11 +1,12 @@
+<div id="cart_wrap">
 <%= form_for @cart, :remote => true, :html => {:id=>'cart_edit' } do |f| %>
-
 <table>
 <%= f.fields_for :line_items do |builder| %>
-  <%= render 'line_items_fields', f: builder %>
+  <%= render 'carts/line_items_fields', f: builder %>
 <% end %>
 </table>
 
 
 
 <% end %>
+</div>

@@ -12,7 +12,7 @@ ActiveAdmin.register Article do
   end
   
   form do |f|  
-    f.inputs "Details" do
+    f.inputs do
       f.input :title
       f.input :date, :as => :datepicker
       f.input :text

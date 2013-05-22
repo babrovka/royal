@@ -1,25 +1,23 @@
 ActiveAdmin.register User do
+  menu :parent => I18n.t('users')
+  
   config.batch_actions = false
   config.clear_sidebar_sections!
-  actions :all, :except => :new
   
   index do 
     column :email
     column :role
+    column :check
     default_actions
   end
   
-  form do |f|  
-    f.inputs "Details" do
-      f.input :role, :as => :select, :collection => User::ROLES
-    end
-    f.actions
-  end
+ form :partial => "form"
   
  show do
    attributes_table do
      row :email
      row :role
+     row :check
    end  
   end
   
@@ -31,6 +29,7 @@ ActiveAdmin.register User do
        respond_to do |format|
          if @user.update_attributes(params[:user])
            format.html { redirect_to action: "index" }
+           UserMailer.confirm_email(@user).deliver
          else
            format.html { render action: "edit" }
          end

@@ -1,4 +1,7 @@
 ActiveAdmin.register Event do
+  config.batch_actions = false
+  config.clear_sidebar_sections!
+  
    index do 
      column :title
      column :date
@@ -7,7 +10,7 @@ ActiveAdmin.register Event do
    end
 
    form do |f|  
-     f.inputs "Details" do
+     f.inputs  do
        f.input :title
        f.input :date, :as => :datepicker
        f.input :text

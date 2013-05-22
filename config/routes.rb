@@ -1,15 +1,13 @@
 Royal::Application.routes.draw do
 
   resources :orders
-
-
   resources :line_items
   resources :carts  
   resources :videos
   resources :events
   resources :products
   
-  root :to => 'products#index'
+  root :to => 'static_pages#home'
 
   
   match '/account' => 'users#show'

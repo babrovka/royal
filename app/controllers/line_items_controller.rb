@@ -37,8 +37,8 @@ class LineItemsController < InheritedResources::Base
     @line_item.destroy
 
     respond_to do |format|
-      format.html { redirect_to line_items_url }
-      format.js
+      format.html { redirect_to edit_cart_path(@cart) }
+      format.js { @cart = current_cart }
       format.json { head :no_content }
     end
   end

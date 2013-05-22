@@ -1,4 +1,5 @@
 ActiveAdmin.register Product do
+  menu :parent => I18n.t('catalog')
 
    form do |f|  
      f.inputs "Details" do

@@ -1,4 +1,6 @@
 ActiveAdmin.register Procedure do
+  menu :parent => I18n.t('catalog')
+  
    index do 
      column :title
      column :text

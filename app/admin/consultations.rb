@@ -1,4 +1,8 @@
 ActiveAdmin.register Consultation do
+  config.batch_actions = false
+  config.clear_sidebar_sections!
+  menu :parent => I18n.t('catalog')
+  
   form do |f|  
     f.inputs "Details" do
       f.input :question, :input_html => { :rows => 2  }

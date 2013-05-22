@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
 
 $(document).ready(
     function(){	
@@ -20,16 +19,4 @@ $(document).ready(
 	 $('#cart_edit').submit();
 	});
 });
-
-
-/*
-$(document).ready(
-     function(){
-          $(".appointment_link").bind("ajax:success",
-                   function(evt, data, status, xhr){
-                        , :html => {:style=>'display: none;' }
-           }).bind("ajax:error", function(evt, data, status, xhr){
-                    alert('failure');
-           });
-});*/
 
