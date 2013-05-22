@@ -175,7 +175,59 @@ textarea:focus, input:focus{
 /*main*/
 
 #main {
-	background: #f8f7e5 url('index_back.jpg') no-repeat center -90px;
+	background: white url('index_back.jpg') no-repeat center -90px;
 	height: 100%;
 	min-height: 710px;
+	position: relative;
 } 
+
+#bronte-bubble {
+	position: absolute;
+	background-image: url('index-bronte.png');
+	background-repeat: no-repeat;
+	left: 200px;
+	top: 200px;
+	padding-top: 170px;
+	padding-left: 60px;
+	width: 392px;
+	height: 365px;
+}
+
+#bronte-text {
+	font-family: PragmaticaC;
+	width: 290px;
+	height: 150px;
+	color: #9e6238;
+	font-size: 14px;
+}
+
+#belter-bubble {
+	position: absolute;
+	background-image: url('index_belter.png');
+	background-repeat: no-repeat;
+	left: 650px;
+	top: 200px;
+	padding-top: 170px;
+	padding-left: 60px;
+	width: 392px;
+	height: 365px;
+}
+
+#belter-text {
+	font-family: PragmaticaC;
+	width: 290px;
+	height: 150px;
+	color: #9e6238;
+	font-size: 14px;
+}
+
+.bubble-link {
+	color: #1f478b;
+	font-family: PragmaticaC;
+	display: block;
+	margin-top: 20px;
+}
+
+.bubble-link:hover {
+	color: black;
+}
