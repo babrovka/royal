@@ -178,14 +178,13 @@ textarea:focus, input:focus{
 	background: white url('index_back.jpg') no-repeat center -90px;
 	height: 100%;
 	min-height: 710px;
-	position: relative;
 } 
 
 #bronte-bubble {
 	position: absolute;
 	background-image: url('index-bronte.png');
 	background-repeat: no-repeat;
-	left: 200px;
+	left: 20px;
 	top: 200px;
 	padding-top: 170px;
 	padding-left: 60px;
@@ -205,7 +204,7 @@ textarea:focus, input:focus{
 	position: absolute;
 	background-image: url('index_belter.png');
 	background-repeat: no-repeat;
-	left: 650px;
+	left: 490px;
 	top: 200px;
 	padding-top: 170px;
 	padding-left: 60px;
