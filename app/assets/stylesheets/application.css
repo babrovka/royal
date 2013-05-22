@@ -13,8 +13,12 @@
  *= require fonts
  */
 
+/*common*/
+
 body {
 	margin: 0px;
+	padding: 0px;
+
 }
 
 textarea:focus, input:focus{
@@ -33,6 +37,8 @@ textarea:focus, input:focus{
 :-ms-input-placeholder { /* Internet Explorer 10+ */
     color:    white;
 }
+
+/*header*/
 
 #header {
 	height: 40px;
@@ -138,6 +144,8 @@ textarea:focus, input:focus{
 	color: #6e2257;
 }
 
+/*topmenu*/
+
 #topmenu {
 	height: 50px;
 }
@@ -147,7 +155,7 @@ textarea:focus, input:focus{
 	color: #6e2257;
 	display: block;
 	text-decoration: none;
-	padding: 15px 15px;
+	padding: 17px 15px 16px;
 	float: left;
 	text-transform: uppercase;
 	font-size: 14px;
@@ -163,3 +171,11 @@ textarea:focus, input:focus{
 	background-color: #c4acd4;
 	color: white;
 }
+
+/*main*/
+
+#main {
+	background: #f8f7e5 url('index_back.jpg') no-repeat center -90px;
+	height: 100%;
+	min-height: 710px;
+} 
