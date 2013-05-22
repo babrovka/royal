@@ -8,7 +8,32 @@
 </head>
 <body>
 
-<%= render 'layouts/header' %>
+<div id="header">
+  <div class="container">
+    <div class="row">
+      <div class="span2"><%= link_to "вход для партнеров", "#", :class => 'partners_link' %></div>
+    </div>
+  </div>
+</div>
+
+<div id="topmenu">
+  <div class="container">
+    <div class="row">
+      <div class="span12">
+		<%= link_to "о нас", "#" %>
+		<%= link_to "Продукция", "#" %>
+		<%= link_to "Студия профессионального роста", "#" %>
+		<%= link_to "Консультации технолога", "#" %>
+		<%= link_to "Медиа зона", "#" %>
+		<%= link_to "Публикации", "#" %>
+		<%= link_to "Контакты", "#" %>
+	  </div>
+    </div>
+  </div>
+</div>
+
+
+
 	
 <%= yield %>
 

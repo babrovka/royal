@@ -9,4 +9,59 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require bootstrap
+ *= require fonts
  */
+
+body {
+	margin: 0px;
+}
+
+#header {
+	height: 40px;
+	background-color: #efefeb;
+}
+
+#header .partners_link {
+	display: block;
+	width: 140px;
+	height: 20px;
+	background-color: #c4acd4;
+	margin-top: 10px;
+	line-height: 1.7;
+	text-align: center;
+	text-decoration: none;
+	color: white;
+	font-family: PragmaticaC;
+	font-size: 12px;
+}
+
+#header .partners_link:hover {
+	background-color: #6e2257;
+}
+
+#topmenu {
+	height: 50px;
+}
+
+#topmenu a {
+	font-family: PragmaticaCondC;
+	color: #6e2257;
+	display: block;
+	text-decoration: none;
+	padding: 15px 15px;
+	float: left;
+	text-transform: uppercase;
+	font-size: 14px;
+	margin-right: 10px;
+}
+
+#topmenu a:last-child {
+	margin-right: 0px;
+}
+
+#topmenu a:hover {
+	display: block;
+	background-color: #c4acd4;
+	color: white;
+}
