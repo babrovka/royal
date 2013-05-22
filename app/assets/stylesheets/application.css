@@ -189,8 +189,8 @@ textarea:focus, input:focus{
 	top: 200px;
 	padding-top: 170px;
 	padding-left: 60px;
-	width: 392px;
-	height: 365px;
+	width: 350px;
+	height: 180px;
 }
 
 #bronte-text {
@@ -209,8 +209,8 @@ textarea:focus, input:focus{
 	top: 200px;
 	padding-top: 170px;
 	padding-left: 60px;
-	width: 392px;
-	height: 365px;
+	width: 350px;
+	height: 180px;
 }
 
 #belter-text {
@@ -230,4 +230,47 @@ textarea:focus, input:focus{
 
 .bubble-link:hover {
 	color: black;
+}
+
+#main-content {
+	padding-top: 700px;
+	z-index: 2;
+}
+
+#main-content .header {
+	display: block;
+	float: left;
+	font-family: PragmaticaC;
+	color: #6e2257;
+	font-size: 16px;
+	height: 20px;
+	margin-bottom: 4px;
+}
+
+.content-header-link {
+	display: block;
+	float: right;
+	margin-bottom: 4px;
+	width: 90px;
+	height: 20px;
+	background-color: #dfd3e6;
+	line-height: 1.7;
+	text-align: center;
+	text-decoration: none;
+	color: white;
+	font-family: PragmaticaC;
+	font-size: 12px;
+
+}
+
+.content-header-link:hover {
+	background-color: #6e2257;
+}
+
+#main-content .line {
+	clear: both;
+	width: 100%;
+	height: 2px;
+	background-color: #cf9f51;
+	content: none;
 }
