@@ -15,10 +15,25 @@
 
 /*common*/
 
+html, body {
+	height: 100%;
+}
+
 body {
 	margin: 0px;
 	padding: 0px;
+}
 
+.wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -4em;
+}
+
+#footer, .push {
+	height: 140px;
+	clear: both;
 }
 
 textarea:focus, input:focus{
@@ -234,6 +249,7 @@ textarea:focus, input:focus{
 #main-content {
 	padding-top: 700px;
 	z-index: 2;
+	margin-bottom: 130px;
 }
 
 #main-content .header {
@@ -412,9 +428,15 @@ textarea:focus, input:focus{
 
 }
 
-.content-header-link:hover {
+.calendar-link:hover {
 	background-color: #6e2257;
 }
 
+/*footer*/
+
+#footer {
+	height: 140px;
+	background-color: #dccfe6;
+}
 
 

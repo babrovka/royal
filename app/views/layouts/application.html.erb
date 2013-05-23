@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="wrapper">
 <%= render 'layouts/header' %>
 <%= render 'layouts/topmenu' %>
 
@@ -23,11 +24,16 @@
 	  <%= render 'layouts/main-catalog' %>
 	
 	  <%= render 'layouts/main-events' %>
+    </div>
   </div>
 </div>
+
+<div class="push"></div>
 </div>
 
-
+<div id="footer">
+	ООО «Роял бьюти косметикс», © 2012 | все права защищены | эл. почта: info@rbcos.ru
+</div>
 
 <%= yield %>
 
