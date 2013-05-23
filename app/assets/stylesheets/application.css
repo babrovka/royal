@@ -79,7 +79,7 @@ textarea:focus, input:focus{
 	background-color: #6e2257;
 }
 
-#header .social_link {
+.social_link {
 	display: block;
 	width: 20px;
 	height: 20px;
@@ -89,29 +89,33 @@ textarea:focus, input:focus{
 	margin-left: 20px;
 }
 
-#header .social_link.vk {
+.social_link.vk {
 	background: url('vk.png') top;
 }
 
-#header .social_link.tw {
+.social_link.tw {
 	background: url('tw.png') top;
 }
 
-#header .social_link.fb {
+.social_link.fb {
 	background: url('fb.png') top;
 }
 
-#header .social_link:hover {
+.social_link.in {
+	background: url('in.png') top;
+}
+
+.social_link:hover {
 	background-position: bottom;
 }
 
-#header #search {
+#header .search {
 	display: block;
 	float: left;
 	position: relative;
 }
 
-#header .search-input {
+.search-input {
 	margin-top: 10px;
 	margin-left: 80px;
 	width: 156px;
@@ -125,7 +129,7 @@ textarea:focus, input:focus{
 	font-size: 11px;
 }
 
-#header .search-submit {
+.search-submit {
 	position: absolute; 
 	width: 30px; 
 	height: 25px; 
@@ -439,4 +443,72 @@ textarea:focus, input:focus{
 	background-color: #dccfe6;
 }
 
+#footer-logo {
+	float: left;
+	width: 259px;
+	height: 64px;
+	background-image:url('logo-footer.png');
+	margin-top: 20px;
+}
 
+#footer-phone {
+	margin-top: 55px;
+	font-family: PragmaticaC;
+	background-image:url('phone.png');
+	background-repeat:no-repeat;
+	background-position:left top;
+	text-indent: 35px;
+	font-weight: bold;
+	float: left;
+	margin-left: 40px;
+	color: #553d59;
+	font-size: 20px;	
+}
+
+#footer-phone #number {
+	margin-top: 2px;
+}
+
+#footer-social {
+	float: left;
+	margin-top: 45px;
+	margin-left: 60px;
+}
+
+#footer .search {
+	margin-top: 45px;
+	display: block;
+	float: right;
+	position: relative;
+}
+
+#copyright {
+	float: left;
+	color: #89738d;
+	font-family: PragmaticaC;
+	font-size: 12px;
+	margin-top: 30px;
+}
+
+.made-in-zero {
+	font-family: PragmaticaC;
+	color: #553d59;
+	font-size: 10px;
+	float: left;
+	margin-top: 20px;
+	margin-left: 300px;
+}
+
+.zero-logo {
+	display: block;
+	margin-top: 20px;
+	float: right;
+	width: 64px;
+	height: 21px;
+	background-image:url('zero-logo.png');
+	text-indent: -99999px;
+}
+
+.zero-logo:hover {
+	background-position: bottom;
+}
