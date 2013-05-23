@@ -22,6 +22,7 @@ html, body {
 body {
 	margin: 0px;
 	padding: 0px;
+	
 }
 
 .wrapper {
@@ -167,6 +168,7 @@ textarea:focus, input:focus{
 
 #topmenu {
 	height: 50px;
+	background-color: white;
 }
 
 #topmenu a {
@@ -186,7 +188,11 @@ textarea:focus, input:focus{
 }
 
 #topmenu a:hover {
-	display: block;
+	background-color: #c4acd4;
+	color: white;
+}
+
+#topmenu a.active {
 	background-color: #c4acd4;
 	color: white;
 }
@@ -511,4 +517,16 @@ textarea:focus, input:focus{
 
 .zero-logo:hover {
 	background-position: bottom;
+}
+
+#about {
+	padding-top: 30px;
+}
+
+#about h1 {
+	font-family: PragmaticaLightC;
+	font-size: 28px;
+	font-weight: normal;
+	color: #553d59;
+	margin-top: 0px;
 }
