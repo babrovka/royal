@@ -276,7 +276,8 @@ textarea:focus, input:focus{
 	display: block;
 	float: right;
 	margin-bottom: 4px;
-	width: 90px;
+	padding-left: 6px;
+	padding-right: 6px;
 	height: 20px;
 	background-color: #dfd3e6;
 	line-height: 1.7;
@@ -285,7 +286,10 @@ textarea:focus, input:focus{
 	color: white;
 	font-family: PragmaticaC;
 	font-size: 12px;
+}
 
+.content-header-link.about {
+	margin-top: 30px;
 }
 
 .content-header-link:hover {
@@ -520,7 +524,6 @@ textarea:focus, input:focus{
 }
 
 #about {
-	padding-top: 30px;
 }
 
 #about h1 {
@@ -528,5 +531,13 @@ textarea:focus, input:focus{
 	font-size: 28px;
 	font-weight: normal;
 	color: #553d59;
-	margin-top: 0px;
+	text-transform: uppercase;
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+#about p {
+	font-family: PragmaticaC;
+	font-size: 14px;
+	color: #553d59;
 }
