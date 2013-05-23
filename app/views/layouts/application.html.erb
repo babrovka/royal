@@ -18,23 +18,13 @@
 <div id="main-content">
   <div class="container">
     <div class="row">
-	  <div style="width: 320px; float: left; margin-right: 40px">
-		<div class="header">Новости компании</div>
-		<%= link_to "все новости", "#", :class => "content-header-link" %>
-		<div class="line"></div>
-	  </div>
-	  <div style="width: 320px; float: left; margin-right: 40px">
-		<div class="header">Новинки из каталога</div>
-		<%= link_to "весь каталог", "#", :class => "content-header-link" %>
-		<div class="line"></div>
-	  </div>
-	  <div style="width: 220px; float: left;">
-		<div class="header">Ближайшие события</div>
-		<div class="line"></div>
-	  </div>
+      <%= render 'layouts/main-news' %>
+
+	  <%= render 'layouts/main-catalog' %>
+	
+	  <%= render 'layouts/main-events' %>
   </div>
 </div>
-
 </div>
 
 
