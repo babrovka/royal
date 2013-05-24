@@ -8,12 +8,13 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
- *= require bootstrap
- *= require fonts
+
+
+
  */
 
 /*common*/
+
 
 html, body {
 	height: 100%;
@@ -318,10 +319,6 @@ textarea:focus, input:focus{
 }
 
 .column-element:last-child {
-	border-bottom: none;
-}
-
-.column-element.product:nth-last-child(2) {
 	border-bottom: none;
 }
 
@@ -687,9 +684,6 @@ textarea:focus, input:focus{
 	font-size: 12px;
 	font-family: PragmaticaC;
 	text-transform: uppercase;
-	font-weight: normal;
-	margin-top: 10px;
-	margin-bottom: 10px;
 }
 
 #product .text {
@@ -708,104 +702,9 @@ textarea:focus, input:focus{
 	width: 220px;
 	height: 46px;
 	margin-top: 30px;
-	margin-bottom: 30px;
+	background-color: #c4acd4;
 	text-decoration: none;	
-	text-indent: 25px;
+	text-align: center;
 	height: 100%;
-	padding-top:14px;
-	padding-bottom:11px;
-	color: white;
-	font-family: PragmaticaC;
-	font-size: 16px;
-	background: #c4acd4 url('order-buttom-arrow.png') no-repeat 170px 15px;
+	
 }
-
-#product .order_button:hover {
-	background-color: #712359;
-}
-
-#product .procedures {
-	list-style: none;
-	padding-left: 0px;
-	font-family: PragmaticaC;
-	font-size: 14px;
-}
-
-#product .procedures li {
-	margin-top: 2px;
-}
-
-#product .procedures a {
-	color: #336699;
-}
-
-#product .procedures a:hover {
-	color: #cc6600;
-}
-
-#product .recommended {
-	margin-top: 10px;
-	height: 180px;
-	background-color: #ede6f2;
-}
-
-#product .icon {
-	height: 80px;
-	width: 80px;
-	background-image: url('index-icon.png');
-	margin-top: 13px;
-	margin-left: 16px;
-	float: left;
-}
-
-#product .recommended-title {
-	color: #6e2257;
-	font-family: PragmaticaC;
-	margin-top: 13px;
-	margin-left:20px;
-	float: left;
-	font-size: 14px;
-}
-
-#product .recommended-title a, #product .recommended-title a:visited  {
-	color: #6e2257;
-}
-
-#product .recommended-description {
-	color: #1f478b;
-	margin-top: 10px;
-	margin-left:20px;
-	float: left;
-	width: 160px;
-	font-family: PragmaticaC;
-	font-size: 14px;
-}
-
-#product .recommended-link {
-	display: block;
-	float: right;
-	font-family: PragmaticaC;
-	font-size: 12px;
-	color: white;
-	padding-bottom: 5px;
-	padding-top: 7px;
-	width: 110px;
-	margin-top: 45px;
-	margin-right: 20px;
-	text-decoration: none;	
-	text-indent: 10px;
-	background: #c4acd4 url('order-buttom-arrow-small.png') no-repeat 95px 8px;
-	-moz-border-radius: 2px;
-	border-radius: 2px;
-}
-
-#product .recommended-link:hover {
-	background-color: #712359;
-}
-
-
-
-
-
-
-

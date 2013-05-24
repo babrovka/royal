@@ -1,9 +1,20 @@
 ActiveAdmin.register Product do
   menu :parent => I18n.t('catalog')
+  config.batch_actions = false
+  config.clear_sidebar_sections!
+  
+  index do
+    column :title
+    column :brand_id do |column|
+      Brand.find(column.brand_id).title
+    end
+    default_actions
+  end
 
    form do |f|  
      f.inputs "Details" do
        f.input :title
+       f.input :short_description, :input_html => { :rows => 2  }
        f.input :packing
        f.input :text, :input_html => { :rows => 8  }
        f.input :ingredients, :input_html => { :rows => 2  }
@@ -27,6 +38,12 @@ ActiveAdmin.register Product do
      f.inputs "Cases" do
        f.input :cases, :as => :check_boxes
      end
+     
+     f.has_many :product_images do |attachment_form|      
+       attachment_form.input :image, :as => :file, :hint => ( attachment_form.object.new_record? || !attachment_form.object.image ) ? nil : image_tag(attachment_form.object.image.url(:catalog))
+       attachment_form.input :_destroy, :as => :boolean, :required => false, :label => I18n.t('destroy')
+     end
+     
      f.actions
    end
    
@@ -56,6 +73,16 @@ ActiveAdmin.register Product do
        table_for product.cases do 
          column :title do |column|
            link_to column.title, admin_case_path(column)
+         end
+       end
+     end
+
+     panel "Images" do 
+       table_for product.product_images do 
+         column :image do |column|
+           if column.image?
+           image_tag column.image.url(:catalog)
+         end
          end
        end
      end

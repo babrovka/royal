@@ -1,0 +1,19 @@
+<% unless @recommended.blank? %>
+<div class="row" style="margin-top: 100px;">
+  <div class="span12">
+	  <div class="header">royal beauty рекомендует:</div>
+	  <div class="line"></div>
+	</div>
+</div>
+
+<div class="row">
+  <% @recommended.each do |product| %>
+  <div class="span4 recommended">
+	<div class="icon">	</div>
+	<div class="recommended-title"><%= link_to product.title, product %></div>
+	<div class="recommended-description"><%= product.short_description %></div>
+	<%= link_to 'Подробнее', product, :class => 'recommended-link' %>
+  </div>
+  <% end %>
+</div>
+<% end %>

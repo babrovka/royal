@@ -3,7 +3,7 @@
     <div class="row">
       <div class="span12">
 		<%= nav_link "о нас", about_path %>
-		<%= link_to "Продукция", "#" %>
+		<%= link_to "Продукция", products_path, :class => ('active' if controller?("products")) %>
 		<%= link_to "Студия профессионального роста", "#" %>
 		<%= link_to "Консультации технолога", "#" %>
 		<%= link_to "Медиа зона", "#" %>

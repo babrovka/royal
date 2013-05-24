@@ -4,9 +4,10 @@ class ApplicationController < ActionController::Base
   
     
   def current_cart
-    cart = Cart.find_by_user_id(current_user.id)
-  if cart.nil?
-    cart = Cart.create(:user_id => current_user.id)
+  if current_user
+    cart = Cart.find_or_create_by_user_id(current_user.id)
+  else
+    cart = nil
   end
     cart
   end

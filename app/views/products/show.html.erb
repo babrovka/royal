@@ -1,0 +1,54 @@
+<div class="container" id="product">
+	
+  <div class="row" style="margin-bottom: 10px;">
+    <div class="span3">
+      <%= link_to "назад к каталогу", products_path, :class => 'content-header-link product' %>
+	</div>
+  </div>
+
+  <div class="row">
+	
+    <div class="span4">
+	  <% unless @product.product_images.blank? %>
+      <%= image_tag(@product.product_images.first.image.url(:product)) %>
+	  <% end %>
+	  <%= link_to 'Заказать товар', line_items_path(product_id: @product), remote: true, :class => 'order_button', :method=> :post %>
+	  <h5>входит в процедуры:</h5>
+	  <ul class="procedures">
+	  <% @procedures.each do |procedure| %>
+	  <li><%= link_to procedure.title, procedure %></li>
+	  <% end %>
+	  </ul>
+	</div>
+	
+	<div class="span5">
+      <div class="title"><%= @product.title %></div>
+	  <div class="packing"><%= @product.short_description %></div>
+	  <div class="line"></div>
+	  <h5>описание</h5>
+	  <div class="text"><%= @product.text %></div>
+	  <h5>ингридиетны</h5>
+	  <div class="text"><%= @product.ingredients %></div>
+	  <div class="line" style="margin-top: 20px"></div>
+	<script type="text/javascript" src="//yandex.st/share/share.js"
+	charset="utf-8"></script>
+	<div class="yashare-auto-init share" data-yashareL10n="ru"
+	 data-yashareType="link" data-yashareQuickServices="yaru,vkontakte,facebook,twitter,odnoklassniki,moimir"></div>
+	</div>
+	
+	<div class="span3">
+      <div class="header">Новости компании</div>
+	  <div class="line"></div>
+		<%= render 'layouts/product-news' %>
+		<%= link_to "все новости", "#", :class => 'content-header-link product' %>
+	</div>
+	
+  </div>
+
+
+
+  <%= render 'products/recommended' %>
+
+
+
+</div>

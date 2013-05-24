@@ -1,0 +1,6 @@
+<div class="span3">
+	<div class="catalog-product">
+		<%= link_to image_tag(product.product_images.first.image.url(:catalog)), product %>
+		<div class="description"><%= product.title %></div>
+	</div>
+</div>

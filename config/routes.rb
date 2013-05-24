@@ -6,6 +6,8 @@ Royal::Application.routes.draw do
   resources :videos
   resources :events
   resources :products
+  resources :articles
+  resources :procedures
   
   root :to => 'static_pages#home'
 
