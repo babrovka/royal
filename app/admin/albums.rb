@@ -32,7 +32,7 @@ ActiveAdmin.register Album do
       end
     end
     
-    panel "Images" do 
+    panel t('images') do 
       table_for album.album_images do 
         column :image do |column|
           if column.image?

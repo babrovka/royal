@@ -18,7 +18,11 @@ ru:
   media: "Медиа"
   catalog: "Каталог"
   users: "Пользователи"
+  images: "Изображения"
   destroy_image: "Удалить изображение?"
+  access: "Доступ и цена"
+  procedures: "Процедуры"
+  cases: "Случаи пременения"
   activerecord:
     models: 
       admin_user:
@@ -97,4 +101,43 @@ ru:
       album:
         title: "Название"
         text: "Описание"
-        
+      article:
+        title: "Название"
+        date: "Дата"
+        text: "Описание"
+      brand:
+        title: "Название"
+      order:
+        user: "Пользователь"
+        comment: "Комментарий"
+      consultation:
+        question: "Вопрос"
+        answer: "Ответ"
+        brand: "Бренд"
+        case: "Случай применения"
+        products: "Товары"
+        check: "Одобрен?"
+      procedure:
+        title: "Название"
+        text: "Описание"
+      case:
+        title: "Название"
+        text: "Описание"
+      product:
+        title: "Название"
+        brand_id: "Бренд"
+        short_description: "Краткое описание"
+        packing: "Упаковка"
+        text: "Описание"
+        ingredients: "Ингредиенты"
+        visible_professional: "Профессионал"
+        visible_dealer1: "Дилер-1"
+        visible_dealer2: "Дилер-2"
+        visible_dealer3: "Дилер-3"
+        price_professional: "Цена для профессионала"
+        price_dealer1: "Цена для дилера-1"
+        price_dealer2: "Цена для дилера-2"
+        price_dealer3: "Цена для дилера-3"
+        procedures: "Процедуры"
+        cases: "Случаи применения"
+        image: "Изображение"

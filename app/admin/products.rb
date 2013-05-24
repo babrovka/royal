@@ -12,16 +12,16 @@ ActiveAdmin.register Product do
   end
 
    form do |f|  
-     f.inputs "Details" do
+     f.inputs do
        f.input :title
        f.input :short_description, :input_html => { :rows => 2  }
        f.input :packing
        f.input :text, :input_html => { :rows => 8  }
        f.input :ingredients, :input_html => { :rows => 2  }
-       f.input :brand_id, :as => :select, :collection => Brand.all
+       f.input :brand_id, :as => :select, :collection => Brand.all, :include_blank => false
      end 
      
-     f.inputs "Access" do
+     f.inputs t('access') do
        f.input :visible_professional      
        f.input :visible_dealer1
        f.input :visible_dealer2
@@ -32,10 +32,10 @@ ActiveAdmin.register Product do
        f.input :price_dealer3
      end
        
-     f.inputs "Procedures" do
+     f.inputs t('procedures') do
        f.input :procedures, :as => :check_boxes
      end
-     f.inputs "Cases" do
+     f.inputs t('cases') do
        f.input :cases, :as => :check_boxes
      end
      
@@ -61,7 +61,7 @@ ActiveAdmin.register Product do
        row :brand_id
      end
 
-     panel "Procedures" do 
+     panel t('procedures') do 
        table_for product.procedures do 
          column :title do |column|
            link_to column.title, admin_procedure_path(column)
@@ -69,7 +69,7 @@ ActiveAdmin.register Product do
        end
      end
      
-     panel "Cases" do 
+     panel t('cases') do 
        table_for product.cases do 
          column :title do |column|
            link_to column.title, admin_case_path(column)
@@ -77,7 +77,7 @@ ActiveAdmin.register Product do
        end
      end
 
-     panel "Images" do 
+     panel t('images') do 
        table_for product.product_images do 
          column :image do |column|
            if column.image?

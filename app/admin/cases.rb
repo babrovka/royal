@@ -1,5 +1,7 @@
 ActiveAdmin.register Case do
   menu :parent => I18n.t('catalog')
+  config.batch_actions = false
+  config.clear_sidebar_sections!
   
    index do 
      column :title
@@ -8,7 +10,7 @@ ActiveAdmin.register Case do
    end
 
    form do |f|  
-     f.inputs "Details" do
+     f.inputs do
        f.input :title
        f.input :text
      end

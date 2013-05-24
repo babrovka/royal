@@ -4,7 +4,7 @@ ActiveAdmin.register Consultation do
   menu :parent => I18n.t('catalog')
   
   form do |f|  
-    f.inputs "Details" do
+    f.inputs do
       f.input :question, :input_html => { :rows => 2  }
       f.input :answer, :input_html => { :rows => 8  }
       f.input :brand_id, :as => :select, :collection => Brand.all
@@ -12,7 +12,7 @@ ActiveAdmin.register Consultation do
       f.input :check
     end 
     
-    f.inputs "Products" do
+    f.inputs t('products') do
       f.input :products, :as => :check_boxes      
     end
       

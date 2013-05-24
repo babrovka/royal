@@ -9,7 +9,7 @@ ActiveAdmin.register Brand do
    end
 
    form do |f|  
-     f.inputs "Details" do
+     f.inputs do
        f.input :title
      end
      f.actions
