@@ -14,9 +14,31 @@
 //= require jquery_ujs
 
 $(document).ready(
+	
+	
     function(){	
 	$(".dynamic_bullshit").on("change", function() {
 	 $('#cart_edit').submit();
 	});
+		
+	$("#city_select").change(function () {
+	  
+	  	
+		
+		var target = $('#city_select option:selected').val();
+
+		if(target == "moscow") {
+		    $('#saint').hide();
+		    $('#moscow').show();
+		} else {
+		    $('#moscow').hide();
+			$('#saint').show();
+		}
+		
+		
+	});
+	
+	
+	
 });
 

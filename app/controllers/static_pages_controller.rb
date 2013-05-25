@@ -4,4 +4,8 @@ class StaticPagesController < ApplicationController
   
   def about
   end
+  
+  def contacts
+    @question = Question.new
+  end
 end

@@ -1,0 +1,37 @@
+<div class="container" id="contacts">
+  <div class="row">
+	
+    <div class="span12">
+      <h1>контакты</h1>
+	</div>
+	
+	<div class="span4">
+		<select id="city_select">
+		  <option value="saint">Санкт-Петербург</option>
+		  <option value="moscow">Москва</option>
+		</select>
+	</div>
+	
+	<%= render 'static_pages/saint' %>
+	<%= render 'static_pages/moscow' %>
+	
+	<div class="span5">
+		<h1>обратная связь</h1>
+		<div id="question">
+	    <div class="text" id="notice" style="margin-bottom: 10px;"><%= notice %></div>
+		<%= form_for @question, :html => { :class => "question_form", :id => 'question_form' } do |f| %>
+		
+		  <input class="form-input" id="question_name" name="question[name]" size="30" type="text" onfocus="if(this.value=='Ваше имя') this.value='';" onblur="if(this.value=='') this.value='Ваше имя';" value="Ваше имя" />
+		  <input class="form-input" id="question_email" name="question[email]" size="30" type="email" onfocus="if(this.value=='Ваша эл. почта') this.value='';" onblur="if(this.value=='') this.value='Ваша эл. почта';" value="Ваша эл. почта" />
+		  <input class="form-input" id="question_phone" name="question[phone]" size="30" type="text" onfocus="if(this.value=='Телефон') this.value='';" onblur="if(this.value=='') this.value='Телефон';" value="Телефон" />
+		  <textarea class="" id="question_text" name="question[text]" rows="10" onfocus="if(this.value=='Сообщение') this.value='';" onblur="if(this.value=='') this.value='Сообщение';"/>Сообщение</textarea>
+		
+		  <%= link_to 'Отправить', "#", :onclick => "$('#question_form').submit()", :class => "form-submit" %>
+		<% end %>
+		</div>
+	</div>
+		
+  </div>
+
+
+</div>

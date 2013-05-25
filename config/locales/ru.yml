@@ -23,6 +23,8 @@ ru:
   access: "Доступ и цена"
   procedures: "Процедуры"
   cases: "Случаи пременения"
+  question_created: "Спасибо за ваш вопрос, мы с вами обязательно свяжемся"
+  fulfill_error: "Пожалуйста, заполните поля корректно"
   activerecord:
     models: 
       admin_user:
@@ -36,6 +38,9 @@ ru:
       article:
         one: "Новость"
         other: "Новости"
+      question:
+        one: "Вопрос"
+        other: "Вопросы"
       brand:
         one: "Бренд"
         other: "Бренды"
@@ -141,3 +146,7 @@ ru:
         procedures: "Процедуры"
         cases: "Случаи применения"
         image: "Изображение"
+      question:
+        name: "Имя"
+        phone: "Телефон"
+        text: "Вопрос"
