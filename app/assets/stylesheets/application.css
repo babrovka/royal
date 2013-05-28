@@ -352,7 +352,9 @@ textarea:focus, input:focus, select:focus {
 }
 
 .element-text a {
+	display: block;
 	color: #d2691e;
+	clear: both;
 }
 
 .element-text a:hover {
@@ -535,7 +537,7 @@ textarea:focus, input:focus, select:focus {
 
 /*about*/
 
-#about h1, #products h1, #contacts h1 {
+#about h1, #products h1, #contacts h1, #publications h1 {
 	font-family: PragmaticaLightC;
 	font-size: 28px;
 	font-weight: normal;
@@ -924,5 +926,26 @@ textarea:focus, input:focus, select:focus {
 	height: 24px;
 }
 
+/*publications*/
 
+.publication {
+	margin-bottom: 35px;
+}
 
+.publication img {
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Для Firefox */
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Для Safari и Chrome */
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
+}
+
+.publication .publication_link {
+	display: block;
+	margin-top: 10px;
+	font-family: PragmaticaC;
+	color: #1f4567;
+	font-size: 14px;
+}
+
+.publication .publication_link:hover {
+	color: #d2691e;
+}

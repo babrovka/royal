@@ -9,6 +9,6 @@ class ApplicationController < ActionController::Base
   else
     cart = nil
   end
-    cart
+    @cart
   end
 end

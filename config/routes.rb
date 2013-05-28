@@ -13,6 +13,8 @@ Royal::Application.routes.draw do
   
   root :to => 'static_pages#home'
   
+  
+  match '/publications' => 'publications#index'
   match '/questions' => 'questions#create', :via => :post
   match '/contacts' => 'static_pages#contacts'
   match '/about' => 'static_pages#about'
