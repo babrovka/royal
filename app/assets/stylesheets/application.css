@@ -601,7 +601,7 @@ h1 {
 	content: none;
 }
 
-#products .line {
+#products .line, #consultations .line {
 	clear: both;
 	width: 100%;
 	height: 1px;
@@ -613,7 +613,7 @@ h1 {
 	height: 30px;	
 } 
 
-#products .normal-link{
+#products .normal-link, #consultations .normal-link{
 	font-family: PragmaticaC;
 	text-align: center;
 	display: block;
@@ -626,7 +626,7 @@ h1 {
 	background-color: #ede6f2;
 }
 
-#products .normal-link:hover{
+#products .normal-link:hover, #consultations .normal-link:hover{
 	background-color: #c4acd4;
 }
 
@@ -998,3 +998,50 @@ h1 {
 	color: #1f4567;
 	font-size: 14px;
 }
+
+/*consultations*/
+
+#consultations .search {
+	display: block;
+	float: right;
+	position: relative;
+}
+
+#consultations .search-input {
+	margin-top: 20px;
+	width: 320px;
+	height: 25px;
+	padding-bottom: 3px;
+	background: none;
+	text-indent:15px;
+	border: solid 1px #c4acd4;
+	-moz-border-radius: 15px;
+	border-radius: 5px;
+	color: #c4acd4;
+	background-color: #ede6f2;
+	font-size: 11px;
+}
+
+#consultations .search-submit {
+	position: absolute; 
+	width: 30px; 
+	height: 25px; 
+	display: block; 
+	right: 2px; 
+	top: 28px;
+	background: url('search2.png') top;
+	background-repeat:no-repeat;
+	content: none;
+}
+
+#cosultations_frame {
+	margin-top: 60px;
+	color: #553d59;
+	font-family: PragmaticaC;
+}
+
+#cosultations_frame h1 {
+	font-weight: bold;
+	color: #6e2257;
+}
+

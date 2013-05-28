@@ -5,7 +5,7 @@ ActiveAdmin.register Consultation do
   
   form do |f|  
     f.inputs do
-      f.input :question, :input_html => { :rows => 2  }
+      f.input :question, :input_html => { :rows => 3  }
       f.input :answer, :input_html => { :rows => 8  }
       f.input :brand_id, :as => :select, :collection => Brand.all
       f.input :case_id, :as => :select, :collection => Case.all

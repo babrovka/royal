@@ -17,6 +17,7 @@ Royal::Application.routes.draw do
   
   match "/albums/:id" => "media#album", :as => :album
   match '/publications' => 'publications#index'
+  match '/consultations' => 'consultations#index'
   match '/media' => 'media#index'
   match '/questions' => 'questions#create', :via => :post
   match '/contacts' => 'static_pages#contacts'

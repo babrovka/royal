@@ -3,4 +3,5 @@ class Consultation < ActiveRecord::Base
   has_and_belongs_to_many :products
   belongs_to :brand
   belongs_to :case
+  scope :checked, where(:check => true)
 end

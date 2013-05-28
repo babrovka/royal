@@ -22,9 +22,13 @@ ru:
   destroy_image: "Удалить изображение?"
   access: "Доступ и цена"
   procedures: "Процедуры"
-  cases: "Случаи пременения"
+  cases: "Случаи применения"
   question_created: "Спасибо за ваш вопрос, мы с вами обязательно свяжемся"
   fulfill_error: "Пожалуйста, заполните поля корректно"
+  professional: "Розничный покупатель"
+  dealer1: "Косметолог"
+  dealer2: "Директор-управляющий"
+  dealer3: "Специалист заведения wellness"
   activerecord:
     models: 
       admin_user:
@@ -69,6 +73,9 @@ ru:
         one: "Пользователь"
         other: "Пользователи"
       video: "Видео"
+      city:
+        one: "Город"
+        other: "Города"
     attributes:
       user:
         role: "Тип пользователя"
@@ -128,6 +135,10 @@ ru:
       case:
         title: "Название"
         text: "Описание"
+      video:
+        title: "Название"
+      city:  
+        title: "Название"
       product:
         title: "Название"
         brand_id: "Бренд"
@@ -135,14 +146,14 @@ ru:
         packing: "Упаковка"
         text: "Описание"
         ingredients: "Ингредиенты"
-        visible_professional: "Профессионал"
-        visible_dealer1: "Дилер-1"
-        visible_dealer2: "Дилер-2"
-        visible_dealer3: "Дилер-3"
-        price_professional: "Цена для профессионала"
-        price_dealer1: "Цена для дилера-1"
-        price_dealer2: "Цена для дилера-2"
-        price_dealer3: "Цена для дилера-3"
+        visible_professional: "Розничный покупатель"
+        visible_dealer1: "Косметолог"
+        visible_dealer2: "Директор-управляющий"
+        visible_dealer3: "Специалист заведения wellness"
+        price_professional: "Цена для розничного покупателя"
+        price_dealer1: "Цена для косметолога"
+        price_dealer2: "Цена для директора-управляющего"
+        price_dealer3: "Цена для специалиста заведения wellness"
         procedures: "Процедуры"
         cases: "Случаи применения"
         image: "Изображение"
