@@ -12,9 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require fotorama
 
 $(document).ready(
-	
 	
     function(){	
 	$(".dynamic_bullshit").on("change", function() {
@@ -22,11 +22,7 @@ $(document).ready(
 	});
 		
 	$("#city_select").change(function () {
-	  
-	  	
-		
 		var target = $('#city_select option:selected').val();
-
 		if(target == "moscow") {
 		    $('#saint').hide();
 		    $('#moscow').show();
@@ -34,10 +30,17 @@ $(document).ready(
 		    $('#moscow').hide();
 			$('#saint').show();
 		}
-		
-		
 	});
 	
+	$('#show_photo').on("click", function() {
+	  $('#video-gallery').hide();	
+      $('#photo-gallery').show();
+    });
+
+	$('#show_video').on("click", function() {
+	  $('#photo-gallery').hide();
+	  $('#video-gallery').show();	
+    });
 	
 	
 });

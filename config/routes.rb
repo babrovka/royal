@@ -1,5 +1,7 @@
 Royal::Application.routes.draw do
 
+  get "media/index"
+
   get "questions/create"
 
   resources :orders
@@ -13,8 +15,9 @@ Royal::Application.routes.draw do
   
   root :to => 'static_pages#home'
   
-  
+  match "/albums/:id" => "media#album", :as => :album
   match '/publications' => 'publications#index'
+  match '/media' => 'media#index'
   match '/questions' => 'questions#create', :via => :post
   match '/contacts' => 'static_pages#contacts'
   match '/about' => 'static_pages#about'

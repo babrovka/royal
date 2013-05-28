@@ -11,9 +11,14 @@
  *= require_self
  *= require bootstrap
  *= require fonts
+ *= require fotorama
  */
 
 /*common*/
+
+.fullscreen,.fotorama__wrap,.fotorama__wrap_style_fade .fotorama__frame,.fotorama__thumbs_previews{
+	background:none!important;
+}
 
 html, body {
 	height: 100%;
@@ -537,7 +542,7 @@ textarea:focus, input:focus, select:focus {
 
 /*about*/
 
-#about h1, #products h1, #contacts h1, #publications h1 {
+h1 {
 	font-family: PragmaticaLightC;
 	font-size: 28px;
 	font-weight: normal;
@@ -938,7 +943,7 @@ textarea:focus, input:focus, select:focus {
     box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
 }
 
-.publication .publication_link {
+.publication .publication_link, #photo-gallery .album_link, #photo-gallery .album_link:visited {
 	display: block;
 	margin-top: 10px;
 	font-family: PragmaticaC;
@@ -946,6 +951,50 @@ textarea:focus, input:focus, select:focus {
 	font-size: 14px;
 }
 
-.publication .publication_link:hover {
+.publication .publication_link:hover, #photo-gallery .album_link:hover {
 	color: #d2691e;
+}
+
+/*media-zone*/
+
+#media-zone .switch-link {
+	display: block;
+	float: left;
+	margin-right: 20px;
+	padding-left: 31px;
+	padding-right: 31px;
+	padding-top: 9px;
+	padding-bottom: 8px;
+	background-color: #dfd3e6;
+	text-align: center;
+	text-decoration: none;
+	color: white;
+	font-family: PragmaticaC;
+	font-size: 12px;
+}
+
+#media-zone .switch-link:hover {
+	background-color: #6e2257;
+}
+
+.gallery {
+	margin-top: 20px;
+}
+
+#media-zone #photo-gallery img {
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Для Firefox */
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Для Safari и Chrome */
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
+}
+
+#media-zone .album {
+	margin-bottom: 35px;
+}
+
+#media-zone .album p {
+	display: block;
+	margin-top: 10px;
+	font-family: PragmaticaC;
+	color: #1f4567;
+	font-size: 14px;
 }

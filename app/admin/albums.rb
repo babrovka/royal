@@ -5,16 +5,12 @@ ActiveAdmin.register Album do
 
   index do 
     column :title
-    column :text do |row|
-      row.text.html_safe
-    end
     default_actions
   end
 
   form do |f|  
     f.inputs do
       f.input :title
-      f.input :text
     end
     
     f.has_many :album_images do |attachment_form|      
@@ -27,9 +23,6 @@ ActiveAdmin.register Album do
   show do |album|
     attributes_table do
       row :title
-      row :text do |row|
-        row.text.html_safe
-      end
     end
     
     panel t('images') do 

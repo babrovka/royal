@@ -6,7 +6,7 @@
 		<%= link_to "Продукция", products_path, :class => ('active' if controller?("products")) %>
 		<%= link_to "Студия профессионального роста", "#" %>
 		<%= link_to "Консультации технолога", "#" %>
-		<%= link_to "Медиа зона", "#" %>
+		<%= link_to "Медиа зона", media_path, :class => ('active' if controller?("media")) %>
 		<%= nav_link "Публикации", publications_path %>
 		<%= nav_link "Контакты", contacts_path %>
 	  </div>

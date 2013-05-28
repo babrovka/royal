@@ -1,0 +1,8 @@
+<div id="photo-gallery" class="gallery">
+<% @albums.each do |album| %>
+<div class="span3 album">
+<%= link_to image_tag(album.album_images.first.image.url(:thumb)), album_path(album) %>
+<%= link_to album.title, album_path(album), :class => 'album_link' %>
+</div>
+<% end %>
+</div>

@@ -1,0 +1,30 @@
+<div class="container" id="media-zone">
+  <div class="row">
+    <div class="span12">
+      <h1>медиа зона</h1>
+	</div>
+
+    <div class="span9">
+	  <div class="row">
+	    <div class="span9">
+		  <%= link_to "Фотогалерея", "#", :class => 'switch-link', :id => 'show_photo' %>
+		  <%= link_to "Видеогалерея", "#", :class => 'switch-link', :id => 'show_video' %>
+		</div>
+	  </div>
+	
+	  <div class="row">  
+		<%= render 'media/photo-gallery' %>
+		<%= render 'media/video-gallery' %>
+	  </div>
+	
+	</div>
+	
+	<div class="span3">
+    <div class="header">Новости компании</div>
+	  <div class="line"></div>
+		<%= render 'layouts/product-news' %>
+		<%= link_to "все новости", "#", :class => 'content-header-link product' %>
+	</div>
+	
+  </div>	
+</div>

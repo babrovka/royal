@@ -1,0 +1,8 @@
+<div id="video-gallery" class="gallery" style="display: none;">
+<% @videos.each do |video| %>
+<div class="span3 album">
+	<%= raw(youtube_embed(video.youtube)) %>
+	<p><%= video.title %></p>
+</div>
+<% end %>
+</div>
