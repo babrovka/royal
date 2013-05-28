@@ -41,7 +41,36 @@ $(document).ready(
 	  $('#photo-gallery').hide();
 	  $('#video-gallery').show();	
     });
+
+
+	
+	
+	  $('.open').on("click", function() {
+		
+		height = $(this).parent().next().height();
+		self = $(this).parent().height();
+		
+		$(this).parent().css('height', self + height + 'px');
+		$(this).parent().next().show();
+		
+	
+			return false
+	  });
+
+	  $('.close').on("click", function() {
+		  height = $(this).parent().height();
+		  self = $(this).parent().prev().height();
+		
+		  
+		
+		  $(this).parent().prev().css('height', self - height + 'px');
+	      $(this).parent().hide();
+	
+		return false
+	  });
 	
 	
 });
+
+
 

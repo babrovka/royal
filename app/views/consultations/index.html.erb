@@ -29,14 +29,26 @@
 	  <div id="cosultations_frame">
 		<h1>Общие вопросы</h1>
 		<% @consultations.each do |consultation| %>
-		Вопрос: <%= consultation.question %>
-		<br/><br/>
-		Ответ: <%= consultation.answer %>
-		<br/><br/>
-		Продукты: 
+		<div class="consultation">
+			
+		<div class="short">
+		<%= link_to "показать консультацию", "#", :class => 'consultaion_switch open', :id => 'open' %>
+		<p><b>Вопрос:</b> <%= consultation.question %></p>
+		</div>
+		
+		<div class="full" style="display: none;">	
+		<%= link_to "показать консультацию", "#", :class => 'consultaion_switch close', :id => 'close' %>	
+		<p><b>Вопрос:</b> <%= consultation.question %></p>
+		<p><b>Ответ:</b>  <%= consultation.answer %></p>
+		<% unless consultation.products.blank? %>
+		<p><b>Продукты: </b> 
 		  <% consultation.products.each do |product, index| %>
 		  <%= link_to product.title, product %>
-		  <% end %>
+		  <% end %></p>
+		<% end %>
+		</div>
+		
+		</div>
 		<% end %>
 	  </div>
 	</div>
