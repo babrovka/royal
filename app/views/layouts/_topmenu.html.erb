@@ -2,9 +2,10 @@
   <div class="container">
     <div class="row">
       <div class="span12">
+		<%= nav_link "главная", "/" %>
 		<%= nav_link "о нас", about_path %>
 		<%= link_to "Продукция", products_path, :class => ('active' if controller?("products")) %>
-		<%= link_to "Студия профессионального роста", "#" %>
+		<%= link_to "Студия профессионального роста", events_path, :class => ('active' if controller?("events")) %>
 		<%= nav_link "Консультации технолога", consultations_path %>
 		<%= link_to "Медиа зона", media_path, :class => ('active' if controller?("media")) %>
 		<%= nav_link "Публикации", publications_path %>

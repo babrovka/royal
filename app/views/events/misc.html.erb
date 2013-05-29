@@ -1,0 +1,12 @@
+<% if notice %>
+<p id="notice" style="color: red;"><%= notice %></p>
+<% end %>
+
+<% @events.each do |event| %>
+<h1><%= event.title %></h1>
+<p><%= event.date %></p>
+<p><%= event.text %></p>
+<% if user_signed_in? %>
+<%= render :partial => 'link', :locals => { :event => event } %>
+<% end %>
+<% end %>

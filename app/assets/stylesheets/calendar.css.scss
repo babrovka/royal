@@ -1,0 +1,119 @@
+#events .calendar {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #553c59;
+
+  td, th {
+    font-family: PragmaticaLightC;
+    font-weight: normal;
+    font-size: 18px;
+    padding: 6px;
+    border: 4px solid #553c59;
+  }
+
+  th {
+    color: white;
+    text-align: center;
+  }
+
+  td {
+    background: #c7b1d6 url('cells.png') left -96px;
+    color: #6e2257;
+    width: 96px;
+    height: 82px;
+    vertical-align: center;
+	text-align: center;
+    font-size: 16px;
+    position: relative;
+  }
+
+  td:hover {
+    background-position: left -192px;
+	color: white;
+  }
+
+  td:active {
+    background-position: left -288px;
+	color: white;
+  }
+
+  .notmonth, .notmonth a { color: #b4b3b3; background: #c7b1d6 url('cells.png') left top; }
+  .today { background-color: #cf9f51; }
+}
+
+#events {
+	
+}
+
+#events ul {
+  bottom: 5px;
+  left: 10px;
+  position: absolute;
+  font-size: 11px;
+  list-style: none;
+  padding-left: 0px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+	
+	li {
+		  float: left;
+		  margin-right: 3px;
+		}
+}
+
+#events #month {
+  font-family: PragmaticaLightC;
+  font-weight: normal;
+  font-size: 24px;
+  margin: 0;
+  width: 100%;
+  background-color: #553c59;
+  border-bottom: 2px solid #cf9f51;
+  padding-top: 19px;
+  padding-bottom: 15px;
+  font-size: 22px;
+  color: #cf9f51;
+  text-align: center;	
+  text-transform: uppercase;
+}
+
+.month-inner {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.current_month {
+	display: inline;
+	margin: 0px;
+	padding: 0px;
+}
+
+.prev_month {
+	float: left;
+	margin-left: 50px;
+	display: block;
+	width: 15px;
+	height: 18px;
+	text-indent: -99999px;
+	background: url('cal_left.png') no-repeat left top;
+}
+
+.prev_month:hover {
+	background-position: bottom;
+}
+
+.next_month {
+	float: right;
+	margin-right: 50px;
+	display: block;
+	width: 15px;
+	height: 18px;
+	text-indent: -99999px;
+	background: url('cal_right.png') no-repeat left top;
+}
+
+.next_month:hover {
+	background-position: bottom;
+}
+

@@ -12,7 +12,9 @@
  *= require bootstrap
  *= require fonts
  *= require fotorama
+ *= require calendar
  */
+
 
 /*common*/
 
@@ -185,7 +187,7 @@ textarea:focus, input:focus, select:focus {
 	float: left;
 	text-transform: uppercase;
 	font-size: 14px;
-	margin-right: 13px;
+	margin-right: 0px;
 }
 
 #topmenu a:last-child {
@@ -1094,4 +1096,12 @@ h1 {
 
 .consultation {
 	position: relative;
+}
+
+/*events*/
+
+.event-widget {
+	margin-top: 30px;
+	height: 230px;
+	background-color: #ede6f2;
 }

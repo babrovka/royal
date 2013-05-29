@@ -29,6 +29,13 @@ ru:
   dealer1: "Косметолог"
   dealer2: "Директор-управляющий"
   dealer3: "Специалист заведения wellness"
+  Monday: "ПН"
+  Tuesday: "ВТ"
+  Wednesday: "СР"
+  Thursday: "ЧТ"
+  Friday: "ПТ"
+  Saturday: "СБ"
+  Sunday: "ВС"
   activerecord:
     models: 
       admin_user:
