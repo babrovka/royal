@@ -70,6 +70,14 @@ $(document).ready(
 	  });
 	
 	
+		$('#header_submit').on("click", function() {
+			$('#header_search').submit();
+		});
+		
+		$('#quick_submit').on("click", function() {
+			$('#quick_search').submit();
+		});
+	
 });
 
 

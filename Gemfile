@@ -11,6 +11,8 @@ gem "execjs"
 gem "therubyracer"
 gem "friendly_id", "~> 4.0.9"
 
+gem "thinking-sphinx", "~> 3.0.3"
+
 #back-end
 gem "activeadmin", "~> 0.6.0"
 gem "just-datetime-picker"

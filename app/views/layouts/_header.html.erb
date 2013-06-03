@@ -7,10 +7,10 @@
         <%= link_to "facebook", "#", :class => 'social_link fb' %>
 		<%= link_to "twitter", "#", :class => 'social_link tw' %>
 		<div class="search">
-		<form id="footsearch" accept-charset="UTF-8" action="/search" method="get">
+		<form id="header_search" accept-charset="UTF-8" action="/search" method="get">
 			<input name="utf8" type="hidden" value="&#x2713;" />
-			<input type="text" name="testfind" class="search-input" onfocus="if(this.value=='поиск по сайту') this.value='';" onblur="if(this.value=='') this.value='поиск по сайту';" value="поиск по сайту" />
-			<a href="/" class="search-submit"></a>
+			<input type="text" name="search" class="search-input" onfocus="if(this.value=='поиск по сайту') this.value='';" onblur="if(this.value=='') this.value='поиск по сайту';" value="поиск по сайту" />
+			<a href="#" class="search-submit" id="header_submit"></a>
 		</form>
 		</div>
 		<%= link_to "показать на карте", "#", :class => 'map_link' %>

@@ -1003,13 +1003,13 @@ h1 {
 
 /*consultations*/
 
-#consultations .search {
+#search_page .search, #consultations .search {
 	display: block;
 	float: right;
 	position: relative;
 }
 
-#consultations .search-input {
+#search_page .search-input, #consultations .search-input {
 	margin-top: 20px;
 	width: 320px;
 	height: 25px;
@@ -1024,7 +1024,7 @@ h1 {
 	font-size: 11px;
 }
 
-#consultations .search-submit {
+#search_page .search-submit, #consultations .search-submit {
 	position: absolute; 
 	width: 30px; 
 	height: 25px; 
@@ -1104,4 +1104,13 @@ h1 {
 	margin-top: 30px;
 	height: 230px;
 	background-color: #ede6f2;
+}
+
+/*search page*/
+
+#search_page h3 {
+	font-family: PragmaticaC;
+	font-weight: normal;
+	color: #6e2257;
+	font-size: 14px;
 }

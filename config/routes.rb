@@ -1,5 +1,7 @@
 Royal::Application.routes.draw do
 
+  get "search/search"
+
   get "media/index"
 
   get "questions/create"
@@ -15,6 +17,7 @@ Royal::Application.routes.draw do
   
   root :to => 'static_pages#home'
   
+  match '/search', to: 'search#search'
   match "/albums/:id" => "media#album", :as => :album
   match '/publications' => 'publications#index'
   match '/consultations' => 'consultations#index'
