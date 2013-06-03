@@ -46,7 +46,7 @@
 }
 
 #events ul {
-  bottom: 5px;
+  bottom: 15px;
   left: 10px;
   position: absolute;
   font-size: 11px;
@@ -122,4 +122,73 @@
 	margin-bottom: 20px;
 }
 
+.bubble {
+	display: none;
+	left: 0px;
+	top: 90px;
+	text-align: left;
+	font-family: PragmaticaC;
+	font-weight: normal;
+	position:absolute;
+	z-index: 2;
+	width: 370px;
+	padding-bottom: 30px;
+	background: #eaeaea;
+	color: grey;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Для Firefox */
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Для Safari и Chrome */
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
+}
 
+.bubble-arrow {
+  position: absolute;
+  margin: -11px 0 0 30px;
+  width: 30px;
+  height: 20px;
+  background: url('bubble-arrow.png') no-repeat 0px 0px;
+}
+
+.bubble .date {
+	font-family: PragmaticaCondC;
+	float: right;
+	margin-top: 10px;
+	margin-right: 10px;
+	font-size: 14px;
+}
+
+.bubble .close {
+	float: right;
+	display: block;
+	width: 18px;
+	height: 18px;
+	text-indent: -99999px;
+	margin-top: 8px;
+	margin-right: 10px;
+	background: url('bubble-close.png');
+}
+
+.bubble .event-title {
+	margin-top: 15px;
+	margin-left: 20px;
+	float: left;
+	width: 320px;
+}
+
+.bubble .event-text {
+	margin-top: 10px;
+	margin-left: 20px;
+	font-size: 12px;
+	float: left;
+	width: 320px;
+}
+
+.bubble .link, .bubble .link:visited {
+	font-size: 14px;
+	color: #1f4567;
+}
+
+.bubble .link:hover {
+	color: #d2691e;
+}

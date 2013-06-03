@@ -79,18 +79,22 @@ $(document).ready(
 		});
 		
 		
-		$("#event_city_select").change(function () {
-			
-			
+		$("#event_city_select").change(function () {		
 			var target = $('#event_city_select option:selected').val();
 			var pathname = window.location.pathname;
 			window.location.assign(pathname + '?city_id=' + target)
-			
-			
-			
-			return false
-			
+			return false	
 		});
+		
+
+		$(".calendar td").on('click', function () {		
+			$(this).children().last().show();
+		});
+		
+		$(".close").on('click', function () {		
+			$(this).parent().hide();
+		});
+
 	
 });
 
