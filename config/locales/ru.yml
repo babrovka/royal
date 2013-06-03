@@ -110,6 +110,8 @@ ru:
         shorttext: "Текст для главной" 
         eventdetails: "Детали занятия"
         main: "Разместить на главной?"
+        city_id: "Город"
+        city: "Город"
       event_type:
         title: "Название"
       recipe_type:

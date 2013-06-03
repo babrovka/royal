@@ -77,6 +77,20 @@ $(document).ready(
 		$('#quick_submit').on("click", function() {
 			$('#quick_search').submit();
 		});
+		
+		
+		$("#event_city_select").change(function () {
+			
+			
+			var target = $('#event_city_select option:selected').val();
+			var pathname = window.location.pathname;
+			window.location.assign(pathname + '?city_id=' + target)
+			
+			
+			
+			return false
+			
+		});
 	
 });
 
