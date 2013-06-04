@@ -12,6 +12,8 @@
 # закомментируйте эту строку.
 require 'bundler/capistrano'
 
+require 'thinking_sphinx/deploy/capistrano'
+
 ## Чтобы не хранить database.yml в системе контроля версий, поместите
 ## dayabase.yml в shared-каталог проекта на сервере и раскомментируйте
 ## следующие строки.
