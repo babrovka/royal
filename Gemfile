@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-gem 'sqlite3'
+gem 'mysql2'
 gem 'jquery-rails'
 
 gem "russian", "~> 0.6.0"
@@ -11,7 +11,7 @@ gem "execjs"
 gem "therubyracer"
 gem "friendly_id", "~> 4.0.9"
 
-gem "thinking-sphinx", "~> 3.0.3"
+gem 'thinking-sphinx', '~> 2.0.14'
 
 #back-end
 gem "activeadmin", "~> 0.6.0"
@@ -27,9 +27,5 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
-end
-
-group :production do  
-  gem 'mysql2'
 end
 

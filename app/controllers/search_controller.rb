@@ -1,6 +1,7 @@
 class SearchController < ApplicationController
   def search
-    @search = params[:search]  
+    @search = params[:search]
+    @results = ThinkingSphinx.search(params[:search])  
     
     respond_to do |format|
       format.html

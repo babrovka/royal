@@ -5,4 +5,9 @@ class Article < ActiveRecord::Base
   validates :title, :date, :text, :presence => true
   just_define_datetime_picker :date, :add_to_attr_accessible => true
   
+  define_index do
+    indexes title
+    indexes text
+  end
+  
 end
