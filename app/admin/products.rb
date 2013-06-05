@@ -19,7 +19,7 @@ ActiveAdmin.register Product do
        f.input :text, :input_html => { :rows => 8  }
        f.input :ingredients, :input_html => { :rows => 2  }
        f.input :brand_id, :as => :select, :collection => Brand.all, :include_blank => false
-       f.input :category_id, :as => :select, :collection => ProductCategory.all, :include_blank => false
+       f.input :product_category_id, :as => :select, :collection => ProductCategory.all, :include_blank => false
      end 
      
      f.inputs t('access') do

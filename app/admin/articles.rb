@@ -5,9 +5,7 @@ ActiveAdmin.register Article do
   index do 
     column :title
     column :date
-    column :text do |row|
-      row.text.html_safe
-    end
+    column :short_text
     default_actions
   end
   
@@ -15,7 +13,8 @@ ActiveAdmin.register Article do
     f.inputs do
       f.input :title
       f.input :date, :as => :datepicker
-      f.input :text
+      f.input :short_text, :input_html => { :rows => 2  }
+      f.input :text, :as => :ckeditor, :label => false
     end
     f.has_many :article_images do |attachment_form|      
       attachment_form.input :image, :as => :file, :hint => ( attachment_form.object.new_record? || !attachment_form.object.image ) ? nil : image_tag(attachment_form.object.image.url(:thumb))
@@ -29,9 +28,7 @@ ActiveAdmin.register Article do
     attributes_table do
       row :title
       row :date
-      row :text do |row|
-        row.text.html_safe
-      end
+      row :short_text
     end
     
     panel "Images" do 

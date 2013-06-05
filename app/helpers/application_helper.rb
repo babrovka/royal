@@ -50,5 +50,10 @@ module ApplicationHelper
      class_name = params[:brand_id] == "2" ? 'image-link be active' : 'image-link be'
      link_to "Belter", products_path(:brand_id => "2"), :class => class_name, remote: true
    end
+   
+   def city(event)
+     city = event.city_id
+     City.find(city).title
+   end
   
 end

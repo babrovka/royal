@@ -129,6 +129,7 @@ ru:
         title: "Название"
         date: "Дата"
         text: "Описание"
+        short_text: "Краткое описание"
       brand:
         title: "Название"
       order:

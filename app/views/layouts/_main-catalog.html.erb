@@ -1,24 +1,19 @@
 <div style="width: 320px; float: left; margin-right: 40px">
 	<div class="header">Новинки из каталога</div>
-	<%= link_to "весь каталог", "#", :class => "content-header-link" %>
+	<%= link_to "весь каталог", products_path, :class => "content-header-link" %>
 	<div class="line"></div>
 	
-	<div class="column-element">
-    <%= image_tag('column-element-picture.png', :class => 'catalog-element-image') %>
-	<%= link_to "Serenity Cream", "#", :class => "catalog-element-header-link" %>
-	<div class="catalog-element-text">Крем для чувствительнойи гиперчувствительной кожис экстрактом орхидеи<%= link_to "читать далее", "#" %></div>
-	</div>
+	<% @products.each do |product| %>
 	
 	<div class="column-element">
-    <%= image_tag('column-element-picture.png', :class => 'catalog-element-image') %>
-	<%= link_to "Serenity Cream", "#", :class => "catalog-element-header-link" %>
-	<div class="catalog-element-text">Крем для чувствительнойи гиперчувствительной кожис экстрактом орхидеи<%= link_to "читать далее", "#" %></div>
+    	<div class="icon main" <% unless product.product_images.blank? %>style="background-image: url(<%= product.product_images.first.image.url(:ico) %>);"<% end %>>
+		  <%= link_to image_tag('index-icon.png'), product %>
+		</div>
+	<%= link_to product.title, product, :class => "catalog-element-header-link" %>
+	<div class="catalog-element-text"><%= product.short_description %><%= link_to "читать далее", product %></div>
 	</div>
 	
-	<div class="column-element">
-    <%= image_tag('column-element-picture.png', :class => 'catalog-element-image') %>
-	<%= link_to "Serenity Cream", "#", :class => "catalog-element-header-link" %>
-	<div class="catalog-element-text">Крем для чувствительнойи гиперчувствительной кожис экстрактом орхидеи<%= link_to "читать далее", "#" %></div>
-	</div>
+
+	<% end %>
 		
   </div>

@@ -458,6 +458,7 @@ textarea:focus, input:focus, select:focus {
 	color: white;
 	font-family: PragmaticaC;
 	font-size: 12px;
+	margin-top: 10px;
 
 }
 
@@ -782,6 +783,16 @@ h1 {
 	margin-left: 16px;
 	float: left;
 	z-index: 999;
+}
+
+.icon.main {
+	height: 80px;
+	width: 80px;
+	background-repeat: no-repeat;
+	float: left;
+	z-index: 999;
+	margin-top: 10px;
+	margin-right: 6px;
 }
 
 #product .recommended-title {

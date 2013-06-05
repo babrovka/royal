@@ -1,5 +1,7 @@
 Royal::Application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
+
   get "search/search"
 
   get "media/index"
@@ -20,6 +22,7 @@ Royal::Application.routes.draw do
   match '/search', to: 'search#search'
   match "/albums/:id" => "media#album", :as => :album
   match '/publications' => 'publications#index'
+  match '/news' => 'articles#index'
   match '/consultations' => 'consultations#index'
   match '/media' => 'media#index'
   match '/questions' => 'questions#create', :via => :post

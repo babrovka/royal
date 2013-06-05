@@ -3,27 +3,17 @@
 	<div class="header">Ближайшие события</div>
 	<div class="line"></div>
 	
-	<div class="column-element">
-	<%= link_to "4 марта (пятница)", "#", :class => "events-element-header-link" %>
-	<div class="element-brand">Alissi Bronte</div>
-	<div class="element-event">Таинственная Аюрведа
-	  <%= link_to "смотреть", "#" %></div>
-	</div>
+	<% @events.each do |event| %>
 	
 	<div class="column-element">
-	<%= link_to "4 марта (пятница)", "#", :class => "events-element-header-link" %>
-	<div class="element-brand">Alissi Bronte</div>
-	<div class="element-event">Таинственная Аюрведа
-	  <%= link_to "смотреть", "#" %></div>
+	<%= link_to Russian::strftime(event.date, "%d %B"), events_path, :class => "events-element-header-link" %>
+	<div class="element-brand"><%= city(event) %></div>
+	<div class="element-event"><%= event.title %>
+	  <%= link_to "смотреть", event %></div>
 	</div>
 	
-	<div class="column-element">
-	<%= link_to "4 марта (пятница)", "#", :class => "events-element-header-link" %>
-	<div class="element-brand">Alissi Bronte</div>
-	<div class="element-event">Таинственная Аюрведа
-	  <%= link_to "смотреть", "#" %></div>
-	</div>
-	</div>
-	<%= link_to "перейти в календарь", "#", :class => "calendar-link" %>
+	<% end %>
+
+	<%= link_to "перейти в календарь", events_path, :class => "calendar-link" %>
 	
   </div>
