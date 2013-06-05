@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130528165920) do
+ActiveRecord::Schema.define(:version => 20130605133216) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -169,6 +169,13 @@ ActiveRecord::Schema.define(:version => 20130528165920) do
     t.integer "product_id"
   end
 
+  create_table "product_categories", :force => true do |t|
+    t.string   "title"
+    t.integer  "brand_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "product_images", :force => true do |t|
     t.string   "image_file_name"
     t.string   "image_content_type"
@@ -196,6 +203,7 @@ ActiveRecord::Schema.define(:version => 20130528165920) do
     t.datetime "created_at",                                                            :null => false
     t.datetime "updated_at",                                                            :null => false
     t.text     "short_description"
+    t.integer  "category_id"
   end
 
   create_table "publications", :force => true do |t|

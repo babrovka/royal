@@ -61,6 +61,9 @@ ru:
       consultation:
         one: "Консультация"
         other: "Консультации"
+      product_category:
+        one: "Категория товара"
+        other: "Категории товаров"
       event:
         one: "Событие"
         other: "События"
@@ -166,7 +169,11 @@ ru:
         procedures: "Процедуры"
         cases: "Случаи применения"
         image: "Изображение"
+        category_id: "Категория"
       question:
         name: "Имя"
         phone: "Телефон"
         text: "Вопрос"
+      product_category:
+        title: "Название"
+        brand_id: "Бренд"

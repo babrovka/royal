@@ -109,7 +109,4 @@ namespace :deploy do
   end
 end
 
-before 'deploy:update_code', 'thinking_sphinx:stop'
-after 'deploy:update_code', 'thinking_sphinx:start'
-after 'deploy:update_code', 'thinking_sphinx:rebuild'
 after "deploy", "deploy:cleanup"
