@@ -1,7 +1,7 @@
 <% @articles.each do |article| %>
   <div class="column-element product">
-  <%= link_to article.title, article, :class => "element-header-link" %>
+  <%= link_to article.title, articles_path, :class => "element-header-link" %>
   <div class="element-date"><%= article.date.strftime("%d.%m.%Y") %></div>
-  <div class="element-text"><%= truncate(strip_tags(article.text), length: 75).html_safe %> <%= link_to "читать далее", article %></div>
+  <div class="element-text"><%= truncate(strip_tags(article.text), length: 75).html_safe %> <%= link_to "читать далее", articles_path %></div>
   </div>
 <% end %>
