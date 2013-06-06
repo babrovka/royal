@@ -94,6 +94,21 @@ $(document).ready(
 		$(".close").on('click', function () {		
 			$(this).parent().hide();
 		});
+		
+		
+		
+		$(".catalog_product_link").hide();
+		
+		$(".product_image_wrap").mouseover(function () {
+			$(this).children().last().show();
+			
+		});
+		
+		$(".product_image_wrap").mouseleave(function () {
+			$(this).children().last().hide();
+			
+		});
+		
 
 	
 });
