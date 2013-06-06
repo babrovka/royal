@@ -685,15 +685,17 @@ h1 {
 
 #products .catalog_product_link {
 	display: block;
-	width: 120px;
-	height: 50px;
+	width: 200px;
+	height: 200px;
 	margin-left: auto;
 	margin-right: auto;
-	font-size: 22px;
+	font-size: 18px;
 	text-align: center;
 	padding-top: 80px;
 	color: #f5eed6;
 	font-family: PragmaticaLightC;
+	text-decoration: none;
+	
 }
 
 /*product*/
