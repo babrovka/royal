@@ -100,12 +100,12 @@ $(document).ready(
 		$(".catalog_product_link").hide();
 		
 		$(".product_image_wrap").mouseover(function () {
-			$(this).children().last().show();
+			$(this).children().show();
 			
 		});
 		
 		$(".product_image_wrap").mouseleave(function () {
-			$(this).children().last().hide();
+			$(this).children().hide();
 			
 		});
 		

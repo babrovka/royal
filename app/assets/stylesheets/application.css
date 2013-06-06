@@ -670,8 +670,8 @@ h1 {
 }
 
 #products .product_image_wrap {
-	width: 231px;
-	height: 232px;
+	width: 211px;
+	height: 212px;
 	background: url('item-list-hover.png') no-repeat;
 }
 
@@ -689,12 +689,11 @@ h1 {
 	height: 50px;
 	margin-left: auto;
 	margin-right: auto;
-	font-family: PragmaticaC;
-	color: #f5eed6;
 	font-size: 22px;
 	text-align: center;
-	font-weight: normal;
 	padding-top: 80px;
+	color: #f5eed6;
+	font-family: PragmaticaLightC;
 }
 
 /*product*/
