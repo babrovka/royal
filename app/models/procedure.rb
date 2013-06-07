@@ -1,4 +1,5 @@
 class Procedure < ActiveRecord::Base
-  attr_accessible :text, :title
-  has_and_belongs_to_many :products
+  attr_accessible :title, :text, :stages_attributes
+  has_many :stages
+  accepts_nested_attributes_for :stages, :allow_destroy => true
 end

@@ -36,6 +36,7 @@ ru:
   Friday: "ПТ"
   Saturday: "СБ"
   Sunday: "ВС"
+  stages: "Стадии"
   activerecord:
     models: 
       admin_user:
@@ -86,6 +87,12 @@ ru:
       city:
         one: "Город"
         other: "Города"
+      stage:
+        one: "Стадия"
+        other: "Стадии"
+      substage:
+        one: "Этап"
+        other: "Этапы"
     attributes:
       user:
         role: "Тип пользователя"
@@ -178,3 +185,9 @@ ru:
       product_category:
         title: "Название"
         brand_id: "Бренд"
+      stage:
+        title: "Название"
+      substage:
+        text: "Текст"
+        product_id: "Продукт"
+        product: "Продукт"

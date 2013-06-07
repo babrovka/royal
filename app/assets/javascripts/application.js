@@ -109,6 +109,16 @@ $(document).ready(
 			
 		});
 		
+		
+		$("#bronte-bubble-wrapper").on('click', function () {		
+			$('#bronte-pre-bubble').hide();
+			$('#bronte-bubble').show();
+		});
+		
+		$("#belter-bubble-wrapper").on('click', function () {		
+			$('#belter-pre-bubble').hide();
+			$('#belter-bubble').show();
+		});
 
 	
 });

@@ -210,41 +210,85 @@ textarea:focus, input:focus, select:focus {
 	background: white url('index_back.jpg') no-repeat center -90px;
 	height: 100%;
 	min-height: 710px;
+}
+
+#bronte-bubble-wrapper {
+	left: 20px;
+	top: 80px;
+	position: absolute;
+	width: 400px;
+	height: 500px;
 } 
 
+#bronte-pre-bubble {
+	position: absolute;
+	background-image: url('pre-bubble.png');
+	background-repeat: no-repeat;
+	padding-top: 80px;
+	padding-left: 10px;
+	width: 326px;
+	height: 220px;
+	top: 140px;
+	left: 40px;	
+	font-family: PragmaticaC;
+	color: #9e6238;
+	font-size: 24px;
+	text-align :center;
+}
+
+
 #bronte-bubble {
+	display: none;
 	position: absolute;
 	background-image: url('index-bronte.png');
 	background-repeat: no-repeat;
-	left: 20px;
-	top: 200px;
 	padding-top: 170px;
 	padding-left: 60px;
 	width: 350px;
 	height: 180px;
+	top: 120px;
 }
 
-#bronte-text {
+
+#belter-bubble-wrapper {
+	left: 490px;
+	top: 60px;
+	position: absolute;
+	width: 400px;
+	height: 500px;
+} 
+
+#belter-pre-bubble {
+	position: absolute;
+	background-image: url('belter-pre-bubble.png');
+	background-repeat: no-repeat;
+	padding-top: 80px;
+	padding-left: 10px;
+	width: 326px;
+	height: 220px;
+	top: 160px;
+	left: 40px;	
 	font-family: PragmaticaC;
-	width: 290px;
-	height: 150px;
 	color: #9e6238;
-	font-size: 14px;
+	font-size: 24px;
+	text-align :center;
 }
+
 
 #belter-bubble {
+	display: none;
 	position: absolute;
 	background-image: url('index_belter.png');
 	background-repeat: no-repeat;
-	left: 490px;
-	top: 200px;
 	padding-top: 170px;
 	padding-left: 60px;
 	width: 350px;
 	height: 180px;
+	top: 140px;
 }
 
-#belter-text {
+
+#bronte-text, #belter-text {
 	font-family: PragmaticaC;
 	width: 290px;
 	height: 150px;

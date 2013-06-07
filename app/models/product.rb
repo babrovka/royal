@@ -5,7 +5,7 @@ class Product < ActiveRecord::Base
                   :procedure_ids, :case_ids, :consultation_ids, :product_images_attributes, :short_description, :product_category_id
   has_and_belongs_to_many :procedures
   has_and_belongs_to_many :cases
-  has_and_belongs_to_many :consultations
+  has_many :substages
   has_many :line_items
   has_many :product_images
   belongs_to :product_category
