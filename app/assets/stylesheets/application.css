@@ -13,6 +13,7 @@
  *= require fonts
  *= require fotorama
  *= require calendar
+ *= require pop-up
  */
 
 
@@ -218,6 +219,7 @@ textarea:focus, input:focus, select:focus {
 	position: absolute;
 	width: 400px;
 	height: 500px;
+	cursor: pointer
 } 
 
 #bronte-pre-bubble {
@@ -256,6 +258,7 @@ textarea:focus, input:focus, select:focus {
 	position: absolute;
 	width: 400px;
 	height: 500px;
+	cursor: pointer
 } 
 
 #belter-pre-bubble {
