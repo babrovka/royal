@@ -222,16 +222,16 @@ textarea:focus, input:focus, select:focus {
 	cursor: pointer
 } 
 
-#bronte-pre-bubble {
+#pre-bubble {
 	position: absolute;
 	background-image: url('pre-bubble.png');
 	background-repeat: no-repeat;
-	padding-top: 80px;
+	padding-top: 100px;
 	padding-left: 10px;
-	width: 326px;
-	height: 220px;
-	top: 140px;
-	left: 40px;	
+	width: 449px;
+	height: 295px;
+	top: 220px;
+	left: 230px;	
 	font-family: PragmaticaC;
 	color: #9e6238;
 	font-size: 24px;
@@ -260,23 +260,6 @@ textarea:focus, input:focus, select:focus {
 	height: 500px;
 	cursor: pointer
 } 
-
-#belter-pre-bubble {
-	position: absolute;
-	background-image: url('belter-pre-bubble.png');
-	background-repeat: no-repeat;
-	padding-top: 80px;
-	padding-left: 10px;
-	width: 326px;
-	height: 220px;
-	top: 160px;
-	left: 40px;	
-	font-family: PragmaticaC;
-	color: #9e6238;
-	font-size: 24px;
-	text-align :center;
-}
-
 
 #belter-bubble {
 	display: none;
