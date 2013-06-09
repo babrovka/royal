@@ -49,19 +49,19 @@
 	
 }
 
-.form h1 {
+.form h1, .authorization h1 {
 	display: block;
 	float: left;
 	
 }
 
-.form .header {
+.form .header, .authorization .header {
 	float: left;
 	width: 100%;
 	height: 80px;
 	color: #c4add4;
 	
-	a:visited {
+	a, a:visited {
 		color: #c4add4;
 	}
 	
@@ -131,7 +131,7 @@
    color: #553d59;
 }
 
-.form textarea {
+.form textarea, .authorization textarea {
 	width: 100%;
 	background: none;
 	border: solid 1px #c4acd4;
@@ -145,7 +145,7 @@
 	padding-top: 10px;
 }
 
-.form .form-submit {
+.form .form-submit, .authorization .form-submit {
 	margin-top: 20px;
 	display: block;
 	font-family: PragmaticaC;
