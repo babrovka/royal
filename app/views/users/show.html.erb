@@ -9,13 +9,26 @@
 		<%= current_user.name %> | <%= current_user.email %> | <%= link_to "выйти", destroy_user_session_path, method: :delete %>
 	</div>
 	
+	<% if current_user.check? %>
+	
 	<div class="span12 my_links">
-		<%= link_to "Мои заказы", "#", :id => 'my_orders_link' %>
-		<%= link_to "История заказов", "#", :id => 'my_history_link' %>
+		<%= link_to "Моя корзина", "#", :id => 'my_cart_link' %>
+		<%= link_to "История заказов", "#", :id => 'my_orders_link' %>
 		<%= link_to "Мои события", "#", :id => 'my_events_link' %>
 	</div>
 	
-	<div class="span12" id="my_history">
+	<div class="span12" id="my_cart">
+		<table>
+		  <tr>
+		    <th>Товар</th>
+		    <th>Количество</th>
+		    <th>Стоимость</th>
+			<th>Убрать товар</th>
+		  </tr>
+		</table>
+	</div>
+	
+	<div class="span12" id="my_orders">
 		<table>
 		  <tr>
 		    <th>Номер заказа</th>
@@ -26,36 +39,31 @@
 		  </tr>
 		</table>
 	</div>
+	
+	
+	<div class="span12" id="my_events">
+		<h1>События</h1>
+		<% if @user.events.blank? %>
+		<h3>Вы пока никуда не записались</h3>
+		<% else %>
+		<% @user.events.each do |event| %>
+		<div class="event">
+		<h3><%= event.title %></h3>
+		<p><%= event.date.strftime("%d.%m.%Y") %></p>
+		<p><%= truncate(strip_tags(event.text), length: 185).html_safe %></p>
+		<%= appointment_link(event) %>
+		</div>
+		<% end %>
+		<% end %>
+	</div>
+
 			
 
-<% if current_user.check? %>
-
-
-
-<h1>События</h1>
-<% if @user.events.blank? %>
-<h3>Вы пока никуда не записались</h3>
 <% else %>
-<% @user.events.each do |event| %>
-<div class="event">
-<h3><%= event.title %></h3>
-<p><%= event.date.strftime("%d.%m.%Y") %></p>
-<p><%= truncate(strip_tags(event.text), length: 185).html_safe %></p>
-<%= appointment_link(event) %>
-</div>
-<% end %>
-<% end %>
-
-
-<%= render @cart %>
-
-<% else %>
-<div style="margin-top: 80px;">
+<div class="span12" style="margin-top: 80px;">
 <h1>Ваш аккаунт неактивен, пожалуйста, дождитесь письма с подтверждением активации. После этого вы сможете заказывать товары</h1>
 </div>
 <% end %>
 
-
-
-
+</div>
 </div>
