@@ -14,7 +14,7 @@
 	
 	<div class="who">Кто вы?</div> 
 	
-	<%= form_for("user", :url => registration_path("user"), :html => { :class => "register_form", :id => 'register_form' }) do |f| %>
+	<%= form_for(resource, :validate => true, :as => resource_name, :url => registration_path(resource), :html => { :class => "register_form", :id => 'register_form' }) do |f| %>
 
 	<div class="field_wrap">
 	<%= f.text_field :name, :class => 'form-input', :placeholder => "Ваше имя" %>
