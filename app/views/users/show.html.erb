@@ -1,6 +1,32 @@
 <div class="container">
 
-<h1><%= current_user.email %> | Личный кабинет</h1>
+  <div class="row">
+    <div class="span4">
+      <h1>Личный кабинет</h1>
+    </div>
+
+	<div class="span5 offset3">
+		<%= current_user.name %> | <%= current_user.email %> | <%= link_to "выйти", destroy_user_session_path, method: :delete %>
+	</div>
+	
+	<div class="span12 my_links">
+		<%= link_to "Мои заказы", "#", :id => 'my_orders_link' %>
+		<%= link_to "История заказов", "#", :id => 'my_history_link' %>
+		<%= link_to "Мои события", "#", :id => 'my_events_link' %>
+	</div>
+	
+	<div class="span12" id="my_history">
+		<table>
+		  <tr>
+		    <th>Номер заказа</th>
+		    <th>Дата заявки</th>
+		    <th>Состав</th>
+			<th>Стоимость</th>
+			<th></th>
+		  </tr>
+		</table>
+	</div>
+			
 
 <% if current_user.check? %>
 
@@ -30,6 +56,6 @@
 <% end %>
 
 
-<%= link_to "Выйти", destroy_user_session_path, method: :delete %>
+
 
 </div>
