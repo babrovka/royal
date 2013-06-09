@@ -128,6 +128,7 @@ $(document).ready(
 			$('.form').show();	
 			$(".layer_bg").show();
 			$(".header").show();
+			$('#register_form').validate();
 			
 		});
 		

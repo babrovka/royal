@@ -1,5 +1,6 @@
 <div class="container">
 <div class="authorization">
+	
 	<div class="header">
 		<h1>регистрация</h1>
 		<p>уже зарегистрированы?</p>
@@ -9,25 +10,28 @@
 	<div class="left_column">
 	
 	<div class="who">Кто вы?</div> 
-	
-	
-	
-	
+		
 	<%= form_for(resource, :validate => true, :as => resource_name, :url => registration_path(resource), :html => { :class => "register_form", :id => 'register_window' }) do |f| %>
 	
 	<div class="field_wrap">
 	<%= f.text_field :name, :class => 'form-input', :placeholder => "Ваше имя" %>
 	</div>
+	
 	<div class="field_wrap">
 	<%= f.email_field :email, :class => 'form-input', :placeholder => "Ваша электронная почта" %>
 	</div>
+	
 	<div class="field_wrap">
 	<%= f.password_field :password, :class => 'form-input', :placeholder => "Пароль" %>
 	</div>
+	
 	<div class="field_wrap">
 	<%= f.password_field :password_confirmation, :class => 'form-input', :placeholder => "Пароль еще раз" %>
 	</div>
+	
 	<%= f.text_field :phone, :class => 'form-input phone', :placeholder => "Телефон" %>
+
+	
 	<%= f.text_area :comment, :rows => "10", :placeholder => "Добавить заметку" %>
 	
 	<%= link_to 'Зарегистрироваться', "#", :onclick => "$('#register_window').submit()", :class => "form-submit" %>
@@ -37,5 +41,6 @@
 	
 	<div class="right_column">	
 	</div>
+	
 </div>
 </div>
