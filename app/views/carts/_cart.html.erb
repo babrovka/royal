@@ -1,18 +1,30 @@
 <% if @cart.line_items.empty? %>
 
-В вашей пусто
+В вашей корзине пусто
 
 <% else %>
 
-<table>
-	<%= render(cart.line_items) %>
-	<tr>
-		<td colspan='2'>Total</td>
-		<td><%= number_to_currency(total_cart_price(cart)) %></td>
-	<tr>
+<table cellspacing="0" cellpadding="0">
+  <tr>
+    <th>Товар</th>
+    <th>Количество</th>
+    <th>Стоимость</th>
+	<th>Убрать товар</th>
+  </tr>
+  <%= render(cart.line_items) %>
 </table>
-<%= button_to 'Оформить заказ', new_order_path, method: :get %>
-<%= button_to 'Редактировать', edit_cart_path(@cart), method: :get %>
-<%= button_to 'Очистить корзину', cart, method: :delete, confirm: 'Вы уверены?', remote: true %>
+
+<div class="line" style="margin-top: 50px;"></div>
+
+<div class="row">
+	<div class="span5 offset7"><h1>итого: <%= number_to_currency(total_cart_price(cart)) %></h1></div>
+</div>
+
+<div class="row">
+	<div class="span5 offset7"><%= link_to 'Оформить заказ', new_order_path, :class => 'order_button' %></div>
+</div>
+
+
+
 
 <% end %>

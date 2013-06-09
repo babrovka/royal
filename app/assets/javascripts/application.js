@@ -151,6 +151,9 @@ $(document).ready(
 			$("#register_frame").show();	
 		});
 		
+		$(".destroy_event").on('click', function () {		
+			$(this).parent().parent().remove();
+		});
 
 		
 	

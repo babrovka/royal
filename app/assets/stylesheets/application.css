@@ -789,7 +789,7 @@ h1 {
 	margin-left: -5px;
 }
 
-#product .order_button, #event .order_button {
+.order_button {
 	display: block;
 	width: 220px;
 	height: 46px;
@@ -806,7 +806,7 @@ h1 {
 	background: #c4acd4 url('order-buttom-arrow.png') no-repeat 170px 15px;
 }
 
-#product .order_button:hover, #event .order_button:hover {
+.order_button:hover {
 	background-color: #712359;
 }
 
@@ -1242,7 +1242,118 @@ h1 {
 
 /* personal_area */
 
+#personal_area .head_links {
+	font-family: PragmaticaC;
+	float: right;
+	margin-top: 30px;
+	color: #c4add4;
+	font-size: 14px;
+}
 
 
+#personal_area .head_links a, #personal_area .head_links a:visited  {
+	color: #c4add4;
+}
+
+#personal_area .head_links a:hover {
+	color: #6e2257;
+}
+
+#personal_area .my_links {
+	margin-bottom: 40px;
+}
+
+#personal_area .my_links a, #personal_area a.destroy_link {
+	display: block;
+	padding-top: 4px;
+	padding-bottom: 2px;
+	background-color: #ede7f2;
+	margin-right: 20px;
+	line-height: 1.7;
+	text-align: center;
+	text-decoration: none;
+	color: #6e2257;
+	font-family: PragmaticaC;
+	font-size: 12px;
+	float: left;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+#personal_area .my_links a:hover, #personal_area a.destroy_link:hover {
+	background-color: #6e2257;
+	color: white;
+}
+
+#personal_area .my_links a.active {
+	background-color: #6e2257;
+	color: white;
+}
+
+#personal_area table {
+	width: 100%;
+	border: none;
+}
+
+
+#personal_area table th {
+	background-color: white;
+	text-align: left;
+	color: #6e2257;
+	font-family: PragmaticaC;
+	font-weight: bold;
+	font-size: 16px;
+	padding: 5px;
+}
+
+#personal_area table td {
+	padding-top: 20px;
+	padding-bottom: 15px;
+}
+
+#personal_area table tr.evenrow {
+	background-color: white; 
+}
+
+#personal_area table td.price {
+	text-transform: uppercase;
+	color: #6e2257;
+	font-family: PragmaticaC;
+	font-size: 16px;
+}
+
+#personal_area table td.quantity {
+	text-transform: uppercase;
+	color: #6e2257;
+	font-family: PragmaticaC;
+	font-size: 16px;
+}
+
+#personal_area .icon {
+	height: 80px;
+	width: 80px;
+	background-repeat: no-repeat;
+	float: left;
+	z-index: 999;
+	margin-left: 10px;
+	margin-right: 6px;
+}
+
+#personal_area .product_info_column {
+	width: 370px;
+}
+
+#personal_area .product_info {
+	font-family: PragmaticaC;
+	font-size: 14px;
+}
+
+#personal_area .product_info a, #personal_area .product_info a:visited {
+	color: #6e2257;
+}
+
+#personal_area .product_info p {
+	color: #1f478b;
+}
 
 

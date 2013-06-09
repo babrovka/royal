@@ -45,6 +45,11 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @articles = Article.order("created_at DESC").limit(3)
+    
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
   
 end
