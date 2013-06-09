@@ -1,19 +1,42 @@
 <div class="container">
+<div class="authorization">
+	
+	<div class="header">
+		<h1>Авторизация</h1>
+		<p>еще не с нами?</p>
+		<%= link_to "ЗАРЕГИСТРИРУЙТЕСЬ!", new_user_registration_path, :id => 'authorization_link' %>
+	</div>
 
-<h1>Авторизация</h1>
+	<div class="left_column">
+		
+	
+		
+	<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :class => "register_form", :id => 'signin_window' }	) do |f| %>
+	  
+	<div class="field_wrap">
+	<%= f.email_field :email, :class => 'form-input', :placeholder => "Ваша электронная почта" %>
+	</div>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+	<div class="field_wrap">
+	<%= f.password_field :password, :class => 'form-input', :placeholder => "Пароль" %>
+	</div>
+	
+	<%= content_tag(:div, flash[:alert], :id => "flash_alert") if flash[:alert] %>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+	  <% if devise_mapping.rememberable? -%>
+	    <div class="remember_me"><%= f.check_box :remember_me %> <%= f.label "Запомнить меня" %></div>
+	  <% end -%>
+	
 
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label "Запомнить меня" %></div>
-  <% end -%>
+	
 
-  <div><%= f.submit "Войти" %></div>
-<% end %>
-
+	  <%= link_to 'Войти', "#", :onclick => "$('#signin_window').submit()", :class => "form-submit" %>
+	<% end %>
+	
+	</div>
+	
+	<div class="right_column">	
+	</div>
+	
+</div>
 </div>

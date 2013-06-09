@@ -1196,7 +1196,7 @@ h1 {
   display: inline;
 }
 
-.field_with_errors .message {
+.field_with_errors .message, .field_wrap .message {
   font-family: PragmaticaC;
   color: #903829;
   padding-left: 5px;
@@ -1205,6 +1205,20 @@ h1 {
 
 .field_wrap {
 	height: 60px;
+}
+
+.authorization .remember_me {
+	font-family: PragmaticaC;
+	color: #553d59;
+	font-size: 14px;
+}
+
+.authorization #flash_alert {
+	margin-bottom: 20px;
+	font-family: PragmaticaC;
+	color: #903829;
+	padding-left: 5px;
+	font-size: 14px;
 }
 
 
@@ -1225,3 +1239,6 @@ h1 {
 .authorization .form-input.phone {
 	margin-bottom: 20px;
 }
+
+/*sign-in*/
+
