@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="span12">
-        <%= link_to "вход для партнеров", "#", :class => 'partners_link' %>
+        <%= partner_link %>
 		<%= link_to "vkontakte", "#", :class => 'social_link vk' %>
         <%= link_to "facebook", "#", :class => 'social_link fb' %>
 		<%= link_to "twitter", "#", :class => 'social_link tw' %>
@@ -13,7 +13,7 @@
 			<a href="#" class="search-submit" id="header_submit"></a>
 		</form>
 		</div>
-		<%= link_to "показать на карте", "#", :class => 'map_link' %>
+		<%= link_to "показать на карте", contacts_path, :class => 'map_link' %>
 		<div class="phone">8 800 100-8079</div>
 		<div class="phone">8 812 702-7989</div>
       </div>

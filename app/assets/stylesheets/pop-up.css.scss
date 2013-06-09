@@ -1,14 +1,168 @@
-#auth_form {
-	display: none;
-}
-
 .layer_bg {
-	display: none;
 	width:100%;
 	height:100%;
 	position:fixed;
-	z-index:999;
+	z-index:500;
 	background:#220519;
 	opacity:0.8;
+	display: none;
 }
+
+.close {
+	display: block;
+	width: 18px;
+	height: 18px;
+	text-indent: -99999px;
+	float: right;
+	background: url('close.png');
+	margin-top: 30px;
+}
+
+
+
+.form {
+	display: none;
+	position: absolute;
+	width: 820px;
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-top: 0px;
+	padding-bottom: 40px;
+	left: 50%;
+	background-color: #ffffff;
+	z-index:999;
+	margin-left: -450px;
+	margin-top: 70px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.form.notice {
+	display: block;
+	width: 400px;
+	left: 50%;
+	margin-left: -240px;
+	background-color: #c4acd4;
+	height: 150px;
+	top: 90px;
+	
+	
+}
+
+.form h1 {
+	display: block;
+	float: left;
+	
+}
+
+.form .header {
+	float: left;
+	width: 100%;
+	height: 80px;
+	color: #c4add4;
+	
+	a:visited {
+		color: #c4add4;
+	}
+	
+	p {
+		display:block;
+		float: left;
+		text-transform: none;
+		margin-left: 50px;
+		margin-top:30px;
+	}
+	
+	#authorization_link, #registration_link {
+		display:block;
+		float: left;
+		margin-left: 50px;
+		margin-top:30px;
+	}
+	
+}
+
+.left_column {
+	float: left;
+	width: 380px;
+}
+
+.right_column {
+	float: left;
+	margin-left: 50px;
+	width: 320px;
+}
+
+.who {
+	color: #6e2257;
+	font-family: PragmaticaC;
+	margin-bottom: 30px;
+}
+
+.form .form-input {
+	width: 100%;
+	height: 33px;
+	background: none;
+	text-indent:15px;
+	border: solid 1px #c4acd4;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	color: #553d59;
+	font-family: PragmaticaC;
+	background-color: #ede6f2;
+	font-size: 14px;
+	margin-bottom: 20px;
+	
+}
+
+::-webkit-input-placeholder {
+   color: #553d59;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #553d59;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #553d59;
+}
+
+:-ms-input-placeholder {  
+   color: #553d59;
+}
+
+.form textarea {
+	width: 100%;
+	background: none;
+	border: solid 1px #c4acd4;
+	-moz-border-radius: 15px;
+	border-radius: 5px;
+	color: #553d59;
+	font-family: PragmaticaC;
+	background-color: #ede6f2;
+	font-size: 14px;
+	text-indent:15px;
+	padding-top: 10px;
+}
+
+.form .form-submit {
+	margin-top: 20px;
+	display: block;
+	font-family: PragmaticaC;
+	font-size: 14px;
+	color: #553d59;
+	padding-bottom: 8px;
+	padding-top: 11px;
+	width: 170px;
+	text-decoration: none;	
+	text-align: center;
+	background-color: #c4acd4;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+
+#auth_frame {
+	display: none;
+}
+
 

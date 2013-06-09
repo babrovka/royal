@@ -1,18 +1,23 @@
-<h2>Sign up</h2>
+<div class="container">
+
+<h1>Регистрация</h1>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+  	<input class="form-input" id="user_name" name="user[name]" size="30" type="text" onfocus="if(this.value=='Ваше имя') this.value='';" onblur="if(this.value=='') this.value='Ваше имя';" value="Ваше имя" />
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+	<input class="form-input" id="user_email" name="user[email]" size="30" type="email" onfocus="if(this.value=='Ваша электронная почта') this.value='';" onblur="if(this.value=='') this.value='Ваша электронная почта';" value="Ваша электронная почта" />
+	
+	<input class="form-input" id="user_password" name="user[password]" size="30" type="password" placeholder="Пароль" />
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
-
-  <div><%= f.submit "Sign up" %></div>
+	<input class="form-input" id="user_password_confirmation" name="user[password_confirmation]" size="30" type="password" placeholder="Пароль еще раз" />
+	
+	<input class="form-input" id="user_phone" name="user[phone]" size="30" type="text" onfocus="if(this.value=='Телефон') this.value='';" onblur="if(this.value=='') this.value='Телефон';" value="Телефон" />
+	
+	<textarea class="" id="question_text" name="user[comment]" rows="10" onfocus="if(this.value=='Добавить заметку') this.value='';" onblur="if(this.value=='') this.value='Добавить заметку';"/>Добавить заметку</textarea>
+	</br></br>
+  <div><%= f.submit "Зарегистрироваться" %></div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+</div>

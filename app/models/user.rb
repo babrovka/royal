@@ -6,14 +6,17 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :role, :check
-  # attr_accessible :title, :body
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :role, :check,
+                  :name, :phone, :assignment, :company, :address, :work_phone, :fax,
+                  :work_email, :from, :comment, :education
   
   cattr_accessor :current_user
   
   has_one :cart
   has_and_belongs_to_many :events, :uniq => true
   has_many :orders
+  
+  validates :name, :phone, :comment, :presence => true
   
   ROLES = %w[professional dealer1 dealer2 dealer3]
 end

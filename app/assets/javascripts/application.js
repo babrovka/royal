@@ -93,9 +93,7 @@ $(document).ready(
 		
 		$(".close").on('click', function () {		
 			$(this).parent().hide();
-		});
-		
-		
+		});		
 		
 		$(".catalog_product_link").hide();
 		
@@ -110,17 +108,45 @@ $(document).ready(
 		});
 		
 		
-		$("#bronte-bubble-wrapper").mouseover(function () {	
-			$('#pre-bubble').hide();	
-			$('#bronte-bubble').show();
+		$("#pre-bubble").on('click', function () {	
+			$(this).hide();
+			
+			$("#bronte-bubble-wrapper").mouseover(function () {
+				$('#belter-bubble').hide();	
+				$('#bronte-bubble').show();
+			});
+
+			$("#belter-bubble-wrapper").mouseover(function () {
+				$('#bronte-bubble').hide();	
+				$('#belter-bubble').show();
+			});
+			
 		});
 		
-		$("#belter-bubble-wrapper").mouseover(function () {	
-			$('#pre-bubble').hide();	
-			$('#belter-bubble').show();
+		$("#partners_link").on('click', function () {	
+			$('.form').show();	
+			$(".layer_bg").show();
+			$(".header").show();
+			
 		});
+		
+		$(".layer_bg, .close").on('click', function () {
+			$(".form").hide();	
+			$(".layer_bg").hide();
+		});
+		
+		$("#authorization_link").on('click', function () {		
+			$("#register_frame").hide();
+			$("#auth_frame").show();	
+		});
+		
+		$("#registration_link").on('click', function () {		
+			$("#auth_frame").hide();
+			$("#register_frame").show();	
+		});
+		
 
-
+		
 	
 });
 

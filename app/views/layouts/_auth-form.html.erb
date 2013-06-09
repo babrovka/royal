@@ -1,3 +1,67 @@
-<div id="auth-form">
 <div class="layer_bg"></div>
+
+<div class="form" id="auth_form">
+
+<div id="register_frame">	
+	<div class="header">
+		<h1>регистрация</h1>
+		<p>уже зарегистрированы?</p>
+		<a href="#" id="authorization_link">ВХОДИТЕ!</a>
+		<a href="#" class="close"></a>	
+	</div>
+	
+	<div class="left_column">
+	
+	<div class="who">Кто вы?</div> 
+	
+	<%= form_for("user", :url => registration_path(resource), :html => { :class => "register_form", :id => 'register_form' }) do |f| %>
+
+	<input class="form-input" id="user_name" name="user[name]" size="30" type="text" onfocus="if(this.value=='Ваше имя') this.value='';" onblur="if(this.value=='') this.value='Ваше имя';" value="Ваше имя" />
+
+	<input class="form-input" id="user_email" name="user[email]" size="30" type="email" onfocus="if(this.value=='Ваша электронная почта') this.value='';" onblur="if(this.value=='') this.value='Ваша электронная почта';" value="Ваша электронная почта" />
+	
+	<input class="form-input" id="user_password" name="user[password]" size="30" type="password" placeholder="Пароль" />
+
+	<input class="form-input" id="user_password_confirmation" name="user[password_confirmation]" size="30" type="password" placeholder="Пароль еще раз" />
+	
+	<input class="form-input" id="user_phone" name="user[phone]" size="30" type="text" onfocus="if(this.value=='Телефон') this.value='';" onblur="if(this.value=='') this.value='Телефон';" value="Телефон" />
+	
+	<textarea class="" id="question_text" name="user[comment]" rows="10" onfocus="if(this.value=='Добавить заметку') this.value='';" onblur="if(this.value=='') this.value='Добавить заметку';"/>Добавить заметку</textarea>
+
+	<%= link_to 'Зарегистрироваться', "#", :onclick => "$('#register_form').submit()", :class => "form-submit" %>
+	<% end %>
+	
+	</div>
+	
+	<div class="right_column">	
+	</div>
+	
+</div>
+
+<div id="auth_frame">	
+	<div class="header">
+		<h1>авторизация</h1>
+		<p>еще не с нами?</p>
+		<a href="#" id="registration_link">ЗАРЕГИСТРИРУЙТЕСЬ!</a>
+		<a href="#" class="close"></a>	
+	</div>
+	
+	<div class="left_column">
+	
+		<%= form_for("user", :url => session_path(resource_name), :html => {:id => "sign_in_form"}) do |f| %>
+
+	<input class="form-input" id="user_email" name="user[email]" size="30" type="email" onfocus="if(this.value=='Ваша электронная почта') this.value='';" onblur="if(this.value=='') this.value='Ваша электронная почта';" value="Ваша электронная почта" />
+	
+	<input class="form-input" id="user_password" name="user[password]" size="30" type="password" placeholder="Пароль" />
+
+	<%= link_to 'Войти', "#", :onclick => "$('#sign_in_form').submit()", :class => "form-submit" %>
+	<% end %>
+	
+	</div>
+	
+	<div class="right_column">	
+	</div>
+	
+</div>
+
 </div>
