@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 gem 'mysql2'
-gem 'jquery-rails'
 
 gem "russian", "~> 0.6.0"
 gem 'paperclip'
@@ -24,6 +23,8 @@ gem 'devise-i18n', :github => 'tigrish/devise-i18n'
 #deploy
 gem 'capistrano'
 gem 'unicorn'
+
+gem 'jquery-rails', '~> 2.3.0'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

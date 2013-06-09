@@ -586,6 +586,16 @@ h1 {
 	margin-bottom: 25px;
 }
 
+h2 {
+	font-family: PragmaticaC;
+	font-size: 20px;
+	font-weight: normal;
+	color: #553d59;
+	text-transform: uppercase;
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
 #about p {
 	font-family: PragmaticaC;
 	font-size: 14px;

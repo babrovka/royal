@@ -5,7 +5,7 @@ ActiveAdmin.register Order do
    attributes_table do
      row :user_id
      row :role do |user|
-       order.user.role
+       t(order.user.role)
      end
      row :comment
    end
