@@ -5,7 +5,7 @@
 <% if f.object.new_record? %>
 <%= f.input :email %>
 <% end %>
-<%= f.input :role, :as => :select, :collection => User::ROLES.map { |k, v| [t(k), v] } %>
+<%= f.input :role, :as => :select, :collection => Hash[User::ROLES.map { |k| [t(k), k] }] %>
 <% if f.object.new_record? %>
 <%= f.input :password %>
 <%= f.input :password_confirmation %>
@@ -16,3 +16,4 @@
 <%= f.actions %>
 
 <% end %>
+

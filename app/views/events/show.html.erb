@@ -1,4 +1,4 @@
-<div class="container" id="publications">
+<div class="container" id="event">
   <div class="row">
     <div class="span12">
       <%= link_to "назад к календарю", events_path, :class => 'content-header-link product' %>
@@ -6,6 +6,14 @@
 
     <div class="span9">
 	  	<h1><%= @event.title %></h1>
+		<div class="element-date">13.03.2012</div>
+		<div class="event-text"><%= @event.text.html_safe %></div>
+		
+		<% if user_signed_in? && current_user.check? %>
+		<div id="appointment_link">
+		<%= render :partial => 'link', :locals => { :event => @event } %>
+		</div>
+		<% end %>
 	</div>
 	
 	<div class="span3">

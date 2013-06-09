@@ -37,6 +37,8 @@ ru:
   Saturday: "СБ"
   Sunday: "ВС"
   stages: "Стадии"
+  user_approved_mail_sent: "Пользователь активирован, письмо с подтверждением отправлено"
+  your_account_was_confirmed: "Ваш аккаунт на сайте rbcos.ru был активирован"
   activerecord:
     models: 
       admin_user:

@@ -6,7 +6,9 @@ ActiveAdmin.register User do
   
   index do 
     column :email
-    column :role
+    column :role do |column|
+      t(column.role)
+    end
     column :check
     default_actions
   end
@@ -16,7 +18,9 @@ ActiveAdmin.register User do
  show do
    attributes_table do
      row :email
-     row :role
+     row :role do |row|
+       t(row.role)
+     end
      row :check
    end  
   end
@@ -25,14 +29,15 @@ ActiveAdmin.register User do
 
     def update    
       @user = User.find(params[:id])
-              
-       respond_to do |format|
-         if @user.update_attributes(params[:user])
-           format.html { redirect_to action: "index" }
-           UserMailer.confirm_email(@user).deliver
-         else
-           format.html { render action: "edit" }
-         end
+       
+       if params[:user][:check] == "1" && @user.update_attributes(params[:user])
+         redirect_to :action => :index
+         UserMailer.confirm_email(@user).deliver
+         flash[:notice] = t('user_approved_mail_sent')
+       elsif @user.update_attributes(params[:user])
+         redirect_to :action => :index
+       else
+         render action: "edit"
        end
       
       

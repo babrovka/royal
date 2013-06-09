@@ -20,4 +20,5 @@ module ProductsHelper
     cart.line_items.to_a.sum { |item| total_price(item) }
   end
   
+  
 end

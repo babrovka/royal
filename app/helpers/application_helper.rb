@@ -15,16 +15,10 @@ module ApplicationHelper
   end
   
   def appointment_link(event)
-    if controller_name == "users"
-      css = "appointment_link destroy"
-    else
-      css = "appointment_link"
-    end
-    
     if current_user.events.exists?(event)
-      link_to 'Отписаться', event, method: :delete, :remote => true, :class => css, :id => event.id
+      link_to 'Отписаться', event, method: :delete, :remote => true, :class => 'order_button'
     else
-      link_to 'Записаться', events_path(event_id: event), method: :post, :remote => true, :class => css, :id => event.id
+      link_to 'Записаться', events_path(event_id: event), method: :post, :remote => true, :class => 'order_button'
     end
   end
   

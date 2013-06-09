@@ -2,20 +2,34 @@
 
 <h1><%= current_user.email %> | Личный кабинет</h1>
 
-<h1>Мои записи</h1>
+<% if current_user.check? %>
+
+
+
+<h1>События</h1>
 <% if @user.events.blank? %>
 <h3>Вы пока никуда не записались</h3>
 <% else %>
 <% @user.events.each do |event| %>
 <div class="event">
 <h3><%= event.title %></h3>
-<p><%= event.date %></p>
-<p><%= event.text %></p>
+<p><%= event.date.strftime("%d.%m.%Y") %></p>
+<p><%= truncate(strip_tags(event.text), length: 185).html_safe %></p>
 <%= appointment_link(event) %>
 </div>
 <% end %>
 <% end %>
 
-<%= link_to "Logout", destroy_user_session_path, method: :delete %>
+
+<%= render @cart %>
+
+<% else %>
+<div style="margin-top: 80px;">
+<h1>Ваш аккаунт неактивен, пожалуйста, дождитесь письма с подтверждением активации. После этого вы сможете заказывать товары</h1>
+</div>
+<% end %>
+
+
+<%= link_to "Выйти", destroy_user_session_path, method: :delete %>
 
 </div>

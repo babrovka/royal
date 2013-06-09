@@ -14,7 +14,7 @@ ActiveAdmin.register Event do
        f.input :city_id, :as => :select,      :collection => City.all
        f.input :title
        f.input :date, :as => :datepicker
-       f.input :text
+       f.input :text, :as => :ckeditor, :label => false
      end
      f.actions
    end
@@ -24,7 +24,9 @@ ActiveAdmin.register Event do
       row :city_id
       row :title
       row :date
-      row :text
+      row :text do |row|
+        row.text.html_safe
+      end
     end  
    end 
 end

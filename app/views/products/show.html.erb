@@ -13,13 +13,19 @@
 		  <div class="product_image_wrap">
 		  </div>
 	  </div>
+	
+	  <% if user_signed_in? && current_user.check? %>
 	  <%= link_to 'Заказать товар', line_items_path(product_id: @product), remote: true, :class => 'order_button', :method=> :post %>
+	  <% end %>
+	
+	  <% unless @procedures.blank? %>
 	  <h5>входит в процедуры:</h5>
 	  <ul class="procedures">
 	  <% @procedures.each do |procedure| %>
 	  <li><%= link_to procedure.title, procedure %></li>
 	  <% end %>
 	  </ul>
+	  <% end %>
 	</div>
 	
 	<div class="span5">
@@ -30,6 +36,10 @@
 	  <div class="text"><%= @product.text %></div>
 	  <h5>ингредиенты</h5>
 	  <div class="text"><%= @product.ingredients %></div>
+	  <% if user_signed_in? && current_user.check? %>
+	  <h5>цена</h5>
+	  <div class="text"><%= number_to_currency(price(@product)) %></div>
+	  <% end %>
 	  <div class="line" style="margin-top: 20px"></div>
 	<script type="text/javascript" src="//yandex.st/share/share.js"
 	charset="utf-8"></script>

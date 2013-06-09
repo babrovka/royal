@@ -789,7 +789,7 @@ h1 {
 	margin-left: -5px;
 }
 
-#product .order_button {
+#product .order_button, #event .order_button {
 	display: block;
 	width: 220px;
 	height: 46px;
@@ -806,7 +806,7 @@ h1 {
 	background: #c4acd4 url('order-buttom-arrow.png') no-repeat 170px 15px;
 }
 
-#product .order_button:hover {
+#product .order_button:hover, #event .order_button:hover {
 	background-color: #712359;
 }
 
@@ -1161,6 +1161,24 @@ h1 {
 	height: 230px;
 	background-color: #ede6f2;
 }
+
+/*event*/
+
+
+
+#event .element-date {
+	font-size: 12px;
+	color: #527dc5;
+	font-family: PragmaticaC;
+}
+
+#event .event-text {
+	color: #336699;
+	font-family: PragmaticaC;
+	font-size: 14px;
+	margin-top: 20px;
+}
+
 
 /*search page*/
 

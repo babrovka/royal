@@ -5,6 +5,6 @@ class UserMailer < ActionMailer::Base
       @user = user
       @mail = user.email
       @url  = "http://example.com/login"
-      mail(:to => user.email, :subject => "Your account was confirmed")
+      mail(:to => user.email, :subject => t("your_account_was_confirmed"))
     end
 end
