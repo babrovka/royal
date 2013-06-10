@@ -6,7 +6,7 @@
 
     <div class="span9">
 	  	<h1><%= @event.title %></h1>
-		<div class="element-date">13.03.2012</div>
+		<div class="element-date"><%= @event.date.strftime("%d.%m.%Y") %></div>
 		<div class="event-text"><%= @event.text.html_safe %></div>
 		
 		<% if user_signed_in? && current_user.check? %>

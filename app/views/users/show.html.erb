@@ -19,7 +19,7 @@
 		<%= link_to "Мои события", "#", :id => 'my_events_link' %>
 	</div>
 	
-	<div class="span12" id="my_cart">
+	<div class="span12" id="my_cart"  style="display: none;">
 	
 	<%= render @cart %>
 	<% unless @cart.line_items.empty? %>
@@ -36,13 +36,22 @@
 		    <th>Дата заявки</th>
 		    <th>Состав</th>
 			<th>Стоимость</th>
-			<th></th>
 		  </tr>
+		
+		<% @orders.each do |order| %>
+		<tr class="<%= cycle('odd', 'evenrow') %>">
+			<td><%= order.id %></td>
+			<td><%= order.created_at.strftime("%d.%m.%Y") %></td>
+			<td><%= order.line_items.map(&:product).map(&:title).join(", ") %></td>
+			<td><%= number_to_currency(total_cart_price(order)) %></td>
+		</tr>
+		<% end %>
+		
 		</table>
 	</div>
 	
 	
-	<div class="span12" id="my_events" style="display: none;">
+	<div class="span12" id="my_events">
 		<% if @user.events.blank? %>
 		  <h3>Вы пока никуда не записались</h3>
 		<% else %>
