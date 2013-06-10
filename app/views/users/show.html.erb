@@ -22,13 +22,15 @@
 	<div class="span12" id="my_cart">
 	
 	<%= render @cart %>
+	<% unless @cart.line_items.empty? %>
 	<div class="row">
 		<div class="span5 offset7"><%= link_to 'Оформить заказ', new_order_path, :class => 'order_button' %></div>
 	</div>
+	<% end %>
 	</div>
 	
 	<div class="span12" id="my_orders" style="display: none;">
-		<table>
+		<table cellspacing="0" cellpadding="0">
 		  <tr>
 		    <th>Номер заказа</th>
 		    <th>Дата заявки</th>
@@ -44,7 +46,7 @@
 		<% if @user.events.blank? %>
 		  <h3>Вы пока никуда не записались</h3>
 		<% else %>
-		  <table>
+		  <table cellspacing="0" cellpadding="0">
 			<tr>
 			  <th>Событие</th>
 			  <th>Дата события</th>

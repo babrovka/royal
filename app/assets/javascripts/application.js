@@ -155,7 +155,34 @@ $(document).ready(
 		$(".destroy_event").on('click', function () {		
 			$(this).parent().parent().remove();
 		});
-
+		
+		$("#my_cart_link").on('click', function () {
+			$('#my_cart').show();		
+			$('#my_orders').hide();
+			$('#my_events').hide();
+			$("#my_cart_link").addClass('active');
+			$("#my_orders_link").removeClass('active');
+			$("#my_events_link").removeClass('active');
+		});
+		
+		$("#my_orders_link").on('click', function () {
+			$('#my_cart').hide();		
+			$('#my_orders').show();
+			$('#my_events').hide();
+			$("#my_cart_link").removeClass('active');
+			$("#my_orders_link").addClass('active');
+			$("#my_events_link").removeClass('active');
+		});
+		
+		$("#my_events_link").on('click', function () {
+			$('#my_cart').hide();		
+			$('#my_orders').hide();
+			$('#my_events').show();
+			$("#my_cart_link").removeClass('active');
+			$("#my_orders_link").removeClass('active');
+			$("#my_events_link").addClass('active');
+		});
+		
 		
 	
 });
