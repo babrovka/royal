@@ -1,6 +1,30 @@
-<div>
-	<fieldset>
-		<legend>Заказ</legend>
+<div class="container" id="personal_area">
+
+  <div class="row">
+    <div class="span5">
+      <h1>Оформление заказа</h1>
+    </div>
+
+	<div class="span5 offset2">
+		<div class="head_links">
+		<%= current_user.name %> | <%= current_user.email %> | <%= link_to "выйти", destroy_user_session_path, method: :delete %>
+		</div>
+	</div>
+	
+
+	
+	<div class="span12" id="my_cart">
+	<%= render @cart %>
+	</div>
+	
+	<div class="span12">
 		<%= render 'form' %>
-	</fieldset>
+	</div>
+	
+
 </div>
+</div>
+
+
+
+

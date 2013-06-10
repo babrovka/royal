@@ -22,7 +22,9 @@
 	<div class="span12" id="my_cart">
 	
 	<%= render @cart %>
-	
+	<div class="row">
+		<div class="span5 offset7"><%= link_to 'Оформить заказ', new_order_path, :class => 'order_button' %></div>
+	</div>
 	</div>
 	
 	<div class="span12" id="my_orders" style="display: none;">

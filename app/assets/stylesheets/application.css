@@ -944,7 +944,7 @@ h2 {
 	margin-bottom: 10px;
 }
 
-#contacts .form-input {
+#contacts .form-input, #new_order .form-input  {
 	width: 100%;
 	height: 25px;
 	padding-bottom: 3px;
