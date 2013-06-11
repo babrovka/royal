@@ -1,4 +1,4 @@
-$('#products-catalog').html("<%=j render @products %>");
+$('#products-catalog').html("<%=j render :partial => 'products/products', :@products => @products %>");
 $('#bronte').html("<%=j bronte_link %>");
 $('#belter').html("<%=j belter_link %>");
 

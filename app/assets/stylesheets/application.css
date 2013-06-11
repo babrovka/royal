@@ -700,7 +700,7 @@ h2 {
 }
 
 .catalog-product {
-	margin-top: 40px;
+	margin-top: 20px;
 }
 
 .catalog-product .description {
@@ -737,7 +737,15 @@ h2 {
 	font-family: PragmaticaLightC;
 	text-decoration: none;
 	visibility: hidden;
-	
+}
+
+.category_title {
+	font-family: PragmaticaCondC;
+	color: #6e2257;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 20px;
+	margin-top: 20px;
 }
 /*product*/
 

@@ -29,8 +29,14 @@
 	<div class="span4 brand"><%= link_to "Процедуры", "#", :class => 'normal-link' %></div>
   </div>
 
+  
+
   <div class="row" id="products-catalog">
-	<%= render @products %>	
+	
+	
+	<%= render :partial => 'products/products', :@products => @products %>
+	
+
   </div>
 
 </div>
