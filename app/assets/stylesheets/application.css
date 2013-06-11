@@ -736,9 +736,9 @@ h2 {
 	color: #f5eed6;
 	font-family: PragmaticaLightC;
 	text-decoration: none;
+	visibility: hidden;
 	
 }
-
 /*product*/
 
 #product .title {
@@ -1337,6 +1337,10 @@ h2 {
 	color: #6e2257;
 	font-family: PragmaticaC;
 	font-size: 16px;
+}
+
+#personal_area table td.quantity a, #personal_area table td.quantity a:visited {
+	text-decoration: none;
 }
 
 #personal_area .icon {

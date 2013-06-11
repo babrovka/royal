@@ -12,8 +12,10 @@
   <% end %>
 	
 	<div class="row">
-		<div class="span4"><h2>Комментарий к заказу</h2><br />
-	    <%= f.text_field :comment, :placeholder => "Ваше пожелания...", :class => 'form-input' %></div>
-		<div class="span5 offset3"><%= link_to "Оформить заказ", "#", :class => 'order_button', :onclick=>"$('#new_order').submit();return false;" %></div>
+		<div class="span5">
+			<h2>Комментарий к заказу</h2>
+	        <%= f.text_field :comment, :placeholder => "Ваше пожелания...", :class => 'form-input' %>
+			<%= link_to "Оформить заказ", "#", :class => 'order_button', :onclick=>"$('#new_order').submit();return false;" %>
+	    </div>
 	</div>
 <% end %>

@@ -10,6 +10,8 @@ Royal::Application.routes.draw do
 
   resources :orders
   resources :line_items
+  match "/increase/:id" => "line_items#increase", :as => :increase
+  match "/decrease/:id" => "line_items#decrease", :as => :decrease
   resources :carts  
   resources :videos
   resources :events

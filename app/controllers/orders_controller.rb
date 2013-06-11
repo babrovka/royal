@@ -3,7 +3,7 @@ class OrdersController < InheritedResources::Base
   def new
     @cart = current_cart
     if @cart.line_items.empty?
-      redirect_to products_url, notice: "Your cart is empty"
+      redirect_to products_url, notice: t('Your_cart_is_empty')
       return
     end
     
@@ -20,10 +20,10 @@ class OrdersController < InheritedResources::Base
     respond_to do |format|
       if @order.save
         Cart.destroy(current_cart.id)
-        format.html { redirect_to products_path, notice: "Thanks for your order" }
+        format.html { redirect_to account_path, notice: t('Thanks_for_your_order') }
       else
-        @cart = current_cart
-        format.html { render action: "new" }
+        redirect_to account_path, notice: t('Order_not_sent_try_again')
+        
       end
     end
   end

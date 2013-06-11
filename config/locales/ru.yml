@@ -39,6 +39,9 @@ ru:
   stages: "Стадии"
   user_approved_mail_sent: "Пользователь активирован, письмо с подтверждением отправлено"
   your_account_was_confirmed: "Ваш аккаунт на сайте rbcos.ru был активирован"
+  Thanks_for_your_order: "Ваш заказ оформлен!"
+  Order_not_sent_try_again: "Заказ не отпарвлен, пожалуйста попробуйте еще раз"
+  Your_cart_is_empty: "Ваша корзина пуста"
   activerecord:
     models: 
       admin_user:

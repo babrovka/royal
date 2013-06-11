@@ -37,18 +37,22 @@
 	border-radius: 5px;
 }
 
-.form.notice {
-	display: block;
-	width: 400px;
+.notice {
+	display: none;
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-top: 0px;
+	padding-bottom: 40px;
 	left: 50%;
 	margin-left: -240px;
+	z-index:999;
+	margin-top: 70px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	display: block;
+	width: 400px;
 	background-color: #c4acd4;
-	height: 150px;
 	top: 90px;
-	
-	h1 {
-		margin-top: 0px;
-	}
 }
 
 .form h1, .authorization h1 {

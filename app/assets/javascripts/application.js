@@ -93,25 +93,33 @@ $(document).ready(
 		});
 		
 
-		$(".calendar td").on('click', function () {		
-			$(this).children().last().show();
+		$(".calendar td").on('click', function () {				
+			bubble = $(this).children().last();
+			bubble.show();
+			$('.bubble').not(bubble).hide();
+			
+			if(bubble.length == 0) {
+				$('.bubble').hide();
+			}
+				
 		});
 		
 		$(".close").on('click', function () {		
 			$(this).parent().hide();
 		});		
 		
-		$(".catalog_product_link").hide();
 		
 		$(".product_image_wrap").mouseover(function () {
-			$(this).children().show();
-			
+			$(this).children().css('visibility', 'visible');
 		});
 		
 		$(".product_image_wrap").mouseleave(function () {
-			$(this).children().hide();
+			$(this).children().css('visibility', 'hidden');
 			
 		});
+		
+		
+
 		
 		
 		$("#pre-bubble").on('click', function () {	

@@ -1,3 +1,12 @@
 $('#products-catalog').html("<%=j render @products %>");
 $('#bronte').html("<%=j bronte_link %>");
 $('#belter').html("<%=j belter_link %>");
+
+$(".product_image_wrap").mouseover(function () {
+	$(this).children().css('visibility', 'visible');
+});
+
+$(".product_image_wrap").mouseleave(function () {
+	$(this).children().css('visibility', 'hidden');
+	
+});

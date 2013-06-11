@@ -37,9 +37,39 @@ class LineItemsController < InheritedResources::Base
     @line_item.destroy
 
     respond_to do |format|
-      format.html { redirect_to cart_path(@cart) }
+      format.html { redirect_to account_path }
       format.js { @cart = current_cart }
-      format.json { head :no_content }
+    end
+  end
+  
+  def increase 
+    @cart = current_cart
+    @line_item = LineItem.find(params[:id])
+    
+    @line_item.quantity += 1
+    @line_item.save
+    
+    respond_to do |format|
+      format.html { redirect_to account_path }
+      format.js { @cart = current_cart }
+    end
+  end
+  
+  def decrease 
+    @cart = current_cart
+    @line_item = LineItem.find(params[:id])
+
+    
+    if @line_item.quantity <= 1
+      destroy
+    else
+      @line_item.quantity -= 1
+      @line_item.save
+    end
+    
+    respond_to do |format|
+      format.html { redirect_to account_path }
+      format.js { @cart = current_cart }
     end
   end
   

@@ -1,9 +1,9 @@
-<tr class="<%= cycle('oddrow', 'evenrow') %>">
+<tr class="<%= cycle('oddrow', 'evenrow') %>" id="<%= line_item.id %>">
 	<td class="product_info_column"><div class="icon" <% unless line_item.product.product_images.blank? %>style="background-image: url(<%= line_item.product.product_images.first.image.url(:ico) %>);"<% end %>><%= link_to image_tag('index-icon.png'), line_item.product %></div>
 		<div class="product_info"><%= link_to line_item.product.title, line_item.product %><p><%= truncate(strip_tags(line_item.product.short_description), length: 48) %></div></td>
-	<td class="quantity"><%= line_item.quantity %></td>
+	<td class="quantity"><%= link_to "-", decrease_path(line_item), :remote => true %><%= line_item.quantity %><%= link_to "+", increase_path(line_item), :remote => true %></td>
 	<td class="price"><%= number_to_currency(total_price(line_item)) %></td>
-	<td><%= link_to "Удалить", line_item_path(line_item), :confirm => 'Вы уверены?', :method => :delete, :class => 'destroy_link' %></td>
+	<td><%= link_to "Удалить", line_item_path(line_item), :confirm => 'Вы уверены?', :method => :delete, :remote => true, :class => 'destroy_link' %></td>
 </tr>
 
 
