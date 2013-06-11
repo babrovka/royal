@@ -2,13 +2,21 @@ module ProductsHelper
   
   def price(product)
     if current_user.role == 'professional'
-      product.price_professional
+      price = product.price_professional
     elsif current_user.role == 'dealer1'
-      product.price_dealer1
+      price = product.price_dealer1
     elsif current_user.role == 'dealer2'
-      product.price_dealer2
+      price = product.price_dealer2
     else 
-      product.price_dealer3
+      price = product.price_dealer3
+    end
+  end
+  
+  def product_has_price(product)
+    if product.price_professional && product.price_dealer1 && product.price_dealer2 && product.price_dealer3
+      true
+    else
+      false
     end
   end
   

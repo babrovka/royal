@@ -1347,8 +1347,29 @@ h2 {
 	font-size: 16px;
 }
 
-#personal_area table td.quantity a, #personal_area table td.quantity a:visited {
-	text-decoration: none;
+#personal_area table td span {
+	display: block;
+	float: left;
+	padding-left: 7px;
+	padding-right: 7px;
+}
+
+#personal_area .decrease_link {
+	float: left;
+	display: block;
+	width: 19px;
+	height: 19px;
+	text-indent: -99999px;
+	background: url('increase.png') top;
+}
+
+#personal_area .increase_link {
+	float: left;
+	display: block;
+	width: 19px;
+	height: 19px;
+	text-indent: -99999px;
+	background: url('decrease.png') top;
 }
 
 #personal_area .icon {

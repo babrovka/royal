@@ -14,7 +14,7 @@
 		  </div>
 	  </div>
 	
-	  <% if user_signed_in? && current_user.check? %>
+	  <% if user_signed_in? && current_user.check? && product_has_price(@product) == true %>
 	  <%= link_to 'Заказать товар', line_items_path(product_id: @product), remote: true, :class => 'order_button', :method=> :post %>
 	  <% end %>
 	
@@ -37,8 +37,10 @@
 	  <h5>ингредиенты</h5>
 	  <div class="text"><%= @product.ingredients %></div>
 	  <% if user_signed_in? && current_user.check? %>
+	  <% if product_has_price(@product) == true %>
 	  <h5>цена</h5>
 	  <div class="text"><%= number_to_currency(price(@product)) %></div>
+	  <% end %>
 	  <% end %>
 	  <div class="line" style="margin-top: 20px"></div>
 	<script type="text/javascript" src="//yandex.st/share/share.js"
