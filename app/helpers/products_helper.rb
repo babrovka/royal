@@ -29,13 +29,14 @@ module ProductsHelper
   end
   
   def category_title(category)
-    ProductCategory.find(category).title
     
-    if category.nil?
-      return false
-    end
+    
+      ProductCategory.find(category).title
+      rescue ActiveRecord::RecordNotFound
+      nil
     
   end
+    
   
   def bronte_link
     class_name = params[:brand_id] == "2" ? 'image-link br' : 'image-link br active'
