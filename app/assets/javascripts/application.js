@@ -59,6 +59,17 @@ $(document).ready(
 		$(this).parent().css('height', self + height + 'px');
 		$(this).parent().next().show();
 		
+		panel = $(this).parent().next()
+		
+		/*$('.full').not(panel).hide();*/
+		
+		$(".full").not(panel).each(function() {
+		  $(this).hide();
+		  height = $(this).prev().height();
+		  self = $(this).height();
+		  $(this).prev().css('height', height - self + 'px')
+		  
+		});
 	
 			return false
 	  });
