@@ -1265,6 +1265,12 @@ h2 {
 
 /* personal_area */
 
+#personal_area {
+	font-family: PragmaticaC;
+	color: #6e2257;
+	font-size: 14px;	
+}
+
 #personal_area .head_links {
 	font-family: PragmaticaC;
 	float: right;
@@ -1327,6 +1333,7 @@ h2 {
 	font-weight: bold;
 	font-size: 16px;
 	padding: 5px;
+	
 }
 
 #personal_area table td {
