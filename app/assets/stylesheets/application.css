@@ -674,6 +674,10 @@ h2 {
 	background-color: #c4acd4;
 }
 
+#products .normal-link.active{
+	background-color: #f7edb8;
+}
+
 #products .image-link {
 	display: block;
 	width: 300px;
@@ -1166,6 +1170,7 @@ h2 {
 	position: absolute;
 	top: 0;
 	z-index: 99;
+	width: 880px;
 }
 
 .consultation {

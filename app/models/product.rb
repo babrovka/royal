@@ -12,7 +12,8 @@ class Product < ActiveRecord::Base
   accepts_nested_attributes_for :product_images, :allow_destroy => true
   before_destroy :ensure_not_referenced_by_any_line_item
   
-  validates :title, :packing, :text, :ingredients, :brand_id, :short_description, :presence => true
+  validates :title, :packing, :text, :ingredients, :brand_id, :short_description, 
+            :price_professional, :price_dealer1, :price_dealer2, :price_dealer3, :presence => true
   
   private
   

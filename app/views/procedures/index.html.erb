@@ -1,7 +1,7 @@
-<div class="container" id="consultations">
+<div class="container" id="products">
   <div class="row">
     <div class="span6">
-      <h1>консультация технолога</h1>
+      <h1>процедуры</h1>
 	</div>
 <!--
 
@@ -22,32 +22,34 @@
 
     <div class="span12"><div class="line"></div></div>
 
-	<div class="span4 brand" id=""><%= link_to "Выбор по случаям применения", "#", :class => 'normal-link' %></div>
-	<div class="span4 brand" id=""><%= link_to "Выбор по продуктам", "#", :class => 'normal-link' %></div>
-	<div class="span4 brand" id=""><%= link_to "Все вопросы", "#", :class => 'normal-link' %></div>
-	
-	
+	<div class="span4 brand" id="bronte"><%= link_to "Bronte", products_path(:brand_id => "1"), :class => 'image-link br' %></div>
+	<div class="span4 brand" id="belter"><%= link_to "Belter", products_path(:brand_id => "2"), :class => 'image-link be' %></div>
+	<div class="span4 brand"><%= link_to "Процедуры", procedures_path, :class => 'normal-link active' %></div>
+
 	<div class="span12">
 	  <div id="cosultations_frame">
-		<h1>Общие вопросы</h1>
-		<% @consultations.each do |consultation| %>
+		<% @procedures.each do |procedure| %>
 		<div class="consultation">
 			
 		<div class="short">
 		<%= link_to "показать консультацию", "#", :class => 'consultaion_switch open', :id => 'open' %>
-		<p><b>Вопрос:</b> <%= consultation.question %></p>
+		<p><b><%= procedure.title %></b></p>
 		</div>
 		
 		<div class="full" style="display: none;">	
 		<%= link_to "показать консультацию", "#", :class => 'consultaion_switch close', :id => 'close' %>	
-		<p><b>Вопрос:</b> <%= consultation.question %></p>
-		<p><b>Ответ:</b>  <%= consultation.answer %></p>
-		<% unless consultation.products.blank? %>
-		<p><b>Продукты: </b> 
-		  <% consultation.products.each do |product, index| %>
-		  <%= link_to product.title, product %>
-		  <% end %></p>
+		<p><b><%= procedure.title %></b></p>
+		<% procedure.stages.to_enum.with_index(1).each do |stage, index| %>
+		<p><b>Стадия <%= index %>:</b> <%= stage.title %> <br/> <br/> 
+		<% stage.substages.to_enum.with_index(1).each do |substage, index| %>	
+		<b>Этап<%= index %>:</b><%= substage.text %><br/>
+		<% unless substage.product.nil? %>
+		<%= link_to substage.product.title, substage.product %></br></br>
 		<% end %>
+		<% end %>
+		</p>
+		<% end %>
+		
 		</div>
 		
 		</div>
