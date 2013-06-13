@@ -3,4 +3,5 @@ class Brand < ActiveRecord::Base
   has_many :products
   has_many :consultations
   has_many :product_categories
+  has_many :videos
 end

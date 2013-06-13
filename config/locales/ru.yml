@@ -42,6 +42,7 @@ ru:
   Thanks_for_your_order: "Ваш заказ оформлен!"
   Order_not_sent_try_again: "Заказ не отпарвлен, пожалуйста попробуйте еще раз"
   Your_cart_is_empty: "Ваша корзина пуста"
+  other: "Другое"
   activerecord:
     models: 
       admin_user:
@@ -162,6 +163,8 @@ ru:
         text: "Описание"
       video:
         title: "Название"
+        brand: "Категория"
+        brand_id: "Категория"
       city:  
         title: "Название"
       product:
