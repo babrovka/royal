@@ -15,6 +15,14 @@
 	<div class="who">Кто вы?</div> 
 	
 	<%= form_for(resource, :validate => true, :as => resource_name, :url => registration_path(resource), :html => { :class => "register_form", :id => 'register_form' }) do |f| %>
+	
+	<div class="field_wrap">
+	<select name="user[role]">
+	    <% User::ROLES.each do |role| %>
+	        <option value="<%= role %>"><%= t(role) %></option>
+	    <% end %>
+	</select>
+	</div>
 
 	<div class="field_wrap">
 	<%= f.text_field :name, :class => 'form-input', :placeholder => "Ваше имя" %>

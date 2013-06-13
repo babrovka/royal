@@ -30,6 +30,11 @@ module ProductsHelper
   
   def category_title(category)
     ProductCategory.find(category).title
+    
+    if category.nil?
+      return false
+    end
+    
   end
   
   def bronte_link

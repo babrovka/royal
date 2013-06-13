@@ -8,10 +8,11 @@
 		<%= link_to "twitter", "https://twitter.com/AlissiBronteRus", :target => '_blank', :class => 'social_link tw' %>
 		<div class="search">
 		<form id="header_search" accept-charset="UTF-8" action="/search" method="get">
-			<input name="utf8" type="hidden" value="&#x2713;" />
-			<input type="text" name="search" class="search-input" onfocus="if(this.value=='поиск по сайту') this.value='';" onblur="if(this.value=='') this.value='поиск по сайту';" value="поиск по сайту" />
-			<a href="#" class="search-submit" id="header_submit"></a>
-		</form>
+					<input name="utf8" type="hidden" value="&#x2713;" />
+					<input type="text" name="search" class="search-input" onfocus="if(this.value=='поиск по сайту') this.value='';" onblur="if(this.value=='') this.value='поиск по сайту';" value="поиск по сайту" />
+					<a href="#" class="search-submit" id="header_submit"></a>
+				</form>
+		
 		</div>
 		<%= link_to "показать на карте", contacts_path, :class => 'map_link' %>
 		<div class="phone">8 800 100-8079</div>

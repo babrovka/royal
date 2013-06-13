@@ -18,8 +18,5 @@ class User < ActiveRecord::Base
   
   validates :name, :email, :password, :presence => true
   
-  validates_confirmation_of :password, :on => :create
-  validates_confirmation_of :password, :on => :update
-  
   ROLES = %w[professional dealer1 dealer2 dealer3]
 end
