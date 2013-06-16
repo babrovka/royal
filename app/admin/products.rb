@@ -14,7 +14,7 @@ ActiveAdmin.register Product do
    form do |f|  
      f.inputs do
        f.input :title
-       f.input :short_description, :input_html => { :rows => 2  }
+       f.input :short_description, :as => :ckeditor, :label => false, :input_html => { :ckeditor => { :toolbar => 'Mini', :height => 100 } }
        f.input :packing
        f.input :text, :input_html => { :rows => 8  }
        f.input :ingredients, :input_html => { :rows => 2  }
