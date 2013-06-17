@@ -171,7 +171,7 @@ ru:
         title: "Название"
         brand_id: "Бренд"
         short_description: "Краткое описание"
-        packing: "Упаковка"
+        packing: "Объем"
         text: "Описание"
         ingredients: "Ингредиенты"
         visible_professional: "Розничный покупатель"

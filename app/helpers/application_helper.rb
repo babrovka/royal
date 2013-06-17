@@ -60,5 +60,9 @@ module ApplicationHelper
    def devise_mapping
      @devise_mapping ||= Devise.mappings[:user]
    end
+   
+   def markdown(text)
+     Redcarpet.new(text, :hard_wrap).to_html.html_safe
+   end
   
 end

@@ -33,9 +33,12 @@
 	  <div class="packing"><%= @product.short_description %></div>
 	  <div class="line"></div>
 	  <h5>описание</h5>
-	  <div class="text"><%= @product.text %></div>
+	  <div class="text"><%= markdown(@product.text) %></div>
 	  <h5>ингредиенты</h5>
-	  <div class="text"><%= @product.ingredients %></div>
+	  <div class="text"><%= markdown(@product.ingredients) %></div>
+	  <div class="line"></div>
+	  <h5>объем</h5>
+	  <div class="text"><%= markdown(@product.packing) %></div>	
 	  <% if user_signed_in? && current_user.check? %>
 	  <% if product_has_price(@product) == true %>
 	  <h5>цена</h5>

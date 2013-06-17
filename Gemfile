@@ -19,6 +19,8 @@ gem "activeadmin", "~> 0.6.0"
 gem "just-datetime-picker"
 gem "ckeditor", "~> 4.0.4"
 gem 'devise-i18n', :github => 'tigrish/devise-i18n'
+gem 'redcarpet', '1.17.2'
+gem 'gollum'
 
 #deploy
 gem 'capistrano'

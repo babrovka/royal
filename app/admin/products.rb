@@ -14,10 +14,10 @@ ActiveAdmin.register Product do
    form do |f|  
      f.inputs do
        f.input :title
-       f.input :short_description, :as => :ckeditor, :label => false, :input_html => { :ckeditor => { :toolbar => 'Mini', :height => 100 } }
+       f.input :short_description, :input_html => { :rows => 2  }
        f.input :packing
        f.input :text, :input_html => { :rows => 8  }
-       f.input :ingredients, :input_html => { :rows => 2  }
+       f.input :ingredients, :input_html => { :rows => 8  }
        f.input :brand_id, :as => :select, :collection => Brand.all, :include_blank => false
        f.input :product_category_id, :as => :select, :collection => ProductCategory.all, :include_blank => false
      end 
@@ -54,10 +54,10 @@ ActiveAdmin.register Product do
        row :title
        row :packing
        row :text do |row|
-         row.text.html_safe
+         Redcarpet.new(row.text, :hard_wrap).to_html.html_safe
        end
        row :ingredients do |row|
-         row.text.html_safe
+         Redcarpet.new(row.ingredients, :hard_wrap).to_html.html_safe
        end
        row :brand_id
      end
