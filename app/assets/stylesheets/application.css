@@ -883,6 +883,9 @@ h2 {
 	margin-left:20px;
 	float: left;
 	font-size: 14px;
+	width: 170px;
+	height: 30px;
+	overflow: hidden;
 }
 
 #product .recommended-title a, #product .recommended-title a:visited  {
@@ -893,10 +896,13 @@ h2 {
 	color: #1f478b;
 	margin-top: 10px;
 	margin-left:20px;
+	width: 170px;
 	float: left;
 	width: 160px;
 	font-family: PragmaticaC;
 	font-size: 14px;
+	height: 70px;
+	overflow: hidden;
 }
 
 #product .recommended-link {
@@ -908,7 +914,7 @@ h2 {
 	padding-bottom: 5px;
 	padding-top: 7px;
 	width: 110px;
-	margin-top: 45px;
+	margin-top: 10px;
 	margin-right: 20px;
 	text-decoration: none;	
 	text-indent: 10px;

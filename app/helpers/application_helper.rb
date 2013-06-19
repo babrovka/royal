@@ -64,5 +64,14 @@ module ApplicationHelper
    def markdown(text)
      Redcarpet.new(text, :hard_wrap).to_html.html_safe
    end
+   
+   def title
+      base_title = "Royal Beauty"
+      if @title.nil?
+        base_title
+      else
+        "#{@title} | #{base_title}"
+      end
+    end
   
 end

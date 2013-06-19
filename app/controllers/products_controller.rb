@@ -19,6 +19,6 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @articles = Article.order("created_at DESC").limit(3)
     @procedures = @product.procedures
-    @recommended = Product.offset(rand(Product.count)).limit(3)
+    @recommended = Product.limit(3)
   end
 end
