@@ -25,6 +25,7 @@ gem 'gollum'
 #deploy
 gem 'capistrano'
 gem 'unicorn'
+gem 'rvm-capistrano'
 
 gem 'jquery-rails', '~> 2.3.0'
 
@@ -32,5 +33,9 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
+end
+
+group :production do
+  gem 'thin'
 end
 

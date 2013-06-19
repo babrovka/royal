@@ -75,6 +75,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.2)
+    daemons (1.1.9)
     devise (2.2.3)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -82,6 +83,7 @@ GEM
       warden (~> 1.2.1)
     diff-lcs (1.2.4)
     erubis (2.7.0)
+    eventmachine (1.0.3)
     execjs (1.4.0)
       multi_json (~> 1.0)
     fastercsv (1.5.5)
@@ -197,6 +199,8 @@ GEM
     riddle (1.5.6)
     russian (0.6.0)
       i18n (>= 0.5.0)
+    rvm-capistrano (1.2.7)
+      capistrano (>= 2.0.0)
     sanitize (2.0.3)
       nokogiri (>= 1.4.4, < 1.6)
       nokogiri (>= 1.4.4, < 1.6)
@@ -218,6 +222,10 @@ GEM
     therubyracer (0.11.3)
       libv8 (~> 3.11.8.12)
       ref
+    thin (1.5.1)
+      daemons (>= 1.0.9)
+      eventmachine (>= 0.12.6)
+      rack (>= 1.0.0)
     thinking-sphinx (2.0.14)
       activerecord (>= 3.0.3)
       builder (>= 2.1.2)
@@ -260,8 +268,10 @@ DEPENDENCIES
   rails (= 3.2.13)
   redcarpet (= 1.17.2)
   russian (~> 0.6.0)
+  rvm-capistrano
   sass-rails (~> 3.2.3)
   therubyracer
+  thin
   thinking-sphinx (~> 2.0.14)
   uglifier (>= 1.0.3)
   unicorn
