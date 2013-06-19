@@ -48,7 +48,7 @@ Royal::Application.configure do
   config.action_mailer.default_url_options = { :host => 'arteslav.ru' }
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  config.assets.precompile += %w( *.css *.js )
+  config.assets.precompile += %w( *.css *.scss *.js )
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
