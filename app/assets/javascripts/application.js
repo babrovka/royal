@@ -202,6 +202,11 @@ $(document).ready(
 			$("#my_events_link").addClass('active');
 		});
 		
+		$("#saint_print").on('click', function () {
+			$('#saint').print();
+		});
+		
+		
 		
 	
 });

@@ -1016,6 +1016,14 @@ h2 {
 	height: 24px;
 }
 
+#contacts .print_link {
+	display: block;
+	float:right;
+	font-family: PragmaticaC;
+	font-size: 12px;
+	margin-right: 0px;
+}
+
 /*publications*/
 
 .publication {
