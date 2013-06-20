@@ -16,12 +16,9 @@ class Product < ActiveRecord::Base
   
   scope :latest, where(:latest => true)
   
-  define_index do
-    indexes title
-    indexes packing
-    indexes text
-    indexes ingredients
-    indexes short_description
+
+  searchable do
+      text :title, :packing, :text, :ingredients, :short_description
   end
   
   private

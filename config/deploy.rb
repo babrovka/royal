@@ -1,6 +1,5 @@
 require 'rvm/capistrano'
 require 'bundler/capistrano'
-require 'thinking_sphinx/capistrano'
 
 load 'deploy/assets'
 
@@ -38,8 +37,5 @@ namespace :deploy do
   end
 end
 
-before 'deploy:update_code', 'thinking_sphinx:stop'
-after 'deploy:update_code', 'thinking_sphinx:start'
-after 'deploy:update_code', 'thinking_sphinx:rebuild'
 before "deploy:assets:precompile", "copy_database_config"
 after "deploy", "deploy:cleanup"

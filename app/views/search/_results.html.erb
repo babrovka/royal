@@ -2,7 +2,7 @@
 
 <ul class="results">
 	
-	<% for search in @results %>
-	<li><%= link_to search.title, url_for(search) %><p><%= truncate(strip_tags(search.text), length: 400) %></p></li>	
+	<% for product in @results %>
+	<li><%= link_to product.title, product_path(product) %><p><%= truncate(strip_tags(product.text), length: 400) %></p></li>	
 	<% end %>		
 </ul>

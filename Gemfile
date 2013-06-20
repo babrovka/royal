@@ -10,7 +10,8 @@ gem "execjs"
 gem "therubyracer"
 gem "friendly_id", "~> 4.0.9"
 
-gem 'thinking-sphinx'
+gem 'sunspot_rails'
+gem 'sunspot_solr' # optional pre-packaged Solr distribution for use in development
 
 gem 'client_side_validations'
 
@@ -24,7 +25,6 @@ gem 'gollum'
 
 #deploy
 gem 'capistrano'
-gem 'unicorn'
 gem 'rvm-capistrano'
 
 gem 'jquery-rails', '~> 2.3.0'
