@@ -19,6 +19,6 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @articles = Article.order("created_at DESC").limit(3)
     @procedures = @product.procedures
-    @recommended = Product.limit(3)
+    @recommended = Product.latest.limit(3)
   end
 end

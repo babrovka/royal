@@ -172,6 +172,7 @@ ru:
         brand_id: "Бренд"
         short_description: "Краткое описание"
         packing: "Объем"
+        latest: "Новинка"
         text: "Описание"
         ingredients: "Ингредиенты"
         visible_professional: "Розничный покупатель"

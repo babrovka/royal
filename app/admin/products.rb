@@ -5,6 +5,7 @@ ActiveAdmin.register Product do
   
   index do
     column :title
+    column :latest
     column :brand_id do |column|
       Brand.find(column.brand_id).title
     end
@@ -14,6 +15,7 @@ ActiveAdmin.register Product do
    form do |f|  
      f.inputs do
        f.input :title
+       f.input :latest
        f.input :short_description, :input_html => { :rows => 2  }
        f.input :packing
        f.input :text, :input_html => { :rows => 8  }
@@ -52,6 +54,7 @@ ActiveAdmin.register Product do
 
      attributes_table do
        row :title
+       row :latest
        row :packing
        row :text do |row|
          Redcarpet.new(row.text, :hard_wrap).to_html.html_safe
