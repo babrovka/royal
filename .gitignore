@@ -16,3 +16,4 @@
 
 .DS_Store
 /config/database.yml
+/db/sphinx/development
