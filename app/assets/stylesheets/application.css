@@ -1216,6 +1216,38 @@ h2 {
 	margin-top: 20px;
 }
 
+#event .who_goes {
+	color: #336699;
+	font-family: PragmaticaC;
+	font-size: 14px;
+	float: left;
+	margin-top: 45px;
+	margin-left: 20px;
+}
+
+.appointment_button {
+	float: left;
+	display: block;
+	width: 220px;
+	height: 46px;
+	margin-top: 30px;
+	margin-bottom: 40px;
+	text-decoration: none;	
+	text-indent: 25px;
+	height: 100%;
+	padding-top:14px;
+	padding-bottom:11px;
+	color: white;
+	font-family: PragmaticaC;
+	font-size: 16px;
+	background: #c4acd4 url('order-buttom-arrow.png') no-repeat 170px 15px;
+}
+
+.appointment_button:hover {
+	background-color: #712359;
+}
+
+
 
 /*search page*/
 
@@ -1371,6 +1403,7 @@ h2 {
 	color: #6e2257;
 	font-family: PragmaticaC;
 	font-size: 16px;
+	padding-left: 20px;
 }
 
 #personal_area table td span {

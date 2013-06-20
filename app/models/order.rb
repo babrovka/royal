@@ -2,7 +2,6 @@ class Order < ActiveRecord::Base
   attr_accessible :comment
   has_many :line_items,  dependent: :destroy
   belongs_to :user
-  validates :comment, :presence => true
   
 
   def add_line_items_from_cart(cart)

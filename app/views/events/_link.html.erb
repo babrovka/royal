@@ -1,1 +1,1 @@
-<%= appointment_link(event) %>
+<%= appointment_link(event) %><% unless event.users.size < 1 %><div class="who_goes">Количество участников: <%= who_goes(event) %></div><% end %>

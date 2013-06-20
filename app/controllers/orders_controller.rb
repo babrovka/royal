@@ -20,6 +20,7 @@ class OrdersController < InheritedResources::Base
     respond_to do |format|
       if @order.save
         Cart.destroy(current_cart.id)
+        OrderMailer.order_email(current_user, @order).deliver
         format.html { redirect_to account_path, notice: t('Thanks_for_your_order') }
       else
         redirect_to account_path, notice: t('Order_not_sent_try_again')

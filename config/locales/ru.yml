@@ -43,6 +43,7 @@ ru:
   Order_not_sent_try_again: "Заказ не отпарвлен, пожалуйста попробуйте еще раз"
   Your_cart_is_empty: "Ваша корзина пуста"
   other: "Другое"
+  your_order_was_created: "Ваш заказ успешно оформлен"
   activerecord:
     models: 
       admin_user:

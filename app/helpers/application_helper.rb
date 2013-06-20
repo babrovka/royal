@@ -18,7 +18,7 @@ module ApplicationHelper
     if controller_name == "users"
       css = "destroy_event"
     else
-      css = "order_button"
+      css = "appointment_button"
     end
     
     
@@ -27,6 +27,10 @@ module ApplicationHelper
     else
       link_to 'Записаться', events_path(event_id: event), method: :post, :remote => true, :class => css
     end
+  end
+  
+  def who_goes(event)
+     event.users.count
   end
   
   def controller?(*controller)
@@ -73,5 +77,7 @@ module ApplicationHelper
         "#{@title} | #{base_title}"
       end
     end
+    
+
   
 end
