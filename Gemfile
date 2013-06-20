@@ -10,7 +10,7 @@ gem "execjs"
 gem "therubyracer"
 gem "friendly_id", "~> 4.0.9"
 
-gem 'thinking-sphinx', '~> 2.0.14'
+gem 'thinking-sphinx'
 
 gem 'client_side_validations'
 
