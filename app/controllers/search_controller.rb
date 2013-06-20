@@ -1,11 +1,12 @@
 class SearchController < ApplicationController
 
   def search
-    @search = params[:search]
-
-    @results = Product.search do
-      fulltext 'CAVIAR'
+    @query = params[:search]
+    
+    @search = Sunspot.search(Product) do
+      fulltext params[:search]
     end
+    @results = @search.results
     
     
 
@@ -17,5 +18,3 @@ class SearchController < ApplicationController
   end
 
 end
-
-

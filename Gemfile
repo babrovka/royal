@@ -11,7 +11,6 @@ gem "therubyracer"
 gem "friendly_id", "~> 4.0.9"
 
 gem 'sunspot_rails'
-gem 'sunspot_solr' # optional pre-packaged Solr distribution for use in development
 
 gem 'client_side_validations'
 
@@ -33,6 +32,10 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
+end
+
+group :development do
+  gem 'sunspot_solr'
 end
 
 group :production do

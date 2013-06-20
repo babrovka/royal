@@ -1,4 +1,10 @@
-<h3>Вы искали: <%= @search %></h3>
+<h2>Вы искали: <b><%= @query %></b></h2>
+
+<% if @results.blank? %>
+
+<h3>К сожалению, по вашему запросу ничего не найдено...</h3>
+
+<% else %>
 
 <ul class="results">
 	
@@ -6,3 +12,5 @@
 	<li><%= link_to product.title, product_path(product) %><p><%= truncate(strip_tags(product.text), length: 400) %></p></li>	
 	<% end %>		
 </ul>
+
+<% end %>
