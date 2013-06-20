@@ -1,7 +1,10 @@
 ActiveAdmin.register Product do
   menu :parent => I18n.t('catalog')
   config.batch_actions = false
-  config.clear_sidebar_sections!
+  filter :latest
+  filter :brand_id, :collection => proc { Brand.all }, :as => :check_boxes
+  filter :procedures_id, :collection => proc { Brand.all }, :as => :check_boxes
+
   
   index do
     column :title
@@ -9,6 +12,7 @@ ActiveAdmin.register Product do
     column :brand_id do |column|
       Brand.find(column.brand_id).title
     end
+    column :created_at
     default_actions
   end
 

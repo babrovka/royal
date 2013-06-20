@@ -156,6 +156,7 @@ ru:
         products: "Товары"
         check: "Одобрен?"
       procedure:
+        procedures: "Процедуры"
         title: "Название"
         text: "Описание"
       case:
@@ -183,10 +184,11 @@ ru:
         price_dealer1: "Цена для косметолога"
         price_dealer2: "Цена для директора-управляющего"
         price_dealer3: "Цена для специалиста заведения wellness"
-        procedures: "Процедуры"
         cases: "Случаи применения"
         image: "Изображение"
         category_id: "Категория"
+        procedures: "Процедуры"
+        created_at: "Создан"
       question:
         name: "Имя"
         phone: "Телефон"
