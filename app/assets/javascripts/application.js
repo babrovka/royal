@@ -22,6 +22,8 @@
 
 $(document).ready(
 	
+	
+	
     function(){	
 	$(".dynamic_bullshit").on("change", function() {
 	 $('#cart_edit').submit();
@@ -148,13 +150,7 @@ $(document).ready(
 			
 		});
 		
-		$("#partners_link").on('click', function () {	
-			$('.form').show();	
-			$(".layer_bg").show();
-			$(".header").show();
-			$('#register_form').validate();
-			
-		});
+
 		
 		$(".layer_bg, .close").on('click', function () {
 			$(".form").hide();	
@@ -206,7 +202,25 @@ $(document).ready(
 			$('#saint').print();
 		});
 		
+		$("#partners_link").on('click', function () {	
+			$('.form').show();	
+			$(".layer_bg").show();
+			$(".header").show();
+		});
 		
+		$("#registration_link").on('click', function () {	
+			$("#register_form").validate();
+		});
+		
+		
+		registration_link
+		
+		$(document).keyup(function(e) {
+		  if (e.keyCode == 27) { 
+			$(".form").hide();	
+			$(".layer_bg").hide();
+			 }   // esc
+		});
 		
 	
 });

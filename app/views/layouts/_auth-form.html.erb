@@ -25,7 +25,7 @@
 	</div>
 
 	<div class="field_wrap">
-	<%= f.text_field :name, :class => 'form-input', :placeholder => "Ваше имя" %>
+	<%= f.text_field :name, :class => 'form-input', :placeholder => "Ваше имя", :validate => true %>
 	</div>
 	
 	<div class="field_wrap">
@@ -40,8 +40,9 @@
 	<%= f.password_field :password_confirmation, :class => 'form-input', :placeholder => "Пароль еще раз" %>
 	</div>
 	
-	<%= f.text_field :phone, :class => 'form-input phone', :placeholder => "Телефон" %>
-
+	<div class="field_wrap">
+	<%= f.text_field :phone, :class => 'form-input', :placeholder => "Телефон" %>
+	</div>
 	
 	<%= f.text_area :comment, :rows => "10", :placeholder => "Добавить заметку" %>
 

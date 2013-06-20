@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :events, :uniq => true
   has_many :orders
   
-  validates :name, :email, :password, :presence => true, :on => :create
+  validates :name, :email, :password, :phone, :presence => true, :on => :create
   
   ROLES = %w[professional dealer1 dealer2 dealer3]
 end
