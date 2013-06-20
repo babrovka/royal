@@ -1016,12 +1016,13 @@ h2 {
 	height: 24px;
 }
 
-#contacts .print_link {
+#contacts .print_link, #contacts .print_link:hover, #contacts .print_link:visited {
 	display: block;
 	float:right;
 	font-family: PragmaticaC;
 	font-size: 12px;
 	margin-right: 0px;
+	color: #6e2257;
 }
 
 /*publications*/
