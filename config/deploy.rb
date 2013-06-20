@@ -39,7 +39,7 @@ namespace :deploy do
 end
 
 before 'deploy:update_code', 'thinking_sphinx:stop'
-after 'deploy:update_code', 'thinking_sphinx:start'
 after 'deploy:update_code', 'thinking_sphinx:rebuild'
+after 'deploy:update_code', 'thinking_sphinx:start'
 before "deploy:assets:precompile", "copy_database_config"
 after "deploy", "deploy:cleanup"

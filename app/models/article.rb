@@ -7,9 +7,4 @@ class Article < ActiveRecord::Base
   validates :text, :date, :title, :short_text, :presence => true
   validates :short_text, :length => { :maximum => 150 }
   
-  define_index do
-    indexes title
-    indexes text
-  end
-  
 end

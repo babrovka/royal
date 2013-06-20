@@ -16,6 +16,14 @@ class Product < ActiveRecord::Base
   
   scope :latest, where(:latest => true)
   
+  define_index do
+    indexes title
+    indexes packing
+    indexes text
+    indexes ingredients
+    indexes short_description
+  end
+  
   private
   
   def ensure_not_referenced_by_any_line_item
