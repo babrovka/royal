@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
   has_many :orders
   
   validates :name, :email, :password, :phone, :presence => true, :on => :create
+
   
   ROLES = %w[professional dealer1 dealer2 dealer3]
 end

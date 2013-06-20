@@ -30,7 +30,7 @@
 	</div>
 	
 	<div class="field_wrap">
-	<%= f.password_field :password, :class => 'form-input', :placeholder => "Пароль" %>
+	<%= f.password_field :password, :class => 'form-input', :placeholder => "Пароль", :validate => { :presence => true, :confirmation => true }  %>
 	</div>
 	
 	<div class="field_wrap">
