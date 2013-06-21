@@ -30,7 +30,7 @@
 	</div>
 	
 	<div class="field_wrap">
-	<%= f.password_field :password, :class => 'form-input', :placeholder => "Пароль", :validate => { :presence => true, :confirmation => true }  %>
+	<%= f.password_field :password, :class => 'form-input', :placeholder => "Пароль"  %>
 	</div>
 	
 	<div class="field_wrap">
@@ -39,6 +39,14 @@
 	
 	<div class="field_wrap">
 	<%= f.text_field :phone, :class => 'form-input', :placeholder => "Телефон" %>
+	</div>
+	
+	<div class="field_wrap">
+	<%= f.collection_select(:region_id, Region.all, :id, :name, :prompt => t('select_your_region')) %>
+	</div>
+	
+	<div class="field_wrap">
+	<%= f.text_field :own_region, :class => 'form-input', :placeholder => "Не нашли свой город в списке, введите его сюда!" %>
 	</div>
 	
 	<%= f.text_area :comment, :rows => "10", :placeholder => "Добавить заметку" %>

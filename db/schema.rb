@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130620083246) do
+ActiveRecord::Schema.define(:version => 20130621124629) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -247,6 +247,12 @@ ActiveRecord::Schema.define(:version => 20130620083246) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "regions", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "stages", :force => true do |t|
     t.string   "title"
     t.integer  "procedure_id"
@@ -288,6 +294,8 @@ ActiveRecord::Schema.define(:version => 20130620083246) do
     t.string   "from"
     t.text     "comment"
     t.boolean  "education"
+    t.integer  "region_id"
+    t.string   "own_region"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

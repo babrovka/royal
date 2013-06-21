@@ -44,6 +44,7 @@ ru:
   Your_cart_is_empty: "Ваша корзина пуста"
   other: "Другое"
   your_order_was_created: "Ваш заказ успешно оформлен"
+  select_your_region: "Откуда вы?"
   activerecord:
     models: 
       admin_user:
@@ -106,6 +107,8 @@ ru:
         password: "Пароль"   
         password_confirmation: "Подтверждение пароля"
         check: "Подтвержден"
+        region_id: "Регион"
+        own_region: "Регион"
       admin_user:
         password: "Пароль"   
         password_confirmation: "Подтверждение пароля"

@@ -10,6 +10,14 @@ ActiveAdmin.register User do
       t(column.role)
     end
     column :check
+    column :region_id do |column|
+      if column.region_id?
+        Region.find(column.region_id).name
+      else
+        "-"
+      end
+    end
+    column :own_region
     default_actions
   end
   

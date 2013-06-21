@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+require 'csv'
+
+puts "Importing regions..."
+CSV.foreach(Rails.root.join("regions.csv"), headers: true) do |row|
+  Region.create! do |region|
+    region.id = row[0]
+    region.name = row[1]
+  end
+end
