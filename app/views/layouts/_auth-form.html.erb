@@ -44,6 +44,14 @@
 	<%= f.text_field :phone, :class => 'form-input', :placeholder => "Телефон" %>
 	</div>
 	
+	<div class="field_wrap">
+	<%= f.collection_select(:region_id, Region.all, :id, :name, :prompt => t('select_your_region')) %>
+	</div>
+	
+	<div class="field_wrap">
+	<%= f.text_field :own_region, :class => 'form-input', :placeholder => "Не нашли свой город в списке, введите его сюда!" %>
+	</div>
+	
 	<%= f.text_area :comment, :rows => "10", :placeholder => "Добавить заметку" %>
 
 	<%= link_to 'Зарегистрироваться', "#", :onclick => "$('#register_form').submit()", :class => "form-submit" %>
