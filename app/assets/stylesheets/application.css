@@ -19,6 +19,11 @@
 
 /*common*/
 
+@media screen and (min-width : 768px) {
+    /* Styles, for example to increase font size */
+    body { font-size: 120%; }
+}
+
 .fullscreen,.fotorama__wrap,.fotorama__wrap_style_fade .fotorama__frame,.fotorama__thumbs_previews{
 	background:none!important;
 }
@@ -193,15 +198,13 @@ textarea:focus, input:focus, select:focus {
 	color: #6e2257;
 	display: block;
 	text-decoration: none;
-	padding: 17px 15px 16px;
+	padding: 17px 15px 16px 15px;
 	float: left;
 	text-transform: uppercase;
-	font-size: 14px;
-	margin-right: 0px;
 }
 
 #topmenu a:last-child {
-	margin-right: 0px;
+	float: right;
 }
 
 #topmenu a:hover {
