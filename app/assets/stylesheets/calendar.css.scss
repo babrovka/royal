@@ -41,13 +41,17 @@
   .today { background-color: #cf9f51; }
 }
 
+.date-inner {
+	position:relative;
+}
+
 #events {
 	
 }
 
 #events ul {
-  bottom: 15px;
-  left: 10px;
+  bottom: -30px;
+  left: 3px;
   position: absolute;
   font-size: 11px;
   list-style: none;
@@ -125,7 +129,7 @@
 .bubble {
 	display: none;
 	left: 0px;
-	top: 90px;
+	top: 70px;
 	text-align: left;
 	font-family: PragmaticaC;
 	font-weight: normal;

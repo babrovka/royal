@@ -107,7 +107,7 @@ $(document).ready(
 		
 
 		$(".calendar td").on('click', function () {				
-			bubble = $(this).children().last();
+			bubble = $(this).find('.bubble');
 			bubble.show();
 			$('.bubble').not(bubble).hide();
 			
