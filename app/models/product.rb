@@ -17,9 +17,7 @@ class Product < ActiveRecord::Base
   scope :latest, where(:latest => true)
   
 
-  searchable do
-      text :title, :packing, :text, :ingredients, :short_description
-  end
+
   
   private
   
