@@ -87,6 +87,7 @@ GEM
     execjs (1.4.0)
       multi_json (~> 1.0)
     fastercsv (1.5.5)
+    fattr (2.2.1)
     formtastic (2.2.1)
       actionpack (>= 3.0)
     friendly_id (4.0.9)
@@ -149,6 +150,8 @@ GEM
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
     nokogiri (1.5.10)
+    options (2.3.0)
+      fattr
     orm_adapter (0.4.0)
     paperclip (3.4.1)
       activemodel (>= 3.0.0)
@@ -161,6 +164,9 @@ GEM
     polyglot (0.3.3)
     posix-spawn (0.3.6)
     pr_geohash (1.0.0)
+    progress_bar (0.4.0)
+      highline (~> 1.6.1)
+      options (~> 2.3.0)
     pygments.rb (0.5.0)
       posix-spawn (~> 0.3.6)
       yajl-ruby (~> 1.1.0)
@@ -264,6 +270,7 @@ DEPENDENCIES
   just-datetime-picker
   mysql2
   paperclip
+  progress_bar
   rails (= 3.2.13)
   redcarpet (= 1.17.2)
   russian (~> 0.6.0)

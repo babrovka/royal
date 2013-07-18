@@ -21,6 +21,7 @@ gem "ckeditor", "~> 4.0.4"
 gem 'devise-i18n', :github => 'tigrish/devise-i18n'
 gem 'redcarpet', '1.17.2'
 gem 'gollum'
+gem 'progress_bar'
 
 #deploy
 gem 'capistrano'
