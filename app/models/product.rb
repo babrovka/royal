@@ -16,7 +16,9 @@ class Product < ActiveRecord::Base
   
   scope :latest, where(:latest => true)
   
-
+  searchable do
+    text :title, :text
+  end
 
   
   private
