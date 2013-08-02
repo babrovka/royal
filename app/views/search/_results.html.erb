@@ -1,4 +1,4 @@
-<h2>Вы искали: <b><%= @query %></b></h2>
+<h4>Вы искали фразу: <b><%= @query %></b></h4>
 
 <% if @results.blank? %>
 
@@ -6,7 +6,7 @@
 
 <% else %>
 
-<ul class="results">
+<ol class="results">
 	
 	<% for product in @results %>
 	<li><%= link_to product.title, product_path(product) %><p><%= truncate(strip_tags(product.text), length: 400) %></p></li>	

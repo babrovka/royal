@@ -1263,11 +1263,38 @@ h2 {
 
 /*search page*/
 
-#search_page h3 {
+#search_page {
 	font-family: PragmaticaC;
+}
+
+#search_page h3 {
 	font-weight: normal;
 	color: #6e2257;
 	font-size: 14px;
+}
+
+#search_page h4 {
+	font-weight: normal;
+	color: #6e2257;
+	font-size: 14px;
+}
+
+#search_page .results {
+	font-size: 18px;
+	color: #6e2257;
+}
+
+#search_page .results a{
+	text-decoration: none;
+}
+
+#search_page .results a:hover{
+	text-decoration: underline;
+}
+
+#search_page .results p {
+	font-size: 14px;
+	color: #553d59;
 }
 
 /*sign-up*/
