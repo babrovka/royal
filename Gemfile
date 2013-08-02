@@ -11,6 +11,7 @@ gem "therubyracer"
 gem "friendly_id", "~> 4.0.9"
 
 gem 'sunspot_rails'
+gem 'sunspot_solr'
 
 gem 'client_side_validations'
 
@@ -37,9 +38,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-group :development do
-  gem 'sunspot_solr'
-end
 
 group :production do
   gem 'thin'
