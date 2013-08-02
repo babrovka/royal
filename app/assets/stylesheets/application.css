@@ -1285,10 +1285,12 @@ h2 {
 }
 
 #search_page .results a{
+	color: #6e2257;
 	text-decoration: none;
 }
 
 #search_page .results a:hover{
+	color: #6e2257;
 	text-decoration: underline;
 }
 
