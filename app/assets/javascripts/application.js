@@ -43,12 +43,21 @@ $(document).ready(
 	$('#show_photo').on("click", function() {
 	  $('#video-gallery').hide();	
       $('#photo-gallery').show();
+      $('#publications').hide();
     });
 
 	$('#show_video').on("click", function() {
 	  $('#photo-gallery').hide();
 	  $('#video-gallery').show();	
+	  $('#publications').hide();
     });
+
+	$('#show_publications').on("click", function() {
+	  $('#photo-gallery').hide();
+	  $('#video-gallery').hide();	
+	  $('#publications').show();
+    });
+
 
 
 	

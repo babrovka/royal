@@ -9,12 +9,14 @@
 	    <div class="span9">
 		  <%= link_to "Фотогалерея", "#", :class => 'switch-link', :id => 'show_photo' %>
 		  <%= link_to "Видеогалерея", "#", :class => 'switch-link', :id => 'show_video' %>
+		  <%= link_to "Публикации", "#", :class => 'switch-link', :id => 'show_publications' %>
 		</div>
 	  </div>
 	
 	  <div class="row">  
 		<%= render 'media/photo-gallery' %>
 		<%= render 'media/video-gallery' %>
+		<%= render 'media/publications' %>
 	  </div>
 	
 	</div>
