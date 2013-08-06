@@ -37,6 +37,20 @@ namespace :deploy do
   end
 end
 
+namespace(:thin) do
+  task :stop do
+    run "thin stop -C /etc/thin/royal.yml"
+   end
+  
+  task :start do
+    run "thin start -C /etc/thin/royal.yml"
+  end
+
+  task :restart do
+    run "thin restart -C /etc/thin/royal.yml"
+  end
+end
+
 namespace :deploy do
   task :setup_solr_data_dir do
     run "mkdir -p #{shared_path}/solr/data"
