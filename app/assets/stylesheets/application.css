@@ -706,6 +706,10 @@ h2 {
 	background: url('pb_drbelter.png') top;
 }
 
+#products .image-link.th {
+	background: url('pb_thalissi.png') top;
+}
+
 #products .image-link:hover {
 	background-position: 0 -30px;
 }

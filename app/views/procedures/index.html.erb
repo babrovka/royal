@@ -3,31 +3,10 @@
     <div class="span6">
       <h1>процедуры</h1>
 	</div>
-<!--
-
-	<div class="span2">
-		<div class="quick-search">Не нашли ответа?</div>
-	</div>
-	
-	<div class="span4">
-		<div class="search">
-		<form id="footsearch" accept-charset="UTF-8" action="/search" method="get">
-			<input name="utf8" type="hidden" value="&#x2713;" />
-			<input type="text" name="testfind" class="search-input" onfocus="if(this.value=='Задайте свой вопрос') this.value='';" onblur="if(this.value=='') this.value='Задайте свой вопрос';" value="Задайте свой вопрос" />
-			<a href="/" class="search-submit"></a>
-		</form>
-		</div>
-	</div>
-	-->
-
-    <div class="span12"><div class="line"></div></div>
-
-	<div class="span4 brand" id="bronte"><%= link_to "Bronte", products_path(:brand_id => "1"), :class => 'image-link br' %></div>
-	<div class="span4 brand" id="belter"><%= link_to "Belter", products_path(:brand_id => "2"), :class => 'image-link be' %></div>
-	<div class="span4 brand"><%= link_to "Процедуры", procedures_path, :class => 'normal-link active' %></div>
+    
 
 	<div class="span12">
-	  <div id="cosultations_frame">
+	  <div id="cosultations_frame" style="margin-top: 0px;">
 		<% @procedures.each do |procedure| %>
 		<div class="consultation">
 			

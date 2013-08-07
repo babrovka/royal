@@ -1,7 +1,8 @@
 class ProductsController < ApplicationController
   def index
     @cart = current_cart
-      
+    
+  
     if params[:brand_id]
       @products = Product.where(:brand_id => params[:brand_id])
     else

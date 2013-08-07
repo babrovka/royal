@@ -39,13 +39,18 @@ module ProductsHelper
     
   
   def bronte_link
-    class_name = params[:brand_id] == "2" ? 'image-link br' : 'image-link br active'
+    class_name = params[:brand_id] == "1" || params[:brand_id] == nil ? 'image-link br active' : 'image-link br'
     link_to "Bronte", products_path(:brand_id => "1"), :class => class_name, remote: true
   end
   
   def belter_link
     class_name = params[:brand_id] == "2" ? 'image-link be active' : 'image-link be'
     link_to "Belter", products_path(:brand_id => "2"), :class => class_name, remote: true
+  end
+  
+  def thalissi_link
+    class_name = params[:brand_id] == "3" ? 'image-link th active' : 'image-link th'
+    link_to "Thalissi", products_path(:brand_id => "3"), :class => class_name, remote: true
   end
   
   
