@@ -728,6 +728,9 @@ h2 {
 	color: #553d59;
 	font-family: PragmaticaCondC;
 	font-size: 16px;
+	width: 200px;
+	height: 33px;
+	overflow: hidden;
 }
 
 #products .product_image_wrap {
