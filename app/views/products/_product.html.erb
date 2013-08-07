@@ -1,6 +1,11 @@
 <div class="span3">
 	<div class="catalog-product">
-		<div class="product_image" <% unless product.product_images.blank? %>style="background-image: url(<%= product.product_images.first.image.url(:catalog) %>);"<% end %>>
+		<div class="product_image"
+		  <% if product.product_images.blank? %>
+		    style="background-image: url('/assets/noimage.png');"
+		  <% else %>
+		    style="background-image: url(<%= product.product_images.first.image.url(:catalog) %>);"
+		  <% end %>>
 			  <div class="product_image_wrap">
 				<%= link_to "Подробней <br/> о товаре".html_safe, product, :class => 'catalog_product_link' %>
 			  </div>
