@@ -2,7 +2,16 @@
 	
 		<div class="row">
 		<% @publications.each do |publication| %>
-	    <div class="span22 publication"><%= link_to image_tag(publication.image.url(:thumb)), publication.file.url(:original, false), :target => '_blank' %><%= link_to publication.title, publication.file.url(:original, false), :target => '_blank', :class => 'publication_link' %></div>
+	    <div class="span22 publication">
+	
+			<%= link_to publication.file.url(:original, false), :target => '_blank' do %>
+			
+			<div class="publication_image"><%= image_tag(publication.image.url(:thumb)) %></div>
+			<div class="publication_image_hover"><img src="/assets/pdf_downl.png"></div>
+	
+			<% end %>
+	
+			<%= link_to publication.title, publication.file.url(:original, false), :target => '_blank', :class => 'publication_link' %></div>
 		<% end %>
 		</div>
 	

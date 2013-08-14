@@ -60,6 +60,15 @@ $(document).ready(
 
 
 
+	$(".publication").on("mouseover",function () {
+		$(this).find('.publication_image_hover').show();
+	});
+	
+
+	$(".publication").mouseleave(function () {
+		$('.publication_image_hover').hide();
+	});
+
 	
 	
 	  $('.open').on("click", function() {

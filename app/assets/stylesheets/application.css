@@ -1071,6 +1071,18 @@ h2 {
 	color: #d2691e;
 }
 
+.publication {
+	position: relative;
+}
+
+.publication_image_hover {
+	display: none;
+	z-index: 2;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
 /*media-zone*/
 
 #media-zone .switch-link {
