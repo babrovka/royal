@@ -5,10 +5,10 @@
 		<%= nav_link "главная", "/" %>
 		<%= nav_link "о нас", about_path %>
 		<%= link_to "Продукция", products_path, :class => ('active' if controller?("products")) %>
+		<%= nav_link "процедуры", procedures_path %>
 		<%= link_to "Студия профессионального роста", events_path, :class => ('active' if controller?("events")) %>
 		<%= nav_link "Консультации технолога", consultations_path %>
 		<%= link_to "Медиа зона", media_path, :class => ('active' if controller?("media")) %>
-		<%= nav_link "процедуры", procedures_path %>
 		<%= nav_link "Контакты", contacts_path %>
 	  </div>
     </div>

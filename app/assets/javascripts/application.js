@@ -157,9 +157,16 @@ $(document).ready(
 				$('#belter-bubble').show();
 			});
 			
+		});	
+		
+		$('#bronte-bubble').on('click', function () {
+			window.location = '/products?brand_id=1';
 		});
 		
-
+		$('#belter-bubble').on('click', function () {
+			window.location = '/products?brand_id=2';
+		});
+		
 		
 		$(".layer_bg, .close").on('click', function () {
 			$(".form").hide();	
