@@ -28,6 +28,10 @@
   }
 
   td:hover {
+	color: white;
+  }
+
+  td.with_events {
     background-position: left -192px;
 	color: white;
   }
