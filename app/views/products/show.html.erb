@@ -11,10 +11,33 @@
   <div class="row">
 	
     <div class="span4">
-	  <div class="product_image" <% unless @product.product_images.blank? %>style="background-image: url(<%= @product.product_images.first.image.url(:product) %>);"<% end %>>
-		  <div class="product_image_wrap">
+	
+		<a class="fancybox"  href="<%= @product.product_images.first.image.url %>" data-fancybox-group="gallery">
+		   <div class="product_image" 
+				<% unless @product.product_images.blank? %>style="background-image: url(<%= @product.product_images.first.image.url(:product) %>);"<% end %>>
+			  <div class="product_image_wrap">
+			  </div>
+
 		  </div>
-	  </div>
+		</a>
+
+	
+		<% @product.product_images.each_with_index do |product_image, index| %>
+		
+			<% if index == 0 %>
+		        <%= nil %>
+		
+			<% else %>
+			
+			<a class="fancybox" style="display: none;" href="<%= product_image.image.url %>" data-fancybox-group="gallery">
+			<%= image_tag product_image.image.url(:ico) %>
+			</a>
+			
+		    <% end %>
+		
+
+		
+		<% end %>
 	
 	  <% if user_signed_in? && current_user.check? && product_has_price(@product) == true %>
 	  <%= link_to 'Заказать товар', line_items_path(product_id: @product), remote: true, :class => 'order_button', :method=> :post %>

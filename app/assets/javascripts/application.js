@@ -16,6 +16,9 @@
 //= require jquery_ujs
 //= require rails.validations
 //= require fotorama
+//= require jquery.mousewheel-3.0.6.pack
+//= require jquery.fancybox
+//= require jquery.fancybox.pack
 //= require_self
 
 
@@ -246,6 +249,11 @@ $(document).ready(
 			$(".layer_bg").hide();
 			 }   // esc
 		});
+		
+	    $(document).ready(function() {
+	        $('.fancybox').fancybox();
+	    });
+
 		
 	
 });
