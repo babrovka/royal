@@ -110,6 +110,7 @@ $(document).ready(
 	  });
 	
 	
+/*
 		$('#header_submit').on("click", function() {
 			$('#header_search').submit();
 		});
@@ -117,6 +118,8 @@ $(document).ready(
 		$('#quick_submit').on("click", function() {
 			$('#quick_search').submit();
 		});
+*/
+
 		
 		
 		$("#event_city_select").change(function () {		
