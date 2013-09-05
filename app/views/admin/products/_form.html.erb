@@ -1,0 +1,51 @@
+<%= semantic_form_for [:admin, @product], :html => {:multipart => true} do |f| %>
+
+
+<%= f.inputs do %>
+<%= f.input :title %>
+<%= f.input :latest %>
+<%= f.input :short_description, :input_html => { :rows => 2  } %>
+<%= f.input :packing %>
+<%= f.input :text, :input_html => { :rows => 8  } %>
+<%= f.input :ingredients, :input_html => { :rows => 8  } %>
+<%= f.input :brand_id, :as => :select, :collection => Brand.all, :include_blank => false %>
+<%= f.input :product_category_id, :as => :select, :collection => ProductCategory.all, :include_blank => false %>
+<% end %>
+
+<%= f.inputs t('access') do %>
+<%= f.input :visible_professional  %>
+<%= f.input :visible_dealer1 %>
+<%= f.input :visible_dealer2 %>
+<%= f.input :visible_dealer3 %>
+<%= f.input :price_dealer1 %>
+<%= f.input :price_dealer2 %>
+<%= f.input :price_dealer3 %>
+<% end %>
+    
+<%= f.inputs t('procedures') do %>
+<%=  f.input :procedures, :as => :check_boxes  %>
+<% end %>
+
+<%= f.inputs t('images') do %>
+<div style="margin-left: 25px;">
+<%= file_field_tag("product_product_images_image", multiple: true, name: "product[product_images_attributes][][image]") %>
+</div>
+<% end %>
+
+<%= f.inputs t('images') do %>
+<div id="album_photos" style="margin-left: 25px;">
+<%= render :partial => 'product_images', :locals => { :@product => @product } %>
+</div>
+<% end %>
+
+<%= f.inputs t('cases') do %>
+<%= f.input :cases, :as => :check_boxes  %>
+<% end %>    
+
+
+<%= f.actions %>   
+  
+
+
+<% end %>
+

@@ -5,6 +5,7 @@ ru:
   properties: "Свойства"
   title: "Название"
   image: "Изображение"  
+  images: "Изображения"
   event_type: "Тип мероприятия"
   recipe_type: "Тип рецепта"
   front_images: "Изображение для слайдера"
