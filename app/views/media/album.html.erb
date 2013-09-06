@@ -12,7 +12,7 @@
   <div class="row">
 	<div class="span12">
 
-		<div class="fotorama" data-width="940">
+		<div class="fotorama" data-width="940" data-allowfullscreen="true" data-keyboard="true">
 			<% @album.album_images.each do |image| %>
 			<%= image_tag(image.image.url(:medium)) %>
 			<% end %>

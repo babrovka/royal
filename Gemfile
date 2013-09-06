@@ -13,6 +13,8 @@ gem "friendly_id", "~> 4.0.9"
 gem 'sunspot_rails'
 gem 'sunspot_solr'
 
+gem 'fotoramajs'
+
 gem 'client_side_validations'
 
 #back-end

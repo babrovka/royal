@@ -90,6 +90,9 @@ GEM
     fattr (2.2.1)
     formtastic (2.2.1)
       actionpack (>= 3.0)
+    fotoramajs (4.3.3)
+      jquery-rails (>= 2.1.0)
+      sprockets (>= 2)
     friendly_id (4.0.9)
     github-markdown (0.5.3)
     github-markup (0.7.5)
@@ -264,6 +267,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise-i18n!
   execjs
+  fotoramajs
   friendly_id (~> 4.0.9)
   gollum
   jquery-rails (~> 2.3.0)
