@@ -1,0 +1,25 @@
+<%= semantic_form_for [:admin, @album], :html => {:multipart => true} do |f| %>
+
+
+<%= f.inputs do %>
+<%= f.input :title %>
+<% end %>
+
+<%= f.inputs t('images') do %>
+<div style="margin-left: 25px;">
+<%= file_field_tag("album_album_images_image", multiple: true, name: "album[album_images_attributes][][image]") %>
+</div>
+<% end %>
+
+<%= f.inputs t('images') do %>
+<div id="album_photos" style="margin-left: 25px;">
+<%= render :partial => 'album_images', :locals => { :@album => @album } %>
+</div>
+<% end %>
+
+<%= f.actions %>   
+  
+
+
+<% end %>
+

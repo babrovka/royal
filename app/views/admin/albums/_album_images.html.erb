@@ -1,0 +1,9 @@
+<% @album.album_images.each do |album_image| %>
+<div class="album_element" id="<%= album_image.id %>" onMouseOut="$(this).children('.image_caption').hide();" onmouseover="$(this).children('.image_caption').show();">
+<div class="image_caption album" style="display: none;">
+	<%= link_to 'Удалить', admin_album_album_image_path(@album, album_image),
+	            :confirm => 'Вы уверены?', :method => :delete, :class => 'image_destroy', :remote => true %>
+</div>
+<%= image_tag album_image.image.url(:thumb), :class => 'product__image', :id => album_image.id %>
+</div>
+<% end %>
