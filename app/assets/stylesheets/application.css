@@ -1182,25 +1182,24 @@ h2 {
 #cosultations_frame .short {
 	padding-top: 10px;
 	padding-right: 15px;
-	padding-bottom: 60px;
+	padding-bottom: 20px;
 
 }
 
 .consultaion_open_link {
 	display: block;
-	height: 24px;
 	float: left;
 	text-decoration: none;
 	color: #553d59;
 	line-height: 1.5;
 	padding-left: 40px;
-	background: url('drop_arrow.png') no-repeat top left;
+	background: url('drop_arrow_normal.png') no-repeat top left;
 }
 
 .consultaion_open_link:hover {
 	text-decoration: underline;
 	color: #6e2257;
-	background: url('drop_arrow.png') no-repeat bottom left;
+	background: url('drop_arrow_hover.png') no-repeat top left;
 }
 
 

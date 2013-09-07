@@ -81,12 +81,13 @@ $(document).ready(
 			full.show();
 			$(".full").not(full).hide();
 	  		$(".short").not(small).show();
+	
 	  	  });
 	
 		  $('.close').on("click", function() {
 				$(this).parent().parent().find('.short').show();
 				$(this).parent().hide();
-
+				
 		  	  });
 	
 	
