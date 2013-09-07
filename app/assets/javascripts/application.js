@@ -73,41 +73,59 @@ $(document).ready(
 	});
 
 	
+	/*publications*/
 	
-	  $('.open').on("click", function() {
-		
-		height = $(this).parent().next().height();
-		self = $(this).parent().height();
-		
-		$(this).parent().css('height', self + height + 'px');
-		$(this).parent().next().show();
-		
-		panel = $(this).parent().next()
-		
-		/*$('.full').not(panel).hide();*/
-		
-		$(".full").not(panel).each(function() {
-		  $(this).hide();
-		  height = $(this).prev().height();
-		  self = $(this).height();
-		  $(this).prev().css('height', height - self + 'px')
-		  
-		});
+	  $('.open').on("click", function() {	
+			small = $(this).parent().hide()
+			full = $(this).parent().next()
+			full.show();
+			$(".full").not(full).hide();
+	  		$(".short").not(small).show();
+	  	  });
 	
-			return false
-	  });
+		  $('.close').on("click", function() {
+				$(this).parent().parent().find('.short').show();
+				$(this).parent().hide();
 
-	  $('.close').on("click", function() {
-		  height = $(this).parent().height();
-		  self = $(this).parent().prev().height();
-		
-		  
-		
-		  $(this).parent().prev().css('height', self - height + 'px');
-	      $(this).parent().hide();
+		  	  });
 	
-		return false
-	  });
+	
+	  /*
+	  $('.open').on("click", function() {
+	  		
+	  		height = $(this).parent().next().height();
+	  		self = $(this).parent().height();
+	  		
+	  		$(this).parent().css('height', self + height + 'px');
+	  		$(this).parent().next().show();
+	  		
+	  		panel = $(this).parent().next()
+	  		
+
+	  		
+	  		$(".full").not(panel).each(function() {
+	  		  $(this).hide();
+	  		  height = $(this).prev().height();
+	  		  self = $(this).height();
+	  		  $(this).prev().css('height', height - self + 'px')
+	  		  
+	  		});
+	  	
+	  			return false
+	  	  });
+
+	  	  $('.close').on("click", function() {
+	  		  height = $(this).parent().height();
+	  		  self = $(this).parent().prev().height();
+	  		
+	  		  
+	  		
+	  		  $(this).parent().prev().css('height', self - height + 'px');
+	  	      $(this).parent().hide();
+	  	
+	  		return false
+	  	  });*/
+	  
 	
 	
 /*

@@ -11,22 +11,22 @@
 		<div class="consultation">
 			
 		<div class="short">
-		<%= link_to "показать консультацию", "#", :class => 'consultaion_switch open', :id => 'open' %>
-		<p><b><%= procedure.title %></b></p>
+		<%= link_to procedure.title, "#", :class => 'consultaion_open_link open' %>
 		</div>
 		
 		<div class="full" style="display: none;">	
-		<%= link_to "показать консультацию", "#", :class => 'consultaion_switch close', :id => 'close' %>	
-		<p><b><%= procedure.title %></b></p>
+		<%= link_to "свернуть", "#", :class => 'consultaion_close_link close' %>	
+		<div class="title"><%= procedure.title %></div>
 		<% procedure.stages.to_enum.with_index(1).each do |stage, index| %>
-		<p><b>Стадия <%= index %>:</b> <%= stage.title %> <br/> <br/> 
+		<p><b>Стадия <%= index %>:</b> <%= stage.title %> <br/> <br/>
 		<% stage.substages.to_enum.with_index(1).each do |substage, index| %>	
-		<b>Этап<%= index %>:</b><%= substage.text %><br/>
+		Этап<%= index %>:<br><%= substage.text %><br>
+		
 		<% unless substage.product.nil? %>
-		<%= link_to substage.product.title, substage.product %></br></br>
+		Продукты: <%= link_to substage.product.title, substage.product %></p>
 		<% end %>
 		<% end %>
-		</p>
+		
 		<% end %>
 		
 		</div>

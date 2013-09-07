@@ -1167,6 +1167,7 @@ h2 {
 	margin-top: 60px;
 	color: #553d59;
 	font-family: PragmaticaC;
+	position: relative;
 }
 
 #cosultations_frame h1 {
@@ -1174,57 +1175,95 @@ h2 {
 	color: #6e2257;
 }
 
-#cosultations_frame p {
-	margin-top: 0px;
-}
-
-.consultaion_switch {
-	display: block;
-	width: 24px;
-	height: 24px;
-	text-indent: -99999px;
-	float: left;
-	margin-right: 20px;
-	margin-left: -44px;
-}
-
-.consultaion_switch.open {
-	background: url('drop_arrow.png') top;
-}
-
-.consultaion_switch.open:hover {
-	background-position: bottom;
-}
-
-.consultaion_switch.close {
-	
-	background: url('close-arrow.png') no-repeat 10px 10px;
-}
-
-#cosultations_frame .short {
-	padding-top: 15px;
-	padding-right: 15px;
-	padding-left: 44px;
-	padding-bottom: 20px;
-}
-
-#cosultations_frame .full {
-	background-color: #f9f5e7;
-	padding-top: 15px;
-	padding-right: 15px;
-	padding-left: 44px;
-	padding-bottom: 50px;
-	-moz-border-radius: 8px;
-	border-radius: 8px;
-	position: absolute;
-	top: 0;
-	z-index: 99;
-	width: 880px;
-}
-
 .consultation {
 	position: relative;
 }
+
+#cosultations_frame .short {
+	padding-top: 10px;
+	padding-right: 15px;
+	padding-bottom: 60px;
+
+}
+
+.consultaion_open_link {
+	display: block;
+	height: 24px;
+	float: left;
+	text-decoration: none;
+	color: #553d59;
+	line-height: 1.5;
+	padding-left: 40px;
+	background: url('drop_arrow.png') no-repeat top left;
+}
+
+.consultaion_open_link:hover {
+	text-decoration: underline;
+	color: #6e2257;
+	background: url('drop_arrow.png') no-repeat bottom left;
+}
+
+
+.consultaion_close_link {
+	margin-left: -33px;
+	display: block;
+	height: 8px;
+	text-indent: 35px;
+	float: left;
+	color: #c4acd4;
+	font-size: 12px;
+	background: url('close-arrow.png') no-repeat top left;
+}
+
+.consultaion_close_link:hover {
+	color: #553d59;
+	background: url('close-arrow.png') no-repeat bottom left;
+}
+
+
+
+
+
+#cosultations_frame .full {
+
+	margin-left: -10px;
+	margin-bottom: 20px;
+	background-color: #f9f5e7;
+	padding-top: 15px;
+	padding-right: 15px;
+	padding-left: 50px;
+	padding-bottom: 20px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	top: 0;
+	z-index: 99;
+	width: 880px;
+	font-size: 14px;
+}
+
+#cosultations_frame .full a {
+	color: #c4acd4;
+}
+
+#cosultations_frame .full a:hover {
+	color: #6e2257;
+}
+
+
+
+
+
+
+
+#cosultations_frame .full .title {
+	color: #553d59;
+	font-size: 18px;
+	margin-top: 40px;
+	margin-bottom: 30px;
+}
+
+
+
 
 /*events*/
 
