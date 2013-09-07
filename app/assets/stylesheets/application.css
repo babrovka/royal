@@ -1176,7 +1176,8 @@ h2 {
 }
 
 .consultation {
-	position: relative;
+	clear: both;
+	
 	
 }
 
