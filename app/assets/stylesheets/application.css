@@ -1177,12 +1177,13 @@ h2 {
 
 .consultation {
 	position: relative;
+	
 }
 
 #cosultations_frame .short {
 	padding-top: 10px;
 	padding-right: 15px;
-	padding-bottom: 20px;
+	padding-bottom: 40px;
 
 }
 
@@ -1224,7 +1225,7 @@ h2 {
 
 
 #cosultations_frame .full {
-
+	margin-top: 30px;
 	margin-left: -10px;
 	margin-bottom: 20px;
 	background-color: #f9f5e7;
