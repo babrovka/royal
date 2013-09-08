@@ -724,7 +724,7 @@ h2 {
 	margin-top: 20px;
 }
 
-.catalog-product .description {
+.catalog-product .title {
 	margin-top: 10px;
 	color: #553d59;
 	font-family: PragmaticaCondC;
@@ -733,6 +733,18 @@ h2 {
 	height: 33px;
 	overflow: hidden;
 }
+
+.catalog-product .short_description {
+	margin-top: 0px;
+	color: #1f478b;
+	font-family: PragmaticaCondC;
+	font-size: 13px;
+	width: 200px;
+	height: 42px;
+	overflow: hidden;
+}
+
+
 
 #products .product_image_wrap {
 	width: 211px;

@@ -15,6 +15,9 @@ gem 'sunspot_solr'
 
 gem 'fotoramajs'
 
+gem 'faker'
+gem 'populator'
+
 gem 'client_side_validations'
 
 #back-end

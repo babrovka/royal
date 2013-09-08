@@ -46,6 +46,7 @@ ru:
   other: "Другое"
   your_order_was_created: "Ваш заказ успешно оформлен"
   select_your_region: "Откуда вы?"
+  taxons: "Таксоны"
   activerecord:
     models: 
       admin_user:
@@ -102,6 +103,12 @@ ru:
       substage:
         one: "Этап"
         other: "Этапы"
+      taxonomy:
+        one: "Таксономия"
+        other: "Таксономии"
+      taxon:
+        one: "Таксон"
+        other: "Таксоны"
     attributes:
       user:
         role: "Тип пользователя"
@@ -190,6 +197,7 @@ ru:
         price_dealer2: "Цена для директора-управляющего"
         price_dealer3: "Цена для специалиста заведения wellness"
         cases: "Случаи применения"
+        taxons: "Таксоны"
         image: "Изображение"
         category_id: "Категория"
         procedures: "Процедуры"
@@ -207,3 +215,5 @@ ru:
         text: "Текст"
         product_id: "Продукт"
         product: "Продукт"
+      taxonomy:
+        title: "Название"
