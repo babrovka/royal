@@ -10,11 +10,13 @@
  *
  *= require_self
  *= require bootstrap
+ 
  *= require fonts
  *= require fotorama
  *= require calendar
  *= require pop-up
  *= require jquery.fancybox
+ *= require dropdown
  */
 
 
@@ -783,6 +785,51 @@ h2 {
 	font-size: 20px;
 	margin-top: 20px;
 }
+
+/*product filter*/
+
+.taxonomy {
+	width: 150px;
+	text-align:center;
+	height: 28px;
+	background-color: #ede6f2;
+	float: left;
+	margin-top: 20px;
+	margin-left: 20px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	font-family: Arial;
+	color: #6e2257;
+	font-size: 14px;
+	padding-top: 7px;
+}
+
+.taxonomy :first-child {
+	margin-left: 0px;
+}
+
+.taxonomy a {
+	text-decoration: none;
+	color: #6e2257;
+}
+
+.select_products {
+	margin-top: 21px;
+	margin-left: 25px;
+	background: #dfd3e6;
+	color: #6e2257;
+	font-family: PragmaticaC;
+	font-size: 16px;
+	border:none;
+	text-align: center;
+	height: 30px;
+	width: 150px;
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Для Firefox */
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Для Safari и Chrome */
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
+}
+
 /*product*/
 
 #product .title {

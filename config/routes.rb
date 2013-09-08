@@ -16,6 +16,7 @@ Royal::Application.routes.draw do
   resources :videos
   resources :events
   resources :products
+  match 'products/select' => 'products#select', :via => :post
   resources :articles
   resources :procedures
   

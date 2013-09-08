@@ -22,4 +22,13 @@ class ProductsController < ApplicationController
     @procedures = @product.procedures
     @recommended = Product.latest.limit(3)
   end
+  
+  def select
+    @products = Product.find( :all, :include => :taxons, :conditions => ["taxons.id in (select id from taxons where id in (?))", params[:taxon_ids]])
+    
+    respond_to do |format|
+        format.html { render :template => "products/index" }
+    end
+  end
+    
 end

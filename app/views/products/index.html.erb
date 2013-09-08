@@ -4,18 +4,26 @@
     <div class="span3">
       <h1>продукция</h1>
 	</div>
-	<div class="span3">
-		<!--<div class="quick-search">Быстрый поиск по названию</div>-->
-	</div>
-	<div class="span6">
-		<!--
-		<div class="search">
-				<form id="footsearch" accept-charset="UTF-8" action="/search" method="get">
-					<input name="utf8" type="hidden" value="&#x2713;" />
-					<input type="text" name="testfind" class="search-input" onfocus="if(this.value=='Начните набирать название продукта или процедуры') this.value='';" onblur="if(this.value=='') this.value='Начните набирать название продукта или процедуры';" value="Начните набирать название продукта или процедуры" />
-					<a href="/" class="search-submit"></a>
-				</form>
-				</div>-->
+	<div class="span9">
+		<%= form_tag('/products/select') do %>
+		<% Taxonomy.all.each do |taxonomy| %>		
+		<div class="dropdown taxonomy">
+			<a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
+			    <%= taxonomy.title %>
+			    <b class="caret"></b>
+			  </a>
+		  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+		    <% taxonomy.taxons.each do |taxon| %>
+			<li>
+			  <label class="checkbox"><%= check_box_tag 'taxon_ids[]', taxon.id %><%= taxon.title %></label> 
+			</li>
+			<% end %>
+		  </ul>
+		</div>
+		
+		<% end %>
+		<%= submit_tag "Сортировать", :class => 'select_products' %>
+		<% end %>
 	</div>
   </div>
 

@@ -16,6 +16,7 @@
 //= require jquery_ujs
 //= require rails.validations
 //= require fotorama
+//= require dropdown
 //= require jquery.mousewheel-3.0.6.pack
 //= require jquery.fancybox
 //= require jquery.fancybox.pack
