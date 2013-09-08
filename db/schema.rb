@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130621124629) do
+ActiveRecord::Schema.define(:version => 20130908100130) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -203,6 +203,13 @@ ActiveRecord::Schema.define(:version => 20130621124629) do
     t.datetime "updated_at",         :null => false
   end
 
+  create_table "product_taxons", :force => true do |t|
+    t.integer  "product_id"
+    t.integer  "taxon_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "products", :force => true do |t|
     t.string   "title"
     t.string   "packing"
@@ -266,6 +273,19 @@ ActiveRecord::Schema.define(:version => 20130621124629) do
     t.integer  "stage_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "taxonomies", :force => true do |t|
+    t.string   "title"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "taxons", :force => true do |t|
+    t.string   "title"
+    t.integer  "taxonomy_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "users", :force => true do |t|
