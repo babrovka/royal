@@ -1167,7 +1167,6 @@ h2 {
 	margin-top: 60px;
 	color: #553d59;
 	font-family: PragmaticaC;
-	position: relative;
 }
 
 #cosultations_frame h1 {
@@ -1176,8 +1175,8 @@ h2 {
 }
 
 .consultation {
-	clear: both;
 	
+	clear: both;
 	
 }
 
@@ -1187,6 +1186,7 @@ h2 {
 }
 
 .consultaion_open_link {
+	margin-top: 20px;
 	display: block;
 	float: left;
 	text-decoration: none;
@@ -1224,7 +1224,6 @@ h2 {
 
 
 #cosultations_frame .full {
-	margin-top: 30px;
 	margin-left: -10px;
 	margin-bottom: 20px;
 	background-color: #f9f5e7;
