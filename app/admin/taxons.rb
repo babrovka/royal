@@ -11,6 +11,7 @@ ActiveAdmin.register Taxon do
    form do |f|  
      f.inputs do
        f.input :title
+       f.input :taxonomy_id, :as => :select, :collection => Taxonomy.all
        f.input :products, :as => :check_boxes
      end
      f.actions
@@ -19,6 +20,7 @@ ActiveAdmin.register Taxon do
   show do
     attributes_table do
       row :title
+      row :taxonomy_id
     end  
    end
 end

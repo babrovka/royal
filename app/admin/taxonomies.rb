@@ -11,6 +11,7 @@ ActiveAdmin.register Taxonomy do
      form do |f|  
        f.inputs do
          f.input :title
+         
        end
        f.actions
      end
