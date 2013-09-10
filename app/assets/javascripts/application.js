@@ -254,18 +254,39 @@ $(document).ready(
 		});
 		
 		$("#partners_link").on('click', function () {	
-			$('.form').show();	
+			$('#auth_form').show();	
 			$(".layer_bg").show();
-			$(".header").show();
 		});
+		
+		$(".show_product_filter").on('click', function () {	
+			$('#product_filter_form').show();	
+			$(".layer_bg").show();
+		});
+		
 		
 		$("#registration_link").on('click', function () {	
 			$("#register_form").validate();
 		});
 		
+		$(".taxonomy_selector").on('click', function () {	
+		    taxons_list = $(this).parent().parent().find('.taxons_list')
+		    taxons_list.toggle();
 		
-		registration_link
+		    $(document).find(':checkbox').prop('checked', this.checked);
+		});
 		
+		$(".taxonomy_checkbox").on('change', function () {
+	        taxons_list = $(this).parent().parent().find('.taxons_list')
+		
+			checkboxes = taxons_list.find(':checkbox').prop('checked', this.checked);
+	    });
+
+	    $('.checkbox').change(function () {
+	        var check = ($('.selectedId').filter(":checked").length == $('.selectedId').length);
+	        $('.taxonomy_selecto').prop("checked", check);
+	    });
+		
+
 		$(document).keyup(function(e) {
 		  if (e.keyCode == 27) { 
 			$(".form").hide();	
@@ -275,6 +296,9 @@ $(document).ready(
 		
 	    $(document).ready(function() {
 	        $('.fancybox').fancybox();
+	
+			$('#product_filter_form').show();	
+			$(".layer_bg").show();
 	    });
 
 		

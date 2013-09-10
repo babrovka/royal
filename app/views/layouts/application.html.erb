@@ -10,6 +10,7 @@
 <body<%= unless controller?("static_pages") && action?("home") then raw ' style="background-color: #edede9;"' end %>>
 <%= if notice then render :partial => 'layouts/notice', :flash => flash end %>
 <%= unless user_signed_in? then render 'layouts/auth-form' end %>
+<%= yield :modals %>
 <div class="wrapper">
 <%= render 'layouts/header' %>
 <%= render 'layouts/topmenu' %>
