@@ -280,11 +280,6 @@ $(document).ready(
 		
 			checkboxes = taxons_list.find(':checkbox').prop('checked', this.checked);
 	    });
-
-	    $('.checkbox').change(function () {
-	        var check = ($('.selectedId').filter(":checked").length == $('.selectedId').length);
-	        $('.taxonomy_selecto').prop("checked", check);
-	    });
 		
 
 		$(document).keyup(function(e) {
@@ -296,9 +291,6 @@ $(document).ready(
 		
 	    $(document).ready(function() {
 	        $('.fancybox').fancybox();
-	
-			$('#product_filter_form').show();	
-			$(".layer_bg").show();
 	    });
 
 		
