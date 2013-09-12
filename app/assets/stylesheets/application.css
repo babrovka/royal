@@ -804,11 +804,12 @@ h2 {
 }
 
 #products .taxonomy {
-	width: 150px;
+	padding-left: 20px;
+	padding-right: 20px;
 	text-align:center;
 	height: 28px;
 	background-color: #ede6f2;
-	float: left;
+	float: right;
 	margin-top: 20px;
 	margin-left: 20px;
 	-webkit-border-radius: 5px;
