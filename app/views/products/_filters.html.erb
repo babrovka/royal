@@ -1,6 +1,7 @@
 <div class="layer_bg"></div>
 <div class="form" id="product_filter_form">
 	<h1>Фильтр по продукции</h1><div class="filter_caption">отметьте интересующие вас типы товаров</div>
+	<a href="#" class="close"></a>	
 	<div class="buf"></div>
 	<%= form_tag('/products/select') do %>
 	<% Taxonomy.all.each do |taxonomy| %>	
@@ -21,7 +22,7 @@
 	  </ul>
 	</div>
 	<% end %>
-	<%= submit_tag "Сортировать", :class => 'select_products' %>
+	<%= submit_tag "Применить фильтр", :class => 'select_products' %>
 	<% end %>
 </div>
 </div>

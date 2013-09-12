@@ -823,6 +823,10 @@ h2 {
 
 /*filter modal*/
 
+#product_filter_form {
+	width: 740px;
+}
+
 #product_filter_form .filter_caption {
 	margin-top: 30px;
 	padding-left: 20px;
@@ -836,8 +840,13 @@ h2 {
 	color: #c4add4;
 	font-family: PragmaticaC;
 	font-size: 18px;
-	border-bottom: 2px dotted #c4add4;
+	border-bottom: 1px dotted #c4add4;
 	text-decoration: none;
+}
+
+#product_filter_form .taxonomy_link a:hover {
+	color: #6e2257;
+	border-bottom: 1px dotted #6e2257;
 }
 
 #product_filter_form ul.taxons_list {
@@ -853,8 +862,8 @@ h2 {
 	margin-top: 5px;
 }
 
-#product_filter_form ul.taxons_list input[type="checkbox"] {
-	margin-right: 5px;
+#product_filter_form input[type="checkbox"] {
+	margin-right: 15px;
 }
 
 
@@ -868,7 +877,15 @@ h2 {
 	border:none;
 	text-align: center;
 	height: 30px;
-	width: 150px;
+	width: 170px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+#product_filter_form .select_products:hover {
+	background: #c4acd4;
+	color: #6e2257;
 }
 
 /*product*/
