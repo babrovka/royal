@@ -795,6 +795,14 @@ h2 {
 
 /*product filter*/
 
+#products .caption {
+	float: left;
+	color: #553d59;
+	font-family: PragmaticaC;
+	font-size: 14px;
+	margin-top: 30px;
+}
+
 #products .taxonomy {
 	width: 150px;
 	text-align:center;
