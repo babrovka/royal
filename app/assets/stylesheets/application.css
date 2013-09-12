@@ -855,6 +855,10 @@ h2 {
 	float: left;
 }
 
+#product_filter_form .taxonomy_link {
+	margin-bottom: 10px;
+}
+
 #product_filter_form .taxonomy_link a {
 	color: #c4add4;
 	font-family: PragmaticaC;
