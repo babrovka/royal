@@ -812,6 +812,10 @@ h2 {
 	padding-top: 7px;
 }
 
+#products .taxonomy:hover {
+	background: #c4acd4;
+}
+
 #products .taxonomy :first-child {
 	margin-left: 0px;
 }
@@ -819,6 +823,12 @@ h2 {
 #products .taxonomy a {
 	text-decoration: none;
 	color: #6e2257;
+}
+
+
+.show_product_filter {
+	background: url('purple_arrow.png') no-repeat right;
+	padding-right: 10px;
 }
 
 /*filter modal*/

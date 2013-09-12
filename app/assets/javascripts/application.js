@@ -290,9 +290,6 @@ $(document).ready(
 		});
 		
 	    $(document).ready(function() {
-		
-			$('#product_filter_form').show();	
-			$(".layer_bg").show();
 	        $('.fancybox').fancybox();
 	    });
 
