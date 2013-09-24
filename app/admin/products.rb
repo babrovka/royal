@@ -61,6 +61,40 @@ ActiveAdmin.register Product do
      end
 
     end
+  
+
+    
+    controller do
+
+
+      def create
+        @product = Product.new(params[:product])
+        if @product.save
+          if params[:product][:product_images_attributes].blank?
+            redirect_to admin_product_path(@product)
+          else
+            render :action => "product_images/crop", :layout => 'active_admin' 
+          end
+        else
+          render :action => 'new'
+        end
+      end
+
+      def update
+        @product = Product.find(params[:id])
+        if @product.update_attributes(params[:product])
+          if params[:product][:product_images_attributes].blank?
+            redirect_to admin_product_path(@product)
+          else
+            @product_image = ProductImage.find(@product.product_images.first)
+            render :action => "product_images/crop", :layout => 'active_admin' 
+          end
+        else
+          render :action => 'edit'
+        end
+      end
+
+    end
    
    
    
