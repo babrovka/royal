@@ -98,7 +98,7 @@ $(document).ready(
 			$('.current_city').html($('.event_city_select option:selected').html());
 			$.ajax({
 			    url: "/events",
-				dataType: 'json',
+				dataType: 'script',
 			    type: "GET",
 			    data: 'city_id=' + city_id
 			  })
