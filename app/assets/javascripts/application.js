@@ -93,11 +93,12 @@ $(document).ready(
 	
 	// city select
 			
-		$("#event_city_select").on("change", function() {
-			city_id = $('#event_city_select option:selected').val();
-			$('.current_city').html($('#event_city_select option:selected').html());
+		$(".event_city_select").on("change", function() {
+			city_id = $('.event_city_select option:selected').val();
+			$('.current_city').html($('.event_city_select option:selected').html());
 			$.ajax({
 			    url: "/events",
+				dataType: 'json',
 			    type: "GET",
 			    data: 'city_id=' + city_id
 			  })
