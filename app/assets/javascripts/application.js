@@ -91,62 +91,16 @@ $(document).ready(
 				
 		  	  });
 	
-	
-	  /*
-	  $('.open').on("click", function() {
-	  		
-	  		height = $(this).parent().next().height();
-	  		self = $(this).parent().height();
-	  		
-	  		$(this).parent().css('height', self + height + 'px');
-	  		$(this).parent().next().show();
-	  		
-	  		panel = $(this).parent().next()
-	  		
-
-	  		
-	  		$(".full").not(panel).each(function() {
-	  		  $(this).hide();
-	  		  height = $(this).prev().height();
-	  		  self = $(this).height();
-	  		  $(this).prev().css('height', height - self + 'px')
-	  		  
-	  		});
-	  	
-	  			return false
-	  	  });
-
-	  	  $('.close').on("click", function() {
-	  		  height = $(this).parent().height();
-	  		  self = $(this).parent().prev().height();
-	  		
-	  		  
-	  		
-	  		  $(this).parent().prev().css('height', self - height + 'px');
-	  	      $(this).parent().hide();
-	  	
-	  		return false
-	  	  });*/
-	  
-	
-	
-/*
-		$('#header_submit').on("click", function() {
-			$('#header_search').submit();
-		});
-		
-		$('#quick_submit').on("click", function() {
-			$('#quick_search').submit();
-		});
-*/
-
-		
-		
-		$("#event_city_select").change(function () {		
-			var target = $('#event_city_select option:selected').val();
-			var pathname = window.location.pathname;
-			window.location.assign(pathname + '?city_id=' + target)
-			return false	
+	// city select
+			
+		$("#event_city_select").on("change", function() {
+			city_id = $('#event_city_select option:selected').val();
+			$('.current_city').html($('#event_city_select option:selected').html());
+			$.ajax({
+			    url: "/events",
+			    type: "GET",
+			    data: 'city_id=' + city_id
+			  })
 		});
 		
 

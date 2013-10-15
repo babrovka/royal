@@ -1,0 +1,36 @@
+	<%= collection_select(:city_id, :city_id, @cities, :id, :title, {:prompt=>"Выберите город"}, {:class=>'event_city_select', :id=>'event_city_select'}) %>
+	
+		<div class="current_city"></div>
+	
+
+	  <div id="month">
+		<div class="month-inner">
+	    <%= link_to "предыдущий месяц", {date: @date.prev_month}, :class => 'prev_month', :remote => true %>
+	    <div class="current_month"><%= Russian::strftime(@date, "%B %Y") %></div>
+	    <%= link_to "следующий месяц", {date: @date.next_month}, :class => 'next_month', :remote => true %>
+		</div>
+	  </div>
+	  <%= calendar @date do |date| %>
+	    
+	    <div class="date-inner">
+		      <%= date.day %>
+		      	<% if @events_by_date[date] %>
+					<div class="bubble">
+					<%= link_to "закрыть", "#", :class => "close" %>
+					<div class="date"><%= date.strftime("%d.%m.%Y") %></div>
+					<% @events_by_date[date].each do |event| %>
+					<div class="event-title">
+					<%= link_to event.title, event, :class => "link" %>
+					</div>
+					<div class="event-text">
+					<%= truncate(strip_tags(event.text), length: 185).html_safe %>
+					</div>
+					<div class="event-title">
+					<%= link_to "читать далее", event, :class => "link" %>
+					</div>
+					<% end %>
+					<span class="bubble-arrow"></span>
+					</div>
+				<% end %>
+		  </div>
+	  <% end %>

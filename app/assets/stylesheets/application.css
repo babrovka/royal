@@ -515,6 +515,13 @@ textarea:focus, input:focus, select:focus {
 
 }
 
+.current_city {
+	float: right;
+	margin-right: 380px;
+	font-family: PragmaticaC;
+	color: #553d59;
+}
+
 .calendar-link:hover {
 	background-color: #6e2257;
 }

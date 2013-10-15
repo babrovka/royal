@@ -12,13 +12,13 @@
 			<div class="short">
 			<%= link_to "показать новость", "#", :class => 'consultaion_switch open', :id => 'open' %>
 			<p><%= article.title %></p>
-			<p class="element-date">13.03.2012</p>
+			<p class="element-date"><%= article.date.strftime('%d.%m.%Y') %></p>
 			</div>
 
 			<div class="full" style="display: none;">	
 			<%= link_to "показать новость", "#", :class => 'consultaion_switch close', :id => 'close' %>	
 			<p><%= article.title %></p>
-			<div class="element-date">13.03.2012</div>
+			<div class="element-date"><%= article.date.strftime('%d.%m.%Y') %></div>
 			<p><%= article.text.html_safe %></p>
 			</div>
 		
