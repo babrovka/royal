@@ -88,20 +88,19 @@ $(document).ready(
 		  $('.close').on("click", function() {
 				$(this).parent().parent().find('.short').show();
 				$(this).parent().hide();
-				
-		  	  });
+		  });
 	
 	// city select
 			
 		$(".event_city_select").on("change", function() {
 			city_id = $('.event_city_select option:selected').val();
-			$('.current_city').html($('.event_city_select option:selected').html());
 			$.ajax({
 			    url: "/events",
 				dataType: 'script',
 			    type: "GET",
 			    data: 'city_id=' + city_id
 			  })
+			return false
 		});
 		
 
@@ -118,6 +117,7 @@ $(document).ready(
 		
 		$(".close").on('click', function () {		
 			$(this).parent().hide();
+			return false
 		});		
 		
 		

@@ -1,8 +1,3 @@
-	<%= collection_select(:city_id, :city_id, @cities, :id, :title, {:prompt=>"Выберите город"}, {:class=>'event_city_select', :id=>'event_city_select'}) %>
-	
-		<div class="current_city"></div>
-	
-
 	  <div id="month">
 		<div class="month-inner">
 	    <%= link_to "предыдущий месяц", {date: @date.prev_month}, :class => 'prev_month', :remote => true %>

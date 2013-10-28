@@ -9,3 +9,8 @@ $(".calendar td").on('click', function () {
 	}
 		
 });
+
+$('.close').on("click", function() {
+		$(this).parent().hide();
+		return false
+});

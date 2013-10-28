@@ -5,7 +5,10 @@
 	</div>
 
     <div class="span9">
+      <%= collection_select(:city_id, :city_id, @cities, :id, :title, {:prompt=>"Выберите город"}, {:class=>'event_city_select', :id=>'event_city_select'}) %>
+    	
 	  	<div id="events">
+	  	  
 		  <%= render 'events', :@events => @events, :@events_by_date => @events_by_date, :@date => @date %>
 		</div>
 	</div>
