@@ -112,8 +112,13 @@ $(document).ready(
 			if(bubble.length == 0) {
 				$('.bubble').hide();
 			}
-				
 		});
+		
+		$(".calendar td").each(function (i) {
+        if ($(this).find('.bubble').length != 0) {
+          $(this).addClass('with_events');
+        }
+        });
 		
 		$(".close").on('click', function () {		
 			$(this).parent().hide();

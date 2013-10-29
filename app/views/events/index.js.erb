@@ -14,3 +14,9 @@ $('.close').on("click", function() {
 		$(this).parent().hide();
 		return false
 });
+
+$(".calendar td").each(function (i) {
+if ($(this).find('.bubble').length != 0) {
+  $(this).addClass('with_events');
+}
+});

@@ -1,4 +1,5 @@
 module CalendarHelper
+  
   def calendar(date = Date.today, &block)
     Calendar.new(self, date, block).table
   end
@@ -8,7 +9,9 @@ module CalendarHelper
     START_DAY = :monday
 
     delegate :content_tag, to: :view
+    
 
+    
     def table
       content_tag :table, class: "calendar" do
         header + week_rows
@@ -37,12 +40,7 @@ module CalendarHelper
       classes = []
       classes << "today" if day == Date.today
       classes << "notmonth" if day.month != date.month
-      classes << "with_events" if has_events?(day)
       classes.empty? ? nil : classes.join(" ")
-    end
-    
-    def has_events?(day)
-      if Event.find_by_date(day) then true end
     end
 
     def weeks
