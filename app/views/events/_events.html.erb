@@ -1,12 +1,16 @@
 	  <div id="month">
 		<div class="month-inner">
-	    <%= link_to "предыдущий месяц", {date: @date.prev_month}, :class => 'prev_month', :remote => true %>
+	    <%= link_to "предыдущий месяц", params.merge(:date => @date.prev_month), :class => 'prev_month', :remote => true %>
 	    <div class="current_month"><%= Russian::strftime(@date, "%B %Y") %></div>
-	    <%= link_to "следующий месяц", {date: @date.next_month}, :class => 'next_month', :remote => true %>
+	    <%= link_to "следующий месяц", params.merge(:date => @date.next_month), :class => 'next_month', :remote => true %>
 		</div>
 	  </div>
+	  
+
+    <%= hidden_field_tag :city_id, params[:city_id] %>
+    <%= hidden_field_tag :date, params[:date] %>
+	  
 	  <%= calendar @date do |date| %>
-	    
 	    <div class="date-inner">
 		      <%= date.day %>
 		      	<% if @events_by_date[date] %>

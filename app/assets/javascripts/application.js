@@ -94,13 +94,9 @@ $(document).ready(
 			
 		$(".event_city_select").on("change", function() {
 			city_id = $('.event_city_select option:selected').val();
-			$.ajax({
-			    url: "/events",
-				dataType: 'script',
-			    type: "GET",
-			    data: 'city_id=' + city_id
-			  })
-			return false
+			$('#city_id').val(city_id);
+			$("#events_form").submit();
+
 		});
 		
 

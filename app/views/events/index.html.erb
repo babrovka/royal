@@ -4,12 +4,15 @@
       <h1>студия профессионального роста</h1>
 	</div>
 
+      
     <div class="span9">
-      <%= collection_select(:city_id, :city_id, @cities, :id, :title, {:prompt=>"Выберите город"}, {:class=>'event_city_select', :id=>'event_city_select'}) %>
-    	
+      
+      <%= collection_select(:event, :city_id, @cities, :id, :title, {}, {:class=>'event_city_select', :id=>'event_city_select'}) %>
+    	<%= form_tag events_path, :method => 'get', :id => "events_form", :remote => true do %>
 	  	<div id="events">
-	  	  
+	  	
 		  <%= render 'events', :@events => @events, :@events_by_date => @events_by_date, :@date => @date %>
+		  <% end %>
 		</div>
 	</div>
 	

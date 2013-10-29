@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   
   def index
-    @events = params[:city_id] ? Event.where(:city_id => params[:city_id]) : Event.all
+    @events = params[:city_id] ? Event.where(:city_id => params[:city_id]) : Event.where(:city_id => 1)
     @events_by_date = @events.group_by(&:date)
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
     
