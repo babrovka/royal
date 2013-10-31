@@ -6,8 +6,10 @@
 
       
     <div class="span9">
+      <%= link_to "Санкт-Петербург", "#", :id => 'city_spb', :class => 'city_link' %>
+      <%= link_to "Москва", "#", :id => 'city_msk', :class => 'city_link' %>
       
-      <%= collection_select(:event, :city_id, @cities, :id, :title, {}, {:class=>'event_city_select', :id=>'event_city_select'}) %>
+      
     	<%= form_tag events_path, :method => 'get', :id => "events_form", :remote => true do %>
 	  	<div id="events">
 	  	

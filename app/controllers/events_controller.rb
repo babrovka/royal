@@ -3,7 +3,12 @@ class EventsController < ApplicationController
   def index
     @events = params[:city_id] ? Event.where(:city_id => params[:city_id]) : Event.where(:city_id => 1)
     @events_by_date = @events.group_by(&:date)
-    @date = params[:date] ? Date.parse(params[:date]) : Date.today
+    
+    if params[:date] == nil || params[:date] == ""
+      @date = Date.today
+    else
+      @date = Date.parse(params[:date])
+    end
     
     @articles = Article.order("created_at DESC").limit(3)
     @widget_events = Event.order("created_at DESC").limit(2)

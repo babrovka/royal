@@ -92,11 +92,16 @@ $(document).ready(
 	
 	// city select
 			
-		$(".event_city_select").on("change", function() {
-			city_id = $('.event_city_select option:selected').val();
-			$('#city_id').val(city_id);
+		$("#city_spb").on("click", function() {
+			$('#city_id').val('1');
 			$("#events_form").submit();
-
+			return false
+		});
+		
+		$("#city_msk").on("click", function() {
+			$('#city_id').val('2');
+			$("#events_form").submit();
+			return false
 		});
 		
 
