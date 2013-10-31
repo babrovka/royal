@@ -1724,7 +1724,7 @@ h2 {
 	text-decoration: none;
 }
 
-.city_link:hover {
+.city_link:hover, .city_link.active {
 	background-color: #6e2257;
 	color: white;
 }

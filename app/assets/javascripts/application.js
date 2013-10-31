@@ -91,16 +91,22 @@ $(document).ready(
 		  });
 	
 	// city select
-			
+		
+		$("#city_spb").addClass("active");
+		
 		$("#city_spb").on("click", function() {
 			$('#city_id').val('1');
 			$("#events_form").submit();
+			$("#city_spb").addClass("active");
+			$("#city_msk").removeClass("active");
 			return false
 		});
 		
 		$("#city_msk").on("click", function() {
 			$('#city_id').val('2');
 			$("#events_form").submit();
+			$("#city_spb").removeClass("active");
+			$("#city_msk").addClass("active");
 			return false
 		});
 		
