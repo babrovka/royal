@@ -11,7 +11,7 @@
 		<div class="caption">Фильтровать:</div>
 		<% Taxonomy.all.each do |taxonomy| %>		
 		<div class="taxonomy">
-			<%= link_to taxonomy.title, "#", :class => "show_product_filter" %>
+			<%= link_to taxonomy.title, "#", :class => "show_product_filter", :id => taxonomy.id %>
 		</div>
 		<% end %>
 	</div>

@@ -226,8 +226,11 @@ $(document).ready(
 		});
 		
 		$(".show_product_filter").on('click', function () {	
+			taxonomy_id = $(this).attr('id');
 			$('#product_filter_form').show();	
 			$(".layer_bg").show();
+			$("#" + taxonomy_id).parent().parent().find('.taxons_list').show();
+			$(".taxonomy_selector").not($("#" + taxonomy_id)).parent().parent().find('.taxons_list').hide();
 		});
 		
 		
@@ -236,7 +239,7 @@ $(document).ready(
 		});
 		
 		$(".taxonomy_selector").on('click', function () {	
-		    taxons_list = $(this).parent().parent().find('.taxons_list')
+		    taxons_list = $(this).parent().parent().find('.taxons_list');
 		    taxons_list.toggle();
 		
 		    $(document).find(':checkbox').prop('checked', this.checked);

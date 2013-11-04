@@ -8,7 +8,7 @@
 	<div class="taxonomy">	
 		    <div class="taxonomy_link">
 				<%= check_box_tag 'taxonomy', taxonomy.id, checked = false,	 {:class => 'taxonomy_checkbox'} %>
-			  <%= link_to "#", :class=> "taxonomy_selector" do %>
+			  <%= link_to "#", :class=> "taxonomy_selector", :id => taxonomy.id do %>
 				<%= taxonomy.title %> (<%= taxonomy.taxons.count %> типов внутри)
 			    
 			  <% end %>
