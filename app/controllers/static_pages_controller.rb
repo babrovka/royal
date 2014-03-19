@@ -11,4 +11,7 @@ class StaticPagesController < ApplicationController
   def contacts
     @question = Question.new
   end
+  
+  def partners
+  end
 end

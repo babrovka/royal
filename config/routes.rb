@@ -30,6 +30,7 @@ Royal::Application.routes.draw do
   match '/media' => 'media#index'
   match '/questions' => 'questions#create', :via => :post
   match '/contacts' => 'static_pages#contacts'
+  match '/partners' => 'static_pages#partners'
   match '/about' => 'static_pages#about'
   match '/account' => 'users#show'
   devise_for :users
