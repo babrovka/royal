@@ -1,0 +1,4 @@
+ru:
+  awesome_nested_set:
+    moved_up: "Категория перемещена вверх"
+    moved_down: "Категория перемещена вниз"
