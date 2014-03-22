@@ -172,6 +172,7 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.0)
       mime-types
+    pg (0.17.1)
     polyamorous (0.5.0)
       activerecord (~> 3.0)
     polyglot (0.3.3)
@@ -289,6 +290,7 @@ DEPENDENCIES
   just-datetime-picker
   mysql2
   paperclip
+  pg
   populator
   progress_bar
   rails (= 3.2.13)
