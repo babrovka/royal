@@ -1,0 +1,28 @@
+= content_for :modals do
+  = render 'filters'
+#products.container
+  .row
+    .span3
+      h1
+        | продукция
+    .span9
+      .caption
+        | Фильтровать:
+      - Taxonomy.all.each do |taxonomy|
+        .taxonomy
+          = link_to taxonomy.title, "#", :class => "show_product_filter", :id => taxonomy.id
+  .row
+    .span12
+      .line
+  .row
+    #bronte.span4.brand
+      = bronte_link
+    #belter.span4.brand
+      = belter_link
+    #thalissi.span4.brand
+      = thalissi_link
+  #products-catalog.row
+    .span4
+      = render 'shared/left_menu'
+    .span8
+      .row = render :partial => 'products/products', :@products => @products

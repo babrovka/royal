@@ -22,7 +22,10 @@
 //= require jquery.fancybox.pack
 //= require_self
 
-
+$(function() {
+    $( "#accordion" ).accordion({heightStyle: "content"});
+    $( "#accordion2" ).accordion({heightStyle: "content"});
+});
 
 $(document).ready(
 	

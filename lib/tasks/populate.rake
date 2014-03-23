@@ -26,6 +26,64 @@ namespace :db do
     puts "Taxons created!"
 
   end
+
+
+  task :test_nested_taxons => :environment do
+
+    Taxon.delete_all
+
+    # instead of Taxon.reset_pk_sequence!
+    ActiveRecord::Base.connection.reset_pk_sequence!('taxons')
+
+    Taxon.populate 5 do |taxon|
+      taxon.title = Faker::Lorem.words(1)[0].capitalize
+      taxon.taxonomy_id = Taxonomy.pluck(:id).sample
+      print '.'
+    end
+
+    puts '+'
+    Taxon.rebuild!
+
+
+    10.times do
+      taxon = Taxon.new
+      taxon.title = Faker::Lorem.words(1)[0].capitalize
+      taxon.taxonomy_id = Taxonomy.pluck(:id).sample
+      taxon.save!
+      print '.'
+      taxon.move_to_child_of Taxon.roots.first
+    end
+
+    puts '++'
+    #Taxon.rebuild!
+
+    20.times do
+      taxon = Taxon.new
+      taxon.title = Faker::Lorem.words(1)[0].capitalize
+      taxon.taxonomy_id = Taxonomy.pluck(:id).sample
+      taxon.save!
+      print '.'
+      taxon.move_to_child_of Taxon.roots.first.children.sample
+    end
+
+    puts '+++'
+    Taxon.rebuild!
+
+    puts "Nested taxons created!"
+
+  end
+
+  task :test_taxonomies => :environment do
+
+    Taxonomy.destroy_all
+
+    Taxonomy.populate 5 do |taxonomy|
+      taxonomy.title = Faker::Lorem.words(1)[0].capitalize
+    end
+
+    puts "Taxonomies created!"
+
+  end
   
   task :create_products => :environment do
     LineItem.destroy_all

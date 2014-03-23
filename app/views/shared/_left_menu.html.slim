@@ -1,0 +1,9 @@
+#accordion
+  - Taxon.roots.each do |taxon|
+    h3 = "#{ '–'*taxon.level } #{taxon.title}"
+    div#accordion2
+      - taxon.children.each do |child|
+        h3 = "#{ '–'*child.level } #{child.title}"
+        div
+          - child.children.each do |child1|
+            p = child1.title

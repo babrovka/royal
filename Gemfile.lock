@@ -233,6 +233,9 @@ GEM
       rack (~> 1.4)
       rack-protection (~> 1.4)
       tilt (~> 1.3, >= 1.3.4)
+    slim (2.0.2)
+      temple (~> 0.6.6)
+      tilt (>= 1.3.3, < 2.1)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -246,6 +249,7 @@ GEM
       nokogiri
       sunspot (= 2.0.0)
     sunspot_solr (2.0.0)
+    temple (0.6.7)
     therubyracer (0.12.0)
       libv8 (~> 3.16.14.0)
       ref
@@ -298,6 +302,7 @@ DEPENDENCIES
   russian (~> 0.6.0)
   rvm-capistrano
   sass-rails (~> 3.2.3)
+  slim
   sunspot_rails
   sunspot_solr
   therubyracer
