@@ -25,6 +25,7 @@ gem 'progress_bar'
 gem 'awesome_nested_set'
 gem 'active_admin-awesome_nested_set'
 gem 'slim'
+gem 'font-awesome-rails'
 
 #deploy
 gem 'capistrano'

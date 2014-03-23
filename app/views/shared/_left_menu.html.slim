@@ -1,9 +1,12 @@
-#accordion
+.left-menu.left-menu-container.js-left-menu
   - Taxon.roots.each do |taxon|
-    h3 = "#{ '–'*taxon.level } #{taxon.title}"
-    div#accordion2
+    h3.left-menu-title[ class="#{'left-menu-empty' if taxon.leaf?}" id="taxon-#{taxon.id}" ]
+      = link_to taxon.title, '#'
+    .left-menu-submenu.js-left-menu
       - taxon.children.each do |child|
-        h3 = "#{ '–'*child.level } #{child.title}"
-        div
+        h3.left-menu-title[ class="#{'left-menu-empty' if child.leaf?}" id="taxon-#{child.id}" ]
+          = link_to child.title, '#'
+        .left-menu-submenu
           - child.children.each do |child1|
-            p = child1.title
+            p.left-menu-title[ id="taxon-#{child1.id}" ]
+              = link_to child1.title, '#'

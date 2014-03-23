@@ -10,7 +10,7 @@
  *
  *= require_self
  *= require bootstrap
- 
+ *= require font-awesome
  *= require fonts
  *= require fotorama
  *= require calendar
@@ -19,6 +19,7 @@
  *= require dropdown
  */
 
+@import "partials/_left_menu.scss";
 
 /*common*/
 

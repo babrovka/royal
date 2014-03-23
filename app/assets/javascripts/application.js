@@ -23,8 +23,11 @@
 //= require_self
 
 $(function() {
-    $( "#accordion" ).accordion({heightStyle: "content"});
-    $( "#accordion2" ).accordion({heightStyle: "content"});
+    $(".js-left-menu").accordion({
+        heightStyle: "content",
+        animate: 100,
+        collapsible: true
+    });
 });
 
 $(document).ready(
