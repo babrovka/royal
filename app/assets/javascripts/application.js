@@ -20,15 +20,9 @@
 //= require jquery.mousewheel-3.0.6.pack
 //= require jquery.fancybox
 //= require jquery.fancybox.pack
+//= require left_menu
 //= require_self
 
-$(function() {
-    $(".js-left-menu").accordion({
-        heightStyle: "content",
-        animate: 100,
-        collapsible: true
-    });
-});
 
 $(document).ready(
 	

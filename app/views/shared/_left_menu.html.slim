@@ -1,12 +1,12 @@
 .left-menu.left-menu-container.js-left-menu
-  - Taxon.roots.each do |taxon|
-    h3.left-menu-title[ class="#{'left-menu-empty' if taxon.leaf?}" id="taxon-#{taxon.id}" ]
-      = link_to taxon.title, '#'
+  - Taxon.roots.each do |root_taxon|
+    h3.left-menu-title[ class="#{'left-menu-empty' if root_taxon.leaf?}" id="taxon-#{root_taxon.id}" ]
+      = link_to root_taxon.title, '#'
     .left-menu-submenu.js-left-menu
-      - taxon.children.each do |child|
-        h3.left-menu-title[ class="#{'left-menu-empty' if child.leaf?}" id="taxon-#{child.id}" ]
-          = link_to child.title, '#'
+      - root_taxon.children.each do |child_taxon|
+        h3.left-menu-title[ class="#{'left-menu-empty' if child_taxon.leaf?}" id="taxon-#{child_taxon.id}" ]
+          = link_to child_taxon.title, '#'
         .left-menu-submenu
-          - child.children.each do |child1|
-            p.left-menu-title[ id="taxon-#{child1.id}" ]
-              = link_to child1.title, '#'
+          - child_taxon.children.each do |subchild_taxon|
+            p.left-menu-title[ id="taxon-#{subchild_taxon.id}" ]
+              = link_to subchild_taxon.title, '#'
