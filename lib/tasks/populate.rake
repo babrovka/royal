@@ -27,7 +27,9 @@ namespace :db do
       product.short_description = Populator.sentences(2..5)
     end
     
-    puts "Taxons created!"
+    Product.find_each(&:save)
+    
+    puts "Products created!"
 
   end
   

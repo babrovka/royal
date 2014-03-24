@@ -59,6 +59,14 @@ ActiveAdmin.register Product do
          end
        end
      end
+     
+     panel t('taxons') do 
+       table_for product.taxons do 
+         column :title do |column|
+           column.title
+         end
+       end
+     end
 
     end
   

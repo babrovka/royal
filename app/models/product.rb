@@ -20,6 +20,9 @@ class Product < ActiveRecord::Base
   
   scope :latest, where(:latest => true)
   
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+  
   
   private
   
