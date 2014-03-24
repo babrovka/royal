@@ -1,6 +1,6 @@
 Royal::Application.routes.draw do
 
-  match "/taxons/:id" => "taxons#show", :as => :taxon
+  
 
   mount Ckeditor::Engine => '/ckeditor'
 
@@ -18,8 +18,10 @@ Royal::Application.routes.draw do
   resources :videos
   resources :events
   
+  match "/products/:id" => "taxons#show", :as => :taxon
   match 'products/:taxon/:id', to: 'products#show', :as => :product
   match '/products', to: 'products#index', :as => :products
+  
   resources :articles
   resources :procedures
   
