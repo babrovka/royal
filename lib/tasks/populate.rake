@@ -5,16 +5,8 @@ require 'faker'
 require 'populator'
 
 namespace :db do
-  
-
-  
-  
   task :create_taxons => :environment do
-    
     Taxon.destroy_all
-    
-    
-    
     Taxon.populate 20 do |taxon|
       taxon.title = Faker::Lorem.words(1)[0].capitalize
       taxon.taxonomy_id = Taxonomy.pluck(:id).sample
@@ -75,7 +67,7 @@ namespace :db do
 
   task :test_taxonomies => :environment do
 
-    Taxonomy.destroy_all
+    Taxonomy.delete_all
 
     Taxonomy.populate 5 do |taxonomy|
       taxonomy.title = Faker::Lorem.words(1)[0].capitalize

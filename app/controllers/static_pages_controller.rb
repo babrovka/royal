@@ -6,9 +6,9 @@ class StaticPagesController < ApplicationController
     @events = Event.order("created_at DESC").limit(3)
     @products = Product.latest.limit(3)
     seo = SeoData.find_by_page('Главная страница')
-    @title = seo.title
-    @meta_description = seo.description
-    @seo_text = seo.seo_text
+    @title = seo.try(:title) || ''
+    @meta_description = seo.try(:description) || ''
+    @seo_text = seo.try(:seo_text) || ''
   end
   
   def about
