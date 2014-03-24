@@ -12,5 +12,8 @@
 	
 	  <%= render 'layouts/main-events' %>
     </div>
+    <div class="row">
+      <div class="span12 seo_text"><%= Redcarpet.new(@seo_text, :hard_wrap).to_html.html_safe %></div>
+    </div>
   </div>
 </div>

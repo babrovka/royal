@@ -62,6 +62,14 @@ namespace :db do
     puts "Taxons added!"
 
   end
+  
+  task :create_seo_data_objects => :environment do
+    SeoData.destroy_all
+    SeoData.create(:page => 'Главная страница')
+    
+    puts "SeoData created!"
+
+  end
 end
 
 

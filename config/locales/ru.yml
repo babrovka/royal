@@ -109,6 +109,9 @@ ru:
       taxon:
         one: "Таксон"
         other: "Таксоны"
+      seo_data:
+        one: "SEO"
+        other: "SEO"
     attributes:
       user:
         role: "Тип пользователя"
@@ -220,3 +223,8 @@ ru:
       taxon:
         title: "Название"
         parent_id: "Родительскй таксон"
+      seo_data:
+        page: "Страница"
+        title: "мета заголовок"
+        description: "мета описание"
+        seo_text: "SEO текст"

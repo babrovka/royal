@@ -78,6 +78,16 @@ module ApplicationHelper
       end
     end
     
+    def meta_description
+      base_meta_description = ""
+      base_meta_description
+      if @meta_description.nil?
+        base_meta_description
+      else
+        @meta_description
+      end
+    end
+    
 
   
 end
