@@ -53,6 +53,10 @@ module ProductsHelper
     link_to "Thalissi", products_path(:brand_id => "3"), :class => class_name, remote: true
   end
   
+  def product_seo_path(product)
+    product_path(product.deepest_taxon, product)
+  end
+    
   
   
 end

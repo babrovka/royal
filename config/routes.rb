@@ -17,8 +17,9 @@ Royal::Application.routes.draw do
   resources :carts  
   resources :videos
   resources :events
-  resources :products
-  match 'products/select' => 'products#select', :via => :post
+  
+  match 'products/:taxon/:id', to: 'products#show', :as => :product
+  match '/products', to: 'products#index', :as => :products
   resources :articles
   resources :procedures
   

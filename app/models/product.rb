@@ -23,6 +23,10 @@ class Product < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: :slugged
   
+  def deepest_taxon
+    self.taxons.max_by(&:depth).slug
+  end
+  
   
   private
   

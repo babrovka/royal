@@ -7,7 +7,7 @@
 		    style="background-image: url(<%= product.product_images.first.image.url(:catalog) %>);"
 		  <% end %>>
 			  <div class="product_image_wrap">
-				<%= link_to "Подробней <br/> о товаре".html_safe, product, :class => 'catalog_product_link' %>
+				<%= link_to "Подробней <br/> о товаре".html_safe, product_seo_path(product), :class => 'catalog_product_link' %>
 			  </div>
 		  </div>
 		

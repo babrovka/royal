@@ -46,6 +46,7 @@ namespace :db do
     end
     
     Taxon.find_each(&:save)
+    Taxon.rebuild!
     
     puts "Taxons created!"
 
