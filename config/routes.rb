@@ -1,5 +1,7 @@
 Royal::Application.routes.draw do
 
+  match "/taxons/:id" => "taxons#show", :as => :taxon
+
   mount Ckeditor::Engine => '/ckeditor'
 
   get "search/search"

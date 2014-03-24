@@ -23,6 +23,8 @@ gem 'gollum'
 gem 'progress_bar'
 gem 'awesome_nested_set'
 gem 'active_admin-awesome_nested_set'
+gem "friendly_id", "~> 4.0.9"
+
 
 #deploy
 gem 'capistrano'
