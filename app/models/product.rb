@@ -11,7 +11,9 @@ class Product < ActiveRecord::Base
   has_many :line_items
   has_many :product_images
   belongs_to :product_category
-  belongs_to :taxon
+  belongs_to :brand
+  has_many :product_taxons
+  has_many :taxons, through: :product_taxons
   accepts_nested_attributes_for :product_images, :allow_destroy => true
   before_destroy :ensure_not_referenced_by_any_line_item
   

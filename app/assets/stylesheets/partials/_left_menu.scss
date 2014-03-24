@@ -15,18 +15,7 @@ $subheader-active-color: #c4add4;
   }
 }
 
-// fonts icon with FontAwesome
-@mixin fa-icon($icon-code, $size: inherit){
-  &:after{
-    content: $icon-code;
-    font-family: FontAwesome;
-    position: absolute;
-    display: block;
-    height: 100%;
-    right: 0;
-    top: 0;
-  }
-}
+
 
 #{$el}{
   font-family: 'PragmaticaC';
