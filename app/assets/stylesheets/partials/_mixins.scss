@@ -1,0 +1,20 @@
+@mixin link-states-style{
+  &, &:hover, &:active, &:visited, &:focus{
+    @content;
+  }
+}
+
+// fonts icon with FontAwesome
+@mixin fa-icon($icon-code, $size: inherit){
+  position: relative;
+  display: inline-block;
+  &:after{
+    content: $icon-code;
+    font-family: FontAwesome;
+    position: absolute;
+    display: block;
+    height: 100%;
+    right: 0;
+    top: 0;
+  }
+}

@@ -1,26 +1,19 @@
 $el: '._product';
 
-$title-color: #6e2257;
+$color-title: #6e2257;
 $color-brand1: #f2e1ac;
 $color-brand2: #aef4f3;
+$color-btn: #553d59;
+$color-link: #3f3ca2;
 
-// fonts icon with FontAwesome
-@mixin fa-icon($icon-code, $size: inherit){
-  position: relative;
-  display: inline-block;
-  &:after{
-    content: $icon-code;
-    font-family: FontAwesome;
-    position: absolute;
-    display: block;
-    height: 100%;
-    right: -1em;
-    top: 0;
-  }
-}
+
 
 #{$el}{
   margin-bottom: 55px;
+}
+
+#{$el}-btn, #{$el}-price{
+  vertical-align: middle;
 }
 
 #{$el}-img{
@@ -77,12 +70,14 @@ $color-brand2: #aef4f3;
   font-family: 'PragmaticaLightC';
   letter-spacing: -.07em;
   font-size: 32px;
-  color: $title-color;
+  color: $color-title;
+  line-height: 1;
 }
 
 #{$el}-brand{
-  color: $title-color;
+  color: $color-title;
   font-size: 14px;
+  margin-bottom: 10px;
 
   &.m-brand1{
     background-color: $color-brand1;
@@ -97,22 +92,47 @@ $color-brand2: #aef4f3;
   font-style: italic;
   letter-spacing: -.005em;
   color: #b78b47;
+  margin-bottom: 15px;
 }
 
 #{$el}-description{
   font-size: 14px;
   letter-spacing: -.03em;
   color: #262626;
+  margin-bottom: 5px;
 }
 
-#{$el}-link{ font-size: 14px; display: block; }
+#{$el}-link{ font-size: 14px; display: block; color: $color-link; margin-bottom: 10px; }
 
 #{$el}-price{
   font-family: 'PragmaticaC';
   font-size: 20px;
-  color: $title-color;
+  color: $color-title;
+  padding-right: 1em;
+  margin-right: 20px;
 
   @include fa-icon("\f158");
 }
 
-#{$el}-btn{}
+#{$el}-btn{
+  $btn-width: 117px;
+  font-family: 'PragmaticaC';
+  font-weight: normal;
+  height: 32px;
+  width: $btn-width;
+  display: inline-block;
+  background-image: image-url('buy-button.png');
+  background-position: -$btn-width 0;
+  background-repeat: no-repeat;
+  color: $color-btn;
+  padding-top: 7px;
+  text-align: center;
+  @include link-states-style{
+    text-decoration: none;
+  }
+
+  &:hover, &:active, &:focus{
+    background-position: 0 0;
+    color: white;
+  }
+}

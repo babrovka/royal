@@ -1,17 +1,21 @@
 .row-fluid._product
   .span5
     / TODO-justvitalius: доделать всплывающие блоки с картинкой
-    - if product.product_images.any?
-      = image_tag product.product_images.first.image.url(:catalog)
-    - else
+    = link_to product_seo_path(product) do
       ._product-img
-        = image_tag 'noimage.png'
+        - if product.product_images.any?
+          = image_tag product.product_images.first.image.url(:catalog)
+        - else
+          = image_tag 'noimage.png'
         ._product-img-staff
+
+
   .span7
     ._product-brand.m-brand1 Dr. beller
     ._product-title = product.title
-    ._product-category средство по уходу за кожей лица
+    ._product-category = product.short_description.truncate(115)
+    / TODO: где поле description
     ._product-description = product.short_description
     = link_to 'читать полностью', product_seo_path(product), class: '_product-link'
     ._product-price 9567
-    ._product-btn Купить
+    = link_to 'Купить', '#', class: '_product-btn'

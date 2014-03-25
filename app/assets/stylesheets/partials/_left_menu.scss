@@ -9,14 +9,6 @@ $subheader-active-color: #c4add4;
 
 
 
-@mixin link-states-style{
-  &, &:hover, &:active, &:visited, &:focus{
-    @content;
-  }
-}
-
-
-
 #{$el}{
   font-family: 'PragmaticaC';
   font-size: 16px;
