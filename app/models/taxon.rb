@@ -6,7 +6,16 @@ class Taxon < ActiveRecord::Base
   has_many :products, through: :product_taxons
   acts_as_nested_set
   default_scope :order => 'lft ASC'
+  validates :title, presence: true
+  
+  after_save :check_depth
   
   extend FriendlyId
   friendly_id :title, use: :slugged
+  
+  def check_depth 
+    if self.depth > 1
+      self.destroy!
+    end
+  end
 end
