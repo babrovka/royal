@@ -9,7 +9,7 @@
 		  <%= link_to image_tag('index-icon.png'), product_seo_path(product) %>
 		</div>
 	<%= link_to product.title, product_seo_path(product), :class => "catalog-element-header-link" %>
-	<div class="catalog-element-text"><%= product.short_description %><%= link_to "читать далее", product %></div>
+	<div class="catalog-element-text"><%= product.short_description %><%= link_to "читать далее", product_seo_path(product) %></div>
 	</div>
 	<% end %>
 	<% end %>
