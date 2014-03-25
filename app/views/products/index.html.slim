@@ -1,7 +1,7 @@
-= content_for :modals do
-  = render 'filters'
+/= content_for :modals do
+/  = render 'filters'
 #products.container
-  .row
+  /.row
     .span3
       h1
         | продукция
@@ -11,10 +11,10 @@
       - Taxonomy.all.each do |taxonomy|
         .taxonomy
           = link_to taxonomy.title, "#", :class => "show_product_filter", :id => taxonomy.id
-  .row
+  /.row
     .span12
       .line
-  .row
+  /.row
     #bronte.span4.brand
       = bronte_link
     #belter.span4.brand
