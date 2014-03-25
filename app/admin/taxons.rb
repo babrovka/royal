@@ -24,6 +24,15 @@ ActiveAdmin.register Taxon do
        f.input :taxonomy_id, :as => :select, :collection => Taxonomy.all
        # f.input :products, :as => :check_boxes
      end
+     
+     f.inputs 'SEO' do
+       f.input :seo_title
+       f.input :seo_description,      :input_html => { :rows => 4 }
+       f.input :seo_text,      :input_html => { :rows => 8 }
+     end
+
+
+     
      f.actions
    end
 
@@ -31,6 +40,9 @@ ActiveAdmin.register Taxon do
     attributes_table do
       row :title
       row :taxonomy_id
+      row :seo_title
+      row :seo_description
+      row :seo_text
     end  
    end
 end

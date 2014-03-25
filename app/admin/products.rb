@@ -32,6 +32,9 @@ ActiveAdmin.register Product do
          Redcarpet.new(row.ingredients, :hard_wrap).to_html.html_safe
        end
        row :brand_id
+       row :seo_title
+       row :seo_description
+       row :seo_text
      end
 
      panel t('procedures') do 

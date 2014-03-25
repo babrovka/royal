@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140324135205) do
+ActiveRecord::Schema.define(:version => 20140325072532) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -238,6 +238,9 @@ ActiveRecord::Schema.define(:version => 20140324135205) do
     t.integer  "product_category_id"
     t.boolean  "latest"
     t.string   "slug"
+    t.string   "seo_title"
+    t.text     "seo_description"
+    t.text     "seo_text"
   end
 
   add_index "products", ["slug"], :name => "index_products_on_slug", :unique => true
@@ -304,13 +307,16 @@ ActiveRecord::Schema.define(:version => 20140324135205) do
   create_table "taxons", :force => true do |t|
     t.string   "title"
     t.integer  "taxonomy_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.integer  "parent_id"
     t.integer  "lft"
     t.integer  "rgt"
     t.integer  "depth"
     t.string   "slug"
+    t.string   "seo_title"
+    t.text     "seo_description"
+    t.text     "seo_text"
   end
 
   add_index "taxons", ["slug"], :name => "index_taxons_on_slug", :unique => true

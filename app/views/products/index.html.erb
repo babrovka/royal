@@ -1,40 +1,31 @@
 <%= content_for :modals do %>
-<%= render 'products/filters' %>
+  <%= render 'products/filters' %>
 <% end %>
+
 <div class="container" id="products">
-	
   <div class="row">
     <div class="span3">
       <h1>продукция</h1>
-	</div>
-	<div class="span9">
-		<div class="caption">Фильтровать:</div>
-		<% Taxonomy.all.each do |taxonomy| %>		
-		<div class="taxonomy">
-			<%= link_to taxonomy.title, "#", :class => "show_product_filter", :id => taxonomy.id %>
-		</div>
-		<% end %>
-	</div>
+    </div>
+    <div class="span9">
+      <div class="caption">Фильтровать:</div>
+      <% Taxonomy.all.each do |taxonomy| %>		
+        <div class="taxonomy">
+          <%= link_to taxonomy.title, "#", :class => "show_product_filter", :id => taxonomy.id %>
+        </div>
+      <% end %>
+    </div>
   </div>
-
   <div class="row">
-	<div class="span12"><div class="line"></div></div>
+    <div class="span12"><div class="line"></div></div>
   </div>
-
   <div class="row">
-	<div class="span4 brand" id="bronte"><%= bronte_link %></div>
-	<div class="span4 brand" id="belter"><%= belter_link %></div>
-	<div class="span4 brand" id="thalissi"><%= thalissi_link %></div>
+    <div class="span4 brand" id="bronte"><%= bronte_link %></div>
+    <div class="span4 brand" id="belter"><%= belter_link %></div>
+    <div class="span4 brand" id="thalissi"><%= thalissi_link %></div>
   </div>
-
-  
-
   <div class="row" id="products-catalog">
-	
-	
-	<%= render :partial => 'products/products', :@products => @products %>
-	
-
+    <%= render :partial => 'products/products', :@products => @products %>
   </div>
-
+  <%= render 'shared/seo_text' if @seo_text %>
 </div>

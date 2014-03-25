@@ -46,6 +46,13 @@
 <%= f.input :taxons, :as => :check_boxes  %>
 <% end %>
 
+<%= f.inputs 'SEO' do %>
+<%= f.input :seo_title %>
+<%= f.input :seo_description,      :input_html => { :rows => 4 } %>
+<%= f.input :seo_text,      :input_html => { :rows => 8 } %>
+<% end %>
+
+
 
 <%= f.actions %>   
   

@@ -66,6 +66,7 @@ namespace :db do
   task :create_seo_data_objects => :environment do
     SeoData.destroy_all
     SeoData.create(:page => 'Главная страница')
+    SeoData.create(:page => 'Продукция главная')
     
     puts "SeoData created!"
 

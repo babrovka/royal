@@ -3,7 +3,8 @@ class Product < ActiveRecord::Base
                   :visible_professional, :visible_dealer1, :visible_dealer2, :visible_dealer3,
                   :price_professional, :price_dealer1, :price_dealer2, :price_dealer3,
                   :procedure_ids, :case_ids, :consultation_ids, :product_images_attributes, 
-                  :short_description, :product_category_id, :product_images, :taxon_ids
+                  :short_description, :product_category_id, :product_images, :taxon_ids,
+                  :seo_title, :seo_description, :seo_text
   has_and_belongs_to_many :procedures
   has_and_belongs_to_many :cases
   has_many :substages

@@ -205,6 +205,9 @@ ru:
         category_id: "Категория"
         procedures: "Процедуры"
         created_at: "Создан"
+        seo_title: "SEO title"
+        seo_description: "SEO description"
+        seo_description: "SEO текст"
       question:
         name: "Имя"
         phone: "Телефон"
@@ -223,6 +226,9 @@ ru:
       taxon:
         title: "Название"
         parent_id: "Родительскй таксон"
+        seo_title: "SEO title"
+        seo_description: "SEO description"
+        seo_description: "SEO текст"
       seo_data:
         page: "Страница"
         title: "мета заголовок"
