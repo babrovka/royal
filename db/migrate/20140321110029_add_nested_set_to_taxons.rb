@@ -6,9 +6,9 @@ class AddNestedSetToTaxons < ActiveRecord::Migration
       add_column :taxons, column, :integer
     end
 
-    if defined?(Taxon) && Taxon.respond_to?(:rebuild!)
-      Taxon.rebuild!
-    end
+    # if defined?(Taxon) && Taxon.respond_to?(:rebuild!)
+    #   Taxon.rebuild!
+    # end
   end
 
   def down
