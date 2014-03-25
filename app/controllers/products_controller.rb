@@ -4,9 +4,9 @@ class ProductsController < ApplicationController
   def index
     @cart = current_cart
     seo = SeoData.find_by_page('Продукция главная')
-    @title = seo.title
-    @meta_description = seo.description
-    @seo_text = seo.seo_text
+    @title = seo.try(:title) || ''
+    @meta_description = seo.try(:description) || ''
+    @seo_text = seo.try(:seo_text) || ''
 
     if params[:brand_id]
       @products = Product.where(:brand_id => params[:brand_id])
