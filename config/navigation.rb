@@ -12,7 +12,7 @@ SimpleNavigation::Configuration.run do |navigation|
           taxons.item "taxon-#{taxon.id}", taxon.title, taxon_path(taxon) do |subtaxons|
             subtaxons.dom_class = '_left-menu-second-level js-left-menu-node'
             taxon.children.each do |subtaxon|
-              subtaxons.item "taxon-#{subtaxon.id}", subtaxon.title, taxon_path(subtaxon)
+              subtaxons.item "taxon-#{subtaxon.id}", subtaxon.title, taxon_path(subtaxon), class: 'empty'
             end
           end
         end

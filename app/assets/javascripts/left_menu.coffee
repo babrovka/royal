@@ -2,6 +2,9 @@ $ ->
   $('.js-left-menu').children('.selected').children('.js-left-menu-node').show()
   $('.js-left-menu').children('.selected').children('.js-left-menu-node').children('.selected').children('.js-left-menu-node').show()
 
+  # просматриваем все ссылки под которыми пустые подменю
+  $('.js-left-menu-node').filter(':empty').prev('a').addClass('empty')
+
   $('.js-left-menu a').on('click', (e) ->
     e.preventDefault()
     $elem = $(e.target)

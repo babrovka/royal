@@ -7,44 +7,69 @@ $item-border: 1px solid #9a899e;
 $header-active-color: #553d59;
 $subheader-active-color: #c4add4;
 
+$arrow-width: 21px;
+
 #{$el}{
   overflow: hidden;
   &, & li, ul, ul li{ list-style: none; padding: 0; margin: 0; }
 
+  li{ border-top: $item-border; }
+  li:first-child{ border-top: none; }
+
+  // убираем стрелки у ссылок
+  li.empty a{ &:after{ background-image: none; } }
+
   a{
     padding: $item-padding;
-    border-bottom: $item-border;
     font-family: 'PragmaticaC';
     font-size: 16px;
     background-color: $bg-color;
     display: block;
     line-height: 1;
+    position: relative;
     @include link-states-style{
       color: $text-color;
       text-decoration: none;
     }
 
+    // стрелки у пунктов меню
+    &:after{
+      content: ' ';
+      display: block;
+      width: $arrow-width;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 15px;
+      background-image: image-url('arrows.png');
+      background-repeat: no-repeat;
+      background-position: 0 50%;
+    }
+
+    // активные пункты меню
     &:hover, &:active, &.selected{ background-color: $color-bg; }
 
-    // тень под активным пунктом меню, налезает на подменю
-//    &.selected{
-//      box-shadow: 0 10px 10px -2px black;
-//      position: relative;
-//      z-index: 990;
-//    }
+    // стрелка у активного пункта меню
+    &.selected:after{ background-position: -$arrow-width 50%; }
+
+    // убираем стрелки у пунктов меню
+    &.empty{ &:after{ background-image: none; } }
   }
 }
 
+// рутовый уровень вложенности
 #{$el}-root-level{
   position: relative;
   overflow: hidden;
   > li > a{
-    &:hover, &:active, &.selected{ background-color: $header-active-color; color: white; }
+    &.selected{ background-color: $header-active-color; color: white; }
     &.selected{ z-index: 999; }
+    &.selected:after{ background-position: -$arrow-width*2 50%; }
   }
 }
 
 
+// первый уровень вложенности
 #{$el}-first-level{
   display: none;
   position: relative;
@@ -57,7 +82,7 @@ $subheader-active-color: #c4add4;
 
 }
 
-
+// последний уровень меню
 #{$el}-second-level{
   display: none;
   position: relative;
@@ -71,6 +96,7 @@ $subheader-active-color: #c4add4;
 
 }
 
+// скрываем пустые подменю в самом последнем уровне вложенности меню
 #{$el}-second-level,
 #{$el}-first-level{
   &:empty{
@@ -88,6 +114,7 @@ $subheader-active-color: #c4add4;
     width: 140%;
     height: 0;
     box-shadow: -20px 0 2px 2px rgba(0,0,0,0.3);
+    z-index: 999;
   }
   &:after{
     bottom: 1px;
