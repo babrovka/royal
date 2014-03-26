@@ -225,13 +225,21 @@ $(document).ready(
 			$(".layer_bg").show();
 		});
 		
-		$(".show_product_filter").on('click', function () {	
-			taxonomy_id = $(this).attr('id');
-			$('#product_filter_form').show();	
-			$(".layer_bg").show();
-			$("#" + taxonomy_id).parent().parent().find('.taxons_list').show();
-			$(".taxonomy_selector").not($("#" + taxonomy_id)).parent().parent().find('.taxons_list').hide();
-		});
+//		$(".show_product_filter").on('click', function () {
+//			taxonomy_id = $(this).attr('id');
+//			$('#product_filter_form').show();
+//			$(".layer_bg").show();
+//			$("#" + taxonomy_id).parent().parent().find('.taxons_list').show();
+//			$(".taxonomy_selector").not($("#" + taxonomy_id)).parent().parent().find('.taxons_list').hide();
+//		});
+
+        $(".js-show-products-filter").on('click', function () {
+            taxonomy_id = $(this).attr('id');
+            $('.js-products-filter-form').show();
+            $(".layer_bg").show();
+            $("#" + taxonomy_id).parent().parent().find('.taxons_list').show();
+            $(".taxonomy_selector").not($("#" + taxonomy_id)).parent().parent().find('.taxons_list').hide();
+        });
 		
 		
 		$("#registration_link").on('click', function () {	

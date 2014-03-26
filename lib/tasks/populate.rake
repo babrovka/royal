@@ -113,6 +113,15 @@ namespace :db do
     puts "SeoData created!"
 
   end
+
+  task :test_brands => :environment do
+    Brand.destroy_all
+    ActiveRecord::Base.connection.reset_pk_sequence!(:brands)
+
+    Brand.populate 3 do |brand|
+      brand.title = Faker::Lorem.words(1)[0]
+    end
+  end
 end
 
 

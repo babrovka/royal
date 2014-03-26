@@ -20,8 +20,14 @@
  */
 
 @import "partials/mixins";
-@import "partials/_left_menu.scss";
-@import "partials/_product.scss";
+@import "partials/variables";
+@import "partials/types";
+@import "partials/buttons_and_links";
+@import "partials/left_menu";
+@import "partials/breadcrumps";
+@import "partials/filter";
+@import "partials/page_header";
+@import "partials/product";
 
 /*common*/
 
@@ -41,7 +47,7 @@ html, body {
 body {
 	margin: 0px;
 	padding: 0px;
-	background: #fffffd;
+	background: $color-bg;
 }
 
 .wrapper {
@@ -608,31 +614,83 @@ textarea:focus, input:focus, select:focus {
 
 /*about*/
 
-h1 {
-	font-family: PragmaticaLightC;
-	font-size: 28px;
-	font-weight: normal;
-	color: #553d59;
-	text-transform: uppercase;
-	margin-top: 25px;
-	margin-bottom: 25px;
-}
 
-h2 {
-	font-family: PragmaticaLightC;
-	font-size: 20px;
-	font-weight: normal;
-	color: #553d59;
-	text-transform: uppercase;
-	margin-top: 25px;
-	margin-bottom: 25px;
-}
 
 #about p {
 	font-family: PragmaticaC;
 	font-size: 14px;
 	color: #553d59;
 }
+/* product filters */
+#product_filter_form {
+  width: 740px;
+}
+
+#product_filter_form .filter_caption {
+  margin-top: 30px;
+  padding-left: 20px;
+  color: #c4add4;
+  font-family: PragmaticaC;
+  font-size: 14px;
+  float: left;
+}
+
+#product_filter_form .taxonomy_link {
+  margin-bottom: 10px;
+}
+
+#product_filter_form .taxonomy_link a {
+  color: #c4add4;
+  font-family: PragmaticaC;
+  font-size: 18px;
+  border-bottom: 1px dotted #c4add4;
+  text-decoration: none;
+}
+
+#product_filter_form .taxonomy_link a:hover {
+  color: #6e2257;
+  border-bottom: 1px dotted #6e2257;
+}
+
+#product_filter_form ul.taxons_list {
+  display: none;
+  list-style-type: none;
+  padding-left: 15px;
+}
+
+#product_filter_form ul.taxons_list li {
+  color: #c4add4;
+  font-family: PragmaticaC;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+#product_filter_form input[type="checkbox"] {
+  margin-right: 15px;
+}
+
+
+#product_filter_form .select_products {
+  margin-top: 21px;
+  margin-left: 25px;
+  background: #dfd3e6;
+  color: #6e2257;
+  font-family: PragmaticaC;
+  font-size: 16px;
+  border:none;
+  text-align: center;
+  height: 30px;
+  width: 170px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+#product_filter_form .select_products:hover {
+  background: #c4acd4;
+  color: #6e2257;
+}
+
 
 /*products*/
 
@@ -850,76 +908,7 @@ h2 {
 	padding-right: 10px;
 }
 
-/*filter modal*/
 
-#product_filter_form {
-	width: 740px;
-}
-
-#product_filter_form .filter_caption {
-	margin-top: 30px;
-	padding-left: 20px;
-	color: #c4add4;
-	font-family: PragmaticaC;
-	font-size: 14px;
-	float: left;
-}
-
-#product_filter_form .taxonomy_link {
-	margin-bottom: 10px;
-}
-
-#product_filter_form .taxonomy_link a {
-	color: #c4add4;
-	font-family: PragmaticaC;
-	font-size: 18px;
-	border-bottom: 1px dotted #c4add4;
-	text-decoration: none;
-}
-
-#product_filter_form .taxonomy_link a:hover {
-	color: #6e2257;
-	border-bottom: 1px dotted #6e2257;
-}
-
-#product_filter_form ul.taxons_list {
-	display: none;
-	list-style-type: none;
-	padding-left: 15px;
-}
-
-#product_filter_form ul.taxons_list li {
-	color: #c4add4;
-	font-family: PragmaticaC;
-	font-size: 16px;
-	margin-top: 5px;
-}
-
-#product_filter_form input[type="checkbox"] {
-	margin-right: 15px;
-}
-
-
-#product_filter_form .select_products {
-	margin-top: 21px;
-	margin-left: 25px;
-	background: #dfd3e6;
-	color: #6e2257;
-	font-family: PragmaticaC;
-	font-size: 16px;
-	border:none;
-	text-align: center;
-	height: 30px;
-	width: 170px;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-}
-
-#product_filter_form .select_products:hover {
-	background: #c4acd4;
-	color: #6e2257;
-}
 
 /*product*/
 

@@ -1,0 +1,33 @@
+h1 {
+  font-family: PragmaticaLightC;
+  font-size: 28px;
+  font-weight: normal;
+  color: #553d59;
+  text-transform: uppercase;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+h2 {
+  font-family: PragmaticaLightC;
+  font-size: 20px;
+  font-weight: normal;
+  color: #553d59;
+  text-transform: uppercase;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+h3{
+  @extend h1 !optional;
+}
+
+h5 {
+  color: #c4add4;
+  font-family: PragmaticaC;
+  font-size: 14px;
+}
+
+a, p, div{
+  font-family: Arial, 'PragmaticaC', sans-serif;
+}

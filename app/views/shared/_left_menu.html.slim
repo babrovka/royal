@@ -7,9 +7,9 @@
     .left-menu-submenu.js-left-menu
       - taxonomy.taxons.roots.each do |taxon|
         h3.left-menu-title[ class="#{'left-menu-empty' if taxon.leaf?}" id="taxon-#{taxon.id}" ]
-          - path = taxon.leaf? ? taxon_path(taxon.id) : '#'
+          - path = taxon.leaf? ? taxon_path(taxon) : '#'
           = link_to taxon.title, path
         .left-menu-submenu
           - taxon.children.each do |child_taxon|
             p.left-menu-title[ id="taxon-#{child_taxon.id}" ]
-              = link_to child_taxon.title, taxon_path(child_taxon.id)
+              = link_to child_taxon.title, taxon_path(child_taxon)

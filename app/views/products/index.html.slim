@@ -1,16 +1,25 @@
 /= content_for :modals do
 /  = render 'filters'
 #products.container
-  /.row
-    .span3
-      h1
-        | продукция
-    .span9
-      .caption
-        | Фильтровать:
-      - Taxonomy.all.each do |taxonomy|
-        .taxonomy
-          = link_to taxonomy.title, "#", :class => "show_product_filter", :id => taxonomy.id
+  .row._page-header
+    .span12
+      h1 продукция по всем брендам
+      .additional
+        = image_tag 'brands/brand-2.png'
+        = image_tag 'brands/brand-1.png'
+        = link_to 'или выберите брэнд', '#', class: 'link-dashed link-big js-show-products-filter'
+
+  = render 'products/filter'
+  .row
+    .span12
+      ._breadcrumps
+        = link_to 'Главная', '#', class: '_breadcrumps-item'
+        = link_to 'Каталог Продукции', '#', class: '_breadcrumps-item'
+        = link_to 'Alissi Bronte, DR beller', '#', class: '_breadcrumps-item'
+        = link_to 'Для лица', '#', class: '_breadcrumps-item'
+        = link_to 'Кремы', '#', class: '_breadcrumps-item'
+        = link_to 'Крем от морщин', '#', class: '_breadcrumps-item'
+
   /.row
     .span12
       .line

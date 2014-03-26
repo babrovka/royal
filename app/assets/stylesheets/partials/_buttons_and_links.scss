@@ -1,0 +1,44 @@
+.btn-group{
+  .btn-simple, .link{
+    display: inline-block;
+    vertical-align: middle;
+
+    & + .btn-simple, & + .link{
+      margin-left: 10px;
+    }
+  }
+}
+
+
+.btn-simple{
+  background: $color-btn-bg;
+  color: #6e2257;
+  font-family: PragmaticaC;
+  font-size: 16px;
+  border:none;
+  text-align: center;
+  height: 30px;
+  width: 170px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  @include link-states-style{ text-decoration: none; }
+  &:hover, &:active{ background-color: $color-btn-hover-bg; }
+}
+
+.link,
+.link-dashed{
+  color: $color-link;
+  font-size: 14px;
+  display: inline-block;
+  &:hover, &:active{ color: $color-link-hover; }
+}
+
+.link-dashed{
+  @include link-states-style{ text-decoration: none; }
+  border-bottom: 1px dotted $color-link;
+}
+
+.link-big{
+  font-size: 18px;
+}

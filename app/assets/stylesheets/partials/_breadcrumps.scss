@@ -1,0 +1,35 @@
+$el: '._breadcrumps';
+
+$color-breadcrumps-link: #7f8c8d;
+
+
+#{$el}{
+  font-size: 13px;
+  text-transform: uppercase;
+  margin-bottom: 45px;
+}
+
+#{$el}-item{
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  @include link-states-style{
+    color: $color-breadcrumps-link;
+    text-decoration: underline;
+  }
+  // разделитель между breadcrumps
+  &:after{
+    content: '>';
+    display: inline-block;
+    padding: 0 10px;
+  }
+
+
+  // особые стили для последнего элемента в списке
+  &:last-child{
+    &:after{ content: ''; }
+    @include link-states-style{
+      text-decoration: none;
+    }
+  }
+}
