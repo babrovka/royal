@@ -16,6 +16,5 @@
 #   end
 # end
 
-Rake::Task['db:import_products'].invoke
-Rake::Task['db:import_taxons'].invoke
-Rake::Task['db:add_taxons_to_products'].invoke
+Rake::Task['db:create_taxons'].invoke
+Rake::Task['db:create_products'].invoke

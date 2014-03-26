@@ -54,8 +54,8 @@ module ProductsHelper
   end
   
   def product_seo_path(product)
-    if product.taxons.present?
-      product_path(product.deepest_taxon, product)
+    if product.taxon_id.present?
+      product_path(product.taxon.slug, product)
     else
       product_path('no_category', product)
     end

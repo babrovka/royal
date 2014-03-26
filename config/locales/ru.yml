@@ -208,6 +208,7 @@ ru:
         seo_title: "SEO title"
         seo_description: "SEO description"
         seo_description: "SEO текст"
+        taxon_id: "Категория"
       question:
         name: "Имя"
         phone: "Телефон"

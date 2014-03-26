@@ -1,0 +1,4 @@
+<%= @product.taxon.taxonomy.title %>
+<% @product.taxon.root.self_and_descendants.each do |taxon| %>
+ |  <%= taxon.title %> 
+<% end %>

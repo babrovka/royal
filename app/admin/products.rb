@@ -1,3 +1,5 @@
+# coding: utf-8
+
 ActiveAdmin.register Product do
   menu :parent => I18n.t('catalog')
   config.batch_actions = false
@@ -8,7 +10,13 @@ ActiveAdmin.register Product do
   
   index do
     column :title
-    column :latest
+    column :taxon_id do |column|
+      if column.taxon_id && Taxon.exists?(column.taxon_id)
+        Taxon.find(column.brand_id).title
+      else
+        'Без категории'
+      end
+    end
     column :brand_id do |column|
       Brand.find(column.brand_id).title
     end
@@ -32,6 +40,7 @@ ActiveAdmin.register Product do
          Redcarpet.new(row.ingredients, :hard_wrap).to_html.html_safe
        end
        row :brand_id
+       row :taxon_id
        row :seo_title
        row :seo_description
        row :seo_text
@@ -59,14 +68,6 @@ ActiveAdmin.register Product do
            if column.image?
            image_tag column.image.url(:catalog)
          end
-         end
-       end
-     end
-     
-     panel t('taxons') do 
-       table_for product.taxons do 
-         column :title do |column|
-           column.title
          end
        end
      end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140325072532) do
+ActiveRecord::Schema.define(:version => 20140326125810) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -241,6 +241,7 @@ ActiveRecord::Schema.define(:version => 20140325072532) do
     t.string   "seo_title"
     t.text     "seo_description"
     t.text     "seo_text"
+    t.integer  "taxon_id"
   end
 
   add_index "products", ["slug"], :name => "index_products_on_slug", :unique => true
