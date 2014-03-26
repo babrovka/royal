@@ -2,6 +2,15 @@ $ ->
   $('.js-left-menu').children('.selected').children('.js-left-menu-node').show()
   $('.js-left-menu').children('.selected').children('.js-left-menu-node').children('.selected').children('.js-left-menu-node').show()
 
+  $('.js-left-menu a').on('click', (e) ->
+    e.preventDefault()
+    $elem = $(e.target)
+    unless $elem.next('.js-left-menu-node').is(':empty') || $elem.next('.js-left-menu-node').length == 0
+      $elem.next('.js-left-menu-node').slideToggle(70)
+      $elem.toggleClass('selected').parent('li').toggleClass('selected')
+    else
+      window.location = e.target.href
+  )
 
 #window.app = {}
 #window.app =

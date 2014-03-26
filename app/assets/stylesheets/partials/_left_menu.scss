@@ -71,6 +71,13 @@ $subheader-active-color: #c4add4;
 
 }
 
+#{$el}-second-level,
+#{$el}-first-level{
+  &:empty{
+    display: none !important;
+  }
+}
+
 // верхняя и нижняя тень у открытого блока с меню
 .selected #{$el}-second-level,
 .selected #{$el}-first-level{
