@@ -46,6 +46,7 @@ $subheader-active-color: #c4add4;
 
 
 #{$el}-first-level{
+  display: none;
   position: relative;
   overflow: hidden;
   border-left: 10px solid $header-active-color;
@@ -58,6 +59,7 @@ $subheader-active-color: #c4add4;
 
 
 #{$el}-second-level{
+  display: none;
   position: relative;
   border-left: 10px solid $subheader-active-color;
   > li > a{

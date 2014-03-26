@@ -1,3 +1,8 @@
+$ ->
+  $('.js-left-menu').children('.selected').children('.js-left-menu-node').show()
+  $('.js-left-menu').children('.selected').children('.js-left-menu-node').children('.selected').children('.js-left-menu-node').show()
+
+
 #window.app = {}
 #window.app =
 #  active_item: (id) ->

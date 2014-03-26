@@ -4,13 +4,13 @@ SimpleNavigation::Configuration.run do |navigation|
   navigation.auto_highlight = true
   navigation.active_leaf_class = 'active-leaf'
   navigation.items do |taxonomies|
-    taxonomies.dom_class = '_left-menu-root-level _left-menu js-left-menu'
+    taxonomies.dom_class = '_left-menu-root-level _left-menu js-left-menu js-left-menu-node'
     Taxonomy.order('title ASC').each do |taxonomy|
       taxonomies.item "taxonomy-#{taxonomy.id}", taxonomy.title, '#' do |taxons|
-        taxons.dom_class = '_left-menu-first-level'
+        taxons.dom_class = '_left-menu-first-level js-left-menu-node'
         taxonomy.taxons.roots.each do |taxon|
           taxons.item "taxon-#{taxon.id}", taxon.title, taxon_path(taxon) do |subtaxons|
-            subtaxons.dom_class = '_left-menu-second-level'
+            subtaxons.dom_class = '_left-menu-second-level js-left-menu-node'
             taxon.children.each do |subtaxon|
               subtaxons.item "taxon-#{subtaxon.id}", subtaxon.title, taxon_path(subtaxon)
             end
