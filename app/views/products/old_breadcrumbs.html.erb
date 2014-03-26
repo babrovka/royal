@@ -3,7 +3,7 @@
   <% @product.taxon.root.self_and_descendants.each do |taxon| %>
    |  <%= taxon.title %> 
   <% end %>
-<% else %>
+<% elsif @taxon %>
   <%= @taxon.taxonomy.title %>
   <% @taxon.root.self_and_descendants.each do |taxon| %>
    |  <%= taxon.title %> 

@@ -70,8 +70,12 @@ $color-link: #3f3ca2;
   font-family: 'PragmaticaLightC';
   letter-spacing: -.07em;
   font-size: 32px;
-  color: $color-title;
   line-height: 1;
+  display: block;
+  @include link-states-style{
+    color: $color-title;
+    text-decoration: none;
+  }
 }
 
 #{$el}-brand{

@@ -10,11 +10,10 @@
 
 
   .span7
-    ._product-brand.m-brand1 Dr. beller
-    ._product-title = product.title
-    ._product-category = product.short_description.truncate(115)
-    / TODO: где поле description
-    ._product-description = product.short_description
+    ._product-brand[ class="m-brand#{product.brand.id}" ] = product.brand.title
+    = link_to product.title, product_seo_path(product), class: '_product-title'
+    ._product-category = product.short_description.truncate(70)
+    ._product-description = product.text.truncate(170)
     = link_to 'читать полностью', product_seo_path(product), class: '_product-link link'
-    ._product-price 9567
+    ._product-price = product.price_professional.to_i
     = link_to 'Купить', '#', class: '_product-btn'

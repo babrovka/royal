@@ -1,0 +1,12 @@
+._breadcrumbs
+  = link_to 'Главная', root_path, class: '_breadcrumbs-item'
+  = link_to 'Каталог Продукции', products_path, class: '_breadcrumbs-item'
+  = link_to 'С БРЕНДАМИ НАДО ЧТО-ТО ДЕЛАТЬ', '#', class: '_breadcrumbs-item'
+  - if @taxon
+    - if @taxon.root
+      = link_to @taxon.root.taxonomy.try(:title), '#taxonomy_path', class: '_breadcrumbs-item'
+      = link_to @taxon.root.try(:title), taxon_path(@taxon.root), class: '_breadcrumbs-item'
+    = link_to @taxon.title, taxon_path(@taxon), class: '_breadcrumbs-item'
+
+  - if @product
+    = link_to @product.title, product_seo_path(@product), class: '_breadcrumbs-item'

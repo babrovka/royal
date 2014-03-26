@@ -12,13 +12,7 @@
   = render 'products/filter'
   .row
     .span12
-      ._breadcrumps
-        = link_to 'Главная', '#', class: '_breadcrumps-item'
-        = link_to 'Каталог Продукции', '#', class: '_breadcrumps-item'
-        = link_to 'Alissi Bronte, DR beller', '#', class: '_breadcrumps-item'
-        = link_to 'Для лица', '#', class: '_breadcrumps-item'
-        = link_to 'Кремы', '#', class: '_breadcrumps-item'
-        = link_to 'Крем от морщин', '#', class: '_breadcrumps-item'
+      = render 'products/breadcrumbs'
 
   /.row
     .span12
