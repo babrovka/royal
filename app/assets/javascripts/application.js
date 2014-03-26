@@ -224,7 +224,8 @@ $(document).ready(
 			$('#auth_form').show();	
 			$(".layer_bg").show();
 		});
-		
+
+//      код старого фильтра
 //		$(".show_product_filter").on('click', function () {
 //			taxonomy_id = $(this).attr('id');
 //			$('#product_filter_form').show();
@@ -237,9 +238,9 @@ $(document).ready(
             taxonomy_id = $(this).attr('id');
             $('.js-products-filter-form').show();
             $(".layer_bg").show();
-            $("#" + taxonomy_id).parent().parent().find('.taxons_list').show();
-            $(".taxonomy_selector").not($("#" + taxonomy_id)).parent().parent().find('.taxons_list').hide();
         });
+
+
 		
 		
 		$("#registration_link").on('click', function () {	
