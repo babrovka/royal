@@ -1,5 +1,7 @@
-/= content_for :modals do
-/  = render 'filters'
+= content_for :modals do
+  = render 'products/filter'
+
+
 #products.container
   .row._page-header
     .span12
@@ -8,22 +10,10 @@
         = image_tag 'brands/brand-2.png'
         = image_tag 'brands/brand-1.png'
         = link_to 'или выберите брэнд', '#', class: 'link-dashed link-big js-show-products-filter'
-
-  = render 'products/filter'
   .row
     .span12
       = render 'products/breadcrumbs'
 
-  /.row
-    .span12
-      .line
-  /.row
-    #bronte.span4.brand
-      = bronte_link
-    #belter.span4.brand
-      = belter_link
-    #thalissi.span4.brand
-      = thalissi_link
   #products-catalog.row
     .span4
       = render 'shared/left_menu'
