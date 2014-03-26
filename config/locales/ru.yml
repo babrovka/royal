@@ -206,8 +206,8 @@ ru:
         procedures: "Процедуры"
         created_at: "Создан"
         seo_title: "SEO title"
-        seo_description: "SEO description"
-        seo_description: "SEO текст"
+        seo_description: "мета описание"
+        seo_text: "SEO текст"
         taxon_id: "Категория"
       question:
         name: "Имя"
@@ -228,8 +228,8 @@ ru:
         title: "Название"
         parent_id: "Родительскй таксон"
         seo_title: "SEO title"
-        seo_description: "SEO description"
-        seo_description: "SEO текст"
+        seo_description: "мета описание"
+        seo_text: "SEO текст"
       seo_data:
         page: "Страница"
         title: "мета заголовок"

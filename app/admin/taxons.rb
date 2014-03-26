@@ -20,6 +20,7 @@ ActiveAdmin.register Taxon do
    form do |f|  
      f.inputs do
        f.input :title
+       f.input :seo_url
        f.input :parent_id, :as => :select, :collection => Taxon.where(:depth => 0)
        f.input :taxonomy_id, :as => :select, :collection => Taxonomy.all
        # f.input :products, :as => :check_boxes

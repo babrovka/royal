@@ -1,6 +1,6 @@
 class Taxon < ActiveRecord::Base
   attr_accessible :title, :taxonomy_id, :product_ids, :parent_id,
-                  :seo_title, :seo_description, :seo_text
+                  :seo_title, :seo_description, :seo_text, :seo_url
   belongs_to :taxonomy
   has_many :products
   acts_as_nested_set
@@ -10,7 +10,7 @@ class Taxon < ActiveRecord::Base
   after_save :check_depth
   
   extend FriendlyId
-  friendly_id :title, use: :slugged
+  friendly_id :seo_url, use: :slugged
   
   def check_depth 
     if self.depth > 1

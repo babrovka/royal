@@ -21,7 +21,11 @@ class Product < ActiveRecord::Base
   scope :latest, where(:latest => true)
   
   extend FriendlyId
-  friendly_id :title, use: :slugged
+  friendly_id :short_description, use: :slugged
+  
+  def normalize_friendly_id(string)
+    super[0..139]
+  end
   
   def deepest_taxon
     self.taxons.max_by(&:depth).slug
