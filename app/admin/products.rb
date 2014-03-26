@@ -12,7 +12,7 @@ ActiveAdmin.register Product do
     column :title
     column :taxon_id do |column|
       if column.taxon_id && Taxon.exists?(column.taxon_id)
-        Taxon.find(column.brand_id).title
+        Taxon.find(column.taxon_id).title
       else
         'Без категории'
       end
