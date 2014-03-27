@@ -1,11 +1,13 @@
 <div class="container" id="product">
 	
   <div class="row" style="margin-bottom: 10px;">
-    <div class="span3">
+    <div class="span2">
       <%= link_to "назад к каталогу", products_path(:brand_id => @product.brand_id), :class => 'content-header-link product' %>
 	  </div>
-	  <div class="span6">
-      <%= render 'breadcrumbs', :product => @product %>
+	  <div class="span9">
+      <div class="_breadcrumbs m-product-page">
+        <%= render 'breadcrumbs', :product => @product %>
+      </div>
 	  </div>
   </div>
 
