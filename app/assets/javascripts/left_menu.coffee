@@ -1,6 +1,7 @@
 $ ->
   $('.js-left-menu').children('.selected').children('.js-left-menu-node').show()
-  $('.js-left-menu').children('.selected').children('.js-left-menu-node').children('.selected').children('.js-left-menu-node').show()
+  $('.js-left-menu').children('.selected').children('.js-left-menu-node').children('selected').addClass('opened').children('.js-left-menu-node').show()
+  $('.js-left-menu').find('.selected').addClass('opened')
 
   # просматриваем все ссылки под которыми пустые подменю
   $('.js-left-menu-node').filter(':empty').prev('a').addClass('empty')
@@ -9,9 +10,12 @@ $ ->
     e.preventDefault()
     $elem = $(e.target)
     unless $elem.next('.js-left-menu-node').is(':empty') || $elem.next('.js-left-menu-node').length == 0
-#      $elem.closest('.js-left-menu-node').find('.opened').first().removeClass('opened').find('.js-left-menu-node').first().slideUp(70)
+      # скрываем все открытые пункты меню
+      $elem.closest('.js-left-menu-node').find('.opened').removeClass('opened').next('.js-left-menu-node').slideUp(70)
+
+      # открываем нужный пункт меню
       $elem.next('.js-left-menu-node').slideToggle(70)
-      $elem.toggleClass('selected').parent('li').toggleClass('opened')
+      $elem.toggleClass('opened').parent('li').toggleClass('opened')
     else
       window.location = e.target.href
   )

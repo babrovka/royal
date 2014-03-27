@@ -47,10 +47,10 @@ $arrow-width: 21px;
     }
 
     // активные пункты меню
-    &:hover, &:active, &.selected, &.opened{ background-color: $color-bg; }
+    &:hover, &:active, &.opened{ background-color: $color-bg; }
 
     // стрелка у активного пункта меню
-    &.selected:after, &.opened:after{ background-position: -$arrow-width 50%; }
+    &.opened:after{ background-position: -$arrow-width 50%; }
 
     // убираем стрелки у пунктов меню
     &.empty{ &:after{ background-image: none; } }
@@ -62,9 +62,9 @@ $arrow-width: 21px;
   position: relative;
   overflow: hidden;
   > li > a{
-    &.selected, &.opened{ background-color: $header-active-color; color: white; }
-    &.selected, &.opened{ z-index: 666; }
-    &.selected:after, &.opened:after{ background-position: -$arrow-width*2 50%; }
+    &.opened{ background-color: $header-active-color; color: white; }
+    &.opened{ z-index: 666; }
+    &.opened:after{ background-position: -$arrow-width*2 50%; }
   }
 }
 
@@ -90,7 +90,7 @@ $arrow-width: 21px;
   > li > a{
     display: block;
     padding-left: 3em;
-    &.selected, &.opened{ box-shadow: none; }
+    &.opened{ box-shadow: none; }
   }
 
 
@@ -105,7 +105,7 @@ $arrow-width: 21px;
 }
 
 // верхняя и нижняя тень у открытого блока с меню
-.selected, .opened{
+.opened{
   #{$el}-second-level,
   #{$el}-first-level{
     &:before, &:after{
