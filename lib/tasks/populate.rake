@@ -30,6 +30,7 @@ namespace :db do
     Taxon.populate 5 do |taxon|
       taxon.title = Faker::Lorem.words(1)[0].capitalize
       taxon.taxonomy_id = Taxonomy.pluck(:id).sample
+      taxon.seo_url = Faker::Lorem.words(1)[0]
       print '.'
     end
 
@@ -41,6 +42,7 @@ namespace :db do
       taxon = Taxon.new
       taxon.title = Faker::Lorem.words(1)[0].capitalize
       taxon.taxonomy_id = Taxonomy.pluck(:id).sample
+      taxon.seo_url = Faker::Lorem.words(1)[0]
       taxon.save!
       print '.'
       taxon.move_to_child_of Taxon.roots.first

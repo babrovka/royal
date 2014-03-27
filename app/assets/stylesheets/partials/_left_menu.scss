@@ -63,7 +63,7 @@ $arrow-width: 21px;
   overflow: hidden;
   > li > a{
     &.selected{ background-color: $header-active-color; color: white; }
-    &.selected{ z-index: 999; }
+    &.selected{ z-index: 666; }
     &.selected:after{ background-position: -$arrow-width*2 50%; }
   }
 }
@@ -114,7 +114,7 @@ $arrow-width: 21px;
     width: 140%;
     height: 0;
     box-shadow: -20px 0 2px 2px rgba(0,0,0,0.3);
-    z-index: 999;
+    z-index: 666;
   }
   &:after{
     bottom: 1px;

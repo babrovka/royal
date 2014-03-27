@@ -5,11 +5,16 @@
 #products.container
   .row._page-header
     .span12
-      h1 продукция по всем брендам
-      .additional
-        = image_tag 'brands/brand-2.png'
-        = image_tag 'brands/brand-1.png'
-        = link_to 'или выберите брэнд', '#', class: 'link-dashed link-big js-show-products-filter'
+      - if @selected_brands.any?
+        h1 продукция
+        .additional
+          - @selected_brands.each do |brand|
+            = image_tag "brands/brand-#{brand.id}.png"
+          = link_to 'или выберите брэнд', '#', class: 'link-dashed link-big js-show-products-filter'
+      - else
+        h1 продукция по всем брендам
+        .additional
+          = link_to 'или выберите брэнд', '#', class: 'link-dashed link-big js-show-products-filter'
   .row
     .span12
       = render 'products/breadcrumbs'

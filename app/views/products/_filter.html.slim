@@ -5,18 +5,18 @@
 
   = link_to '', '#', class: 'close'
 
-  = form_tag '/products/select' do
+  = form_tag request.original_url, method: :get do
     ._filter-body
       - Brand.all.each do |brand|
         ._filter-item
-          = label_tag "brand-#{brand.id}" do
-            = check_box_tag "brand-#{brand.id}", brand.id
+          = label_tag "brand_ids[][#{brand.id}]" do
+            = check_box_tag "brand_ids[]", brand.id, id: "brand_ids[][#{brand.id}]"
             = image_tag "brands/brand-#{brand.id}.png"
 
     ._filter-footer
       .btn-group
         = submit_tag 'Применить фильтр', class: 'btn-simple'
-        = link_to 'Отмена', '#', class: 'link'
+        = link_to 'Отмена', '#', class: 'link '
 
 
 

@@ -1,6 +1,9 @@
 # coding: utf-8
 
 class ProductsController < ApplicationController
+
+  before_filter :get_brands
+
   def index
     @cart = current_cart
     seo = SeoData.find_by_page('Продукция главная')
@@ -8,17 +11,8 @@ class ProductsController < ApplicationController
     @meta_description = seo.try(:description) || ''
     @seo_text = seo.try(:seo_text) || ''
 
-    if params[:brand_id]
-      @products = Product.where(:brand_id => params[:brand_id])
-    else
-      @products= Product.where(:brand_id => 1)
-    end
-    
-    respond_to do |format|
-      format.html 
-      format.js
-    end
-    
+    @products = Product.order('title ASC')
+    @products = @products.where(:brand_id => params[:brand_ids]) if params[:brand_ids]
   end
   
   def show
@@ -41,6 +35,13 @@ class ProductsController < ApplicationController
     respond_to do |format|
         format.html { render :template => "products/index" }
     end
+  end
+
+
+  private
+
+  def get_brands
+    @selected_brands ||= Brand.where(id: params[:brand_ids])
   end
     
 end

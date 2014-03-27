@@ -56,8 +56,8 @@ module ProductsHelper
   def product_seo_path(product)
     if product.taxon
       # почему то slug пустой у таксона
-      #product_path(product.taxon.slug, product)
-      product_path('no_category', product)
+      product_path(product.taxon.slug, product)
+      #product_path('no_category', product)
     else
       product_path('no_category', product)
     end
