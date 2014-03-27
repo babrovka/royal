@@ -14,7 +14,6 @@ module BreadcrumbsHelper
   def breadcrumbs_taxons taxon
     out = []
     if taxon
-      out << link_to(taxon.root.taxonomy.try(:title), taxonomy_path(taxon.root.taxonomy), class: '_breadcrumbs-item')
       out << link_to(taxon.root.try(:title), taxon_path(taxon.root), class: '_breadcrumbs-item')
       unless taxon.root?
         out << link_to(taxon.title, taxon_path(taxon), class: '_breadcrumbs-item')
@@ -22,6 +21,12 @@ module BreadcrumbsHelper
     end
 
     out.join.html_safe
+  end
+
+  def breadcrumbs_taxonomy taxonomy
+    if taxonomy
+      link_to(taxonomy.try(:title), taxonomy_path(taxonomy), class: '_breadcrumbs-item')
+    end
   end
 
 end

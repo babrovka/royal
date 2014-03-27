@@ -1,5 +1,5 @@
 class TaxonsController < ApplicationController
-  before_filter :get_brands, :get_taxon
+  before_filter :selected_brands, :selected_taxonomy, :selected_taxon
 
   def show
     #brands = params[:brand_ids]
@@ -14,12 +14,16 @@ class TaxonsController < ApplicationController
 
   private
 
-  def get_brands
+  def selected_brands
     @selected_brands ||= Brand.where(id: params[:brand_ids])
   end
 
-  def get_taxon
+  def selected_taxon
     @selected_taxon ||= @taxon ||  Taxon.find(params[:id])
+  end
+
+  def selected_taxonomy
+    @selected_taxonomy ||= selected_taxon.taxonomy
   end
 
 end

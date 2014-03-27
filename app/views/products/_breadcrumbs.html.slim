@@ -1,6 +1,7 @@
 ._breadcrumbs
   = link_to 'Главная', root_path, class: '_breadcrumbs-item'
   = link_to 'Каталог Продукции', products_path, class: '_breadcrumbs-item'
+  = breadcrumbs_taxonomy @selected_taxonomy
   = breadcrumbs_brands @selected_brands
   = breadcrumbs_taxons @selected_taxon
   - if @product

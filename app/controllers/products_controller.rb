@@ -2,7 +2,7 @@
 
 class ProductsController < ApplicationController
 
-  before_filter :get_brands, :get_taxon
+  before_filter :selected_brands, :selected_taxon, :selected_taxonomy
 
   def index
     @cart = current_cart
@@ -28,7 +28,9 @@ class ProductsController < ApplicationController
     @meta_description = @product.seo_description
     @seo_text = @product.seo_text
 
+    # переменные для breadcrumbs на странице продукта
     @selected_taxon ||= @product.try(:taxon)
+    @selected_taxonomy ||= selected_taxon.taxonomy
   end
   
   def select
@@ -42,13 +44,17 @@ class ProductsController < ApplicationController
 
   private
 
-  def get_brands
+  def selected_brands
     @selected_brands ||= Brand.where(id: params[:brand_ids])
   end
 
   # если есть продукт, то берем таксон, который относится непосредственно к нему
-  def get_taxon
+  def selected_taxon
     @selected_taxon ||= @product.try(:taxon)
+  end
+
+  def selected_taxonomy
+    @selected_taxonomy ||= selected_taxon.try(:taxonomy)
   end
     
 end
