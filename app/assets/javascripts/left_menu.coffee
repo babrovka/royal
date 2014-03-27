@@ -9,8 +9,9 @@ $ ->
     e.preventDefault()
     $elem = $(e.target)
     unless $elem.next('.js-left-menu-node').is(':empty') || $elem.next('.js-left-menu-node').length == 0
+#      $elem.closest('.js-left-menu-node').find('.opened').first().removeClass('opened').find('.js-left-menu-node').first().slideUp(70)
       $elem.next('.js-left-menu-node').slideToggle(70)
-      $elem.toggleClass('selected').parent('li').toggleClass('selected')
+      $elem.toggleClass('selected').parent('li').toggleClass('opened')
     else
       window.location = e.target.href
   )
