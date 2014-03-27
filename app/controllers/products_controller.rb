@@ -2,7 +2,7 @@
 
 class ProductsController < ApplicationController
 
-  before_filter :get_brands, :get_taxon, :product
+  before_filter :get_brands, :get_taxon
 
   def index
     @cart = current_cart
@@ -16,6 +16,7 @@ class ProductsController < ApplicationController
   end
   
   def show
+    @product ||= Product.find(params[:id])
     @articles = Article.order("created_at DESC").limit(3)
     @procedures = @product.procedures
     @recommended = Product.latest.limit(3)
@@ -26,6 +27,8 @@ class ProductsController < ApplicationController
     end
     @meta_description = @product.seo_description
     @seo_text = @product.seo_text
+
+    @selected_taxon ||= @product.try(:taxon)
   end
   
   def select
@@ -45,11 +48,7 @@ class ProductsController < ApplicationController
 
   # если есть продукт, то берем таксон, который относится непосредственно к нему
   def get_taxon
-    @selected_taxon ||= product.try(:taxon)
-  end
-
-  def product
-    @product ||= Product.find(params[:id])
+    @selected_taxon ||= @product.try(:taxon)
   end
     
 end

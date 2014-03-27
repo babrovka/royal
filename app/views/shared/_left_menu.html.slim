@@ -1,8 +1,7 @@
 = render_navigation expand_all: true
 
-/ TODO-justvitalius: перенести в контроллер вызов коллекции
-/ TODO-justvitalius: как взять линк на тахон
-.left-menu.left-menu-container.js-left-menu
+/ старый код вывода меню
+/.left-menu.left-menu-container.js-left-menu
   - Taxonomy.order('title ASC').each do |taxonomy|
     h3.left-menu-title[ class="#{'left-menu-empty' if taxonomy.taxons.roots.empty?}" id="taxon-#{taxonomy.id}" ]
       = link_to taxonomy.title, '#'
