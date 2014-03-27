@@ -170,8 +170,8 @@ $(document).ready(
 		});
 		
 		
-		$(".layer_bg, .close").on('click', function () {
-			$(".form").hide();	
+		$(".layer_bg, .close, .js-filter-close").on('click', function () {
+			$(".js-products-filter-form").hide();
 			$(".layer_bg").hide();
 		});
 		
