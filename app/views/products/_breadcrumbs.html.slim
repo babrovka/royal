@@ -1,12 +1,7 @@
 ._breadcrumbs
   = link_to 'Главная', root_path, class: '_breadcrumbs-item'
   = link_to 'Каталог Продукции', products_path, class: '_breadcrumbs-item'
-  = render_brands @selected_brands
-  - if @taxon
-    - if @taxon.root
-      = link_to @taxon.root.taxonomy.try(:title), taxonomy_path(@taxon.root.taxonomy), class: '_breadcrumbs-item'
-      = link_to @taxon.root.try(:title), taxon_path(@taxon.root), class: '_breadcrumbs-item'
-    = link_to @taxon.title, taxon_path(@taxon), class: '_breadcrumbs-item'
-
+  = breadcrumbs_brands @selected_brands
+  = breadcrumbs_taxons @selected_taxon
   - if @product
     = link_to @product.title, product_seo_path(@product), class: '_breadcrumbs-item'

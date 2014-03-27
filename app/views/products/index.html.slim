@@ -5,7 +5,7 @@
 #products.container
   .row._page-header
     .span12
-      - if @selected_brands.any?
+      - if @selected_brands.any? && @selected_brands.count != Brand.count
         h1 продукция
         .additional
           - @selected_brands.each do |brand|

@@ -1,6 +1,8 @@
 module BreadcrumbsHelper
-  def render_brands brands
-    if brands.any?
+
+  # рисуем несколько брендов в линию через запятую
+  def breadcrumbs_brands brands
+    if brands.any? && brands.count != Brand.count
       content_tag :div, class: '_breadcrumbs-inline-items' do
         brands.map do |brand|
           link_to brand.title, products_path(brand_ids: brand.id), class: '_breadcrumbs-item'
@@ -8,4 +10,18 @@ module BreadcrumbsHelper
       end
     end
   end
+
+  def breadcrumbs_taxons taxon
+    out = []
+    if taxon
+      out << link_to(taxon.root.taxonomy.try(:title), taxonomy_path(taxon.root.taxonomy), class: '_breadcrumbs-item')
+      out << link_to(taxon.root.try(:title), taxon_path(taxon.root), class: '_breadcrumbs-item')
+      unless taxon.root?
+        out << link_to(taxon.title, taxon_path(taxon), class: '_breadcrumbs-item')
+      end
+    end
+
+    out.join.html_safe
+  end
+
 end

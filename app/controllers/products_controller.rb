@@ -2,7 +2,7 @@
 
 class ProductsController < ApplicationController
 
-  before_filter :get_brands
+  before_filter :get_brands, :get_taxon
 
   def index
     @cart = current_cart
@@ -42,6 +42,11 @@ class ProductsController < ApplicationController
 
   def get_brands
     @selected_brands ||= Brand.where(id: params[:brand_ids])
+  end
+
+  # если есть продукт, то берем таксон, который относится непосредственно к нему
+  def get_taxon
+    @selected_taxon ||= @product.try(:taxon)
   end
     
 end
