@@ -10,13 +10,13 @@
       - Brand.all.each do |brand|
         ._filter-item
           = label_tag "brand_ids[][#{brand.id}]" do
-            = check_box_tag "brand_ids[]", brand.id, id: "brand_ids[][#{brand.id}]"
+            = check_box_tag "brand_ids[]", brand.id, true, id: "brand_ids__#{brand.id}"
             = image_tag "brands/brand-#{brand.id}.png"
 
     ._filter-footer
       .btn-group
         = submit_tag 'Применить фильтр', class: 'btn-simple'
-        = link_to 'Отмена', '#', class: 'link '
+        = link_to 'Отмена', '#', class: 'link js-close-modal'
 
 
 
