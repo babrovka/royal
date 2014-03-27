@@ -1,7 +1,7 @@
 ._breadcrumbs
   = link_to 'Главная', root_path, class: '_breadcrumbs-item'
   = link_to 'Каталог Продукции', products_path, class: '_breadcrumbs-item'
-  = link_to 'С БРЕНДАМИ НАДО ЧТО-ТО ДЕЛАТЬ', '#', class: '_breadcrumbs-item'
+  = render_brands @selected_brands
   - if @taxon
     - if @taxon.root
       = link_to @taxon.root.taxonomy.try(:title), taxonomy_path(@taxon.root.taxonomy), class: '_breadcrumbs-item'

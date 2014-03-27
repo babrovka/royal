@@ -9,6 +9,22 @@ $color-breadcrumps-link: #7f8c8d;
   margin-bottom: 45px;
 }
 
+// распологаем несколько элементов breadcrumbs через запятую
+#{$el}-inline-items{
+  display: inline-block;
+  vertical-align: top;
+
+  #{$el}-item{
+    &:after{  content: ','; padding: 0 .3em 0 0; }
+    &:last-child{
+      &:after{  content: '>'; padding: 0 10px; }
+      @include link-states-style{
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
 #{$el}-item{
   display: inline-block;
   vertical-align: top;
