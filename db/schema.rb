@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140326145140) do
+ActiveRecord::Schema.define(:version => 20140327073256) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -303,7 +303,10 @@ ActiveRecord::Schema.define(:version => 20140326145140) do
     t.string   "title"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "slug"
   end
+
+  add_index "taxonomies", ["slug"], :name => "index_taxonomies_on_slug", :unique => true
 
   create_table "taxons", :force => true do |t|
     t.string   "title"
