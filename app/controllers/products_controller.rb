@@ -30,7 +30,7 @@ class ProductsController < ApplicationController
 
     # переменные для breadcrumbs на странице продукта
     @selected_taxon ||= @product.try(:taxon)
-    @selected_taxonomy ||= selected_taxon.taxonomy
+    @selected_taxonomy ||= @selected_taxon.taxonomy
   end
   
   def select
