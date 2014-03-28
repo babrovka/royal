@@ -1,17 +1,20 @@
 $ ->
-  $('.js-left-menu').children('.selected').children('.js-left-menu-node').show()
-  $('.js-left-menu').children('.selected').children('.js-left-menu-node').children('selected').addClass('opened').children('.js-left-menu-node').show()
+  # класс .selected есть у пунктов меню, на странице которых мы сейчас находимся
+  # открываем их (активируем)
+  $('.js-left-menu').find('.selected').find('.js-left-menu-node').show()
   $('.js-left-menu').find('.selected').addClass('opened')
 
   # просматриваем все ссылки под которыми пустые подменю
   $('.js-left-menu-node').filter(':empty').prev('a').addClass('empty')
 
+  # в $elem находится тэг 'a', по которому произошел клик
   $('.js-left-menu a').on('click', (e) ->
     e.preventDefault()
     $elem = $(e.target)
     unless $elem.next('.js-left-menu-node').is(':empty') || $elem.next('.js-left-menu-node').length == 0
       # скрываем все открытые пункты меню
-      $elem.closest('.js-left-menu-node').find('.opened').removeClass('opened').next('.js-left-menu-node').slideUp(70)
+      # обходим ноду текущей ссылки,чтобы включить показать/скрыть при повторном клике на текущей ноде меню
+      $elem.closest('.js-left-menu-node').find('.opened').not($elem).removeClass('opened').next('.js-left-menu-node').slideUp(70)
 
       # открываем нужный пункт меню
       $elem.next('.js-left-menu-node').slideToggle(70)
@@ -19,31 +22,3 @@ $ ->
     else
       window.location = e.target.href
   )
-
-#window.app = {}
-#window.app =
-#  active_item: (id) ->
-#    $("#taxon-#{id}").closest('.js-left-menu').prev('h3').trigger('click')
-#    $("#taxon-#{id}").closest('.left-menu-submenu').prev('h3').trigger('click')
-#
-#$ ->
-#  $(".js-left-menu").accordion(
-#    heightStyle: "content",
-#    animate: 100,
-#    collapsible: true,
-#    active: false,
-#  )
-#
-#  # показываем активный пункт меню. Его id хранится в .js-left-menu-active-item
-#  timer_id = setTimeout( ->
-#    app.active_item($('.js-left-menu-active-item').data('id'))
-#    clearTimeout(timer_id)
-#  , 500)
-#
-#
-#  # клики по пунктам меню в левом списке
-#  $(document).on('click', '.js-left-menu-link', (e) ->
-##    e.preventDefault()
-##    e.stopImmediatePropagation()
-##    console.log(e.target)
-#  )

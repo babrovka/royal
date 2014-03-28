@@ -19,7 +19,6 @@ namespace :db do
 
   end
 
-
   task :test_nested_taxons => :environment do
 
     Taxon.delete_all

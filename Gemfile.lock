@@ -156,7 +156,6 @@ GEM
     mini_portile (0.5.1)
     multi_json (1.8.0)
     mustache (0.99.4)
-    mysql2 (0.3.13)
     net-scp (1.1.2)
       net-ssh (>= 2.6.5)
     net-sftp (2.1.2)
@@ -297,7 +296,6 @@ DEPENDENCIES
   gollum
   jquery-rails (~> 2.3.0)
   just-datetime-picker
-  mysql2
   paperclip
   pg
   populator
