@@ -16,10 +16,9 @@ Royal::Application.routes.draw do
   resources :videos
   resources :events
   
-  # product
-  match '/products/:id' => 'products#show', :as => :product
+
   # taxonomy
-  match '/taxonomies/:id' => 'taxonomies#show', :as => :taxonomy
+  match '/products/:id' => 'taxonomies#show', :as => :taxonomy
 
   # products
   match '/products', to: 'products#index', :as => :products
@@ -49,4 +48,6 @@ Royal::Application.routes.draw do
   
   #taxon
   match '/:taxonomy/:id', to: 'taxons#show', :as => :taxon
+  # product
+  match '/:id' => 'products#show', :as => :product
 end
