@@ -15,5 +15,5 @@
     ._product-category = product.short_description.truncate(70)
     ._product-description = product.text.truncate(170)
     = link_to 'читать полностью', product_seo_path(product), class: '_product-link link'
-    ._product-price = product.price_professional.to_i
-    = link_to 'Купить', '#', class: '_product-btn'
+    / ._product-price = product.price_professional.to_i
+    / = link_to 'Купить', '#', class: '_product-btn'

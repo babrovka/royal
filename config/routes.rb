@@ -1,9 +1,5 @@
 Royal::Application.routes.draw do
 
-  
-
-  get "taxonomies/show"
-
   mount Ckeditor::Engine => '/ckeditor'
 
   get "search/search"
