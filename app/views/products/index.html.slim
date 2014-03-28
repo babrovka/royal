@@ -10,7 +10,7 @@
         .additional
           - @selected_brands.each do |brand|
             = image_tag "brands/brand-#{brand.id}.png"
-          = link_to 'или выберите брэнд', '#', class: 'link-dashed link-big js-show-products-filter'
+          = link_to 'или выберите бренд', '#', class: 'link-dashed link-big js-show-products-filter'
       - else
         h1 продукция по всем брендам
         .additional
