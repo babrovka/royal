@@ -20,8 +20,7 @@ Royal::Application.routes.draw do
   match '/products/:id' => 'products#show', :as => :product
   # taxonomy
   match '/taxonomies/:id' => 'taxonomies#show', :as => :taxonomy
-  #taxon
-  match '/:taxonomy/:id', to: 'taxons#show', :as => :taxon
+
   # products
   match '/products', to: 'products#index', :as => :products
 
@@ -48,5 +47,6 @@ Royal::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   
-
+  #taxon
+  match '/:taxonomy/:id', to: 'taxons#show', :as => :taxon
 end
