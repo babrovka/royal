@@ -1,6 +1,6 @@
 .row-fluid._product
   .span5
-    = link_to product_seo_path(product) do
+    = link_to product_path(product) do
       ._product-img
         - if product.product_images.any?
           = image_tag product.product_images.first.image.url(:catalog)
@@ -11,9 +11,9 @@
 
   .span7
     ._product-brand[ class="m-brand#{product.brand.id}" ] = product.brand.title
-    = link_to product.title, product_seo_path(product), class: '_product-title'
+    = link_to product.title, product_path(product), class: '_product-title'
     ._product-category = product.short_description.truncate(70)
     ._product-description = product.text.truncate(170)
-    = link_to 'читать полностью', product_seo_path(product), class: '_product-link link'
+    = link_to 'читать полностью', product_path(product), class: '_product-link link'
     / ._product-price = product.price_professional.to_i
     / = link_to 'Купить', '#', class: '_product-btn'

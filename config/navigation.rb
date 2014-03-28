@@ -9,10 +9,10 @@ SimpleNavigation::Configuration.run do |navigation|
       taxonomies.item "taxonomy-#{taxonomy.id}", taxonomy.title, '#' do |taxons|
         taxons.dom_class = '_left-menu-first-level js-left-menu-node'
         taxonomy.taxons.roots.each do |taxon|
-          taxons.item "taxon-#{taxon.id}", taxon.title, taxon_path(taxon) do |subtaxons|
+          taxons.item "taxon-#{taxon.id}", taxon.title, taxon_seo_path(taxon) do |subtaxons|
             subtaxons.dom_class = '_left-menu-second-level js-left-menu-node'
             taxon.children.each do |subtaxon|
-              subtaxons.item "taxon-#{subtaxon.id}", subtaxon.title, taxon_path(subtaxon), class: 'empty'
+              subtaxons.item "taxon-#{subtaxon.id}", subtaxon.title, taxon_seo_path(subtaxon), class: 'empty'
             end
           end
         end

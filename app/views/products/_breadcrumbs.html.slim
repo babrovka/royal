@@ -5,4 +5,4 @@
   = breadcrumbs_brands @selected_brands
   = breadcrumbs_taxons @selected_taxon
   - if @product
-    = link_to @product.title, product_seo_path(@product), class: '_breadcrumbs-item'
+    = link_to @product.title, product_path(@product), class: '_breadcrumbs-item'
