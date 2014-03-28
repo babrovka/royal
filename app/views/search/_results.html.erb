@@ -9,7 +9,7 @@
 <ol class="results">
 	
 	<% for product in @results %>
-	<li><%= link_to product.title, product_seo_path(product) %><p><%= truncate(strip_tags(product.text), length: 400) %></p></li>	
+	<li><%= link_to product.title, product_path(product) %><p><%= truncate(strip_tags(product.text), length: 400) %></p></li>	
 	<% end %>		
 </ul>
 
