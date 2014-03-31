@@ -1,6 +1,6 @@
 class TaxonomiesController < ApplicationController
 
-  before_filter :selected_brands, :selected_taxonomy
+  before_filter :selected_brands, :selected_taxonomy, :seo_text
 
   def show
     taxonomy = Taxonomy.find(params[:id])

@@ -87,12 +87,7 @@ module ApplicationHelper
         @meta_description
       end
     end
-    
-    def seo_text
-      seo = SeoData.find_by_page('Главная страница')
-      @seo_text = seo.try(:seo_text) || ''
-    end
-    
+
 
   
 end

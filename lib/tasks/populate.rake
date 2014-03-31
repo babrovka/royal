@@ -24,7 +24,7 @@ namespace :db do
     Taxon.delete_all
 
     # instead of Taxon.reset_pk_sequence!
-    ActiveRecord::Base.connection.reset_pk_sequence!('taxons')
+    # ActiveRecord::Base.connection.reset_pk_sequence!('taxons')
 
     Taxon.populate 5 do |taxon|
       taxon.title = Faker::Lorem.words(1)[0].capitalize
@@ -117,7 +117,7 @@ namespace :db do
 
   task :test_brands => :environment do
     Brand.destroy_all
-    ActiveRecord::Base.connection.reset_pk_sequence!(:brands)
+    # ActiveRecord::Base.connection.reset_pk_sequence!(:brands)
 
     Brand.populate 3 do |brand|
       brand.title = Faker::Lorem.words(1)[0]

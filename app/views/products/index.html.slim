@@ -25,3 +25,4 @@
     .span8
       .js-left-menu-active-item[ data-id=35 ]
       .row = render :partial => 'products/products', :@products => @products
+      .row = render 'shared/seo_text', :@seo_text => @seo_text if @seo_text

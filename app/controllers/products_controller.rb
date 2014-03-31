@@ -2,7 +2,7 @@
 
 class ProductsController < ApplicationController
 
-  before_filter :selected_brands, :selected_taxon, :selected_taxonomy
+  before_filter :selected_brands, :selected_taxon, :selected_taxonomy, :seo_text
 
   def index
     @cart = current_cart

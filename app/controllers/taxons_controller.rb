@@ -1,5 +1,5 @@
 class TaxonsController < ApplicationController
-  before_filter :selected_brands, :selected_taxonomy, :selected_taxon
+  before_filter :selected_brands, :selected_taxonomy, :selected_taxon, :seo_text
 
   def show
     #brands = params[:brand_ids]

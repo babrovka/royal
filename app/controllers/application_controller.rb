@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
-  
     
   def current_cart
   if current_user
@@ -11,4 +10,11 @@ class ApplicationController < ActionController::Base
   end
     @cart = cart
   end
+  
+    
+    def seo_text
+      seo = SeoData.find_by_page('Главная страница')
+      @seo_text = seo.try(:seo_text) || ''
+    end
+  
 end
