@@ -2,14 +2,14 @@
 
 class ProductsController < ApplicationController
 
-  before_filter :selected_brands, :selected_taxon, :selected_taxonomy, :seo_text
+  before_filter :selected_brands, :selected_taxon, :selected_taxonomy
 
   def index
     @cart = current_cart
     seo = SeoData.find_by_page('Продукция главная')
     @title = seo.try(:title) || ''
     @meta_description = seo.try(:description) || ''
-    seo_text
+    @seo_text = seo.try(:seo_text) || ''
 
     @products = Product.order('title ASC')
     @products = @products.where(:brand_id => params[:brand_ids]) if params[:brand_ids]
