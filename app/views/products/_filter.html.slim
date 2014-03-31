@@ -15,7 +15,8 @@
 
     ._filter-footer
       .btn-group
-        = submit_tag 'Применить фильтр', class: 'btn-simple'
+        = button_tag :submit, class: 'btn-simple', name: 'filter', value: 'brand' do
+          span Применить фильтр
         = link_to 'Отмена', '#', class: 'link js-filter-close'
 
 
