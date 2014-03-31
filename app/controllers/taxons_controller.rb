@@ -8,7 +8,7 @@ class TaxonsController < ApplicationController
     @products = @products.where(:brand_id => params[:brand_ids]) if params[:brand_ids]
     @title = @taxon.seo_title
     @meta_description = @taxon.seo_description
-    @seo_text = @taxon.seo_text
+    seo_text
     render :template => "/products/index" 
   end
 

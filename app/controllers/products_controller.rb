@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
     seo = SeoData.find_by_page('Продукция главная')
     @title = seo.try(:title) || ''
     @meta_description = seo.try(:description) || ''
-    @seo_text = seo.try(:seo_text) || ''
+    seo_text
 
     @products = Product.order('title ASC')
     @products = @products.where(:brand_id => params[:brand_ids]) if params[:brand_ids]
