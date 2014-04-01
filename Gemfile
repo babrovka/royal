@@ -1,8 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-#gem 'mysql2'
-gem 'pg'
 
 gem "russian", "~> 0.6.0"
 gem 'paperclip'
@@ -41,7 +39,12 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :developments do
+  gem 'pg'
+end
+
 group :production do
+  gem 'mysql2'
   gem 'thin'
 end
 
