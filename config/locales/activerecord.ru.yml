@@ -1,0 +1,200 @@
+ru:
+  activerecord:
+    models: 
+      admin_user:
+        one: "Адмиристратор"
+        other: "Администраторы"
+      album:
+        one: "Альбом"
+        few: "Альбомы"
+        many: "Альбомов"
+        other: "Альбомы"
+      article:
+        one: "Новость"
+        other: "Новости"
+      question:
+        one: "Вопрос"
+        other: "Вопросы"
+      brand:
+        one: "Бренд"
+        other: "Бренды"
+      case:
+        one: "Случай применения"
+        other: "Случаи применения"
+      consultation:
+        one: "Консультация"
+        other: "Консультации"
+      product_category:
+        one: "Категория товара"
+        other: "Категории товаров"
+      event:
+        one: "Событие"
+        other: "События"
+      order:
+        one: "Заказ"
+        other: "Заказы"    
+      procedure:
+        one: "Процедура"
+        other: "Процедуры"  
+      product:
+        one: "Товар"
+        other: "Товары"
+      publication:
+        one: "Публикация"
+        other: "Публикации"
+      user: 
+        one: "Пользователь"
+        other: "Пользователи"
+      video: "Видео"
+      city:
+        one: "Город"
+        other: "Города"
+      stage:
+        one: "Стадия"
+        other: "Стадии"
+      substage:
+        one: "Этап"
+        other: "Этапы"
+      taxonomy:
+        one: "Таксономия"
+        other: "Таксономии"
+      taxon:
+        one: "Таксон"
+        other: "Таксоны"
+      seo_data:
+        one: "SEO"
+        other: "SEO"
+      partner:
+        one: "Партнер"
+        other: "Партнеры"
+        many: "Партнера"
+        few: "Партнера"
+    attributes:
+      user:
+        role: "Тип пользователя"
+        password: "Пароль"   
+        password_confirmation: "Подтверждение пароля"
+        check: "Подтвержден"
+        region_id: "Регион"
+        own_region: "Регион"
+      admin_user:
+        password: "Пароль"   
+        password_confirmation: "Подтверждение пароля"
+        current_sign_in_at: "Текущая авторизация"
+        last_sign_in_at: "Последняя авторизация"
+        sign_in_count: "Кол-во авторизаций"
+      publication:
+        title: "Название"
+        file: "Файл"
+        image: "Изображение"
+      recipe:
+        title: "Название"
+        text: "Описание"        
+      event:
+        title: "Название"
+        price: "Стоимость"
+        date: "Дата"
+        text: "Описание" 
+        shorttext: "Текст для главной" 
+        eventdetails: "Детали занятия"
+        main: "Разместить на главной?"
+        city_id: "Город"
+        city: "Город"
+      event_type:
+        title: "Название"
+      recipe_type:
+        title: "Название"    
+      photo:
+        title: "Название"
+        image: "Изображение"
+      album:
+        title: "Название"
+        text: "Описание"
+      article:
+        title: "Название"
+        date: "Дата"
+        text: "Описание"
+        short_text: "Краткое описание"
+      brand:
+        title: "Название"
+      order:
+        user: "Пользователь"
+        comment: "Комментарий"
+      consultation:
+        question: "Вопрос"
+        answer: "Ответ"
+        brand: "Бренд"
+        case: "Случай применения"
+        products: "Товары"
+        check: "Одобрен?"
+      procedure:
+        procedures: "Процедуры"
+        title: "Название"
+        text: "Описание"
+      case:
+        title: "Название"
+        text: "Описание"
+      video:
+        title: "Название"
+        brand: "Категория"
+        brand_id: "Категория"
+      city:  
+        title: "Название"
+      product:
+        title: "Название"
+        brand_id: "Бренд"
+        short_description: "Краткое описание"
+        packing: "Объем"
+        latest: "Новинка"
+        text: "Описание"
+        ingredients: "Ингредиенты"
+        visible_professional: "Розничный покупатель"
+        visible_dealer1: "Косметолог"
+        visible_dealer2: "Директор-управляющий"
+        visible_dealer3: "Специалист заведения wellness"
+        price_professional: "Цена для розничного покупателя"
+        price_dealer1: "Цена для косметолога"
+        price_dealer2: "Цена для директора-управляющего"
+        price_dealer3: "Цена для специалиста заведения wellness"
+        cases: "Случаи применения"
+        taxons: "Таксоны"
+        image: "Изображение"
+        category_id: "Категория"
+        procedures: "Процедуры"
+        created_at: "Создан"
+        seo_title: "SEO title"
+        seo_description: "мета описание"
+        seo_text: "SEO текст"
+        taxon_id: "Категория"
+      question:
+        name: "Имя"
+        phone: "Телефон"
+        text: "Вопрос"
+      product_category:
+        title: "Название"
+        brand_id: "Бренд"
+      stage:
+        title: "Название"
+      substage:
+        text: "Текст"
+        product_id: "Продукт"
+        product: "Продукт"
+      taxonomy:
+        title: "Название"
+        seo_title: "SEO title"
+        seo_description: "мета описание"
+        seo_text: "SEO текст"
+      taxon:
+        title: "Название"
+        parent_id: "Родительскй таксон"
+        seo_title: "SEO title"
+        seo_description: "мета описание"
+        seo_text: "SEO текст"
+      seo_data:
+        page: "Страница"
+        title: "мета заголовок"
+        description: "мета описание"
+        seo_text: "SEO текст"
+      partner:
+        title: "Название"
+        address: "Адрес"
