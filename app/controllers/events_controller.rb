@@ -12,7 +12,7 @@ class EventsController < ApplicationController
     
     @articles = Article.order("created_at DESC").limit(3)
     @widget_events = Event.order("created_at DESC").limit(2)
-    @cities = City.all
+    @cities = City.with_events
     
     respond_to do |format|
       format.html
