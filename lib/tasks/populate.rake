@@ -26,7 +26,7 @@ namespace :db do
     # instead of Taxon.reset_pk_sequence!
     # ActiveRecord::Base.connection.reset_pk_sequence!('taxons')
 
-    Taxon.populate 5 do |taxon|
+    Taxon.populate 10 do |taxon|
       taxon.title = Faker::Lorem.words(1)[0].capitalize
       taxon.taxonomy_id = Taxonomy.pluck(:id).sample
       taxon.seo_url = Faker::Lorem.words(1)[0]
@@ -37,31 +37,22 @@ namespace :db do
     Taxon.rebuild!
 
 
-    10.times do
-      taxon = Taxon.new
-      taxon.title = Faker::Lorem.words(1)[0].capitalize
-      taxon.taxonomy_id = Taxonomy.pluck(:id).sample
-      taxon.seo_url = Faker::Lorem.words(1)[0]
-      taxon.save!
-      print '.'
-      taxon.move_to_child_of Taxon.roots.first
+    4.times do ||
+      root = Taxon.roots.shuffle.first
+
+      5.times do
+        taxon = Taxon.new
+        taxon.title = Faker::Lorem.words(1)[0].capitalize
+        taxon.taxonomy_id = Taxonomy.pluck(:id).sample
+        taxon.seo_url = Faker::Lorem.words(1)[0]
+        taxon.save!
+        print '.'
+        taxon.move_to_child_of root
+      end
     end
 
     puts '++'
     Taxon.rebuild!
-
-    #20.times do
-    #  taxon = Taxon.new
-    #  taxon.title = Faker::Lorem.words(1)[0].capitalize
-    #  taxon.taxonomy_id = Taxonomy.pluck(:id).sample
-    #  taxon.save!
-    #  print '.'
-    #  taxon.move_to_child_of Taxon.roots.first.children.sample
-    #end
-    #
-    #puts '+++'
-    #Taxon.rebuild!
-
     puts "Nested taxons created!"
 
   end
