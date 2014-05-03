@@ -106,6 +106,14 @@ namespace :db do
 
   end
 
+  task :create_cities => :environment do
+    City.destroy_all
+    City.create(:title => 'Москва')
+    City.create(:title => 'Санкт-Петербург')
+
+    puts "Cities created!"
+  end
+
   task :test_brands => :environment do
     Brand.destroy_all
     # ActiveRecord::Base.connection.reset_pk_sequence!(:brands)

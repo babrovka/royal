@@ -1,0 +1,22 @@
+.container
+  .row
+    .span12
+      h1 студия профессионального роста
+    .span9
+      = City.all
+      - cities.each do |city|
+        = link_to city.title, '#', id: "city-#{city.id}", class: 'city_link'
+
+
+      = form_tag events_path, :method => 'get', :id => "events_form", :remote => true do
+        #events
+          = render 'events', :@events => @events, :@events_by_date => @events_by_date, :@date => @date
+    .span3
+      .header Новости компании
+      .line
+      = render 'layouts/product-news'
+      = link_to 'все новости', articles_path, :class => 'content-header-link product'
+
+      /- @widget_events.each do |event|
+        .span6.event-widget = event.title
+

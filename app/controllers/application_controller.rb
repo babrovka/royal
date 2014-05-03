@@ -3,7 +3,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  helper_method :parthners
+  helper_method :parthners, :cities
 
     
   def current_cart
@@ -24,7 +24,11 @@ class ApplicationController < ActionController::Base
   private
 
   def parthners
-    Partner.all
+    @_parthners ||= Partner.all
+  end
+
+  def cities
+    @_cities ||= City.all
   end
   
 end
