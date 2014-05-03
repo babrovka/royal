@@ -1,8 +1,14 @@
 $ ->
   # класс .selected есть у пунктов меню, на странице которых мы сейчас находимся
   # открываем их (активируем)
-  $('.js-left-menu').find('.selected').find('.js-left-menu-node').show()
-  $('.js-left-menu').find('.selected').addClass('opened')
+  # попутно выставляем класс opened для ссылок, подсветить активные пункт
+  # и выставить стрелочки в нужном направлении
+  $('.js-left-menu').find('a.selected').addClass('opened').next('.js-left-menu-node').show()
+  $('.js-left-menu').find('li.selected').addClass('opened')
+
+  # выставляем класс для «по-настоящему» активному пункту меню
+  # чтобы при повторном открытии ноды с этим пунктом меню, он подсвечивался основным цветом.
+  console.log $('.js-left-menu a.selected').last().addClass('current-active')
 
   # просматриваем все ссылки под которыми пустые подменю
   $('.js-left-menu-node').filter(':empty').prev('a').addClass('empty')
@@ -14,10 +20,10 @@ $ ->
     unless $elem.next('.js-left-menu-node').is(':empty') || $elem.next('.js-left-menu-node').length == 0
       # скрываем все открытые пункты меню
       # обходим ноду текущей ссылки,чтобы включить показать/скрыть при повторном клике на текущей ноде меню
-      $elem.closest('.js-left-menu-node').find('.opened').not($elem).removeClass('opened').next('.js-left-menu-node').slideUp(70)
+      $elem.closest('.js-left-menu-node').find('.opened').not($elem).removeClass('opened').next('.js-left-menu-node').slideUp(140)
 
       # открываем нужный пункт меню
-      $elem.next('.js-left-menu-node').slideToggle(70)
+      $elem.next('.js-left-menu-node').slideToggle(140)
       $elem.toggleClass('opened').parent('li').toggleClass('opened')
     else
       window.location = e.target.href

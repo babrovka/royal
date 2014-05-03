@@ -47,7 +47,7 @@ $arrow-width: 21px;
     }
 
     // активные пункты меню
-    &:hover, &:active, &.opened{ background-color: $color-bg; }
+    &:hover, &:active, &.opened, &.current-active{ background-color: $color-bg; }
 
     // стрелка у активного пункта меню
     &.opened:after{ background-position: -$arrow-width 50%; }
