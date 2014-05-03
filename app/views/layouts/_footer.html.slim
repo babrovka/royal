@@ -1,0 +1,31 @@
+#footer
+  .container
+    .row
+      - parthners.each do |parhner|
+        = parthner.title
+        = parthner.address
+        = parthner.city
+
+      - if parthners.empty?
+        p Партнеров нет
+    .row
+      #footer-logo
+      #footer-phone
+        #number= t('views.phone')
+      #footer-social
+        = link_to "vkontakte", "https://vk.com/alissi_bronte_russia", :target => '_blank', :class => 'social_link vk'
+        = link_to "facebook", "https://www.facebook.com/AlissiBronteRussia", :target => '_blank', :class => 'social_link fb'
+        = link_to "linkedin", "http://www.linkedin.com/pub/alissi-bronte/69/770/836?trk=fbr", :target => '_blank', :class => 'social_link in'
+      .search
+        form#footsearch accept-charset="UTF-8" action="/search" method="get"
+          input name="utf8" type="hidden" value="✓" /
+          input.search-input name="testfind" onblur=("if(this.value=='') this.value='поиск по сайту';") onfocus=("if(this.value=='поиск по сайту') this.value='';") type="text" value=("поиск по сайту") /
+          a.search-submit href="#"
+    .row
+      #copyright
+        | ООО «Роял Брендс», © #{Time.now.year} | все права защищены | эл. почта: info@rbcos.ru
+      .made-in-zero
+        | сделано
+        br/
+        | в #{link_to "zero b2b", "http://zonazero.ru/", :target => '_blank'}
+      = link_to "zero b2b", "http://zonazero.ru/", :class => "zero-logo", :target => '_blank'
