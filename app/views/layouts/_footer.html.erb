@@ -3,11 +3,11 @@
 	
     <div class="row">
 	  <div id="footer-logo"></div>
-	  <div id="footer-phone"><div id="number">8 499 703 31 32</div></div>
+	  <div id="footer-phone"><div id="number"><%= t('views.phone') %></div></div>
 	  <div id="footer-social">
 		<%= link_to "vkontakte", "https://vk.com/alissi_bronte_russia", :target => '_blank', :class => 'social_link vk' %>
     <%= link_to "facebook", "https://www.facebook.com/AlissiBronteRussia", :target => '_blank', :class => 'social_link fb' %>
-		<!-- <%= link_to "twitter", "https://twitter.com/AlissiBronteRus", :target => '_blank', :class => 'social_link tw' %> -->
+		<%# link_to "twitter", "https://twitter.com/AlissiBronteRus", :target => '_blank', :class => 'social_link tw' %> 
 		<%= link_to "linkedin", "http://www.linkedin.com/pub/alissi-bronte/69/770/836?trk=fbr", :target => '_blank', :class => 'social_link in' %>
 	  </div>
 		<div class="search">
@@ -20,7 +20,7 @@
 	</div>
 	
 	<div class="row">
-	<div id="copyright">ООО «Роял бьюти косметикс», © <%= Time.now.year %> | все права защищены | эл. почта: info@rbcos.ru</div>
+	<div id="copyright">ООО «Роял Брендс», © <%= Time.now.year %> | все права защищены | эл. почта: info@rbcos.ru</div>
 	<div class="made-in-zero">сделано <br/> в <%= link_to "zero b2b", "http://zonazero.ru/", :target => '_blank'%></div>
 	<%= link_to "zero b2b", "http://zonazero.ru/", :class => "zero-logo", :target => '_blank'%>
 	</div>

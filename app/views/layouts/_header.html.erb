@@ -3,9 +3,9 @@
     <div class="row">
       <div class="span12">
         <%= partner_link %>
-		<%= link_to "vkontakte", "https://vk.com/alissi_bronte_russia", :target => '_blank', :class => 'social_link vk' %>
+		    <%= link_to "vkontakte", "https://vk.com/alissi_bronte_russia", :target => '_blank', :class => 'social_link vk' %>
         <%= link_to "facebook", "https://www.facebook.com/AlissiBronteRussia", :target => '_blank', :class => 'social_link fb' %>
-		<%= link_to "twitter", "https://twitter.com/AlissiBronteRus", :target => '_blank', :class => 'social_link tw' %>
+		    <%= link_to "twitter", "https://twitter.com/AlissiBronteRus", :target => '_blank', :class => 'social_link tw' %>
 		<div class="search">
 		<form id="header_search" accept-charset="UTF-8" action="/search" method="get">
 					<input name="utf8" type="hidden" value="&#x2713;" />
@@ -15,8 +15,8 @@
 		
 		</div>
 		<%= link_to "показать на карте", contacts_path, :class => 'map_link' %>
-		<div class="phone">8 499 703 31 32</div>
-		<div class="phone">8 812 702-7989</div>
+		<div class="phone"><%= t('views.phone') %></div>
+		<div class="phone"><%= t('views.phone_spb') %></div>
       </div>
     </div>
   </div>
