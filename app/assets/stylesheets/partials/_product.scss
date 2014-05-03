@@ -21,7 +21,13 @@ $color-link: #3f3ca2;
   $size: 220px;
   margin-left: 30px;
   cursor: pointer;
+  /*
+    после замены с absolute на relative,
+    все блоки-родители данного класса приобрели правильные размеры
+    и отступы снизу выровнялись по изображению.
+  */
   position: absolute;
+  position: relative;
   box-shadow: 0 3px 10px -1px rgba(0,0,0,0.5);
   width: $size;
   height: $size;
