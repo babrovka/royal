@@ -3,9 +3,11 @@
     .span12
       h1 студия профессионального роста
     .span9
-      = City.all
-      - cities.each do |city|
+      - cities_with_events.each do |city|
         = link_to city.title, '#', id: "city-#{city.id}", class: 'city_link'
+
+      - if cities_with_events.blank?
+        p Ни в одном из городом нет событий.
 
 
       = form_tag events_path, :method => 'get', :id => "events_form", :remote => true do

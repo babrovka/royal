@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+
+  helper_method :cities_with_events
   
   def index
     @events = params[:city_id] ? Event.where(:city_id => params[:city_id]) : Event.where(:city_id => 1)
@@ -56,6 +58,12 @@ class EventsController < ApplicationController
       format.html
       format.js
     end
+  end
+
+  private
+
+  def cities_with_events
+    @_cities_with_events = City.with_events
   end
   
 end

@@ -29,54 +29,54 @@ $(document).ready(
 	
 	
     function(){	
-	$(".dynamic_bullshit").on("change", function() {
-	 $('#cart_edit').submit();
-	});
-		
-	$("#city_select").change(function () {
-		var target = $('#city_select option:selected').val();
-		if(target == "moscow") {
-		    $('#saint').hide();
-		    $('#moscow').show();
-		} else {
-		    $('#moscow').hide();
-			$('#saint').show();
-		}
-	});
+        $(".dynamic_bullshit").on("change", function() {
+         $('#cart_edit').submit();
+        });
+
+        $("#city_select").change(function () {
+            var target = $('#city_select option:selected').val();
+            if(target == "moscow") {
+                $('#saint').hide();
+                $('#moscow').show();
+            } else {
+                $('#moscow').hide();
+                $('#saint').show();
+            }
+        });
+
+        $('#show_photo').on("click", function() {
+          $('#video-gallery').hide();
+          $('#photo-gallery').show();
+          $('#publications').hide();
+        });
+
+        $('#show_video').on("click", function() {
+          $('#photo-gallery').hide();
+          $('#video-gallery').show();
+          $('#publications').hide();
+        });
+
+        $('#show_publications').on("click", function() {
+          $('#photo-gallery').hide();
+          $('#video-gallery').hide();
+          $('#publications').show();
+        });
+
+
+
+        $(".publication").on("mouseover",function () {
+            $(this).find('.publication_image_hover').show();
+        });
+
+
+        $(".publication").mouseleave(function () {
+            $('.publication_image_hover').hide();
+        });
+
 	
-	$('#show_photo').on("click", function() {
-	  $('#video-gallery').hide();	
-      $('#photo-gallery').show();
-      $('#publications').hide();
-    });
-
-	$('#show_video').on("click", function() {
-	  $('#photo-gallery').hide();
-	  $('#video-gallery').show();	
-	  $('#publications').hide();
-    });
-
-	$('#show_publications').on("click", function() {
-	  $('#photo-gallery').hide();
-	  $('#video-gallery').hide();	
-	  $('#publications').show();
-    });
-
-
-
-	$(".publication").on("mouseover",function () {
-		$(this).find('.publication_image_hover').show();
-	});
+	    /*publications*/
 	
-
-	$(".publication").mouseleave(function () {
-		$('.publication_image_hover').hide();
-	});
-
-	
-	/*publications*/
-	
-	  $('.open').on("click", function() {	
+	    $('.open').on("click", function() {
 			event.preventDefault();
 			small = $(this).parent().hide()
 			full = $(this).parent().next()
@@ -91,7 +91,7 @@ $(document).ready(
 				$(this).parent().hide();
 		  });
 	
-	// city select
+	    // Выбор города на странице с календарем
 		
 		$("#city_spb").addClass("active");
 		
@@ -111,7 +111,7 @@ $(document).ready(
 			return false
 		});
 		
-
+        // Работа календаря
 		$(".calendar td").on('click', function () {				
 			bubble = $(this).find('.bubble');
 			bubble.show();
@@ -133,7 +133,9 @@ $(document).ready(
 			return false
 		});		
 		
-		
+		// =============================================
+
+
 		$(".product_image_wrap").mouseover(function () {
 			$(this).children().css('visibility', 'visible');
 		});
