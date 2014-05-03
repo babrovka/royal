@@ -43,7 +43,7 @@ group :developments do
 end
 
 group :production do
-  gem 'mysql2'
+  # gem 'mysql2'
   gem 'thin'
 end
 
