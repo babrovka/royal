@@ -168,6 +168,7 @@ ru:
         seo_description: "мета описание"
         seo_text: "SEO текст"
         taxon_id: "Категория"
+        position: "Порядковый номер"
       question:
         name: "Имя"
         phone: "Телефон"

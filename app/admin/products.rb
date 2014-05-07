@@ -6,9 +6,10 @@ ActiveAdmin.register Product do
   filter :latest
   filter :brand_id, :collection => proc { Brand.all }, :as => :check_boxes
   filter :procedures_id, :collection => proc { Brand.all }, :as => :check_boxes
-
+  config.sort_order = "position_asc"
   
   index do
+    column :position
     column :title
     column :taxon_id do |column|
       if column.taxon_id && Taxon.exists?(column.taxon_id)
@@ -31,6 +32,7 @@ ActiveAdmin.register Product do
 
      attributes_table do
        row :title
+       row :position
        row :latest
        row :packing
        row :text do |row|

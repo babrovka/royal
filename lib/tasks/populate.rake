@@ -89,7 +89,7 @@ namespace :db do
       product.packing = ["30 мл", "50 мл", "100 мл"].sample
       product.text = Populator.sentences(10..20)
       product.ingredients = Faker::Lorem.words(10..30)
-      product.brand_id = [1, 2, 3].sample
+      product.brand_id = Brand.all.sample
       product.taxon_id = Taxon.pluck(:id).sample
       product.visible_professional = true
       product.visible_dealer1 = true
@@ -100,6 +100,7 @@ namespace :db do
       product.price_dealer2 = 200
       product.price_dealer3 = 300
       product.short_description = Populator.sentences(2..5)
+      product.position = Array(1..1000)
     end
     
     Product.all.each do |product|
