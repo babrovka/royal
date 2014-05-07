@@ -4,7 +4,7 @@ class Product < ActiveRecord::Base
                   :price_professional, :price_dealer1, :price_dealer2, :price_dealer3,
                   :procedure_ids, :case_ids, :consultation_ids, :product_images_attributes, 
                   :short_description, :product_category_id, :product_images,
-                  :seo_title, :seo_description, :seo_text, :taxon_id, :position
+                  :seo_title, :seo_description, :seo_text, :taxon_id#, :position
   has_and_belongs_to_many :procedures
   has_and_belongs_to_many :cases
   has_many :substages
@@ -20,7 +20,7 @@ class Product < ActiveRecord::Base
   validates :title, :packing, :text, :ingredients, :brand_id, :short_description, :presence => true
   
   scope :latest, where(:latest => true)
-  default_scope order('position ASC')
+  # default_scope order('position ASC')
   
   extend FriendlyId
   friendly_id :short_description, use: :slugged

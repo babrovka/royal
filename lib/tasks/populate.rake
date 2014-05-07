@@ -8,7 +8,7 @@ namespace :db do
   
   task :test_brands => :environment do
     Brand.destroy_all
-    # ActiveRecord::Base.connection.reset_pk_sequence!(:brands)
+    ActiveRecord::Base.connection.reset_pk_sequence!(:brands)
 
     Brand.populate 3 do |brand|
       brand.title = Faker::Lorem.words(1)[0]
@@ -100,7 +100,7 @@ namespace :db do
       product.price_dealer2 = 200
       product.price_dealer3 = 300
       product.short_description = Populator.sentences(2..5)
-      product.position = Array(1..1000)
+      # product.position = Array(1..1000)
     end
     
     Product.all.each do |product|
