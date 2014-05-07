@@ -5,17 +5,25 @@ require 'faker'
 require 'populator'
 
 namespace :db do
-  task :create_taxons => :environment do
-    Taxon.destroy_all
-    Taxon.populate 20 do |taxon|
-      taxon.title = Faker::Lorem.words(1)[0].capitalize
-      taxon.taxonomy_id = Taxonomy.pluck(:id).sample
+  
+  task :test_brands => :environment do
+    Brand.destroy_all
+    # ActiveRecord::Base.connection.reset_pk_sequence!(:brands)
+
+    Brand.populate 3 do |brand|
+      brand.title = Faker::Lorem.words(1)[0]
     end
-    
-    Taxon.find_each(&:save)
-    Taxon.rebuild!
-    
-    puts "Taxons created!"
+  end
+  
+  task :test_taxonomies => :environment do
+
+    Taxonomy.delete_all
+
+    Taxonomy.populate 5 do |taxonomy|
+      taxonomy.title = Faker::Lorem.words(1)[0].capitalize
+    end
+
+    puts "Taxonomies created!"
 
   end
 
@@ -57,21 +65,17 @@ namespace :db do
 
   end
 
-  task :test_taxonomies => :environment do
 
-    Taxonomy.delete_all
-
-    Taxonomy.populate 5 do |taxonomy|
-      taxonomy.title = Faker::Lorem.words(1)[0].capitalize
-    end
-
-    puts "Taxonomies created!"
-
-  end
   
   task :create_products => :environment do
     LineItem.destroy_all
     Product.destroy_all
+    Case.destroy_all
+    
+    Case.populate 100 do |product_case|
+      product_case.title = Faker::Lorem.words(1)[0].capitalize
+    end
+    
     
     Product.populate 100 do |product|
       product.title = Faker::Lorem.words(1)[0].capitalize
@@ -89,6 +93,11 @@ namespace :db do
       product.price_dealer2 = 200
       product.price_dealer3 = 300
       product.short_description = Populator.sentences(2..5)
+    end
+    
+    Product.all.each do |product|
+      product.cases << Case.all.sample
+      product.save!
     end
     
     Product.find_each(&:save)
@@ -114,14 +123,7 @@ namespace :db do
     puts "Cities created!"
   end
 
-  task :test_brands => :environment do
-    Brand.destroy_all
-    # ActiveRecord::Base.connection.reset_pk_sequence!(:brands)
 
-    Brand.populate 3 do |brand|
-      brand.title = Faker::Lorem.words(1)[0]
-    end
-  end
 end
 
 
