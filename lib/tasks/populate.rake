@@ -89,7 +89,7 @@ namespace :db do
       product.packing = ["30 мл", "50 мл", "100 мл"].sample
       product.text = Populator.sentences(10..20)
       product.ingredients = Faker::Lorem.words(10..30)
-      product.brand_id = Brand.all.sample
+      product.brand_id = Brand.pluck(:id).sample
       product.taxon_id = Taxon.pluck(:id).sample
       product.visible_professional = true
       product.visible_dealer1 = true
