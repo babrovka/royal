@@ -16,6 +16,9 @@ Royal::Application.routes.draw do
   resources :videos
   resources :events
   
+  # case
+  match '/cases/:id' => 'cases#show', :as => :case
+  
 
   # taxonomy
   match '/products/:id' => 'taxonomies#show', :as => :taxonomy
