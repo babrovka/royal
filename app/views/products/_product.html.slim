@@ -1,4 +1,4 @@
-.row-fluid._product
+.row-fluid._product.js-product-box
   .span5
     = link_to product_path(product) do
       ._product-img
@@ -9,11 +9,14 @@
         ._product-img-staff
 
 
-  .span7
+  .span7.js-product-box-description
     ._product-brand[ class="m-brand#{product.brand.id}" ] = product.brand.title
     = link_to product.title, product_path(product), class: '_product-title'
     ._product-category = product.short_description.truncate(70)
-    ._product-description = product.text.truncate(170)
+    - numbers = 170
+    - numbers -=53 if (product.title.length/28.0).ceil > 2
+    - numbers -= 53 if (product.short_description.truncate(70).length/40.0).ceil > 3
+    ._product-description.js-product-box-shorting-area = product.text.truncate(numbers)
     = link_to 'читать полностью', product_path(product), class: '_product-link link'
     / ._product-price = product.price_professional.to_i
     / = link_to 'Купить', '#', class: '_product-btn'
