@@ -1,9 +1,12 @@
 $el: '._product';
 
 $color-title: #6e2257;
-$color-brand1: #f2e1ac;
-$color-brand2: #aef4f3;
-$color-brand3: #aef4f3;
+$color-brand1-bg: #f2e1ac;
+$color-brand1-txt: #000;
+$color-brand2-bg: #befaeb;
+$color-brand2-txt: #008054;
+$color-brand3-bg: #136ea9;
+$color-brand3-txt: #fff;
 $color-btn: #553d59;
 $color-link: #3f3ca2;
 
@@ -93,9 +96,9 @@ $color-link: #3f3ca2;
   padding: .1em .6em;
   vertical-align: top;
 
-  &.m-brand1{ background-color: $color-brand1; }
-  &.m-brand2{ background-color: $color-brand2; }
-  &.m-brand3{ background-color: $color-brand3; }
+  &.m-brand1{ background-color: $color-brand1-bg; color: $color-brand1-txt; }
+  &.m-brand2{ background-color: $color-brand2-bg; color: $color-brand2-txt; }
+  &.m-brand3{ background-color: $color-brand3-bg; color: $color-brand3-txt; }
 }
 
 #{$el}-category{
