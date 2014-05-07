@@ -151,3 +151,20 @@ $color-link: #3f3ca2;
     color: white;
   }
 }
+
+
+// SCROLLING
+.scrolled {
+  ._product {
+    background: red;
+    width: 49.98%;
+    display: inline-block;
+    vertical-align: top;
+    .span5 {
+      width: 57.44680851063829%;
+    }
+    .span7 {
+      width: 40.42553191489362%;
+    }
+  }
+}
