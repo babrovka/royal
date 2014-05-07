@@ -21,6 +21,7 @@
 //= require jquery.fancybox
 //= require jquery.fancybox.pack
 //= require left_menu
+//= require scrolling
 //= require_self
 
 

@@ -1,3 +1,18 @@
+window.test ||= {}
+window.test =
+  left_menu_check: ->
+    @.debug($('.js-left-menu a').hasClass('hovered') == false)
+    @.debug($('.js-left-menu a').first().trigger('hover').hasClass('hovered') == true)
+
+    $('.js-left-menu a').trigger('hover').hasClass('hovered')
+
+
+  debug: (condition) ->
+    if condition
+      console.log 'true'
+    else
+      console.log 'false'
+
 $ ->
   # класс .selected есть у пунктов меню, на странице которых мы сейчас находимся
   # открываем их (активируем)
@@ -28,3 +43,5 @@ $ ->
     else
       window.location = e.target.href
   )
+
+
