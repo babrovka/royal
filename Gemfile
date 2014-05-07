@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '1.9.3'
-gem 'rails', '3.2.13'
 
+gem 'rails', '3.2.13'
 gem "russian", "~> 0.6.0"
 gem 'paperclip'
 gem "execjs"

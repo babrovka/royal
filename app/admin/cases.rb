@@ -5,22 +5,31 @@ ActiveAdmin.register Case do
   
    index do 
      column :title
-     column :text
      default_actions
    end
 
    form do |f|  
      f.inputs do
        f.input :title
-       f.input :text
+       f.input :short_description, :input_html => { :rows => 3 }
+       f.input :text, :input_html => { :rows => 15 }
+       f.input :image, :as => :file, :hint => ( f.object.new_record? || !f.object.image ) ? nil : image_tag(f.object.image.url(:medium))
      end
      f.actions
    end
 
-  show do
+  show do |product_case|
     attributes_table do
       row :title
-      row :text
+      row :short_description do |row|
+        Redcarpet.new(row.short_description, :hard_wrap).to_html.html_safe
+      end
+      row :text do |row|
+        Redcarpet.new(row.text, :hard_wrap).to_html.html_safe
+      end
+      row :image do 
+        image_tag(product_case.image.url(:medium)) if product_case.image
+      end
     end  
    end
 end

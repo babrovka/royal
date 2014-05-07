@@ -72,8 +72,15 @@ namespace :db do
     Product.destroy_all
     Case.destroy_all
     
-    Case.populate 100 do |product_case|
+    Case.populate 10 do |product_case|
       product_case.title = Faker::Lorem.words(1)[0].capitalize
+      product_case.short_description = Populator.sentences(1..3)
+      product_case.text = Populator.sentences(10..20)
+    end
+    
+    Case.all.each do |product_case|
+      product_case.image = File.open(Dir.glob(File.join(Rails.root, 'covers', '*')).sample)
+      product_case.save!
     end
     
     
@@ -99,6 +106,8 @@ namespace :db do
       product.cases << Case.all.sample
       product.save!
     end
+    
+    
     
     Product.find_each(&:save)
     

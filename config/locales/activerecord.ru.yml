@@ -134,6 +134,8 @@ ru:
       case:
         title: "Название"
         text: "Описание"
+        short_description: "Краткое описание"
+        image: "Изображение"
       video:
         title: "Название"
         brand: "Категория"
