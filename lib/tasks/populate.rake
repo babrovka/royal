@@ -85,7 +85,7 @@ namespace :db do
     
     
     Product.populate 100 do |product|
-      product.title = Faker::Lorem.words(1)[0].capitalize
+      product.title = Populator.words(1..10).capitalize
       product.packing = ["30 мл", "50 мл", "100 мл"].sample
       product.text = Populator.sentences(10..20)
       product.ingredients = Faker::Lorem.words(10..30)
@@ -99,8 +99,7 @@ namespace :db do
       product.price_dealer1 = 100
       product.price_dealer2 = 200
       product.price_dealer3 = 300
-      product.short_description = Populator.sentences(2..5)
-      # product.position = Array(1..1000)
+      product.short_description = Populator.sentences(3..14)
     end
     
     Product.all.each do |product|
