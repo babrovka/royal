@@ -7,17 +7,20 @@ $ ->
   enable_scroll_top_btn = () =>
     $('.js-scroll-top-btn').fadeIn(200).one('click', (e) => scroll_to_top(e))
     $('body').addClass('scrolled')
-    $('#products-catalog .span8').first().addClass('span12').removeClass('span8')
+#    $('#products-catalog .span8').first().
+    $('.js-products-list-change-render').addClass('span12').removeClass('span8')
     @
 
   disable_scroll_top_btn = () ->
     $('.js-scroll-top-btn').fadeOut(200)
     $('body').removeClass('scrolled')
-    $('#products-catalog .span12').first().addClass('span8').removeClass('span12')
+    $('.js-products-list-change-render').addClass('span8').removeClass('span12')
     @
 
   scroll_to_top = (e) =>
     e.preventDefault()
+#    вначале без анимации пролестать до 100 пикселов
+#    а потом плавно пролистать до 0
     $("html, body").animate({ scrollTop: 0 }, 200)
     false
 
