@@ -8,7 +8,7 @@ $ ->
 
   # выставляем класс для «по-настоящему» активному пункту меню
   # чтобы при повторном открытии ноды с этим пунктом меню, он подсвечивался основным цветом.
-  console.log $('.js-left-menu a.selected').last().addClass('current-active')
+  $('.js-left-menu a.selected').last().addClass('current-active')
 
   # просматриваем все ссылки под которыми пустые подменю
   $('.js-left-menu-node').filter(':empty').prev('a').addClass('empty')

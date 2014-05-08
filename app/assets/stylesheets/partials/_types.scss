@@ -31,3 +31,14 @@ h5 {
 a, p, div{
   font-family: Arial, 'PragmaticaC', sans-serif;
 }
+
+.visible-animate,
+.invisible-animate{
+  -webkit-transition: opacity .3s ease-in-out;
+  -moz-transition: opacity .3s ease-in-out;
+  -o-transition: opacity .3s ease-in-out;
+  transition: opacity .3s ease-in-out;
+}
+
+.visible-animate{ opacity: 0.99; }
+.invisible-animate{ opacity: 0.01; }
