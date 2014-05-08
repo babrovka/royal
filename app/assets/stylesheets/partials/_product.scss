@@ -14,6 +14,8 @@ $color-link: #3f3ca2;
 
 #{$el}{
   margin-bottom: 55px;
+
+  > a { display: inline-block; }
 }
 
 #{$el}-btn, #{$el}-price{
@@ -154,14 +156,18 @@ $color-link: #3f3ca2;
 
 
 // SCROLLING
+// при скроллинге, включаем отрисовку продуктов в два ряда.
+// данный способ отрисовки очень завязан на bootstrap2
+// и фиксированной верстке.
 .scrolled {
   ._product {
-    background: red;
     width: 49.98%;
     display: inline-block;
     vertical-align: top;
     .span5 {
       width: 57.44680851063829%;
+      max-width: 230px;
+      #{$el}-img {  margin-left: 0; }
     }
     .span7 {
       width: 40.42553191489362%;

@@ -5,18 +5,21 @@ $ ->
 
   # показываем кнопку
   enable_scroll_top_btn = () =>
-    console.log 'enable scroll'
     $('.js-scroll-top-btn').fadeIn(200).one('click', (e) => scroll_to_top(e))
     $('body').addClass('scrolled')
     $('#products-catalog .span8').first().addClass('span12').removeClass('span8')
+    @
 
   disable_scroll_top_btn = () ->
     $('.js-scroll-top-btn').fadeOut(200)
     $('body').removeClass('scrolled')
     $('#products-catalog .span12').first().addClass('span8').removeClass('span12')
+    @
 
   scroll_to_top = (e) =>
     e.preventDefault()
+    $("html, body").animate({ scrollTop: 0 }, 200)
+    false
 
 
   # вводим переменную, чтобы улучшить производительность
