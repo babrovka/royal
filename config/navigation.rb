@@ -3,6 +3,15 @@
 SimpleNavigation::Configuration.run do |navigation|
   navigation.auto_highlight = true
   navigation.active_leaf_class = 'active-leaf'
+
+  # If you need to add custom html around item names, you can define a proc that
+  # will be called with the name you pass in to the navigation.
+  # The example below shows how to wrap items spans.
+  navigation.name_generator = Proc.new {|name, item| "<span>#{name}</span>"}
+
+  # If this option is set to true, all item names will be considered as safe (passed through html_safe). Defaults to false.
+  navigation.consider_item_names_as_safe = true
+
   navigation.items do |taxonomies|
     taxonomies.dom_class = '_left-menu-root-level _left-menu js-left-menu js-left-menu-node'
     Taxonomy.order('title ASC').each do |taxonomy|
@@ -48,7 +57,7 @@ SimpleNavigation::Configuration.run do |navigation|
   # The auto highlight feature is turned on by default.
   # This turns it off globally (for the whole plugin)
   # navigation.auto_highlight = false
-  
+
   # If this option is set to true, all item names will be considered as safe (passed through html_safe). Defaults to false.
   # navigation.consider_item_names_as_safe = false
 
