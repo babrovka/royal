@@ -15,6 +15,7 @@
 /tmp
 /.idea/*
 .rvmrc
+.powrc
 
 .DS_Store
 /config/database.yml
