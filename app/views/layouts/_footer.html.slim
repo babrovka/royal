@@ -1,14 +1,6 @@
 #footer
   .container
     .row
-      - parthners.each do |parhner|
-        = parthner.title
-        = parthner.address
-        = parthner.city
-
-      - if parthners.empty?
-        p Партнеров нет
-    .row
       #footer-logo
       #footer-phone
         #number= t('views.phone')

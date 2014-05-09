@@ -62,6 +62,17 @@ module ProductsHelper
       product_path('no_category', product)
     end
   end
+
+  # обрезаем полное описание к продукту
+  # длину текста расчитываем исходя из длины заголовка и краткого описания
+  # средняя длина одной строки заголовка = 28символов
+  # средняя длина одной строки категории = 40символов
+  def shorten_product_text(product)
+    numbers = 170
+    numbers -=53 if (product.title.length/28.0).ceil > 2 if product.try(:title)
+    numbers -= 53 if (product.short_description.truncate(70).length/40.0).ceil > 3 if product.try(:short_description)
+    product.text.truncate(numbers)
+  end
     
   
   

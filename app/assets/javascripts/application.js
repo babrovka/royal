@@ -20,10 +20,7 @@
 //= require jquery.mousewheel-3.0.6.pack
 //= require jquery.fancybox
 //= require jquery.fancybox.pack
-//= require left_menu
-//= require products_height_optimizing
-//= require scrolling
-//= require brands_filter
+//= require_tree ./app
 //= require_self
 
 
