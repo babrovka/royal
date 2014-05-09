@@ -22,6 +22,7 @@
 //= require jquery.fancybox.pack
 //= require left_menu
 //= require scrolling
+//= require brands_filter
 //= require_self
 
 

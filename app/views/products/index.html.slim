@@ -1,5 +1,5 @@
 = content_for :modals do
-  = render 'products/filter'
+  = render 'products/filter_popup'
 
 
 / кнопка «наверх»
@@ -10,16 +10,9 @@
 #products.container
   .row._page-header
     .span12
-      - if @selected_brands.any? && @selected_brands.count != Brand.count
-        h1 продукция
-        .additional
-          - @selected_brands.each do |brand|
-            = image_tag "brands/brand-#{brand.id}.png"
-          = link_to 'или выберите бренд', '#', class: 'link-dashed link-big js-show-products-filter'
-      - else
-        h1 продукция по всем брендам
-        .additional
-          = link_to 'или выберите бренд', '#', class: 'link-dashed link-big js-show-products-filter'
+      h1 продукция
+      .additional = render 'products/brands_filter'
+
   .row
     .span12
       = render 'products/breadcrumbs'

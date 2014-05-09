@@ -1,19 +1,19 @@
-._filter.js-products-filter-form
-  ._filter-header
+._filter-popup.js-products-filter-form
+  ._filter-popup-header
     h3 Выбор брендов
     h5 отметьте интересующие вас бренды
 
   = link_to '', '#', class: 'close'
 
   = form_tag request.original_url, method: :get do
-    ._filter-body
+    ._filter-popup-body
       - Brand.all.each do |brand|
-        ._filter-item
+        ._filter-popup-item
           = label_tag "brand_ids[][#{brand.id}]" do
             = check_box_tag "brand_ids[]", brand.id, true, id: "brand_ids__#{brand.id}"
             = image_tag "brands/brand-#{brand.id}.png"
 
-    ._filter-footer
+    ._filter-popup-footer
       .btn-group
         = button_tag :submit, class: 'btn-simple', name: 'filter', value: 'brand' do
           span Применить фильтр

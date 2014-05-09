@@ -3,7 +3,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  helper_method :parthners, :cities
+  helper_method :parthners, :cities, :products_brands
 
     
   def current_cart
@@ -29,6 +29,10 @@ class ApplicationController < ActionController::Base
 
   def cities
     @_cities ||= City.all
+  end
+
+  def products_brands
+    @_products_brands ||= Brand.all
   end
   
 end

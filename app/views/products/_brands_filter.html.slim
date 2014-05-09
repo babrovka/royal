@@ -1,0 +1,16 @@
+/ выбираем какие чекбоксы выделить при загрузке страницы
+/ если не выбрано ничего, значит выбраны все бренды
+/ т.е.не может быть, чтобы не было выбрано ни одного бренда
+- if params.has_key?(:brand_ids)
+  - is_selected = products_brands.map do |brand|
+    - params[:brand_ids].include?(brand.id.to_s)
+- else
+  - is_selected = products_brands.map { true }
+
+
+._brands-filter
+  = form_tag request.original_url, method: :get,  class: 'js-brands-filter-form' do
+    - products_brands.each_with_index do |brand, i|
+      = label_tag "brand_ids[][#{brand.id}]", class: "_brands-filter-item item-#{brand.id} js-brands-filter-item" do
+        = check_box_tag "brand_ids[]", brand.id, is_selected[i], id: "brand_ids__#{brand.id}"
+        ._brands-filter-item-img
