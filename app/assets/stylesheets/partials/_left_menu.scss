@@ -18,6 +18,13 @@ $color-first-level-hover: #c4add4;
 $color-second-level-hover: #fff;
 
 
+@mixin transition($str){
+  -webkit-transition: $str;
+  -o-transition: $str;
+  -moz-transition: $str;
+  transition: $str;
+}
+
 #{$el}{
   overflow: hidden;
   &, & li, ul, ul li{ list-style: none; padding: 0; margin: 0; }
@@ -85,6 +92,7 @@ $color-second-level-hover: #fff;
     &.hovered, &.opened, &.current-active{
       background-color: $color-root-level-hover;
       color: $color-root-level-txt-hover;
+      @include transition(background-color .05s ease-in-out);
     }
   }
 }
@@ -101,11 +109,11 @@ $color-second-level-hover: #fff;
     padding-left: 1em;
 
     // активные пункты меню
-    &.hovered, &.opened, &.current-active{ background-color: $color-first-level-hover; }
+    &.hovered, &.opened, &.current-active{ background-color: $color-first-level-hover; @include transition(background-color .1s ease-in-out); }
 
     // обрамление самого текста внутри блока меню
     // при наведении на него и на пункт меню применяются различный стили
-    span:hover { background: $bg-color; }
+    span:hover { background-color: $bg-color; @include transition(background-color .1s ease-in-out);}
   }
 
 }
@@ -120,7 +128,7 @@ $color-second-level-hover: #fff;
     padding-left: 3em;
     &.opened{ box-shadow: none; }
     // активные пункты меню
-    &.hovered, &.opened, &.current-active{ background-color: $color-second-level-hover; }
+    &.hovered, &.opened, &.current-active{ background-color: $color-second-level-hover; @include transition(background-color .1s ease-in-out); }
   }
 
 
@@ -155,3 +163,5 @@ $color-second-level-hover: #fff;
     }
   }
 }
+
+

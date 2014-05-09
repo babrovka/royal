@@ -17,7 +17,7 @@ Royal::Application.routes.draw do
   resources :events
   
   # case
-  match '/cases/:id' => 'cases#show', :as => :case
+  resources :cases, only: [:show]
   
 
   # taxonomy

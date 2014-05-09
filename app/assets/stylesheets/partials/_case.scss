@@ -1,0 +1,66 @@
+$el: '._case';
+$height_img: 380px;
+$width: 940px;
+
+
+#{$el}{
+  // делаем отрицательный отступ вверх,чтобы убрать белое пространство между меню и блоком
+  // причем не удалось выяснить, откуда это пустое пространство взялось,
+  // поэтому это чистый monkey patch
+  margin-top: -25px;
+  margin-bottom: 30px;
+}
+
+#{$el}-header, #{$el}-body{
+  width: $width;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+#{$el}-header{
+  height: 380px;
+  position: relative;
+
+  h2, h3{
+    text-align: center;
+    position: relative;
+    color: #fff;
+    text-shadow: 1px 1px rgba(0,0,0,0.5);
+    z-index: 12;
+  }
+
+  h2{
+    font-family: 'Bebas Neue Book';
+    font-size: 72px;
+    line-height: 1.13;
+    padding: 50px 140px 64px;
+  }
+
+  h3{
+    font-family: 'Georgia', serif;
+    text-transform: none;
+    font-size: 22px;
+    line-height: 1.33;
+    padding: 0 140px;
+  }
+
+  img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+  }
+}
+
+
+#{$el}-body{
+  padding: 27px;
+  background-color: #fff5d5;
+
+  p{
+    font-family: 'PragmaticaC', sans-serif;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #2c3e50;
+  }
+}

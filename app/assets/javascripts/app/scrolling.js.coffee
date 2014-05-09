@@ -2,8 +2,10 @@ $ ->
   # первоначальные состояния элементов
   $window = $(window)
   $left_menu = $('.js-left-menu-container')
-  $('.js-scroll-top-btn').hide()
   $left_menu.addClass('visible-animate')
+  $('.js-scroll-top-btn').hide()
+  height_to_change_render = $left_menu.height() + $left_menu.offset().top
+
 
   # показываем кнопку
   enable_scroll_top_btn = () =>
@@ -50,7 +52,7 @@ $ ->
   # чтобы всегда начать просмотр списка продуктов сначала
   # это самый простой способ не допустить пропуска каких-то продуктов в мертвой зоне
   window.onscroll =  (e) =>
-    if $window.scrollTop() > $left_menu.height() + 200
+    if $window.scrollTop() > height_to_change_render
       unless is_scrolled
         enable_scroll_top_btn()
         hide_left_menu()
