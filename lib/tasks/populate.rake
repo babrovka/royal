@@ -100,6 +100,7 @@ namespace :db do
       product.price_dealer2 = 200
       product.price_dealer3 = 300
       product.short_description = Populator.sentences(1..10)
+      product.position = Array(1..1000).sample
     end
     
     Product.all.each do |product|
