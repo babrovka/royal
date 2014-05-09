@@ -1,0 +1,7 @@
+._case.m-banner
+  ._case-teaser
+    h4 посмотрите статью на вашу тему в разделе «случаи применения»:
+  ._case-header
+    = link_to case_path(products_case) do
+      = image_tag products_case.image.url(:banner)
+      h2 = products_case.title

@@ -1,4 +1,4 @@
 <% @products.group_by(&:product_category_id).each do |category, products| %>
 <div class="category_title products_page"><%= category_title(category) %></div>
-<%= render products %>	
+<%= render products %>
 <% end %>

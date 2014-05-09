@@ -3,7 +3,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  helper_method :parthners, :cities, :products_brands
+  helper_method :parthners, :cities, :products_brands, :products_cases
 
     
   def current_cart
@@ -34,5 +34,9 @@ class ApplicationController < ActionController::Base
   def products_brands
     @_products_brands ||= Brand.all
   end
-  
+
+  def products_cases
+    @_products_cases ||= Case.order('title')
+  end
+
 end

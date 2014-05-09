@@ -1,18 +1,30 @@
 $el: '._case';
 $height_img: 380px;
-$width: 940px;
+$width_img: 940px;
+
+$banner_height_img: 220px;
+$banner_width_img: 620px;
 
 
+// Страница просмотра
+//
+//
 #{$el}{
+  * { box-sizing: border-box; }
   // делаем отрицательный отступ вверх,чтобы убрать белое пространство между меню и блоком
   // причем не удалось выяснить, откуда это пустое пространство взялось,
   // поэтому это чистый monkey patch
   margin-top: -25px;
   margin-bottom: 30px;
+  a {
+    @include link-states-style{
+      text-decoration: none;
+    }
+  }
 }
 
 #{$el}-header, #{$el}-body{
-  width: $width;
+  width: $width_img;
   margin: 0 auto;
   box-sizing: border-box;
 }
@@ -52,7 +64,6 @@ $width: 940px;
   }
 }
 
-
 #{$el}-body{
   padding: 27px;
   background-color: #fff5d5;
@@ -62,5 +73,56 @@ $width: 940px;
     font-size: 16px;
     line-height: 1.25;
     color: #2c3e50;
+  }
+}
+
+// Рендер в виде баннера
+//
+//
+#{$el}.m-banner{
+  @include clearfix;
+  margin-bottom: 80px;
+  margin-top: 10px;
+
+  #{$el}-header, #{$el}-teaser{
+    height: $banner_height_img;
+  }
+
+  #{$el}-header{
+    float: right;
+    h2 { font-size: 58px; line-height: 1.22; padding: 10px 30px; margin: 0; }
+
+    // чтобы выровнять текст по центру вертикально и горизонтально,
+    // приходиться делать следующее
+    &, h2, img{
+      width: $banner_width_img;
+      height: $banner_height_img;
+    }
+    h2{ display: table-cell; vertical-align: middle; }
+  }
+
+  #{$el}-teaser{
+    float: left;
+    max-width: 250px;
+    display: none;
+
+    h4{
+      font-family: 'Bebas Neue Book';
+      font-size: 25px;
+      line-height: 1.2;
+      text-transform: uppercase;
+      color: #7f8c8d;
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+}
+
+// есть особый вариант отрисовки, когда странится скролится и продукты выравниваются в два ряда
+//
+//
+.scrolled{
+  #{$el}.m-banner{
+    #{$el}-teaser{ display: table; }
   }
 }
