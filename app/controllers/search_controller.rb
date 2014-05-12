@@ -3,10 +3,7 @@ class SearchController < ApplicationController
   def search
     @query = params[:search]
     
-    @search = Sunspot.search(Product) do
-      fulltext params[:search]
-    end
-    @results = @search.results
+    @results = ThinkingSphinx.search @query
     
     
 

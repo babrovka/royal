@@ -49,8 +49,9 @@ module ApplicationHelper
 
    
    def city(event)
-     city = event.city_id
-     City.find(city).title
+     city = event.try(:city_id)
+     City.exists?(city) ? City.find(city).try(:title) : ""
+     
    end
    
    def resource_name
