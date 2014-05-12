@@ -1,3 +1,5 @@
+# coding: utf-8
+
 ActiveAdmin.register City do
   config.batch_actions = false
   config.clear_sidebar_sections!
