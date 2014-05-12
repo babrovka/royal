@@ -3,23 +3,28 @@ $ ->
   $window = $(window)
   $left_menu = $('.js-left-menu-container')
   $left_menu.addClass('visible-animate')
-  $('.js-scroll-top-btn').hide()
+  $scroll_top_btn = $('.js-scroll-top-btn')
+
+  $scroll_top_btn.hide()
+
   height_to_change_render = ->
-    $left_menu.height() + $left_menu.offset().top - 20
+    if $left_menu.length
+      $left_menu.height() + $left_menu.offset().top - 20
 
 
   # показываем кнопку
   enable_scroll_top_btn = () =>
-    $('.js-scroll-top-btn').fadeIn(200).one('click', (e) => scroll_to_top(e))
-    $('body').addClass('scrolled')
-#    $('#products-catalog .span8').first().
-    $('.js-products-list-change-render').addClass('span12').removeClass('span8')
+    if $scroll_top_btn.length
+      $scroll_top_btn.fadeIn(200).one('click', (e) => scroll_to_top(e))
+      $('body').addClass('scrolled')
+      $('.js-products-list-change-render').addClass('span12').removeClass('span8')
     @
 
   disable_scroll_top_btn = () ->
-    $('.js-scroll-top-btn').fadeOut(200)
-    $('body').removeClass('scrolled')
-    $('.js-products-list-change-render').addClass('span8').removeClass('span12')
+    if $scroll_top_btn.length
+      $scroll_top_btn.fadeOut(200)
+      $('body').removeClass('scrolled')
+      $('.js-products-list-change-render').addClass('span8').removeClass('span12')
     @
 
 
@@ -30,7 +35,7 @@ $ ->
     e.preventDefault()
     enable_left_menu()
     window.scrollTo(0, 400)
-    $("html, body").animate({ scrollTop: 0 }, 200)
+    $('html, body').animate({ scrollTop: 0 }, 200)
     false
 
 
@@ -38,10 +43,10 @@ $ ->
   # при скроллинге вниз, для красоты мы скрываем левое меню
   # а при скроллинге наверх, вновь показываем его
   hide_left_menu = ->
-    $('.js-left-menu-container').addClass('invisible-animate').removeClass('visible-animate')
+    $left_menu.addClass('invisible-animate').removeClass('visible-animate')
 
   enable_left_menu = ->
-    $('.js-left-menu-container').addClass('visible-animate').removeClass('invisible-animate')
+    $left_menu.addClass('visible-animate').removeClass('invisible-animate')
 
 
   # вводим переменную, чтобы улучшить производительность

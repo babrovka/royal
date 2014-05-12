@@ -3,18 +3,13 @@ class EventsController < ApplicationController
   helper_method :cities_with_events
   
   def index
-    @events = params[:city_id] ? Event.where(:city_id => params[:city_id]) : Event.where(:city_id => 1)
+    @events = params[:city_id].present? ? Event.where(:city_id => params[:city_id]) : Event.order('date DESC')
     @events_by_date = @events.group_by(&:date)
-    
-    if params[:date] == nil || params[:date] == ""
-      @date = Date.today
-    else
-      @date = Date.parse(params[:date])
-    end
-    
-    @articles = Article.order("created_at DESC").limit(3)
-    @widget_events = Event.order("created_at DESC").limit(2)
-    @cities = City.with_events
+    @date = params[:date].blank? ? Date.today : Date.parse(params[:date])
+
+    @articles = Article.order('created_at DESC').limit(3)
+    @widget_events = Event.order('created_at DESC').limit(2)
+    @cities = cities_with_events
     
     respond_to do |format|
       format.html
@@ -63,7 +58,7 @@ class EventsController < ApplicationController
   private
 
   def cities_with_events
-    @_cities_with_events = City.with_events
+    @_cities_with_events = City.order('cities.title ASC').with_events
   end
   
 end

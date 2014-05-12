@@ -3,16 +3,19 @@
     .span12
       h1 студия профессионального роста
     .span9
-      - cities_with_events.each do |city|
-        = link_to city.title, '#', id: "city-#{city.id}", class: 'city_link'
 
-      - if cities_with_events.blank?
-        p Ни в одном из городом нет событий.
+      = form_tag events_path, :method => 'get', class: 'js-events-calendar-select-city-form', :remote => true, multiple: true do
+        - cities_with_events.each do |city|
+          = label_tag "city_id_#{city.id}", class: 'city_link' do
+            = radio_button_tag :city_id, city.id, false, class: 'hidden'
+            span = city.title
 
+        - if cities_with_events.blank?
+          p Ни в одном из городом нет событий.
 
-      = form_tag events_path, :method => 'get', :id => "events_form", :remote => true do
         #events
           = render 'events', :@events => @events, :@events_by_date => @events_by_date, :@date => @date
+
     .span3
       .header Новости компании
       .line

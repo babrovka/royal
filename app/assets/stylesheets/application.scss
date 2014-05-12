@@ -30,6 +30,7 @@
 @import "partials/page_header";
 @import "partials/product";
 @import "partials/case";
+@import "partials/component_relations";
 
 /*common*/
 
@@ -1730,4 +1731,10 @@ textarea:focus, input:focus, select:focus {
 	color: #6e2257;
 	font-family: PragmaticaC;
 	font-size: 14px;
+}
+
+
+.hidden{
+  visibility: none;
+  display: none;
 }
