@@ -22,6 +22,7 @@ Rake::Task['db:test_nested_taxons'].invoke
 Rake::Task['db:create_products'].invoke
 Rake::Task['db:create_seo_data_objects'].invoke
 Rake::Task['db:create_cities'].invoke
+Rake::Task['db:test_events'].invoke
 Taxon.find_each(&:save!)
 Taxonomy.find_each(&:save!)
 Taxon.rebuild!

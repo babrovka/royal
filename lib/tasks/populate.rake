@@ -133,6 +133,18 @@ namespace :db do
     puts "Cities created!"
   end
 
+  task :test_events => :environment do
+    Event.delete_all
+    # ActiveRecord::Base.connection.reset_pk_sequence!('events')
+
+    Event.populate 100 do |event|
+      event.title = Populator.words(1..8).capitalize
+      event.text = Populator.sentences(10..20)
+      event.date = rand(15.days).ago
+      event.city_id = City.pluck(:id).sample
+    end
+  end
+
 
 end
 
