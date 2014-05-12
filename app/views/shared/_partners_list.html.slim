@@ -6,5 +6,10 @@
       - city.partners.each do |partner|
         tr
           td = partner.title
-          td = partner.address
-          td бренды
+          td
+            p = partner.address
+            p = partner.phone
+            p = link_to partner.website, partner.website
+          td
+            - partner.brands.each do |brand|
+              p = brand.title

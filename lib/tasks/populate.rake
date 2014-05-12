@@ -153,7 +153,15 @@ namespace :db do
       partner.title = Populator.words(1..8).capitalize
       partner.address = Populator.words(1..8)
       partner.city_id = City.pluck(:id).sample
+      partner.phone = '(812) 718-19-29'
+      partner.website = 'hello.com'
     end
+
+    Partner.limit(10).each do |p|
+      p.brands << Brand.all.shuffle.first
+      p.save!
+    end
+
   end
 
 
