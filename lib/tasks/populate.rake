@@ -145,6 +145,17 @@ namespace :db do
     end
   end
 
+  task :test_partners => :environment do
+    Partner.delete_all
+    # ActiveRecord::Base.connection.reset_pk_sequence!('events')
+
+    Partner.populate 100 do |partner|
+      partner.title = Populator.words(1..8).capitalize
+      partner.address = Populator.words(1..8)
+      partner.city_id = City.pluck(:id).sample
+    end
+  end
+
 
 end
 

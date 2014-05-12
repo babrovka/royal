@@ -7,24 +7,31 @@
       <h1>контакты</h1>
 	  </div>
 	  
-    <div class="span8">
-      <!-- <h2><%= link_to "наши партнеры", partners_path %></h2> -->
+    <div class="span8 text-right">
+      <h3>Наши партнеры</h3>
+      <select class='js-partners-city-select'>
+        <option value="">Выберите город</option>
+        <%- cities.each do |city| %>
+          <option value="city-<%= city.id %>"><%= city.title %></option>
+        <%- end %>
+      </select>
     </div>
 	
 	</div>
 	
 	<div class="row">
-	
-	<div class="span4">
-		<select id="city_select">
-		  <option value="saint">Санкт-Петербург</option>
-		  <option value="moscow">Москва</option>
-		</select>
-	</div>
-	
+
+  <!-- было вынесено решение скрыть этот блок и оставить только одну карту -->
+	<!--<div class="span4">-->
+		<!--<select id="city_select">-->
+		  <!--<option value="saint">Санкт-Петербург</option>-->
+		  <!--<option value="moscow">Москва</option>-->
+		<!--</select>-->
+	<!--</div>-->
+	<%# render 'static_pages/moscow' %>
+
 	<%= render 'static_pages/saint' %>
-	<%= render 'static_pages/moscow' %>
-	
+
 	
 	
 	<div class="span5">
@@ -44,6 +51,10 @@
 	</div>
 		
   </div>
+
+
+
+  <%= render 'shared/partners_list' %>
 
 
 </div>

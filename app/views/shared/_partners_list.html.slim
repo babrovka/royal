@@ -1,0 +1,10 @@
+.partners
+  - cities_with_partners.each do |city|
+    h3 id="city-#{city.id}"
+      = city.title
+    table.partners-table
+      - city.partners.each do |partner|
+        tr
+          td = partner.title
+          td = partner.address
+          td бренды

@@ -3,7 +3,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  helper_method :parthners, :cities, :products_brands, :products_cases
+  helper_method :partners, :cities, :products_brands, :products_cases, :cities_with_partners
 
     
   def current_cart
@@ -23,12 +23,16 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def parthners
-    @_parthners ||= Partner.all
+  def cities_with_partners
+    @_cities_with_parners ||= cities.includes(:partners)
+  end
+
+  def partners
+    @_partners ||= Partner.all
   end
 
   def cities
-    @_cities ||= City.all
+    @_cities ||= City.order('title ASC')
   end
 
   def products_brands

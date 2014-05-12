@@ -1,3 +1,8 @@
 .city_link + .city_link{
   margin-left: 10px;
 }
+
+.text-right{
+  text-align: right;
+  h1, h2, h3, h4, h5, h6, p, a{ display: inline-block; vertical-align: middle; }
+}
