@@ -25,6 +25,9 @@ ActiveAdmin.register City do
          
          partner.input :title 
          partner.input :address 
+         partner.input :website 
+         partner.input :phone 
+         partner.input :brands, :as => :check_boxes
      end
      
      f.actions
@@ -43,6 +46,15 @@ ActiveAdmin.register City do
         end
         column "Адресс" do |partner|
           partner.address
+        end
+        column "Сайт" do |partner|
+          partner.website
+        end
+        column "Телефон" do |partner|
+          partner.phone
+        end
+        column "Бренды" do |partner|
+          partner.brands.map { |b| b.title }.join(' ')
         end
       end
     end

@@ -117,6 +117,7 @@ ru:
         short_text: "Краткое описание"
       brand:
         title: "Название"
+        parner_id: "Партнер"
       order:
         user: "Пользователь"
         comment: "Комментарий"
@@ -201,3 +202,5 @@ ru:
       partner:
         title: "Название"
         address: "Адрес"
+        website: "Сайт"
+        phone: "Телефон"
