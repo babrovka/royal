@@ -13,7 +13,7 @@ set :use_sudo, false
 
 set :scm, "git"
 set :repository, "git@github.com:babrovka/royal.git"
-set :branch, "simple_navigation"
+set :branch, "master"
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
