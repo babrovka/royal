@@ -9,7 +9,7 @@
           td
             p = partner.address
             p = partner.phone
-            p = link_to partner.website, partner.website
+            p = link_to partner.website, partner.website if partner.website
           td
             - partner.brands.each do |brand|
               p = brand.title

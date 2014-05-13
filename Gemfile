@@ -24,7 +24,7 @@ gem 'active_admin-awesome_nested_set'
 gem 'slim'
 gem 'font-awesome-rails'
 gem 'simple-navigation'
-
+gem 'spreadsheet'
 
 #deploy
 gem 'capistrano'

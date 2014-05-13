@@ -3,6 +3,23 @@
 require 'csv'
 require 'faker'
 require 'populator'
+require 'spreadsheet'
+
+# Получает данные листа xls-файла
+# Возвращает объект Spreadsheet::Worksheet
+def get_xls_spreadsheet file_path, sheet_name
+  # Файл не существует?
+  raise "Can't find #{file_path}" unless File.exists? file_path
+
+  book = Spreadsheet.open file_path
+  sheet = book.worksheet sheet_name
+
+  # Лист не существует?
+  raise "Sheet #{sheet} doesn't exists" unless sheet
+
+  return sheet
+end
+
 
 namespace :db do
   
@@ -125,12 +142,33 @@ namespace :db do
 
   end
 
-  task :create_cities => :environment do
-    City.destroy_all
-    City.create(:title => 'Москва')
-    City.create(:title => 'Санкт-Петербург')
+  task :create_cities_and_partners => :environment do
+    
+    # Удаляем старое
+    Partner.destroy_all
+    
+    # Получаем данные
+    org_sheet = get_xls_spreadsheet 'db/excel/partners.xls', 'Лист1'
 
-    puts "Cities created!"
+    # Создаем объекты
+    org_sheet.each_with_index do |row, index|
+      next if index == 0
+      city_cell = row[2]
+      if city_cell
+        city = city_cell.gsub('г. ', '') 
+        city = City.where(title: city).first_or_create
+        city_id = city.id
+      end
+      
+      Partner.create({
+        title: row[1],
+        city_id: city_id,
+        address: row[3],
+        phone: row[4]
+      })
+    end
+
+    puts "Cities and Partners created!"
   end
 
   task :test_events => :environment do
