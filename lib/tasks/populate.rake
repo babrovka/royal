@@ -65,24 +65,24 @@ namespace :db do
 
   end
 
+  task :create_cases => :environment do
 
-  
-  task :create_products => :environment do
-    LineItem.destroy_all
-    Product.destroy_all
     Case.destroy_all
     
-    Case.populate 10 do |product_case|
-      product_case.title = Faker::Lorem.words(1)[0].capitalize
-      product_case.short_description = Populator.sentences(1..3)
-      product_case.text = Populator.sentences(10..20)
-    end
-    
-    Case.all.each do |product_case|
+    ["Жирная кожа, акне", "Пигментация", "Еженедельный уход", "Омолаживающий уход", "Чувствительная кожа, купероз", "Сухая кожа", "Антицеллюлитный уход", "Сухая кожа", "Комбинированная кожа"].each do |case_title|
+      product_case = Case.new(:title => case_title)
       product_case.image = File.open(Dir.glob(File.join(Rails.root, 'covers', '*')).sample)
       product_case.save!
     end
-    
+
+
+    puts "Cases created!"
+
+  end
+  
+  task :create_products => :environment do
+    LineItem.destroy_all
+    Product.destroy_all    
     
     Product.populate 100 do |product|
       product.title = Populator.words(1..8).capitalize
