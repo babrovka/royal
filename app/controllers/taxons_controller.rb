@@ -4,7 +4,7 @@ class TaxonsController < ApplicationController
   def show
     #brands = params[:brand_ids]
     @taxon = Taxon.find(params[:id])
-    @products = @taxon.products
+    @products = Product.where(:taxon_id => @taxon.self_and_descendants.pluck(:id))
     @products = @products.where(:brand_id => params[:brand_ids]) if params[:brand_ids]
     @title = @taxon.seo_title
     @meta_description = @taxon.try(:seo_description) || ''
