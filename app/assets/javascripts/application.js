@@ -76,8 +76,8 @@ $(document).ready(
 	
 	    /*publications*/
 	
-	    $('.open').on("click", function() {
-			event.preventDefault();
+	    $('.open').on("click", function(e) {
+			e.preventDefault();
 			small = $(this).parent().hide()
 			full = $(this).parent().next()
 			full.show();
