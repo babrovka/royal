@@ -75,9 +75,6 @@ namespace :solr do
   end
 end
  
-after 'deploy:setup', 'deploy:setup_solr_data_dir'
-before 'deploy:update_code', 'thinking_sphinx:stop'
-after 'deploy:update_code', 'thinking_sphinx:start'
-after 'deploy:update_code', 'thinking_sphinx:rebuild'
+
 before "deploy:assets:precompile", "copy_database_config"
 after "deploy", "deploy:cleanup"
