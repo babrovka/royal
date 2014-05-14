@@ -25,6 +25,7 @@ gem 'slim'
 gem 'font-awesome-rails'
 gem 'simple-navigation'
 gem 'spreadsheet'
+gem "select2-rails"
 
 #deploy
 gem 'capistrano'

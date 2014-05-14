@@ -8,7 +8,7 @@ ActiveAdmin.register Consultation do
       f.input :question, :input_html => { :rows => 3  }
       f.input :answer, :input_html => { :rows => 8  }
       f.input :brand_id, :as => :select, :collection => Brand.all
-      f.input :case_id, :as => :select, :collection => Case.all
+      f.input :case_id, :as => :select, :collection => Case.all, input_html: {class: 'select2able'}
       f.input :check
     end 
     
