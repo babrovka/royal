@@ -14,7 +14,7 @@ $banner_width_img: 620px;
   // делаем отрицательный отступ вверх,чтобы убрать белое пространство между меню и блоком
   // причем не удалось выяснить, откуда это пустое пространство взялось,
   // поэтому это чистый monkey patch
-  margin-top: -25px;
+  //  margin-top: -25px;
   margin-bottom: 30px;
   a {
     @include link-states-style{
@@ -30,22 +30,32 @@ $banner_width_img: 620px;
 }
 
 #{$el}-header{
-  height: 380px;
+  height: $height_img;
   position: relative;
+  overflow: hidden;
 
   h2, h3{
+    margin: 0;
     text-align: center;
     position: relative;
     color: #fff;
     text-shadow: 1px 1px rgba(0,0,0,0.5);
     z-index: 12;
+    padding: 0 140px;
+    height: $height_img/2 - 5px;
   }
 
   h2{
     font-family: 'Bebas Neue Book';
-    font-size: 72px;
+    font-size: 64px;
     line-height: 1.13;
-    padding: 50px 140px 64px;
+
+    // выравнивание текста по центру изображения
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    width: $width_img;
+    // ====
   }
 
   h3{
@@ -53,7 +63,6 @@ $banner_width_img: 620px;
     text-transform: none;
     font-size: 22px;
     line-height: 1.33;
-    padding: 0 140px;
   }
 
   img{
