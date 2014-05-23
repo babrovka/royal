@@ -13,6 +13,9 @@ $color-link: #3f3ca2;
 
 
 #{$el}{
+
+  -webkit-font-smoothing: antialiased;
+
   margin-bottom: 55px;
 
   > a { display: inline-block; }
@@ -174,4 +177,8 @@ $color-link: #3f3ca2;
       width: 40.42553191489362%;
     }
   }
+
+  ._product-title{ font-size: 25px; }
+  ._product-category{ font-size: 14px; }
+  ._product-description { font-size: 13px; }
 }
