@@ -32,7 +32,7 @@ $color-second-level-hover: #fff;
   li{ border-top: $item-border; }
   li:first-child{ border-top: none; }
 
-  // убираем стрелки у ссылок
+  // убираем стрелки элементов, которые не имеют потомков и не могут быть раскрыты
   li.empty a{ &:after{ background-image: none; } }
 
   a{
@@ -103,7 +103,16 @@ $color-second-level-hover: #fff;
     span:hover { background-color: $bg-color; @include transition(background-color .1s ease-in-out); color: $text-color; }
 
     // если нет подпунктов у этого блока, то не подкрашиваем текст внутри блока меню
-    &.empty span:hover { background-color: transparent; }
+    &.empty span:hover { background-color: transparent; color: #fff; }
+  }
+
+  // если уровень вложения только один, то li имеет класс empty
+  // выставляем особое поведение, показываем стрелки
+  > li{
+    &.empty span:hover { background-color: transparent; color: #fff; }
+    &.empty a:after{ background-image: image-url('arrows.png');}
+    &.empty a.opened:after{background-position: -$arrow-width*3 50%;}
+
   }
 }
 

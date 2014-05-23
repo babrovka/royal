@@ -13,9 +13,10 @@ SimpleNavigation::Configuration.run do |navigation|
   navigation.consider_item_names_as_safe = true
 
   navigation.items do |cases|
+    cases.dom_attributes = {class: 'empty'}
     cases.dom_class = '_left-menu-root-level _left-menu js-left-menu js-left-menu-node'
     Case.order('title ASC').each do |product_case|
-      cases.item "case-#{product_case.id}", product_case.title, case_path(product_case) do |subcases|
+      cases.item "case-#{product_case.id}", product_case.title, case_path(product_case), class: 'empty' do |subcases|
         subcases.dom_class = '_left-menu-first-level js-left-menu-node'
       end
     end
