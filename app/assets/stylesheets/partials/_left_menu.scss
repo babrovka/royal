@@ -92,7 +92,7 @@ $color-second-level-hover: #fff;
 
 
     // активные пункты меню
-    &.hovered, &.opened, &.current-active{
+    &.hovered, &.opened, &.current-active, &.selected{
       background-color: $color-root-level-hover;
       color: $color-root-level-txt-hover;
       @include transition(background-color .05s ease-in-out);
