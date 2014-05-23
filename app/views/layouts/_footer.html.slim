@@ -11,7 +11,7 @@
       .search
         form#footsearch accept-charset="UTF-8" action="/search" method="get"
           input name="utf8" type="hidden" value="✓" /
-          input.search-input name="testfind" onblur=("if(this.value=='') this.value='поиск по сайту';") onfocus=("if(this.value=='поиск по сайту') this.value='';") type="text" value=("поиск по сайту") /
+          input.search-input name="search" onblur=("if(this.value=='') this.value='поиск по сайту';") onfocus=("if(this.value=='поиск по сайту') this.value='';") type="text" value=("поиск по сайту") autocomplete='off'/
           a.search-submit href="#"
     .row
       #copyright
