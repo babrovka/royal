@@ -7,6 +7,7 @@
     ._case
       ._case-header
         = image_tag @case.image.url(:medium)
+        ._case-header-darken
         h2 = @case.title
         h3 = @case.short_description
       ._case-body

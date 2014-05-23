@@ -21,7 +21,7 @@ Rake::Task['db:test_taxonomies'].invoke
 Rake::Task['db:test_nested_taxons'].invoke
 Rake::Task['db:create_products'].invoke
 Rake::Task['db:create_seo_data_objects'].invoke
-Rake::Task['db:create_cities'].invoke
+# Rake::Task['db:create_cities'].invoke
 Rake::Task['db:test_events'].invoke
 Rake::Task['db:test_partners'].invoke
 Taxon.find_each(&:save!)
