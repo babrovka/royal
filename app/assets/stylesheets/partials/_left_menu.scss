@@ -83,10 +83,13 @@ $color-second-level-hover: #fff;
   > li > a{
     &.opened{ z-index: 666; }
 
+    // белая стрелка вправо
+    &.hovered:after, &.selected:after{ background-position: -$arrow-width*3 50%; }
+
+    // белая стрелка вниз
     &.opened:after,
     &.opened.hovered:after{ background-position: -$arrow-width*2 50%; }
 
-    &.hovered:after{ background-position: -$arrow-width*3 50%; }
 
     // активные пункты меню
     &.hovered, &.opened, &.current-active{
@@ -94,6 +97,10 @@ $color-second-level-hover: #fff;
       color: $color-root-level-txt-hover;
       @include transition(background-color .05s ease-in-out);
     }
+
+    // обрамление самого текста внутри блока меню
+    // при наведении на него и на пункт меню применяются различный стили
+    span:hover { background-color: $bg-color; @include transition(background-color .1s ease-in-out); color: $text-color; }
   }
 }
 

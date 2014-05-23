@@ -31,14 +31,16 @@ $ ->
       window.location = $(e.target).closest('a').attr('href')
   )
 
+  # клик по тексту рутового уровня меню.
+  #
   # вешаем такое не красивое событие на клик текста в самом верхнем уровне меню
   # по дизайну, верхний уровень всегда только открывает подпункты
   # поэтому экранируем клики по span внутри ссылок
-  $('.js-left-menu:first-child > li > a > span').on('click', (e) ->
-    e.preventDefault()
-    e.stopPropagation()
-    $(this).closest('a').click()
-  )
+  #  $('.js-left-menu:first-child > li > a > span').on('click', (e) ->
+  #    e.preventDefault()
+  #    e.stopPropagation()
+  #    $(this).closest('a').click()
+  #  )
 
   # выставляем особый стиль при наведении и скрытии курсора
   $('.js-left-menu a').hover( ->
