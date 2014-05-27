@@ -15,7 +15,7 @@ SimpleNavigation::Configuration.run do |navigation|
   navigation.items do |taxonomies|
     taxonomies.dom_class = '_left-menu-root-level _left-menu js-left-menu js-left-menu-node'
     Taxonomy.order('title ASC').each do |taxonomy|
-      taxonomies.item "taxonomy-#{taxonomy.id}", taxonomy.title, taxonomy_path(taxonomy.id) do |taxons|
+      taxonomies.item "taxonomy-#{taxonomy.id}", taxonomy.title, taxonomy_path(taxonomy.slug) do |taxons|
         taxons.dom_class = '_left-menu-first-level js-left-menu-node'
         taxonomy.taxons.roots.each do |taxon|
           taxons.item "taxon-#{taxon.id}", taxon.title, taxon_seo_path(taxon) do |subtaxons|
