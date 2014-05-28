@@ -12,7 +12,10 @@ ActiveAdmin.register Case do
      f.inputs do
        f.input :title
        f.input :short_description, :input_html => { :rows => 3 }
-       f.input :text, :input_html => { :rows => 15 }
+       f.input :seo_url
+       f.input :seo_title
+       f.input :seo_description, :input_html => { :rows => 3 } 
+       f.input :text, :as => :ckeditor, :label => false
        f.input :image, :as => :file, :hint => ( f.object.new_record? || !f.object.image ) ? nil : image_tag(f.object.image.url(:medium))
      end
      f.actions

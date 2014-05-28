@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140512152227) do
+ActiveRecord::Schema.define(:version => 20140528114811) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -106,7 +106,13 @@ ActiveRecord::Schema.define(:version => 20140512152227) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "slug"
+    t.string   "seo_url"
+    t.string   "seo_title"
+    t.text     "seo_description"
   end
+
+  add_index "cases", ["slug"], :name => "index_cases_on_slug", :unique => true
 
   create_table "cases_products", :force => true do |t|
     t.integer "case_id"

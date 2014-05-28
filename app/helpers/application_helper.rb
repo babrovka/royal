@@ -72,10 +72,10 @@ module ApplicationHelper
    
    def title
       base_title = "Royal Beauty"
-      if @title.nil?
-        base_title
-      else
+      if @title
         "#{@title} | #{base_title}"
+      else
+        base_title
       end
     end
     

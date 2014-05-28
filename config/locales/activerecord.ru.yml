@@ -137,6 +137,9 @@ ru:
         text: "Описание"
         short_description: "Краткое описание"
         image: "Изображение"
+        seo_url: "SEO url"
+        seo_title: "SEO title"
+        seo_description: "SEO description"
       video:
         title: "Название"
         brand: "Категория"

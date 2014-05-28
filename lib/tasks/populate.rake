@@ -92,7 +92,7 @@ namespace :db do
       product_case.save!
     end
 
-
+    Case.find_each(&:save)
     puts "Cases created!"
 
   end
