@@ -11,7 +11,7 @@
           h2 = @case.title
           h3 = @case.short_description
       ._case-body
-        p = @case.text.html_safe
+        p = @case.text.html_safe if @case.text
 
 
   .row
