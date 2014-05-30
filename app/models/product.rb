@@ -20,7 +20,7 @@ class Product < ActiveRecord::Base
   validates :title, :packing, :text, :ingredients, :brand_id, :short_description, :presence => true
   
   scope :latest, where(:latest => true)
-  default_scope order('position ASC')
+  default_scope order('position DESC')
   
   extend FriendlyId
   friendly_id :short_description, use: :slugged
