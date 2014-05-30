@@ -6,5 +6,5 @@ class Article < ActiveRecord::Base
   just_define_datetime_picker :date, :add_to_attr_accessible => true
   validates :text, :date, :title, :short_text, :presence => true
   validates :short_text, :length => { :maximum => 150 }
-  
+  default_scope order('date DESC')
 end

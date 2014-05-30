@@ -1,7 +1,7 @@
 ActiveAdmin.register Article do
   config.batch_actions = false
   config.clear_sidebar_sections!
-  
+  config.sort_order = "date_desc"
   index do 
     column :title
     column :date

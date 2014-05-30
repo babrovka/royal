@@ -182,6 +182,20 @@ namespace :db do
       event.city_id = City.pluck(:id).sample
     end
   end
+  
+  task :test_articles => :environment do
+    Article.delete_all
+    # ActiveRecord::Base.connection.reset_pk_sequence!('events')
+
+    Article.populate 100 do |article|
+      article.title = Populator.words(1..8).capitalize
+      article.text = Populator.sentences(10..20)
+      article.date = rand(15.days).ago
+      article.short_text = Populator.sentences(1..3)
+    end
+    
+    puts "Articles created!"
+  end
 
   task :test_partners => :environment do
     Partner.delete_all
