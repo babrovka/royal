@@ -10,7 +10,6 @@
 <%= f.input :text, :input_html => { :rows => 8  } %>
 <%= f.input :ingredients, :input_html => { :rows => 8  } %>
 <%= f.input :brand_id, :as => :select, :collection => Brand.all, :include_blank => false %>
-<%= f.input :taxon_id, :as => :select, :collection => Taxon.all %>
 <%= f.input :product_category_id, :as => :select, :collection => ProductCategory.all, :include_blank => false %>
 <% end %>
 
@@ -43,6 +42,10 @@
 <%= f.inputs t('cases') do %>
 <%= f.input :cases, :as => :check_boxes  %>
 <% end %>    
+
+<%= f.inputs t('taxons') do %>
+<%= f.input :taxons, :as => :select, :multiple => true, input_html: {class: 'select2able'}  %>
+<% end %>
 
 <%= f.inputs 'SEO' do %>
 <%= f.input :seo_title %>

@@ -11,13 +11,6 @@ ActiveAdmin.register Product do
   index do
     column :position
     column :title
-    column :taxon_id do |column|
-      if column.taxon_id && Taxon.exists?(column.taxon_id)
-        Taxon.find(column.taxon_id).title
-      else
-        'Без категории'
-      end
-    end
     column :brand_id do |column|
       Brand.find(column.brand_id).title
     end
@@ -42,10 +35,17 @@ ActiveAdmin.register Product do
          Redcarpet.new(row.ingredients, :hard_wrap).to_html.html_safe
        end
        row :brand_id
-       row :taxon_id
        row :seo_title
        row :seo_description
        row :seo_text
+     end
+     
+     panel t('taxons') do 
+       table_for product.taxons do 
+         column :title do |column|
+           link_to column.title, admin_taxon_path(column)
+         end
+       end
      end
 
      panel t('procedures') do 

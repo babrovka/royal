@@ -4,7 +4,7 @@ class Product < ActiveRecord::Base
                   :price_professional, :price_dealer1, :price_dealer2, :price_dealer3,
                   :procedure_ids, :case_ids, :consultation_ids, :product_images_attributes, 
                   :short_description, :product_category_id, :product_images,
-                  :seo_title, :seo_description, :seo_text, :taxon_id, :position
+                  :seo_title, :seo_description, :seo_text, :taxon_id, :position, :taxon_ids
   has_and_belongs_to_many :procedures
   has_and_belongs_to_many :cases
   has_many :substages
