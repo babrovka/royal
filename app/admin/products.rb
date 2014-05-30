@@ -6,7 +6,7 @@ ActiveAdmin.register Product do
   filter :latest
   filter :brand_id, :collection => proc { Brand.all }, :as => :check_boxes
   filter :procedures_id, :collection => proc { Brand.all }, :as => :check_boxes
-  config.sort_order = "position_desc"
+  config.sort_order = "position_asc"
   
   index do
     column :position

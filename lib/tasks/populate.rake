@@ -196,6 +196,15 @@ namespace :db do
     
     puts "Articles created!"
   end
+  
+  task :positions_to_products => :environment do
+    Product.all.each do |product|
+      product.position = 999
+      product.save!
+    end
+    
+    puts "Positions assigned!"
+  end
 
   task :test_partners => :environment do
     Partner.delete_all
