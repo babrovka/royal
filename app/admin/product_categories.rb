@@ -1,7 +1,9 @@
 ActiveAdmin.register ProductCategory do
-  menu :parent => I18n.t('catalog')
+  menu false
+  # menu :parent => I18n.t('catalog') 
   config.batch_actions = false
   config.clear_sidebar_sections!
+  
   
    index do 
      column :brand_id do |column|

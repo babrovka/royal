@@ -3,6 +3,7 @@
 
 <%= f.inputs do %>
 <%= f.input :title %>
+<%= f.input :position, :as => :select, :collection => (1..1000).to_a, :default => 0 %>
 <%= f.input :latest %>
 <%= f.input :short_description, :input_html => { :rows => 2  } %>
 <%= f.input :packing %>
