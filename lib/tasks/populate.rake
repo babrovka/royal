@@ -107,7 +107,6 @@ namespace :db do
       product.text = Populator.sentences(10..20)
       product.ingredients = Faker::Lorem.words(10..30)
       product.brand_id = Brand.pluck(:id).sample
-      product.taxon_id = Taxon.pluck(:id).sample
       product.visible_professional = true
       product.visible_dealer1 = true
       product.visible_dealer2 = true
@@ -122,6 +121,7 @@ namespace :db do
     
     Product.all.each do |product|
       product.cases << Case.all.sample
+      product.taxons << Taxon.all.sample
       product.save!
     end
     
