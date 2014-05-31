@@ -1,13 +1,3 @@
-$('#products-catalog').html("<%=j render :partial => 'products/products', :@products => @products %>");
-$('#bronte').html("<%=j bronte_link %>");
-$('#belter').html("<%=j belter_link %>");
-$('#thalissi').html("<%=j thalissi_link %>");
-
-$(".product_image_wrap").mouseover(function () {
-	$(this).children().css('visibility', 'visible');
-});
-
-$(".product_image_wrap").mouseleave(function () {
-	$(this).children().css('visibility', 'hidden');
-	
-});
+// используется для бесконечной прокрутки продуктов
+$('.js-endless-products').append('<%= j render 'products/products' %>');
+$('.pagination').replaceWith('<%= j will_paginate(@products) %>');

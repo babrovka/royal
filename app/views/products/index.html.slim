@@ -18,10 +18,10 @@
       = render_navigation expand_all: true, context: :products
 
     .js-products-list-change-render.span8
-      .js-left-menu-active-item[ data-id=35 ]
+      .row.js-endless-products = render 'products/products'
+
+
       .row
-        - @products.each_with_index do |product, i|
-          = render product
-          = render_products_case(i)
+        = will_paginate(@products)
 
       .row = render 'shared/seo_text', :@seo_text => @seo_text if @seo_text

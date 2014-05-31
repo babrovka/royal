@@ -5,6 +5,7 @@ class TaxonomiesController < ApplicationController
   def show
     taxon_ids = Taxon.where(taxonomy_id: selected_taxonomy.id).map(&:id)
     @products = Product.includes(:taxons).where(taxons: { id: taxon_ids })
+    @products = @products.page(params[:page]).per_page(10)
     @title = selected_taxonomy.try(:seo_title) || ''
     @meta_description = selected_taxonomy.try(:seo_description) || ''
     @seo_text = selected_taxonomy.try(:seo_text) || ''

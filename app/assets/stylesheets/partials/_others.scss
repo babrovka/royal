@@ -1,0 +1,5 @@
+// скрываем элементы управления пагинацией
+// потому что она работает по принципу endless_page
+.pagination a,
+.pagination em,
+.pagination span{ display: none; }

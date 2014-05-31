@@ -296,6 +296,7 @@ GEM
     useragent (0.6.0)
     warden (1.2.3)
       rack (>= 1.0)
+    will_paginate (3.0.5)
     yajl-ruby (1.1.0)
 
 PLATFORMS
@@ -337,3 +338,4 @@ DEPENDENCIES
   thin
   thinking-sphinx (~> 3.1.0)
   uglifier (>= 1.0.3)
+  will_paginate

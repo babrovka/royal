@@ -13,6 +13,8 @@ class ProductsController < ApplicationController
 
     @products = Product.order('title ASC')
     @products = @products.where(:brand_id => params[:brand_ids]) if params[:brand_ids]
+    @products = @products.page(params[:page]).per_page(10)
+
   end
   
   def show
