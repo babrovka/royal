@@ -2,13 +2,11 @@ class TaxonsController < ApplicationController
   before_filter :selected_brands, :selected_taxonomy, :selected_taxon, :seo_text
 
   def show
-    #brands = params[:brand_ids]
-    @taxon = Taxon.find(params[:id])
-    @products = Product.where(:taxon_id => @taxon.self_and_descendants.pluck(:id))
+    @products = Product.includes(:taxons).where(taxons: {id: selected_taxon.id})
     @products = @products.where(:brand_id => params[:brand_ids]) if params[:brand_ids]
-    @title = @taxon.seo_title
-    @meta_description = @taxon.try(:seo_description) || ''
-    @seo_text = @taxon.try(:seo_text) || ''
+    @title = selected_taxon.seo_title
+    @meta_description = selected_taxon.try(:seo_description) || ''
+    @seo_text = selected_taxon.try(:seo_text) || ''
     render :template => "/products/index" 
   end
 
