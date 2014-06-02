@@ -29,7 +29,7 @@ class ProductsController < ApplicationController
     @seo_text = @product.seo_text
 
     # переменные для breadcrumbs на странице продукта
-    @selected_taxon ||= @product.try(:taxon)
+    @selected_taxon ||= @product.taxons.first
     @selected_taxonomy ||= @selected_taxon.try(:taxonomy)
   end
   
