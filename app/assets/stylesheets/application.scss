@@ -17,6 +17,7 @@
  *= require pop-up
  *= require jquery.fancybox
  *= require dropdown
+ *= require select2
  */
 
 @import "partials/mixins";
@@ -33,6 +34,7 @@
 @import "partials/component_relations";
 @import "partials/partners";
 @import "partials/others";
+@import "partials/select2_override";
 
 /*common*/
 

@@ -20,6 +20,8 @@
 //= require jquery.mousewheel-3.0.6.pack
 //= require jquery.fancybox
 //= require jquery.fancybox.pack
+//= require select2
+//= require select2_locale_ru
 //= require_tree ./app
 //= require_self
 
