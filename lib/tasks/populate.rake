@@ -205,6 +205,18 @@ namespace :db do
     
     puts "Positions assigned!"
   end
+  
+  task :habtm_taxons => :environment do
+    Product.all.each do |product|
+      if product.taxon_id
+        taxon = Taxon.find(product.taxon_id)
+        product.taxons << taxon
+        product.save!
+      end
+    end
+    
+    puts "HABTM Taxons Assigned!"
+  end
 
   task :test_partners => :environment do
     Partner.delete_all
