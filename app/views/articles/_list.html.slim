@@ -1,0 +1,15 @@
+- title ||= 'Новости компании'
+.news-list
+  .header= title
+  .line
+  - unless @articles.blank?
+    - @articles.each do |article|
+      .column-element
+        = link_to article.title, articles_path, :class => "element-header-link"
+        .element-date= article.date.strftime("%d.%m.%Y")
+        .element-text
+          = truncate(strip_tags(article.text), length: 75).html_safe
+        = link_to "читать далее", show_news_path(article.id), class: 'element-read-more'
+
+
+= link_to 'все новости', news_path, class: 'content-header-link product'

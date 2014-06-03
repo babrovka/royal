@@ -1,6 +1,7 @@
-<div style="width: 320px; float: left; margin-right: 40px">
-	<div class="header">Новости компании</div>
-	<%= link_to "все новости", news_path, :class => "content-header-link" %>
+<%- title ||= 'Новости компании' %>
+
+<div>
+	<div class="header"><%= title %></div>
 	<div class="line"></div>
 	<% unless @articles.blank? %>
 	<% @articles.each do |article| %>

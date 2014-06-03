@@ -20,6 +20,6 @@ class Article < ActiveRecord::Base
   default_scope order('date DESC')
 
 
-  has_attached_file :image, :styles => {:medium => "694x264>"}, :default_url => "/images/:style/missing.png"
+  has_attached_file :image, :styles => {:medium => "694x264>"}, :default_url => "/system/articles/missing.jpg"
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 end
