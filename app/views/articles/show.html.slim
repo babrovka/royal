@@ -1,0 +1,16 @@
+.container
+  .row
+    .span2 = link_to 'назад к новостям', news_path, class: 'content-header-link product'
+
+  .row
+    .span8.news
+      h3 = @article.title
+      .element-date = @article.date.strftime('%d.%m.%Y')
+
+      /- if @article.image
+        = image_tag @article.image
+
+      p = @article.text
+
+    .span4 = render 'layouts/main-news'
+

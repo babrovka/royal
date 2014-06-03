@@ -2,10 +2,12 @@ Royal::Application.routes.draw do
 
   mount Ckeditor::Engine => '/ckeditor'
 
+
+  get 'news' => 'articles#index', as: :news
+  get 'news/:id' => 'articles#show', as: :show_news
+
   get "search/search"
-
   get "media/index"
-
   get "questions/create"
 
   resources :orders
@@ -22,13 +24,9 @@ Royal::Application.routes.draw do
 
   # taxonomy
   match '/products/:id' => 'taxonomies#show', :as => :taxonomy
-
   # products
   match '/products', to: 'products#index', :as => :products
 
-
-  
-  
   resources :articles
   resources :procedures
   
@@ -37,7 +35,6 @@ Royal::Application.routes.draw do
   match '/search', to: 'search#search'
   match "/albums/:id" => "media#album", :as => :album
   match '/publications' => 'publications#index'
-  match '/news' => 'articles#index'
   match '/consultations' => 'consultations#index'
   match '/media' => 'media#index'
   match '/questions' => 'questions#create', :via => :post
