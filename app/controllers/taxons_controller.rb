@@ -19,6 +19,8 @@ class TaxonsController < ApplicationController
 
   def selected_taxon
     @selected_taxon ||= @taxon ||  Taxon.find(params[:id])
+    session[:taxon_id] = @selected_taxon.id
+    @selected_taxon
   end
 
   def selected_taxonomy

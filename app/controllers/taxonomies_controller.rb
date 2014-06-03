@@ -9,6 +9,7 @@ class TaxonomiesController < ApplicationController
     @title = selected_taxonomy.try(:seo_title) || ''
     @meta_description = selected_taxonomy.try(:seo_description) || ''
     @seo_text = selected_taxonomy.try(:seo_text) || ''
+    session[:taxon_id] = nil
     render :template => "/products/index"
   end
 
