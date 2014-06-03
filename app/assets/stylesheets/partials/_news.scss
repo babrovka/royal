@@ -3,7 +3,12 @@ $color-border-img: #cf9f51;
 
 .news{
   h3{
-    color: $color-txt;
+    &, a{
+      &, &:hover, &:visited, &:focus{
+        color: $color-txt;
+        text-decoration: none;
+      }
+    }
     font-family: 'PragmaticaC';
     font-size: 24px;
     font-weight: normal;
@@ -11,12 +16,16 @@ $color-border-img: #cf9f51;
     margin: .3em 0;
   }
 
+
+
   .element-date{ margin-bottom: 1em; }
 
   p{
     color: $color-txt;
     font-size: 16px;
     line-height: 1.5;
+    margin: 0;
+    padding-bottom: 1em;
   }
 
   img{

@@ -1,0 +1,22 @@
+= render 'shared/top_btn'
+
+.container
+  .row
+    .span12
+      h1 Новости компании
+
+
+  .row
+    .span12.news-list.js-endless-news
+      = render 'list'
+
+      - if @articles.blank?
+        .news
+          p новостей нет
+
+
+  .row
+    .span12 = will_paginate @articles
+
+
+

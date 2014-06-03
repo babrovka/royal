@@ -2,7 +2,7 @@
 
 class StaticPagesController < ApplicationController
   def home
-    @articles = Article.order("created_at DESC").limit(3)
+    @articles = Article.order("date DESC").limit(3)
     @events = Event.order("created_at DESC").limit(3)
     @products = Product.latest.limit(3)
     seo = SeoData.find_by_page('Главная страница')

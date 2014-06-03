@@ -7,6 +7,9 @@ $ ->
 
   $scroll_top_btn.hide()
 
+  unless $left_menu.length
+    $left_menu = $('#topmenu')
+
   height_to_change_render = ->
     if $left_menu.length
       $left_menu.height() + $left_menu.offset().top - 20

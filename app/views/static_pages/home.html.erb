@@ -6,12 +6,16 @@
 <div id="main-content">
   <div class="container">
     <div class="row">
-      <%= render 'layouts/main-news' %>
-
-	  <%= render 'layouts/main-catalog' %>
-	
-	  <%= render 'layouts/main-events' %>
+      <div class="span3">
+        <%= render 'articles/widget' %>
+      </div>
+      <div class="span5">
+	      <%= render 'layouts/main-catalog' %>
+      </div>
+      <div class="span4">
+	      <%= render 'layouts/main-events' %>
+      </div>
     </div>
-    <%= render 'shared/seo_text' if @seo_text %>
   </div>
+  <%= render 'shared/seo_text' if @seo_text %>
 </div>
