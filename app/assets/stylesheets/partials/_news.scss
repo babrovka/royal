@@ -12,8 +12,10 @@ $color-border-img: #cf9f51;
     font-family: 'PragmaticaC';
     font-size: 24px;
     font-weight: normal;
+    text-transform: none;
     line-height: 1.3;
     margin: .3em 0;
+    padding-top: 1em;
   }
 
 
@@ -22,10 +24,10 @@ $color-border-img: #cf9f51;
 
   p{
     color: $color-txt;
-    font-size: 16px;
+    &, span{  font-size: 14px !important; }
     line-height: 1.5;
     margin: 0;
-    padding-bottom: 1em;
+    padding-bottom: 2em;
   }
 
   img{

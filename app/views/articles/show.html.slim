@@ -10,7 +10,7 @@
       - if @article.image_file_name
         = image_tag @article.image.url(:medium)
 
-      p = @article.text
+      p = @article.text.html_safe
 
     .span3 = render 'widget', title: 'Другие новости'
 
