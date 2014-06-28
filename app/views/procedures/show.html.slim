@@ -1,0 +1,39 @@
+= render 'shared/top_btn'
+
+.container
+  .row
+    ._case
+      ._case-header
+        = link_to 'назад к процедурам', procedures_path, class: '_procedure-back-btn'
+        = image_tag @procedure
+        ._case-header-darken
+          h2 = @procedure.title
+          h3 = @procedure.short_text.try(:truncate, 100)
+      ._case-body
+        = link_to '#', class: '_procedure-print-link' do
+          span.fa.fa-print
+          span распечатать
+
+        p = @procedure.text.html_safe if @procedure.text
+
+
+  .row
+    .span12
+      - stages = @procedure.stages
+      - num = 1
+
+      - stages.each do |stage|
+        = image_tag stage
+        - stage.substages.each do |substage|
+          p
+            span = num
+            span = substage.text
+          div
+            = substage.product.title
+
+          - num += 1
+
+
+
+
+

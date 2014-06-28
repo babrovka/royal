@@ -4,10 +4,10 @@ ruby '1.9.3'
 gem 'rails', '3.2.13'
 gem 'russian', '~> 0.6.0'
 gem 'paperclip'
-gem "execjs"
-gem "therubyracer"
-gem "friendly_id", "~> 4.0.9"
-gem 'thinking-sphinx', '~> 3.1.0'
+gem 'execjs'
+gem 'therubyracer'
+gem 'friendly_id', '~> 4.0.9'
+
 gem 'fotoramajs'
 gem 'faker'
 gem 'populator'
@@ -49,5 +49,6 @@ end
 group :production do
   gem 'mysql2'
   gem 'thin'
+  gem 'thinking-sphinx', '~> 3.1.0'
 end
 
