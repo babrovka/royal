@@ -72,16 +72,35 @@ $banner_width_img: 620px;
     z-index: 0;
   }
 
+  // осветлитель фона
   #{$el}-header-lighten{
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255,255,255,0.8);
+    background: rgba(255,255,255,0.84);
+  }
+
+  // кнопка назад на изображении
+  #{$el}-back-btn{
+    @include link-states-style{
+      background-color: #fff;
+      color: $color-lilac;
+      position: absolute;
+      top: 1.5em;
+      padding: .3em .5em .2em;
+      z-index: 999;
+      font-size: 12px;
+      display: inline-block;
+    }
+    &:hover, &:active, &:focus{
+      background-color: lighten($color-magenta-l, 5%);
+    }
   }
 }
 
+// Текст под большим изображением
 #{$el}-body{
   padding: 27px 0;
 
@@ -109,6 +128,8 @@ $banner_width_img: 620px;
       text-decoration: none;
       color: $color-magenta;
     }
+
+    &:hover, &:active, &:focus{ color: lighten($color-magenta, 15%); }
   }
 }
 
@@ -173,6 +194,7 @@ $banner_width_img: 620px;
     text-decoration: none;
     color: $color-magenta;
   }
+  &:hover, &:active, &:focus{ background-color: darken($color-magenta-l, 5%);}
 
 
   img{
