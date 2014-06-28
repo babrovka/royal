@@ -239,8 +239,10 @@ namespace :db do
 
 
   task :test_procedures => :environment do
-    Procedure.delete_all
-    # ActiveRecord::Base.connection.reset_pk_sequence!('events')
+    Procedure.destroy_all
+    Stage.destroy_all
+    Substage.destroy_all
+    ActiveRecord::Base.connection.reset_pk_sequence!('procedures')
 
     Procedure.populate 100 do |pr|
       pr.title = Populator.words(1..8).capitalize
@@ -248,12 +250,16 @@ namespace :db do
     end
 
 
+    products = Product.all
     Procedure.all.each do |pr|
       3.times do
         pr.stages.build.tap do |stage|
-          stage.substages.build.tap do |substage|
-            substage.product = Product.all.shuffle.first
-            substage.text = Populator.words(10..50)
+          stage.title = Populator.words(1..4)
+          4.times do
+            stage.substages.build.tap do |substage|
+              substage.product = products.shuffle.first
+              substage.text = Populator.words(10..50)
+            end
           end
         end
       end

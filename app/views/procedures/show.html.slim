@@ -2,36 +2,49 @@
 
 .container
   .row
-    ._case
-      ._case-header
-        = link_to 'назад к процедурам', procedures_path, class: '_procedure-back-btn'
-        = image_tag @procedure
-        ._case-header-darken
-          h2 = @procedure.title
-          h3 = @procedure.short_text.try(:truncate, 100)
-      ._case-body
-        = link_to '#', class: '_procedure-print-link' do
-          span.fa.fa-print
-          span распечатать
+    .span12
+      ._procedure
+        ._procedure-header
+          = link_to 'назад к процедурам', procedures_path, class: '_procedure-back-btn'
+          = image_tag 'mocks/procedure-header.jpg'
+          ._procedure-header-lighten
+            h2 = @procedure.title
+            /h3 = @procedure.short_text.try(:truncate, 100)
+            h3 = Populator.words(10..30)
+        ._procedure-body
+          = link_to '#', class: '_procedure-print-link' do
+            span.fa.fa-print
+            span распечатать
 
-        p = @procedure.text.html_safe if @procedure.text
+          p = @procedure.text.html_safe if @procedure.text
 
 
   .row
     .span12
       - stages = @procedure.stages
-      - num = 1
+      - num = 0
 
       - stages.each do |stage|
-        = image_tag stage
-        - stage.substages.each do |substage|
-          p
-            span = num
-            span = substage.text
-          div
-            = substage.product.title
+        ._procedure-stage
+          ._procedure-stage-header
+            = image_tag 'mocks/stage.png'
+            h5 = stage.title
 
-          - num += 1
+          - stage.substages.each do |substage|
+            - num += 1
+            p._procedure-substage
+              span = "#{num}. "
+              span = substage.text
+            ._procedure-substage-products
+              - product = substage.product
+              = link_to product_path(product), class: '_procedure-product' do
+                - if product.product_images.any?
+                  = image_tag product.product_images.first.url(:ico)
+                - else
+                  = image_tag 'noimage.png'
+
+                h6 = product.title
+
 
 
 

@@ -1,0 +1,198 @@
+$el: '._procedure';
+$height_img: 380px;
+$width_img: 940px;
+
+$banner_height_img: 220px;
+$banner_width_img: 620px;
+
+
+// Страница просмотра
+//
+//
+#{$el}{
+  * { box-sizing: border-box; }
+  // делаем отрицательный отступ вверх,чтобы убрать белое пространство между меню и блоком
+  // причем не удалось выяснить, откуда это пустое пространство взялось,
+  // поэтому это чистый monkey patch
+  //  margin-top: -25px;
+  margin-bottom: 30px;
+  a {
+    @include link-states-style{
+      text-decoration: none;
+    }
+  }
+}
+
+#{$el}-header, #{$el}-body{
+  width: $width_img;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+#{$el}-header{
+  height: $height_img;
+  position: relative;
+  overflow: hidden;
+
+  h2, h3{
+    margin: 0;
+    text-align: center;
+    position: relative;
+    color: $color-magenta;
+    text-shadow: 1px 1px rgba(255,255,255,0.5);
+    z-index: 12;
+    padding: 0 140px;
+    height: $height_img/2 - 5px;
+  }
+
+  h2{
+    font-family: 'Bebas Neue Book';
+    font-size: 72px;
+    line-height: 1.13;
+
+    // выравнивание текста по центру изображения
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    width: $width_img;
+    // ====
+  }
+
+  h3{
+    font-family: 'Georgia', serif;
+    text-transform: none;
+    font-size: 22px;
+    line-height: 1.33;
+  }
+
+  img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+  }
+
+  #{$el}-header-lighten{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255,255,255,0.8);
+  }
+}
+
+#{$el}-body{
+  padding: 27px 0;
+
+  p{
+    color: $color-brown;
+    padding-left: 170px;
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1.35;
+    margin: 0;
+  }
+
+  #{$el}-print-link{
+    float: left;
+    font-size: 14px;
+    display: inline-block;
+    margin-top: .2em;
+    span + span{
+      margin-left: 10px;
+      border-bottom: 1px solid $color-magenta;
+    }
+
+    @include link-states-style{
+      text-decoration: none;
+      color: $color-magenta;
+    }
+  }
+}
+
+
+
+
+#{$el}-stage{
+  margin-bottom: 70px;
+}
+
+
+// Картинка и текст внутри нее выровненный по центру
+#{$el}-stage-header{
+  position: relative;
+  width: 553px;
+  overflow: hidden;
+
+  h5 {
+    font-family: PragmaticaLightC, sans-serif;
+    font-size: 48px;
+    line-height: 91px;
+    padding-left: .6em;
+    font-weight: normal;
+    display: inline-block;
+    color: #fff;
+    position: relative;
+    margin: 0;
+  }
+
+  img{
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+}
+
+
+// Текст с карточками товара под ним
+#{$el}-substage{
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+#{$el}-substage-products{
+  margin-bottom: 30px;
+}
+
+
+// Карточка продукта
+#{$el}-product{
+  $img-size: 35px;
+  height: $img-size;
+  background-color: $color-magenta-l;
+  line-height: $img-size;
+  display: inline-block;
+  border: none;
+  border-radius: 4px;
+  position: relative;
+
+  @include link-states-style{
+    text-decoration: none;
+    color: $color-magenta;
+  }
+
+
+  img{
+    $border-width: 2px;
+    position: absolute;
+    max-width: $img-size;
+    max-height: $img-size;
+    border: $border-width solid $color-magenta;
+    top: -$border-width;
+    border-radius: $border-width;
+    left: 10px;
+  }
+
+  h6{
+    color: $color-magenta;
+    text-decoration: underline;
+    font-size: 14px;
+    position: relative;
+    padding-right: 1em;
+    margin: 0;
+    margin-left: 2*$img-size;
+  }
+}
