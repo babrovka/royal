@@ -7,7 +7,8 @@ class Product < ActiveRecord::Base
                   :seo_title, :seo_description, :seo_text, :taxon_id, :position, :taxon_ids
   has_and_belongs_to_many :procedures
   has_and_belongs_to_many :cases
-  has_many :substages
+  has_many :substage_products
+  has_many :substages, through: :substage_products
   has_many :line_items
   has_many :product_images
   belongs_to :product_category

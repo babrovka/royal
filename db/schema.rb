@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140603154930) do
+ActiveRecord::Schema.define(:version => 20140701100224) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -203,8 +203,13 @@ ActiveRecord::Schema.define(:version => 20140603154930) do
   create_table "procedures", :force => true do |t|
     t.string   "title"
     t.text     "text"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.text     "short_text"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "procedures_products", :force => true do |t|
@@ -310,9 +315,15 @@ ActiveRecord::Schema.define(:version => 20140603154930) do
     t.datetime "updated_at",   :null => false
   end
 
+  create_table "substage_products", :force => true do |t|
+    t.integer  "substage_id"
+    t.integer  "product_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "substages", :force => true do |t|
     t.text     "text"
-    t.integer  "product_id"
     t.integer  "stage_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

@@ -1,5 +1,6 @@
 class Substage < ActiveRecord::Base
-  attr_accessible :product_id, :stage_id, :text
-  belongs_to :product
+  attr_accessible :stage_id, :text
+  has_many :substage_products
+  has_many :products, through: :substage_products
   belongs_to :stage
 end
