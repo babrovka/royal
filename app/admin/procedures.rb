@@ -1,3 +1,5 @@
+# coding: utf-8
+
 ActiveAdmin.register Procedure do
   menu :parent => I18n.t('catalog')
   config.batch_actions = false
@@ -36,11 +38,11 @@ ActiveAdmin.register Procedure do
     
     panel t('stages') do 
       table_for procedure.stages do 
-        column :title do |stage|
+        column 'Заголовок' do |stage|
           stage.title
         end
         
-        column :substages do |stage|
+        column 'Этапы' do |stage|
           stage.substages.map(&:text).join(", ")
         end
 
