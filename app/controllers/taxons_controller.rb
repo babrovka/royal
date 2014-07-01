@@ -2,7 +2,8 @@ class TaxonsController < ApplicationController
   before_filter :selected_brands, :selected_taxonomy, :selected_taxon, :seo_text
 
   def show
-    @products = Product.includes(:taxons).where(taxons: {id: selected_taxon.id})
+    taxons = selected_taxon.self_and_descendants
+    @products = Product.includes(:taxons).where(:taxons => {:id => taxons})
     @products = @products.where(:brand_id => params[:brand_ids]) if params[:brand_ids]
     @products = @products.page(params[:page]).per_page(10)
     @title = selected_taxon.seo_title
