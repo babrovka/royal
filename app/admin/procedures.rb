@@ -14,7 +14,7 @@ ActiveAdmin.register Procedure do
    form do |f|  
      f.inputs do
        f.input :title
-       f.input :short_text, :input_html => { :rows => 2  }
+       f.input :short_text, :input_html => { :rows => 4  }
        f.input :text, :input_html => { :rows => 5  }
        f.input :image, :as => :file, :hint => ( f.object.new_record? || !f.object.image ) ? nil : image_tag(f.object.image.url(:thumb))
        
