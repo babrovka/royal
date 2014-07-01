@@ -16,6 +16,7 @@ class ProcedurePdf < Prawn::Document
     start_new_page
     move_down 60
     title
+    main_text
   end
   
   def belter_logo
@@ -42,6 +43,15 @@ class ProcedurePdf < Prawn::Document
   
   def footer
     image "#{Rails.root}/app/assets/images/pdf/rb_logo.png", :position => :left
+  end
+  
+  def main_text
+    @procedure.stages.each do |stage|
+      text (stage.title + ':'), :color => '002539', :size => 20
+      stage.substages.each do |substage|
+        text (substage.text + ':'), :color => '002539', :size => 10
+      end
+    end
   end
   
   def russian_font
