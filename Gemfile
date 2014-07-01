@@ -27,6 +27,7 @@ gem 'simple-navigation'
 gem 'spreadsheet'
 gem 'select2-rails'
 gem 'will_paginate'
+gem 'prawn'
 
 #deploy
 gem 'capistrano'

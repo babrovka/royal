@@ -132,6 +132,8 @@ ru:
         procedures: "Процедуры"
         title: "Название"
         text: "Описание"
+        short_text: "Краткий текст"
+        image: "Изображение"
       case:
         title: "Название"
         text: "Описание"
