@@ -21,7 +21,7 @@ ActiveAdmin.register Procedure do
          
          stage_fields.has_many :substages do |substage_fields|      
             substage_fields.input :text, :input_html => { :rows => 2  }
-            substage_fields.input :product_id, :as => :select, :collection => Product.all, :include_blank => true
+            substage_fields.input :products, :as => :select, :collection => Product.all, input_html: {class: 'select2able'}
           end
           
        end
