@@ -8,10 +8,10 @@ class ProcedurePdf < Prawn::Document
     init_fonts
     first_page_logo
     first_page_title
-    # first_page_short_text
     first_page_footer
 
     start_new_page
+
     main_text
 
     repeatable_footer
