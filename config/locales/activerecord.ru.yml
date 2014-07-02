@@ -184,6 +184,7 @@ ru:
         brand_id: "Бренд"
       stage:
         title: "Название"
+        stage_images: "Изображения"
       substage:
         text: "Текст"
         product_id: "Продукт"

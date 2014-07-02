@@ -20,6 +20,7 @@ ActiveAdmin.register Procedure do
        
        f.has_many :stages do |stage_fields|      
          stage_fields.input :title
+         stage_fields.input :stage_images, :as => :select, :collection => StageImage.all, input_html: {class: 'select2able'}
          
          stage_fields.has_many :substages do |substage_fields|      
             substage_fields.input :text, :input_html => { :rows => 2  }
