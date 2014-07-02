@@ -5,62 +5,110 @@ class ProcedurePdf < Prawn::Document
     super(margin: 70)
     @procedure = procedure
     @view = view
-    russian_font
-    belter_logo
-    move_down 120
-    first_title
-    move_down 60
-    short_text
-    move_down 180
-    first_footer
+    init_fonts
+    first_page_logo
+    first_page_title
+    # first_page_short_text
+    first_page_footer
+
     start_new_page
-    move_down 60
-    title
     main_text
+
+    repeatable_footer
   end
-  
-  def belter_logo
-    image "#{Rails.root}/app/assets/images/pdf/belter_logo.png", :position => :center
+
+  # повторяем футер на всех кроме главной страницы
+  def repeatable_footer
+    footer_height = 100
+    repeat(lambda { |pg| pg != 1 }) do
+      bounding_box([0, 0],  width: bounds.width, height: footer_height) do
+        image "#{Rails.root}/app/assets/images/pdf/rb_logo.png", :position => :left, width: 150
+
+        text_width = 180
+        bounding_box([bounds.width - text_width, footer_height], width: text_width, height: footer_height) do
+          font 'PTSansCondensed'
+          text "Эксклюзивный дистрибьютор в России\nкомпания «Роял Брендс»\n8(800)100-8079, www.rbcos.ru",
+               color: '333333',
+               size: 12
+        end
+      end
+    end
   end
-  
-  def first_title 
-    text @procedure.title, :color => 'F48120', :size => 30, :align => :center
-  end
-  
-  def title 
-    text @procedure.title, :color => 'C99541', :size => 25
-  end
-  
-  def short_text 
-    span(350, :position => :center) do
-     text @procedure.short_text, :size => 10
+
+  # футер на главной странице
+  def first_page_footer
+    footer_height = 100
+    bounding_box([0, 0], width: bounds.width, height: footer_height) do
+      image "#{Rails.root}/app/assets/images/pdf/rb_logo.png", :position => :center, width: 150
     end
   end
   
-  def first_footer
-    image "#{Rails.root}/app/assets/images/pdf/rb_logo.png", :position => :center
+  def first_page_logo
+    bounding_box([0, bounds.height], width: bounds.width, height: 200) do
+      image "#{Rails.root}/app/assets/images/pdf/belter_logo.png", :position => :center, fit: [200, 200]
+      image "#{Rails.root}/app/assets/images/pdf/th_logo.png", :position => :center, fit: [200, 200]
+      image "#{Rails.root}/app/assets/images/pdf/ab_logo.png", :position => :center, fit: [200, 200]
+    end
   end
   
-  def footer
-    image "#{Rails.root}/app/assets/images/pdf/rb_logo.png", :position => :left
+  def first_page_title
+    bounding_box([0, bounds.height/2 + 100], width: bounds.width) do
+      font 'Bebas'
+      text @procedure.title, :color => 'F48120', :size => 35, :align => :center
+      move_down 60
+      first_page_short_text
+    end
   end
   
+
+  def first_page_short_text
+    span(350, :position => :center) do
+      font 'PTSansRegular'
+      text @procedure.title, :size => 12
+    end
+  end
+  
+
+  
+
   def main_text
-    @procedure.stages.each do |stage|
-      text (stage.title + ':'), :color => '002539', :size => 20
-      stage.substages.each do |substage|
-        text (substage.text + ':'), :color => '002539', :size => 10
+    font 'PTSansRegular'
+    bounding_box([0, bounds.height], width: bounds.width, height: bounds.height - 100) do
+      text @procedure.title, :color => 'C99541', :size => 22
+      move_down 20
+      num = 0
+      @procedure.stages.each do |stage|
+        text (stage.title + ':'), :color => '002539', :size => 16
+        move_down 7
+        # формируем то,что будем рисовать
+        rows = []
+        stage.substages.each do |substage|
+          num += 1
+          rows.push ["#{num}.", substage.text]
+        end
+
+        # рисуем таблицу
+        indent 10 do
+          table rows, cell_style: { border_width: 0, color: '002539', padding: [5,3], size: 12 }
+        end
+        move_down 15
       end
     end
   end
   
-  def russian_font
+  def init_fonts
     font_families.update(
-      "PT Sans" => {
-        :bold => "#{Rails.root}/app/assets/fonts/pdf/verdanab.ttf",
-        :italic => "#{Rails.root}/app/assets/fonts/pdf/verdanai.ttf",
-        :normal  => "#{Rails.root}/app/assets/fonts/pdf/verdana.ttf" })
-    font "PT Sans"
+      'PTSansCondensed' =>{
+        normal: "#{Rails.root}/app/assets/fonts/pdf/OpenSans-Condensed.ttf"
+      },
+      'PTSansRegular' => {
+          normal: "#{Rails.root}/app/assets/fonts/pdf/OpenSans-Regular.ttf"
+      },
+      'Bebas' =>{
+        :normal => "#{Rails.root}/app/assets/fonts/pdf/BebasNeue Regular.ttf"
+      }
+    )
   end
+
 
 end
