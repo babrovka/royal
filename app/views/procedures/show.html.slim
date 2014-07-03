@@ -45,12 +45,11 @@
                   h6 = product.title
 
 
-
-
-
-
-
-
   .row
     .span12
       = render 'shared/ya_share_btn'
+
+  .row
+    .span12
+      - @nested_products.each do |product|
+        = product.title
