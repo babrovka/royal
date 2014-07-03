@@ -28,7 +28,10 @@ Royal::Application.routes.draw do
   match '/products', to: 'products#index', :as => :products
 
   resources :articles
+  
+  match '/procedures/categories/:id', to: 'procedures#category'
   resources :procedures, only: [:index, :show]
+ 
   
   root :to => 'static_pages#home'
   

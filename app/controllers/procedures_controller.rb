@@ -3,6 +3,12 @@ class ProceduresController < ApplicationController
     @procedures = Procedure.all
   end
   
+  def category
+    category = ProcedureCategory.find(params[:id])
+    categories = category.self_and_descendants
+    @procedures = Product.includes(:procedure_categories).where(:procedure_categories => {:id => categories})
+  end
+  
   def show 
     @procedure = Procedure.find(params[:id])
     respond_to do |format|
