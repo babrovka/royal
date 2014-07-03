@@ -280,19 +280,24 @@ namespace :db do
     Procedure.destroy_all
     Stage.destroy_all
     Substage.destroy_all
+    StageImage.destroy_all
     ActiveRecord::Base.connection.reset_pk_sequence!('procedures')
 
     Procedure.populate 100 do |pr|
       pr.title = Populator.words(1..8).capitalize
       pr.text = Populator.words(10..50)
     end
-
-
+    
+    StageImage.create!(:title => 'Очищение и пилинг', :image => File.new(File.join(Rails.root, 'app', 'assets', 'images', 'pro1.png')))
+    StageImage.create!(:title => 'Массаж и маска', :image => File.new(File.join(Rails.root, 'app', 'assets', 'images', 'pro2.png')))
+    
+    stage_images = StageImage.all
     products = Product.all
     Procedure.all.each do |pr|
       3.times do
         pr.stages.build.tap do |stage|
           stage.title = Populator.words(1..4)
+          stage.stage_images << stage_images.shuffle.first
           4.times do
             stage.substages.build.tap do |substage|
               substage.products << products.shuffle.first
