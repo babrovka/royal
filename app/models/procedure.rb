@@ -8,17 +8,9 @@ class Procedure < ActiveRecord::Base
   
   
   def brand 
-    if self.stages
-      stages = self.stages.pluck(:id)
-      substages = Substage.where(:stage_id => stages)
-      if substages
-        products = Product.includes(:substages).where("substages.id" => substages) 
-        unless products.empty? && products.first.brand
-          brand = products.first.brand
-          brand
-        end
-      end
-    end
+    unless self.procedure_categories.empty?
+      self.procedure_categories.first.brand if self.procedure_categories.first.brand
+    end      
   end
   
 end
