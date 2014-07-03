@@ -236,6 +236,44 @@ namespace :db do
     end
 
   end
+  
+  
+  task :test_nested_procedure_categories => :environment do
+
+    ProcedureCategory.delete_all
+    ProcedureProcedureCategory.delete_all
+
+    # instead of Taxon.reset_pk_sequence!
+    # ActiveRecord::Base.connection.reset_pk_sequence!('taxons')
+
+    ProcedureCategory.populate 10 do |cat|
+      cat.title = Faker::Lorem.words(1)[0].capitalize
+      cat.brand_id = Brand.pluck(:id).sample
+      print '.'
+    end
+
+    puts '+'
+    ProcedureCategory.rebuild!
+
+
+    4.times do ||
+      root = ProcedureCategory.roots.shuffle.first
+
+      5.times do
+        cat = ProcedureCategory.new
+        cat.title = Faker::Lorem.words(1)[0].capitalize
+        cat.brand_id = Brand.pluck(:id).sample
+        cat.save!
+        print '.'
+        cat.move_to_child_of root
+      end
+    end
+
+    puts '++'
+    ProcedureCategory.rebuild!
+    puts "Nested procedure categories created!"
+
+  end
 
 
   task :test_procedures => :environment do
@@ -257,15 +295,17 @@ namespace :db do
           stage.title = Populator.words(1..4)
           4.times do
             stage.substages.build.tap do |substage|
-              substage.product = products.shuffle.first
+              substage.products << products.shuffle.first
               substage.text = Populator.words(10..50)
             end
           end
         end
       end
+      pr.procedure_categories << ProcedureCategory.all.sample
       pr.save!
     end
-
+    
+    puts "Procedures created!"
 
   end
 
