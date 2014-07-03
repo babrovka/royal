@@ -45,9 +45,7 @@ class ProcedurePdf < Prawn::Document
   
   def first_page_logo
     bounding_box([0, bounds.height], width: bounds.width, height: 200) do
-      image "#{Rails.root}/app/assets/images/pdf/belter_logo.png", :position => :center, fit: [200, 200]
-      image "#{Rails.root}/app/assets/images/pdf/th_logo.png", :position => :center, fit: [200, 200]
-      image "#{Rails.root}/app/assets/images/pdf/ab_logo.png", :position => :center, fit: [200, 200]
+      image "#{Rails.root}/app/assets/images/pdf/logo-brand-#{@procedure.brand.try(:id)}.png", :position => :center, fit: [200, 200]
     end
   end
   
@@ -81,6 +79,7 @@ class ProcedurePdf < Prawn::Document
         text (stage.title + ':'), :color => '002539', :size => 16
         move_down 7
         # формируем то,что будем рисовать
+        # в каждой строчке порядковый номер и текст
         rows = []
         stage.substages.each do |substage|
           num += 1
