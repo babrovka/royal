@@ -1,0 +1,17 @@
+.row-fluid._procedure.js-product-box
+  .span5
+    = link_to procedure_path(procedure) do
+      ._product-img
+        - if procedure.image
+          = image_tag procedure.image.url(:thumb)
+        - else
+          = image_tag 'empty-procedure.png'
+        ._product-img-staff
+
+
+  .span7.js-product-box-description
+    ._product-brand[ class="m-brand#{procedure.brand.try(:id)}" ] = procedure.brand.try(:title)
+    = link_to procedure.title, procedure_path(procedure), class: '_product-title'
+    ._product-category = procedure.short_text.try(:truncate, 70)
+    ._product-description.js-product-box-shorting-area = procedure.text.try(:truncate, 140)
+    = link_to 'читать полностью', procedure_path(procedure), class: '_product-link link'

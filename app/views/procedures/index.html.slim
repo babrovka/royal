@@ -1,0 +1,20 @@
+= render 'shared/top_btn'
+
+
+#products.container
+  .row._page-header
+    .span12
+      h1 процедуры
+
+  .row
+    .span4.visible-animate.js-left-menu-container
+      = render_navigation expand_all: true, context: :procedures
+
+    .js-products-list-change-render.span8
+      .row.js-endless-products = render 'procedures/procedures'
+
+
+      .row
+        = will_paginate(@procedures)
+
+      .row = render 'shared/seo_text', :@seo_text => @seo_text if @seo_text
