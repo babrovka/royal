@@ -51,6 +51,7 @@ $color-link: #3f3ca2;
     box-shadow: inset 0 0 10px -1px rgba(0,0,0,0.5);
   }
 
+
   img{
     $img-size: $size - 6px;
     width: $img-size;
@@ -77,6 +78,25 @@ $color-link: #3f3ca2;
     }
   }
 
+
+  // модификатор рендера изображения 220х160
+  // с отсутствующей рамкой
+  &.m-widescreen{
+    background-image: none;
+    $height: $size/1.375;
+    height: $height;
+    #{$el}-img-staff{ background: none; }
+
+    img{
+      max-width: $size;
+      max-height: $height;
+      width: auto;
+      height: auto;
+      padding-left: 0;
+      padding-top: 0;
+      box-shadow: none;
+    }
+  }
 }
 
 

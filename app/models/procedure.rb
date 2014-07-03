@@ -5,7 +5,7 @@ class Procedure < ActiveRecord::Base
   has_many :procedure_procedure_categories
   has_many :procedure_categories, through: :procedure_procedure_categories
 
-  has_attached_file :image, :styles => { :medium => "940x380#", :thumb => "200x100>" }
+  has_attached_file :image, :styles => { :medium => "940x380#", :thumb => "220x160>" }
   accepts_nested_attributes_for :stages, :allow_destroy => true
 
   def brand 

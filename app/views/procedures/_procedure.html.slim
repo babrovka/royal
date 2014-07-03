@@ -1,12 +1,11 @@
-.row-fluid._procedure.js-product-box
+.row-fluid._product.js-product-box
   .span5
     = link_to procedure_path(procedure) do
-      ._product-img
-        - if procedure.image
+      ._product-img.m-widescreen
+        - if procedure.image?
           = image_tag procedure.image.url(:thumb)
         - else
           = image_tag 'empty-procedure.png'
-        ._product-img-staff
 
 
   .span7.js-product-box-description
