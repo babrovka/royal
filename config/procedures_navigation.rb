@@ -18,10 +18,16 @@ SimpleNavigation::Configuration.run do |navigation|
       procedure_categories.item "brand-#{brand.id}", brand.title, '#' do |brand_procedure_categories|
         brand_procedure_categories.dom_class = '_left-menu-first-level js-left-menu-node'
         brand.procedure_categories.roots.each do |procedure_category_root|
-          brand_procedure_categories.item "procedure-category-#{procedure_category_root.id}", procedure_category_root.title, '#' do |procedure_categories_child|
+          brand_procedure_categories.item "procedure-category-#{procedure_category_root.id}",
+                                          procedure_category_root.title,
+                                          procedures_category_path(procedure_category_root) \
+          do |procedure_categories_child|
             procedure_categories_child.dom_class = '_left-menu-second-level js-left-menu-node'
             procedure_category_root.children.each do |procedure_category_child|
-              procedure_categories_child.item "procedure-category-#{procedure_category_child.id}", procedure_category_child.title, '#', class: 'empty'
+              procedure_categories_child.item "procedure-category-#{procedure_category_child.id}",
+                                              procedure_category_child.title,
+                                              procedures_category_path(procedure_category_child),
+                                              class: 'empty'
             end
           end
         end

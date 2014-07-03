@@ -6,9 +6,11 @@ class ProceduresController < ApplicationController
   def category
     category = ProcedureCategory.find(params[:id])
     categories = category.self_and_descendants
-    @procedures = Product.includes(:procedure_categories)
+    @procedures = Procedure.includes(:procedure_categories)
                           .where(:procedure_categories => {:id => categories})
                           .page(params[:page]).per_page(10)
+
+    render template: '/procedures/index'
   end
   
   def show 

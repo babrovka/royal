@@ -29,7 +29,7 @@ Royal::Application.routes.draw do
 
   resources :articles
   
-  match '/procedures/categories/:id', to: 'procedures#category'
+  match '/procedures/categories/:id', to: 'procedures#category', as: :procedures_category
   resources :procedures, only: [:index, :show]
  
   
