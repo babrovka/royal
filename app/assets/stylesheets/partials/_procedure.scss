@@ -183,7 +183,7 @@ $banner_width_img: 620px;
 
 // Карточка продукта
 #{$el}-product{
-  $img-size: 35px;
+  $img-size: 36px;
   height: $img-size;
   background-color: $color-magenta-l;
   line-height: $img-size;
@@ -196,8 +196,21 @@ $banner_width_img: 620px;
     text-decoration: none;
     color: $color-magenta;
   }
-  &:hover, &:active, &:focus{ background-color: darken($color-magenta-l, 5%);}
+  &:hover, &:active, &:focus{
+    background-color: darken($color-magenta-l, 5%);
+    &:after{ background-position: 0 -36px;}
+  }
 
+  &:after{
+    content: ' ';
+    display: block;
+    width: 14px;
+    height: 36px;
+    background-image: image-url('procedure-product-btn-arrow.png');
+    position: absolute;
+    right: -11px;
+    top: 0;
+  }
 
   img{
     $border-width: 2px;
