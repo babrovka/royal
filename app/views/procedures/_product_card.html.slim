@@ -1,0 +1,16 @@
+.row-fluid._product.m-procedure-page
+  .span4
+    = link_to product_path(product) do
+      ._product-img.m-procedure-page
+        - if product.product_images.any?
+          = image_tag product.product_images.first.image.url(:catalog)
+        - else
+          = image_tag 'noimage.png'
+        ._product-img-staff
+
+  .span8.js-product-box-description
+    = link_to product.title.truncate(100), product_path(product), class: '_product-title m-procedure-page'
+    ._product-category.m-procedure-page = product.short_description.truncate(100)
+    = link_to product_path(product), class: '_product-link m-procedure-page btn-success' do
+      span подробнее
+      span.fa.fa-caret-right

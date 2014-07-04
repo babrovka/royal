@@ -50,6 +50,6 @@
       = render 'shared/ya_share_btn'
 
   .row
-    .span12
-      - @nested_products.each do |product|
-        = product.title
+    - @nested_products.each do |product|
+      .span4
+        = render 'procedures/product_card', product: product

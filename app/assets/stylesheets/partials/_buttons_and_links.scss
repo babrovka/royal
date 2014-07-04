@@ -18,12 +18,20 @@
   border:none;
   text-align: center;
   height: 30px;
+  line-height: 30px;
   width: 170px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
   @include link-states-style{ text-decoration: none; }
   &:hover, &:active{ background-color: $color-btn-hover-bg; }
+
+  span + span{ padding-left: 1em; }
+}
+
+.btn-success{
+  @extend .btn-simple !optional;
+  &:hover, &:active { background-color: $color-magenta; color: #fff; }
 }
 
 .link,

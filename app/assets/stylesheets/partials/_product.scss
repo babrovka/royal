@@ -13,12 +13,17 @@ $color-link: #3f3ca2;
 
 
 #{$el}{
-
-  -webkit-font-smoothing: antialiased;
-
+  position: relative;
   margin-bottom: 55px;
 
   > a { display: inline-block; }
+
+  &.m-procedure-page{
+    background-color: $color-magenta-l;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 250px;
+  }
 }
 
 #{$el}-btn, #{$el}-price{
@@ -78,10 +83,33 @@ $color-link: #3f3ca2;
     }
   }
 
+  // карточка товара на странице процедуры
+  &.m-procedure-page{
+    $size: 70px;
+    width: $size;
+    height: $size;
+    background-image: image-url('product-images-70.png');
+    margin-left: 0;
+    margin-right: 0;
+
+    img {
+      $img-size: $size - 6px;
+      width: $img-size;
+      height: $img-size;
+      padding-left: ($size - $img-size)/2;
+      padding-top: ($size - $img-size)/2;
+      box-shadow: inset 0 0 10px -1px rgba(0, 0, 0, 0.5);
+    }
+
+    #{$el}-img-staff {
+      background-image: image-url('product-images-70.png');
+    }
+  }
 
   // модификатор рендера изображения 220х160
   // с отсутствующей рамкой
   &.m-widescreen{
+    $size: 220px;
     background-image: none;
     $height: $size/1.375;
     height: $height;
@@ -111,6 +139,16 @@ $color-link: #3f3ca2;
     color: $color-title;
     text-decoration: none;
   }
+
+  // карточка на странице процедуры
+  &.m-procedure-page{
+    font-family: 'PragmaticaC';
+    font-size: 14px;
+    font-weight: normal;
+    text-decoration: underline;
+    padding-bottom: 1em;
+    letter-spacing: 0.4px;
+  }
 }
 
 #{$el}-brand{
@@ -133,6 +171,14 @@ $color-link: #3f3ca2;
   letter-spacing: -.005em;
   color: #b78b47;
   margin-bottom: 15px;
+
+  // карточка товара на странице процедуры
+  &.m-procedure-page {
+    font-family: 'PragmaticaC';
+    font-style: normal;
+    color: #1f478b;
+    font-size: 14px;
+  }
 }
 
 #{$el}-description{
@@ -143,7 +189,16 @@ $color-link: #3f3ca2;
   line-height: 1.2;
 }
 
-#{$el}-link{ display:block; margin-bottom: 10px; }
+#{$el}-link{
+  display:block;
+  margin-bottom: 10px;
+
+  &.m-procedure-page{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+  }
+}
 
 #{$el}-price{
   font-family: 'PragmaticaC';
@@ -184,7 +239,7 @@ $color-link: #3f3ca2;
 // данный способ отрисовки очень завязан на bootstrap2
 // и фиксированной верстке.
 .scrolled {
-  ._product {
+  ._product:not(.m-procedure-page) {
     width: 49.60%;
     display: inline-block;
     vertical-align: top;
@@ -196,9 +251,10 @@ $color-link: #3f3ca2;
     .span7 {
       width: 40.42553191489362%;
     }
+
   }
 
-  ._product-title{ font-family: 'PragmaticaC'; font-size: 18px; padding-bottom: 0.2em; }
-  ._product-category{ font-size: 12px; }
-  ._product-description { font-size: 12px; }
+  ._product-title:not(.m-procedure-page){ font-family: 'PragmaticaC'; font-size: 18px; padding-bottom: 0.2em; }
+  ._product-category:not(.m-procedure-page){ font-size: 12px; }
+  ._product-description:not(.m-procedure-page){ font-size: 12px; }
 }
