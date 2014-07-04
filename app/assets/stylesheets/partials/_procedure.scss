@@ -143,14 +143,16 @@ $banner_width_img: 620px;
 
 // Картинка и текст внутри нее выровненный по центру
 #{$el}-stage-header{
+  $image-height: 91px;
   position: relative;
   width: 553px;
+  height: $image-height;
   overflow: hidden;
 
   h5 {
     font-family: PragmaticaLightC, sans-serif;
     font-size: 48px;
-    line-height: 91px;
+    line-height: $image-height;
     padding-left: .6em;
     font-weight: normal;
     display: inline-block;
