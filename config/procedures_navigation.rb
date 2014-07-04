@@ -15,7 +15,7 @@ SimpleNavigation::Configuration.run do |navigation|
   navigation.items do |procedure_categories|
     procedure_categories.dom_class = '_left-menu-root-level _left-menu js-left-menu js-left-menu-node'
     Brand.order('title ASC').each do |brand|
-      procedure_categories.item "brand-#{brand.id}", brand.title, '#' do |brand_procedure_categories|
+      procedure_categories.item "brand-#{brand.id}", brand.title, procedures_brand_path(brand) do |brand_procedure_categories|
         brand_procedure_categories.dom_class = '_left-menu-first-level js-left-menu-node'
         brand.procedure_categories.roots.each do |procedure_category_root|
           brand_procedure_categories.item "procedure-category-#{procedure_category_root.id}",
