@@ -4,12 +4,19 @@ ActiveAdmin.register ProcedureCategory do
   menu :parent => I18n.t('catalog') 
   config.batch_actions = false
   config.clear_sidebar_sections!
+  config.sort_order = "parent_id_asc" 
   
   
    index do 
+     
      column :brand_id do |column|
        if column.brand_id 
          Brand.find(column.brand_id).try(:title)
+       end
+     end
+     column :parent_id do |column|
+       if column.parent_id 
+         ProcedureCategory.find(column.parent_id).try(:title)
        end
      end
      column :title
