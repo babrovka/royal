@@ -1,5 +1,5 @@
 class Procedure < ActiveRecord::Base
-  attr_accessible :title, :text, :stages_attributes, :short_text, :image
+  attr_accessible :title, :text, :stages_attributes, :short_text, :image, :procedure_category_ids
 
   has_many :stages
   has_many :procedure_procedure_categories

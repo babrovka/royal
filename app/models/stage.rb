@@ -1,5 +1,5 @@
 class Stage < ActiveRecord::Base
-  attr_accessible :procedure_id, :title, :substages_attributes
+  attr_accessible :procedure_id, :title, :substages_attributes, :stage_image_ids
   belongs_to :procedure
   has_many :substages
   has_many :stage_stage_images

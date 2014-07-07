@@ -134,6 +134,7 @@ ru:
         text: "Описание"
         short_text: "Краткий текст"
         image: "Изображение"
+        procedure_categories: "Категории"
       case:
         title: "Название"
         text: "Описание"
