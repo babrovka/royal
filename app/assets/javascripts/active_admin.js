@@ -14,3 +14,5 @@ $(document).ready(function(){
 	});
 
 });
+
+$(document).on('click', '.has_many.stages a.button, .has_many.substages a.button', function(){ $('select').not('.select2-offscreen').select2({width: 300}) })
