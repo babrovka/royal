@@ -44,8 +44,10 @@ class ProcedurePdf < Prawn::Document
   end
   
   def first_page_logo
-    bounding_box([0, bounds.height], width: bounds.width, height: 200) do
-      image "#{Rails.root}/app/assets/images/pdf/logo-brand-#{@procedure.brand.try(:id)}.png", :position => :center, fit: [200, 200]
+    if @procedure.brand
+      bounding_box([0, bounds.height], width: bounds.width, height: 200) do
+        image "#{Rails.root}/app/assets/images/pdf/logo-brand-#{@procedure.brand.try(:id)}.png", :position => :center, fit: [200, 200]
+      end
     end
   end
   
