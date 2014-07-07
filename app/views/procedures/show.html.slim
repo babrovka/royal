@@ -26,7 +26,8 @@
       - stages.each do |stage|
         ._procedure-stage
           ._procedure-stage-header
-            = image_tag stage.stage_images.first.image.url(:medium)
+            - if stage.stage_images.any?
+              = image_tag stage.stage_images.first.image.url(:medium)
             / текст сразу на картинке,скрываем поэтому отрисовку текста
             /h5 = stage.title.truncate(20, omission: '')
 
