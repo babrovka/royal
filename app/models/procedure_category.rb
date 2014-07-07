@@ -6,4 +6,18 @@ class ProcedureCategory < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: :slugged
   belongs_to :brand
+  
+  def parent_category
+    if self.parent_id
+      ProcedureCategory.find(self.parent_id).try(:title)
+    end
+  end
+  
+  def title_with_parent
+    if self.parent_id
+      "#{self.parent_category} | #{self.title}"
+    else
+      self.title
+    end
+  end
 end

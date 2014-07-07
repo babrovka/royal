@@ -16,7 +16,7 @@ ActiveAdmin.register Procedure do
        f.input :title
        f.input :short_text, :input_html => { :rows => 4  }
        f.input :text, :input_html => { :rows => 5  }
-       f.input :procedure_categories, :as => :select, :collection => ProcedureCategory.all, input_html: {class: 'select2able'}
+       f.input :procedure_categories, :as => :select, :collection => ProcedureCategory.all.map {|p| p.title_with_parent } , input_html: {class: 'select2able'}
        f.input :image, :as => :file, :hint => ( f.object.new_record? || !f.object.image ) ? nil : image_tag(f.object.image.url(:thumb))
        
        f.has_many :stages do |stage_fields|      
