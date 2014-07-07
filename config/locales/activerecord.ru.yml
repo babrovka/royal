@@ -195,8 +195,7 @@ ru:
         stage_images: "Изображения"
       substage:
         text: "Текст"
-        product_id: "Продукт"
-        product: "Продукт"
+        products: "Товары"
       taxonomy:
         title: "Название"
         seo_title: "SEO title"
