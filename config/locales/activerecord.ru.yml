@@ -27,6 +27,9 @@ ru:
       product_category:
         one: "Категория товара"
         other: "Категории товаров"
+      procedure_category:
+        one: "Категория процедур"
+        other: "Категории процедур"
       event:
         one: "Событие"
         other: "События"
@@ -135,6 +138,10 @@ ru:
         short_text: "Краткий текст"
         image: "Изображение"
         procedure_categories: "Категории"
+      procedure_category:
+        title: "Название"
+        brand_id: "Бренд"
+        parent_id: "Родительская категория"
       case:
         title: "Название"
         text: "Описание"
