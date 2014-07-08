@@ -12,6 +12,10 @@ class StaticPagesController < ApplicationController
   end
   
   def about
+    seo = SeoData.find_by_page('О нас')
+    @title = seo.try(:title) || ''
+    @meta_description = seo.try(:description) || ''
+    @seo_text = seo.try(:seo_text) || ''
   end
   
   def contacts

@@ -137,9 +137,12 @@ namespace :db do
     SeoData.destroy_all
     SeoData.create(:page => 'Главная страница')
     SeoData.create(:page => 'Продукция главная')
-    
     puts "SeoData created!"
-
+  end
+  
+  task :create_about_us => :environment do
+    SeoData.create(:page => 'О нас')
+    puts "About us created!"
   end
 
   task :create_cities_and_partners => :environment do

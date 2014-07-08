@@ -1,0 +1,7 @@
+.container id="about"
+  .row
+    .span3
+      h1 о компании
+    .span2.offset7
+	    = link_to "обратная связь", contacts_path, :class => 'content-header-link about'    
+  = @seo_text.html_safe if @seo_text

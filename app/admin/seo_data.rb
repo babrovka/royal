@@ -10,8 +10,8 @@ ActiveAdmin.register SeoData do
    form do |f|  
      f.inputs  do
        f.input :title
-       f.input :description
-       f.input :seo_text
+       f.input :description,      :input_html => { :rows => 4 }
+       f.input :seo_text, :as => :ckeditor, :label => false
      end
      f.actions
    end
