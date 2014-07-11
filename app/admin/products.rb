@@ -87,6 +87,7 @@ ActiveAdmin.register Product do
           if params[:product][:product_images_attributes].blank?
             redirect_to admin_product_path(@product)
           else
+            @product_image = ProductImage.find(@product.product_images.first)
             render :action => "product_images/crop", :layout => 'active_admin' 
           end
         else
