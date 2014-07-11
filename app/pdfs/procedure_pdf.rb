@@ -77,9 +77,10 @@ class ProcedurePdf < Prawn::Document
       text @procedure.title, :color => 'C99541', :size => 22
       move_down 20
       num = 0
-      font 'PTSansRegular'
       @procedure.stages.each do |stage|
+        font 'PTSansCaption'
         text (stage.title + ':'), :color => '002539', :size => 14
+        font 'PTSansRegular'
         move_down 7
         # формируем то,что будем рисовать
         # в каждой строчке порядковый номер и текст
@@ -101,10 +102,13 @@ class ProcedurePdf < Prawn::Document
   def init_fonts
     font_families.update(
       'PTSansCondensed' =>{
-        normal: "#{Rails.root}/app/assets/fonts/pdf/OpenSans-Condensed.ttf"
+        normal: "#{Rails.root}/app/assets/fonts/pdf/PTSansCondensed.ttf"
       },
       'PTSansRegular' => {
-          normal: "#{Rails.root}/app/assets/fonts/pdf/OpenSans-Regular.ttf"
+          normal: "#{Rails.root}/app/assets/fonts/pdf/PTSansRegular.ttf"
+      },
+      'PTSansCaption' => {
+          normal: "#{Rails.root}/app/assets/fonts/pdf/PTSansCaption.ttf"
       },
       'Bebas' =>{
         :normal => "#{Rails.root}/app/assets/fonts/pdf/BebasNeue Regular.ttf"
