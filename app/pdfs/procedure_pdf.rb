@@ -2,7 +2,7 @@
 
 class ProcedurePdf < Prawn::Document
   def initialize(procedure, view)
-    super(margin: 70)
+    super(margin: 60)
     @procedure = procedure
     @view = view
     init_fonts
@@ -24,12 +24,12 @@ class ProcedurePdf < Prawn::Document
       bounding_box([0, 0],  width: bounds.width, height: footer_height) do
         image "#{Rails.root}/app/assets/images/pdf/rb_logo.png", :position => :left, width: 150
 
-        text_width = 180
+        text_width = 150
         bounding_box([bounds.width - text_width, footer_height], width: text_width, height: footer_height) do
           font 'PTSansCondensed'
           text "Эксклюзивный дистрибьютор в России\nкомпания «Роял Брендс»\n8(800)100-8079, www.rbcos.ru",
                color: '333333',
-               size: 12
+               size: 9
         end
       end
     end
@@ -64,7 +64,7 @@ class ProcedurePdf < Prawn::Document
   def first_page_short_text
     span(350, :position => :center) do
       font 'PTSansRegular'
-      text @procedure.title, :size => 12
+      text @procedure.title, :size => 9
     end
   end
   
@@ -72,13 +72,14 @@ class ProcedurePdf < Prawn::Document
   
 
   def main_text
-    font 'PTSansRegular'
     bounding_box([0, bounds.height], width: bounds.width, height: bounds.height - 100) do
+      font 'Bebas'
       text @procedure.title, :color => 'C99541', :size => 22
       move_down 20
       num = 0
+      font 'PTSansRegular'
       @procedure.stages.each do |stage|
-        text (stage.title + ':'), :color => '002539', :size => 16
+        text (stage.title + ':'), :color => '002539', :size => 14
         move_down 7
         # формируем то,что будем рисовать
         # в каждой строчке порядковый номер и текст
@@ -89,10 +90,10 @@ class ProcedurePdf < Prawn::Document
         end
 
         # рисуем таблицу
-        indent 10 do
-          table rows, cell_style: { border_width: 0, color: '002539', padding: [5,3], size: 12 }
+        indent 20 do
+          table rows, cell_style: { border_width: 0, color: '002539', padding: [5,3], size: 9 }
         end
-        move_down 15
+        move_down 12
       end
     end
   end
