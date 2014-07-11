@@ -15,7 +15,7 @@
             span.fa.fa-print
             span распечатать
 
-          p = @procedure.text.html_safe if @procedure.text
+          p = markdown(@procedure.text) if @procedure.text
 
 
   .row
@@ -33,9 +33,8 @@
 
           - stage.substages.each do |substage|
             - num += 1
-            p._procedure-substage
-              span = "#{num}. "
-              span = substage.text
+            ._procedure-substage
+              span = special_markdown(num, substage.text)
             - substage.products.each do |product|
               ._procedure-substage-products
                 = link_to product_path(product), class: '_procedure-product' do
