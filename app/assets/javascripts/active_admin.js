@@ -13,6 +13,15 @@ $(document).ready(function(){
 	    width: 300,
 			formatNoMatches: function(term) {return 'Ничего не найдено';}
 	});
+	
+	$('.select2able_max3').select2({
+	    width: 300,
+			maximumSelectionSize: 3,
+			formatSelectionTooBig: function (limit) {
+          return 'Можно выбрать максимум три товара';
+      },
+			formatNoMatches: function(term) {return 'Ничего не найдено';}
+	});
 
 });
 
