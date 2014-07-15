@@ -138,6 +138,7 @@ ru:
         short_text: "Краткий текст"
         image: "Изображение"
         procedure_categories: "Категории"
+        products: "Рекомендованные товары"
       procedure_category:
         title: "Название"
         brand_id: "Бренд"
