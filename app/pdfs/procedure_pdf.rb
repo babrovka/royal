@@ -64,7 +64,7 @@ class ProcedurePdf < Prawn::Document
   def first_page_short_text
     span(350, :position => :center) do
       font 'PTSansRegular'
-      text @procedure.title, :size => 9
+      text @procedure.short_text, :size => 9
     end
   end
   
