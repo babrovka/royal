@@ -29,6 +29,7 @@ Rake::Task['db:test_events'].invoke
 Rake::Task['db:test_articles'].invoke
 Rake::Task['db:test_partners'].invoke
 Rake::Task['db:test_nested_procedure_categories'].invoke
+Rake::Task['db:stage_images'].invoke
 Rake::Task['db:test_procedures'].invoke
 Taxon.find_each(&:save!)
 Taxonomy.find_each(&:save!)

@@ -277,6 +277,21 @@ namespace :db do
     puts "Nested procedure categories created!"
 
   end
+  
+  task :stage_images => :environment do
+    StageImage.destroy_all
+    
+    Dir.glob(File.join(Rails.root, 'stage_images', '*')).each do |path|
+      StageImage.create!(
+        :title => File.basename(path, ".png"),
+        :image => File.new(path)
+      )
+      puts "Stage image created!"
+    end
+    
+    puts "Done!"
+    
+  end
 
 
   task :test_procedures => :environment do
@@ -291,9 +306,7 @@ namespace :db do
       pr.text = Populator.words(10..50)
     end
     
-    StageImage.create!(:title => 'Очищение и пилинг', :image => File.new(File.join(Rails.root, 'app', 'assets', 'images', 'pro1.png')))
-    StageImage.create!(:title => 'Массаж и маска', :image => File.new(File.join(Rails.root, 'app', 'assets', 'images', 'pro2.png')))
-    
+
     stage_images = StageImage.all
     products = Product.all
     Procedure.all.each do |pr|
