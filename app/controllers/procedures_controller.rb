@@ -25,7 +25,7 @@ class ProceduresController < ApplicationController
   
   def show 
     @procedure = Procedure.find(params[:id])
-    @nested_products = Product.all.sample(3)
+    @nested_products = @procedure.products.present? ? @procedure.products : Product.all.sample(3)
     respond_to do |format|
       format.html
       format.pdf do
