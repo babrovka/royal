@@ -57,6 +57,7 @@ class ProcedurePdf < Prawn::Document
       text @procedure.title, :color => 'F48120', :size => 35, :align => :center
       move_down 60
       first_page_short_text
+      first_page_text
     end
   end
   
@@ -65,6 +66,15 @@ class ProcedurePdf < Prawn::Document
     span(350, :position => :center) do
       font 'PTSansRegular'
       text @procedure.short_text, :size => 9
+      move_down 18 if @procedure.short_text
+    end
+  end
+
+
+  def first_page_text
+    span(350, :position => :center) do
+      font 'PTSansRegular'
+      text @procedure.text, :size => 9
     end
   end
   
