@@ -3,7 +3,7 @@ class ProductImage < ActiveRecord::Base
   attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
   belongs_to :product
   
-  has_attached_file :image, :styles: { 
+  has_attached_file :image, styles: { 
                                         catalog: {geometry: "200x200#", processors: [:cropper]},
                                         product: {geometry: "300x300#"},
                                         ico: {geometry: "70x70#"},
