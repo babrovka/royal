@@ -41,7 +41,7 @@ group :assets do
   gem 'chosen-rails'
 end
 
-group :developments do
+group :development do
   gem 'pg'
 end
 
