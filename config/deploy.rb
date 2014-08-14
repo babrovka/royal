@@ -1,15 +1,16 @@
 require 'rvm/capistrano'
 require 'bundler/capistrano'
-require 'thinking_sphinx/capistrano'
 load 'deploy/assets'
 
-server "5.178.80.26", :web, :app, :db, primary: true
+server "109.120.165.36", :web, :app, :db, primary: true
 
-set :user, "user"
-set :application, "royal"
-set :deploy_to, "/home/user/projects/#{application}"
+set :user, "babrovka"
+set :application, "rbcos"
+set :deploy_to, "/home/#{user}/projects/#{application}"
 set :deploy_via, :remote_cache
 set :use_sudo, false
+set :port, 34511
+set :rvm_ruby_version, '2.1.2@rbcos'
 
 set :scm, "git"
 set :repository, "git@github.com:babrovka/royal.git"
@@ -24,57 +25,49 @@ task :copy_database_config do
    run "cp #{db_config} #{latest_release}/config/database.yml"
 end
 
-namespace :deploy do
-  namespace :assets do
-    task :precompile, :roles => :web, :except => { :no_release => true } do
-      from = source.next_revision(current_revision)
-      if capture("cd #{latest_release} && #{source.local.log(from)} vendor/assets/ app/assets/ | wc -l").to_i > 0
-        run %Q{cd #{latest_release} && #{rake} RAILS_ENV=#{rails_env} #{asset_env} assets:precompile}
-      else
-        logger.info "Skipping asset pre-compilation because there were no asset changes"
-      end
-    end
+task :copy_secret_config do
+   db_config = "#{shared_path}/secrets.yml"
+   run "cp #{db_config} #{latest_release}/config/secrets.yml"
+end
+
+# namespace :deploy do
+#   namespace :assets do
+#     task :precompile, :roles => :web, :except => { :no_release => true } do
+#       from = source.next_revision(current_revision)
+#       if capture("cd #{latest_release} && #{source.local.log(from)} vendor/assets/ app/assets/ | wc -l").to_i > 0
+#         run %Q{cd #{latest_release} && #{rake} RAILS_ENV=#{rails_env} #{asset_env} assets:precompile}
+#       else
+#         logger.info "Skipping asset pre-compilation because there were no asset changes"
+#       end
+#     end
+#   end
+# end
+
+namespace(:log) do
+  task :rails do
+    run %Q{cd #{shared_path} && tailf -n 50 log/production.log }
+  end
+  
+  task :thin do
+    run %Q{cd #{shared_path} && tailf -n 50 log/thin.log }
   end
 end
 
-namespace(:thin) do
+namespace(:deploy) do
   task :stop do
-    run "thin stop -C /etc/thin/royal.yml"
+    run %Q{cd #{latest_release} && bundle exec thin stop -C #{shared_path}/thin.yml}
    end
   
   task :start do
-    run "thin start -C /etc/thin/royal.yml"
+    run %Q{cd #{latest_release} && bundle exec thin start -C #{shared_path}/thin.yml}
   end
 
   task :restart do
-    run "thin restart -C /etc/thin/royal.yml"
+    stop
+    start
   end
 end
 
-namespace :deploy do
-  task :setup_solr_data_dir do
-    run "mkdir -p #{shared_path}/solr/data"
-  end
-end
- 
-namespace :solr do
-  desc "start solr"
-  task :start, :roles => :app, :except => { :no_release => true } do 
-    run "cd #{current_path} && RAILS_ENV=#{rails_env} bundle exec sunspot-solr start --port=8983 --data-directory=#{shared_path}/solr/data --pid-dir=#{shared_path}/pids"
-  end
-  desc "stop solr"
-  task :stop, :roles => :app, :except => { :no_release => true } do 
-    run "cd #{current_path} && RAILS_ENV=#{rails_env} bundle exec sunspot-solr stop --port=8983 --data-directory=#{shared_path}/solr/data --pid-dir=#{shared_path}/pids"
-  end
-  desc "reindex the whole database"
-  task :reindex, :roles => :app do
-    stop
-    run "rm -rf #{shared_path}/solr/data"
-    start
-    run "cd #{current_path} && RAILS_ENV=#{rails_env} bundle exec rake sunspot:solr:reindex"
-  end
-end
- 
 
 before "deploy:assets:precompile", "copy_database_config"
-after "deploy", "deploy:cleanup"
+after "copy_database_config", "copy_secret_config"
