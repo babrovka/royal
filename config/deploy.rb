@@ -11,7 +11,6 @@ set :deploy_via, :remote_cache
 set :use_sudo, false
 set :port, 34511
 set :rvm_ruby_version, '2.1.2@rbcos'
-set :linked_dirs, fetch(:linked_dirs) - %w{public/system}
 set :scm, "git"
 set :repository, "git@github.com:babrovka/royal.git"
 set :branch, "master"
@@ -33,7 +32,7 @@ task :copy_secret_config do
 end
 
 task :public_system_symlink do
-   run "ln -s /shared_images #{latest_release}/public/system"
+   run "rm -rf -- #{latest_release}/public/system && ln -s -- /shared_images #{latest_release}/public/system"
 end
 
 namespace :deploy do
