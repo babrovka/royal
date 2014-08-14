@@ -11,13 +11,15 @@ set :deploy_via, :remote_cache
 set :use_sudo, false
 set :port, 34511
 set :rvm_ruby_version, '2.1.2@rbcos'
-
+set :linked_dirs, fetch(:linked_dirs) - %w{public/system}
 set :scm, "git"
 set :repository, "git@github.com:babrovka/royal.git"
 set :branch, "master"
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
+
+
 
 
 task :copy_database_config do
@@ -28,6 +30,10 @@ end
 task :copy_secret_config do
    db_config = "#{shared_path}/secrets.yml"
    run "cp #{db_config} #{latest_release}/config/secrets.yml"
+end
+
+task :public_system_symlink do
+   run "ln -s /shared_images #{latest_release}/public/system"
 end
 
 namespace :deploy do
@@ -71,3 +77,4 @@ end
 
 before "deploy:assets:precompile", "copy_database_config"
 after "copy_database_config", "copy_secret_config"
+after "copy_secret_config", "public_system_symlink"
