@@ -298,7 +298,7 @@ namespace :db do
     Procedure.destroy_all
     Stage.destroy_all
     Substage.destroy_all
-    StageImage.destroy_all
+    # StageImage.destroy_all
     ActiveRecord::Base.connection.reset_pk_sequence!('procedures')
 
     Procedure.populate 100 do |pr|
