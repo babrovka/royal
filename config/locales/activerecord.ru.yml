@@ -194,9 +194,11 @@ ru:
       stage:
         title: "Название"
         stage_images: "Изображения"
+        position: позиция
       substage:
         text: "Текст"
         products: "Товары"
+        position: позиция
       taxonomy:
         title: "Название"
         seo_title: "SEO title"

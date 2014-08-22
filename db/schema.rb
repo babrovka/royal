@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140703131858) do
+ActiveRecord::Schema.define(:version => 20140822094105) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -45,6 +45,24 @@ ActiveRecord::Schema.define(:version => 20140703131858) do
 
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
+
+  create_table "admins", :force => true do |t|
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0,  :null => false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
+  add_index "admins", ["reset_password_token"], :name => "index_admins_on_reset_password_token", :unique => true
 
   create_table "album_images", :force => true do |t|
     t.string   "title"
@@ -174,6 +192,19 @@ ActiveRecord::Schema.define(:version => 20140703131858) do
     t.integer "user_id"
   end
 
+  create_table "friendly_id_slugs", :force => true do |t|
+    t.string   "slug",                         :null => false
+    t.integer  "sluggable_id",                 :null => false
+    t.string   "sluggable_type", :limit => 50
+    t.string   "scope"
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], :name => "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", :unique => true
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], :name => "index_friendly_id_slugs_on_slug_and_sluggable_type"
+  add_index "friendly_id_slugs", ["sluggable_id"], :name => "index_friendly_id_slugs_on_sluggable_id"
+  add_index "friendly_id_slugs", ["sluggable_type"], :name => "index_friendly_id_slugs_on_sluggable_type"
+
   create_table "line_items", :force => true do |t|
     t.integer  "product_id"
     t.integer  "cart_id"
@@ -287,6 +318,10 @@ ActiveRecord::Schema.define(:version => 20140703131858) do
     t.text     "seo_text"
     t.integer  "taxon_id"
     t.integer  "position",                                           :default => 0
+    t.string   "sku"
+    t.integer  "price"
+    t.integer  "new_price"
+    t.string   "applying"
   end
 
   add_index "products", ["slug"], :name => "index_products_on_slug", :unique => true
@@ -320,6 +355,20 @@ ActiveRecord::Schema.define(:version => 20140703131858) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "related_products", :id => false, :force => true do |t|
+    t.integer  "product_id"
+    t.integer  "related_product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "same_taxon_products", :id => false, :force => true do |t|
+    t.integer  "product_id"
+    t.integer  "same_product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "seo_data", :force => true do |t|
     t.string   "title"
     t.text     "description"
@@ -327,6 +376,67 @@ ActiveRecord::Schema.define(:version => 20140703131858) do
     t.string   "page"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "shop_carts", :force => true do |t|
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "shop_line_items", :force => true do |t|
+    t.integer  "product_id"
+    t.integer  "cart_id"
+    t.integer  "order_id"
+    t.integer  "quantity",   :default => 1
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "shop_orders", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "city"
+    t.string   "address"
+    t.text     "comment"
+  end
+
+  create_table "shop_product_taxons", :force => true do |t|
+    t.integer  "product_id"
+    t.integer  "taxon_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "shop_taxonomies", :force => true do |t|
+    t.string   "title"
+    t.string   "slug"
+    t.string   "seo_title"
+    t.text     "seo_description"
+    t.text     "seo_text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "shop_taxons", :force => true do |t|
+    t.string   "title"
+    t.integer  "taxonomy_id"
+    t.integer  "parent_id"
+    t.integer  "lft"
+    t.integer  "rgt"
+    t.integer  "depth"
+    t.string   "slug"
+    t.string   "seo_title"
+    t.text     "seo_description"
+    t.text     "seo_text"
+    t.string   "seo_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "taxon_type",      :default => 0
   end
 
   create_table "stage_images", :force => true do |t|
@@ -349,8 +459,9 @@ ActiveRecord::Schema.define(:version => 20140703131858) do
   create_table "stages", :force => true do |t|
     t.string   "title"
     t.integer  "procedure_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+    t.integer  "position",     :default => 0
   end
 
   create_table "substage_products", :force => true do |t|
@@ -363,8 +474,9 @@ ActiveRecord::Schema.define(:version => 20140703131858) do
   create_table "substages", :force => true do |t|
     t.text     "text"
     t.integer  "stage_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.integer  "position",   :default => 0
   end
 
   create_table "taxonomies", :force => true do |t|
