@@ -1,5 +1,6 @@
 require 'rvm/capistrano'
 require 'bundler/capistrano'
+require 'thinking_sphinx/capistrano'
 load 'deploy/assets'
 
 server "109.120.165.36", :web, :app, :db, primary: true
