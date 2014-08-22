@@ -9,7 +9,7 @@
 
 
 ._brands-filter
-  = form_tag request.original_url, method: :get,  class: 'js-brands-filter-form' do
+  = form_tag request.original_url, method: :get,  class: 'js-brands-filter-form', multiple: true do
     - products_brands.each_with_index do |brand, i|
       = label_tag "brand_ids[][#{brand.id}]", class: "_brands-filter-item item-#{brand.id} js-brands-filter-item" do
         = check_box_tag "brand_ids[]", brand.id, is_selected[i], id: "brand_ids__#{brand.id}"
