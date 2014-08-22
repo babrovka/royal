@@ -151,11 +151,11 @@ $(document).ready(
 		});	
 		
 		$('#bronte-bubble').on('click', function () {
-			window.location = '/products?brand_id=1';
+			window.location = '/products?brand_ids=1';
 		});
 		
 		$('#belter-bubble').on('click', function () {
-			window.location = '/products?brand_id=2';
+			window.location = '/products?brand_ids=2';
 		});
 		
 		
