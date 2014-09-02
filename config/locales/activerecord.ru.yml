@@ -192,11 +192,11 @@ ru:
         title: "Название"
         brand_id: "Бренд"
       stage:
-        title: "Название"
+        title: "Название стадии"
         stage_images: "Изображения"
         position: позиция
       substage:
-        text: "Текст"
+        text: "Текст этапа"
         products: "Товары"
         position: позиция
       taxonomy:

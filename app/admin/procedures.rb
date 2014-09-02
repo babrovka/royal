@@ -20,12 +20,16 @@ ActiveAdmin.register Procedure do
        f.input :products, :as => :select, :collection => Product.all, input_html: {class: 'select2able_max3'}
        f.input :image, :as => :file, :hint => ( f.object.new_record? || !f.object.image ) ? nil : image_tag(f.object.image.url(:thumb))
        
-       f.has_many :stages do |stage_fields|      
-         stage_fields.input :title
+       f.has_many :stages, class: 'js-dragger-container stages-container ' do |stage_fields|
+         stage_fields.input :position, as: :hidden, wrapper_html: { class: 'js-dragger-input', 'data-id' => stage_fields.object.id }
+         stage_fields.input '_destroy', as: :hidden, wrapper_html: { class: 'js-dragger-destroy' }
+         stage_fields.input :title, wrapper_html: { class: 'js-dragger-visible ' }
          stage_fields.input :stage_images, :as => :select, :collection => StageImage.all, input_html: {class: 'select2able'}
          
-         stage_fields.has_many :substages do |substage_fields|      
-            substage_fields.input :text, :input_html => { :rows => 2  }
+         stage_fields.has_many :substages, class: 'js-dragger-container substages-container ' do |substage_fields|
+            substage_fields.input :position, as: :hidden, wrapper_html: { class: 'js-dragger-input', 'data-id' => substage_fields.object.id }
+            substage_fields.input '_destroy', as: :hidden, wrapper_html: { class: 'js-dragger-destroy' }
+            substage_fields.input :text, wrapper_html: { class: 'js-dragger-visible ' }, input_html: { rows: 2 }
             substage_fields.input :products, :as => :select, :collection => Product.all, input_html: {class: 'select2able'}
           end
           
@@ -42,7 +46,7 @@ ActiveAdmin.register Procedure do
     end  
     
     panel t('stages') do 
-      table_for procedure.stages do 
+      table_for procedure.stages do
         column 'Заголовок' do |stage|
           stage.title
         end

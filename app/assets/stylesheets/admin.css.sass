@@ -1,3 +1,4 @@
+
 @import "active_admin/mixins"
 @import "active_admin/components/links"
 @import "jquery.Jcrop"
@@ -75,3 +76,57 @@ a.cke_dialog_ui_button
   a
     top: 60px
     left: 80px
+
+
+
+// стили для перетаскивания элементов по плоскости
+// этапы и подэтапы
+.stages-container
+  border-bottom: 3px solid #444
+
+
+.stages-container, .substages-container
+  position: relative
+
+.move-btn
+  color: #888
+  cursor: pointer
+
+  &:hover, &:active, &:focus
+    color: black
+
+  span
+    font-size: 1.4em
+    padding-right: .2em
+    vertical-align: bottom
+
+
+.drag-btn + .move-btn
+  padding-left: 30px
+
+.move-btn + .move-btn
+  padding-left: 15px
+
+.drag-btn
+  background-color: #e9e9e9
+  position: relative
+  padding: 10px
+  cursor: move
+  &:hover, &:active, &:focus
+    background-color: #ddd
+
+
+.remove-btn
+  position: absolute
+  right: 20px
+  top: 7px
+  color: #b24926
+  cursor: pointer
+
+  &:hover, &:active, &:focus
+    color: mix(#000, #b24926, 20%)
+
+  span
+    font-size: 1em
+    padding-right: .2em
+    vertical-align: middle
