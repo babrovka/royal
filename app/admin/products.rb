@@ -12,7 +12,7 @@ ActiveAdmin.register Product do
     column :position
     column :title
     column :brand_id do |column|
-      Brand.find(column.brand_id).title
+      Brand.where(id: column.try(:brand_id)).first.try(:title)
     end
     column :created_at
     default_actions
